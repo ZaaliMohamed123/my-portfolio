@@ -1,0 +1,18 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "education": "Education",
+    "skills": "Skills", 
+    "certifications": "Certifications",
+    "experience": "Experience",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "home": {
+    "welcome": "Welcome",
+    "name": "ZAALI Mohamed",
+    "subtitle": "Data Science & AI Student | Health-Tech Innovator",
+    "description": "Passionate Engineering Student from Morocco, specializing in Data Science, AI, and Digital Health at ENSAM Rabat."
+  }
+}
