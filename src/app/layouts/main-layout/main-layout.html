@@ -1,1 +1,110 @@
-<p>main-layout works!</p>
+<div class="portfolio-layout">
+  
+  <!-- Scroll Progress Indicator -->
+  <div class="scroll-progress" 
+       [style.transform]="'scaleX(' + scrollProgress / 100 + ')'"
+       role="progressbar"
+       [attr.aria-valuenow]="scrollProgress"
+       [attr.aria-label]="'Page progress: ' + Math.round(scrollProgress) + '%'">
+  </div>
+  
+  <!-- Fixed Header -->
+  <app-header class="main-header"></app-header>
+  
+  <!-- Main Content Area -->
+  <main class="main-content" 
+        id="main-content"
+        role="main">
+    
+    <!-- Loading State -->
+    <div class="loading-screen" 
+         [class.hidden]="!isLoading"
+         role="status"
+         [attr.aria-label]="'Loading portfolio content'">
+      <div class="loading-animation">
+        <div class="loading-dots">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+        <p class="loading-text">{{ 'common.loading' | transloco }}</p>
+      </div>
+    </div>
+    
+    <!-- Router Content Wrapper -->
+    <div class="content-wrapper" 
+         [class.loading]="isLoading">
+      <router-outlet></router-outlet>
+      
+      <!-- Temporary Test Content (remove this later when we add real components) -->
+      <section class="hero-section" id="home">
+        <div class="container-custom">
+          <h1 class="text-gradient">Mohamed ZAALI</h1>
+          <p class="lead">Data Science & AI Student | Health-Tech Innovator</p>
+          <p>Welcome to my portfolio! Testing header and layout functionality.</p>
+          <div class="hero-buttons">
+            <button class="btn-primary">View Projects</button>
+            <button class="btn-secondary">Contact Me</button>
+          </div>
+        </div>
+      </section>
+      
+      <section id="about" class="test-section">
+        <div class="container-custom">
+          <h2>About Section</h2>
+          <p>This is a test section to verify our navigation and scrolling works correctly.</p>
+        </div>
+      </section>
+      
+      <section id="education" class="test-section">
+        <div class="container-custom">
+          <h2>Education Section</h2>
+          <p>Test education content...</p>
+        </div>
+      </section>
+      
+      
+      
+      <section id="experience" class="test-section">
+        <div class="container-custom">
+          <h2>Experience Section</h2>
+          <p>Test experience content...</p>
+        </div>
+      </section>
+      
+      <section id="projects" class="test-section">
+        <div class="container-custom">
+          <h2>Projects Section</h2>
+          <p>Test projects content...</p>
+        </div>
+      </section>
+
+      <section id="skills" class="test-section">
+        <div class="container-custom">
+          <h2>Skills Section</h2>
+          <p>Test skills content...</p>
+        </div>
+      </section>
+      
+      <section id="contact" class="test-section">
+        <div class="container-custom">
+          <h2>Contact Section</h2>
+          <p>Test contact content...</p>
+        </div>
+      </section>
+      
+    </div>
+    
+  </main>
+  
+  
+  <!-- Back to Top Button -->
+  <button class="back-to-top btn-modern"
+          [class.visible]="showBackToTop"
+          (click)="scrollToTop()"
+          [attr.aria-label]="'Back to top'"
+          type="button">
+    <i class="fas fa-arrow-up" aria-hidden="true"></i>
+  </button>
+  
+</div>

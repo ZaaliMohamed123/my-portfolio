@@ -1,1 +1,152 @@
-<p>header works!</p>
+<header class="portfolio-header" [class.scrolled]="isScrolled" [class.menu-open]="isMobileMenuOpen">
+  <!-- Glassmorphism Navigation Container  -->
+  <nav class="header-nav glass-ultra" role="navigation" [attr.aria-label]="'Main navigation'">
+    <!-- Header Content Wrapper -->
+    <div class="nav-content container-custom">
+
+      <!-- Brand/Logo Section -->
+      <div class="brand-section">
+        <a href="#home" class="brand-link hover-scale" [attr.aria-label]="'Go to homepage'">
+          <!-- Custom Logo Container -->
+          <div class="logo-container">
+            <div class="logo-symbol">
+              <!-- Light Theme Logo -->
+              <img
+                src="assets/media/logos/light_theme_logo.svg"
+                alt="Mohamed ZAALI Logo"
+                class="logo-image logo-light"
+              />
+
+              <!-- Dark Theme Logo -->
+              <img
+                src="assets/media/logos/dark_theme_logo.svg"
+                alt="Mohamed ZAALI Logo"
+                class="logo-image logo-dark"
+              />
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Desktop Navigation  -->
+      <div class="desktop-nav">
+        <ul class="nav-menu" role="list">
+          @for (section of navigationSections; track section.id) {
+          <li class="nav-item" role="listitem">
+            <a
+              [href]="'#' + section.id"
+              class="nav-link hover-lift"
+              [class.active]="activeSection === section.id"
+              (click)="scrollToSection(section.id)"
+              [attr.aria-label]="'Go to ' + (section.name | transloco)"
+              [attr.aria-current]="activeSection === section.id ? 'page' : null"
+            >
+              <!-- Section Icon -->
+              <i [class]="'fas ' + section.icon" class="nav-icon" aria-hidden="true"></i>
+
+              <!-- Section Name -->
+              <span class="nav-text">{{ section.name | transloco }}</span>
+
+              <!-- Active Indicator -->
+              <div class="active-indicator"></div>
+            </a>
+          </li>
+          }
+        </ul>
+      </div>
+
+      <!-- Right Side Controls -->
+      <div class="header-controls">
+        <!-- Language Switcher -->
+        <app-language-switcher class="control-item"></app-language-switcher>
+
+        <!-- Theme Toggle -->
+        <app-theme-toggle class="control-item" (themeChanged)="onThemeChange($event)">
+        </app-theme-toggle>
+
+        <!-- Mobile Menu Toggle [web:300] -->
+        <button
+          class="mobile-menu-toggle btn-modern"
+          [class.active]="isMobileMenuOpen"
+          (click)="toggleMobileMenu()"
+          [attr.aria-expanded]="isMobileMenuOpen"
+          [attr.aria-label]="isMobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'"
+          type="button"
+        >
+          <!-- Animated Hamburger -->
+          <div class="hamburger-lines">
+            <span class="line line-1"></span>
+            <span class="line line-2"></span>
+            <span class="line line-3"></span>
+          </div>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Navigation Overlay [web:298] -->
+  <div
+    class="mobile-nav-overlay"
+    [class.open]="isMobileMenuOpen"
+    [attr.aria-hidden]="!isMobileMenuOpen"
+  >
+    <div class="mobile-nav-content glass-ultra">
+      <!-- Mobile Navigation Menu -->
+      <ul class="mobile-nav-menu" role="list">
+        @for (section of navigationSections; track section.id) {
+        <li
+          class="mobile-nav-item fade-in"
+          role="listitem"
+          [style.animation-delay]="$index * 0.1 + 's'"
+        >
+          <a
+            [href]="'#' + section.id"
+            class="mobile-nav-link"
+            [class.active]="activeSection === section.id"
+            (click)="onMobileNavClick(section.id)"
+            [attr.aria-label]="'Go to ' + (section.name | transloco)"
+          >
+            <!-- Section Icon -->
+            <div class="mobile-nav-icon">
+              <i [class]="'fas ' + section.icon" aria-hidden="true"></i>
+            </div>
+
+            <!-- Section Info -->
+            <div class="mobile-nav-info">
+              <span class="mobile-nav-name">{{ section.name | transloco }}</span>
+              <span class="mobile-nav-desc">{{ section.description | transloco }}</span>
+            </div>
+
+            <!-- Arrow -->
+            <i class="fas fa-chevron-right mobile-nav-arrow" aria-hidden="true"></i>
+          </a>
+        </li>
+        }
+      </ul>
+
+      <!-- Mobile Footer -->
+      <div class="mobile-nav-footer">
+        <div class="mobile-social-links">
+          <a href="#" class="social-link" aria-label="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="#" class="social-link" aria-label="LinkedIn">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="#" class="social-link" aria-label="Email">
+            <i class="fas fa-envelope"></i>
+          </a>
+        </div>
+        <p class="mobile-footer-text">{{ 'header.mobile_footer' | transloco }}</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Header Backdrop (for mobile menu) -->
+<div
+  class="header-backdrop"
+  [class.visible]="isMobileMenuOpen"
+  (click)="closeMobileMenu()"
+  [attr.aria-hidden]="true"
+></div>

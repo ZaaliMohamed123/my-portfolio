@@ -4,15 +4,21 @@
     "about": "À propos",
     "education": "Formation",
     "skills": "Compétences",
-    "certifications": "Certifications", 
-    "experience": "Expérience",
+    "experience": "Expérience", 
     "projects": "Projets",
-    "contact": "Contact"
+    "contact": "Contact",
+    "home_desc": "Bienvenue & introduction",
+    "about_desc": "Parcours & passion",
+    "education_desc": "Études & certifications",
+    "skills_desc": "Expertise technique",
+    "experience_desc": "Parcours professionnel",
+    "projects_desc": "Travaux présentés",
+    "contact_desc": "Contactez-moi"
   },
-  "home": {
-    "welcome": "Bienvenue",
-    "name": "ZAALI Mohamed",
-    "subtitle": "Étudiant en Data Science & IA | Innovateur en Tech-Santé",
-    "description": "Étudiant ingénieur passionné du Maroc, spécialisé en Data Science, IA et Santé Numérique à l'ENSAM Rabat."
+  "header": {
+    "mobile_footer": "Portfolio Data Science & IA"
+  },
+  "common": {
+    "loading": "Chargement"
   }
 }

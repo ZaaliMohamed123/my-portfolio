@@ -1,98 +1,480 @@
-// Import Bootstrap functions and variables first (traditional @import method)
-@import 'bootstrap/scss/functions';
-@import 'bootstrap/scss/variables';
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap');
 
-// Custom color variables for your portfolio
-$primary: #2563EB;      // Professional blue
-$secondary: #059669;    // Health green  
-$dark: #0F172A;        // Dark mode background
-$light: #FAFBFC;       // Light mode background
-$purple: #7C3AED;      // AI/Tech accent
 
-// Override Bootstrap theme colors
-$theme-colors: (
-  'primary': $primary,
-  'secondary': $secondary,
-  'dark': $dark,
-  'light': $light,
-  'purple': $purple
-);
+$primary: #2563EB;          // Trust Blue - main brand color
+$secondary: #10B981;        // Success Green - secondary actions
+$accent: #F59E0B;           // Attention Amber - highlights
+$purple: #8B5CF6;           // Creative Purple - special elements
+$cyan: #06B6D4;             // Tech Cyan - data/tech elements
+$pink: #EC4899;             // Energy Pink - creative accents
 
-// Import the rest of Bootstrap
-@import 'bootstrap/scss/bootstrap';
+// Neutral Colors -
+$white: #FFFFFF;
+$light-gray: #F8FAFC;       // Light background
+$medium-gray: #E2E8F0;      // Borders, dividers
+$text-gray: #64748B;        // Secondary text
+$dark-gray: #334155;        // Primary text (light mode)
+$darker: #1E293B;           // Cards, surfaces (dark mode)
+$darkest: #0F172A;          // Background (dark mode)
+$pure-black: #000000;
 
-// Custom CSS variables for glassmorphism
+// Status Colors
+$success: #22C55E;
+$warning: #F59E0B;
+$error: #EF4444;
+$info: #3B82F6;
+
+
+
+
 :root {
-  --glass-bg-light: rgba(255, 255, 255, 0.85);
-  --glass-bg-dark: rgba(30, 41, 59, 0.8);
-  --glass-border-light: rgba(37, 99, 235, 0.2);
-  --glass-border-dark: rgba(59, 130, 246, 0.3);
-}
-
-// Glassmorphism utility class
-.glass-effect {
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  background: var(--glass-bg-light);
-  border: 1px solid var(--glass-border-light);
+  // Light Theme Colors
+  --color-primary: #{$primary};
+  --color-secondary: #{$secondary};
+  --color-accent: #{$accent};
+  --color-purple: #{$purple};
+  --color-cyan: #{$cyan};
+  --color-pink: #{$pink};
   
-  .dark-mode & {
-    background: var(--glass-bg-dark);
-    border: 1px solid var(--glass-border-dark);
-  }
+  // Light Theme Backgrounds
+  --bg-primary: #{$white};
+  --bg-secondary: #{$light-gray};
+  --bg-elevated: #{$white};
+  --bg-muted: #{$medium-gray};
+  
+  // Light Theme Text
+  --text-primary: #{$dark-gray};
+  --text-secondary: #{$text-gray};
+  --text-muted: #94A3B8;
+  --text-inverse: #{$white};
+  
+  // Light Theme Borders
+  --border-primary: #{$medium-gray};
+  --border-secondary: #E2E8F0;
+  --border-muted: #F1F5F9;
+  
+  // Shadows - Subtle and Professional
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  
+  // Professional Gradients [web:244]
+  --gradient-primary: linear-gradient(135deg, #{$primary} 0%, #{$purple} 100%);
+  --gradient-secondary: linear-gradient(135deg, #{$secondary} 0%, #{$cyan} 100%);
+  --gradient-warm: linear-gradient(135deg, #{$accent} 0%, #{$pink} 100%);
+  --gradient-subtle: linear-gradient(135deg, #{$light-gray} 0%, #{$white} 100%);
+  
+  // Glass Morphism - Modern & Subtle
+  --glass-bg: rgba(255, 255, 255, 0.85);
+  --glass-border: rgba(255, 255, 255, 0.2);
+  --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+
+  // Bootstrap color overrides
+  --bs-primary: #{$primary};
+  --bs-secondary: #{$secondary};
+  --bs-success: #{$success};
+  --bs-warning: #{$warning};
+  --bs-danger: #{$error};
+  --bs-info: #{$info};
 }
 
-// CSS animations (replacement for deprecated Angular animations)
+// Dark Theme
+.dark-mode {
+  --bg-primary: #{$darkest};
+  --bg-secondary: #{$darker};
+  --bg-elevated: #{$darker};
+  --bg-muted: #{$dark-gray};
+  
+  --text-primary: #{$white};
+  --text-secondary: #CBD5E1;
+  --text-muted: #94A3B8;
+  --text-inverse: #{$darkest};
+  
+  --border-primary: #{$dark-gray};
+  --border-secondary: #374151;
+  --border-muted: #2D3748;
+  
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.3);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.4);
+  
+  --glass-bg: rgba(30, 41, 59, 0.85);
+  --glass-border: rgba(59, 130, 246, 0.2);
+  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.6);
+}
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px; // Base font size
+  line-height: 1.5;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%; // Prevent iOS font scaling
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-weight: 400;
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+  
+  // Mobile optimization
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-overflow-scrolling: touch;
+  
+  // Smooth theme transitions
+  transition: color 0.3s ease, background-color 0.3s ease;
+  
+  // Prevent horizontal scroll
+  overflow-x: hidden;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+// Mobile-First Typography Scale
+h1 {
+  font-size: 2rem;    // 32px
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 1.75rem; // 28px
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 1.5rem;  // 24px
+  font-weight: 600;
+}
+
+h4 {
+  font-size: 1.25rem; // 20px
+  font-weight: 500;
+}
+
+h5 {
+  font-size: 1.125rem; // 18px
+  font-weight: 500;
+}
+
+h6 {
+  font-size: 1rem;    // 16px
+  font-weight: 500;
+}
+
+// Tablet & Desktop Typography
+@media (min-width: 768px) {
+  h1 { font-size: 3rem; }      // 48px
+  h2 { font-size: 2.5rem; }    // 40px
+  h3 { font-size: 2rem; }      // 32px
+  h4 { font-size: 1.5rem; }    // 24px
+}
+
+@media (min-width: 1024px) {
+  h1 { font-size: 3.5rem; }    // 56px
+  h2 { font-size: 3rem; }      // 48px
+  h3 { font-size: 2.25rem; }   // 36px
+}
+
+// Text Utilities
+.text-gradient {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+// ===============================
+// ✨ ANIMATION SYSTEM
+// Hardware-accelerated for mobile [web:245][web:255]
+// ===============================
+
+// Performance-first animations
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from { 
+    opacity: 0; 
+    transform: translateY(20px) translateZ(0); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0) translateZ(0); 
+  }
 }
 
 @keyframes slideInLeft {
-  from { opacity: 0; transform: translateX(-30px); }
-  to { opacity: 1; transform: translateX(0); }
+  from { 
+    opacity: 0; 
+    transform: translateX(-30px) translateZ(0); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateX(0) translateZ(0); 
+  }
 }
 
 @keyframes slideInRight {
-  from { opacity: 0; transform: translateX(30px); }
-  to { opacity: 1; transform: translateX(0); }
+  from { 
+    opacity: 0; 
+    transform: translateX(30px) translateZ(0); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateX(0) translateZ(0); 
+  }
 }
 
-// Animation utility classes
+@keyframes scaleIn {
+  from { 
+    opacity: 0; 
+    transform: scale(0.9) translateZ(0); 
+  }
+  to { 
+    opacity: 1; 
+    transform: scale(1) translateZ(0); 
+  }
+}
+
+// Utility Animation Classes
 .fade-in {
-  animation: fadeIn 0.6s ease-out;
+  animation: fadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .slide-in-left {
-  animation: slideInLeft 0.6s ease-out;
+  animation: slideInLeft 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .slide-in-right {
-  animation: slideInRight 0.6s ease-out;
+  animation: slideInRight 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-// Hover effects
-.hover-scale {
-  transition: transform 0.3s ease;
-  &:hover {
-    transform: scale(1.05);
-  }
+.scale-in {
+  animation: scaleIn 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+// Hover Effects - GPU Accelerated [web:228]
 .hover-lift {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  will-change: transform;
+  
   &:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    transform: translateY(-4px) translateZ(0);
+    box-shadow: var(--shadow-lg);
   }
 }
 
-// Global smooth transitions
-* {
-  transition: all 0.3s ease;
+.hover-scale {
+  transition: transform 0.2s ease;
+  will-change: transform;
+  
+  &:hover {
+    transform: scale(1.05) translateZ(0);
+  }
 }
 
-// Custom font
-body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+// ===============================
+// 🎨 COMPONENT SYSTEM
+// Reusable UI elements
+// ===============================
+
+// Glass Morphism Cards
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  box-shadow: var(--glass-shadow);
+}
+
+// Modern Button System
+.btn-modern {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  font-weight: 500;
+  border-radius: 8px;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+  
+  // Mobile touch optimization
+  min-height: 44px;
+  -webkit-tap-highlight-color: transparent;
+  
+  &:hover {
+    transform: translateY(-1px);
+  }
+  
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+.btn-primary {
+  @extend .btn-modern;
+  background: var(--color-primary);
+  color: var(--text-inverse);
+  
+  &:hover {
+    background: color-mix(in srgb, var(--color-primary) 90%, black);
+  }
+}
+
+.btn-secondary {
+  @extend .btn-modern;
+  background: transparent;
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+  
+  &:hover {
+    background: var(--color-primary);
+    color: var(--text-inverse);
+  }
+}
+
+// Section Spacing
+.section {
+  padding: 4rem 0;
+  
+  @media (min-width: 768px) {
+    padding: 6rem 0;
+  }
+  
+  @media (min-width: 1024px) {
+    padding: 8rem 0;
+  }
+}
+
+// ===============================
+// 📱 RESPONSIVE UTILITIES
+// Mobile-first breakpoints
+// ===============================
+
+// Container System
+.container-custom {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  
+  @media (min-width: 768px) {
+    padding: 0 2rem;
+  }
+  
+  @media (min-width: 1024px) {
+    padding: 0 3rem;
+  }
+}
+
+// Grid System
+.grid {
+  display: grid;
+  gap: 1rem;
+  
+  &.cols-1 { grid-template-columns: 1fr; }
+  
+  @media (min-width: 768px) {
+    gap: 1.5rem;
+    
+    &.cols-2 { grid-template-columns: repeat(2, 1fr); }
+    &.cols-3 { grid-template-columns: repeat(3, 1fr); }
+  }
+  
+  @media (min-width: 1024px) {
+    gap: 2rem;
+    
+    &.cols-4 { grid-template-columns: repeat(4, 1fr); }
+  }
+}
+
+// ===============================
+// ♿ ACCESSIBILITY & UX
+// Inclusive design
+// ===============================
+
+// Focus States
+*:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+// Reduced Motion Support [web:245]
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+// High Contrast Mode
+@media (prefers-contrast: high) {
+  :root {
+    --border-primary: #000000;
+    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.8);
+  }
+  
+  .dark-mode {
+    --border-primary: #FFFFFF;
+  }
+}
+
+// ===============================
+// 🔧 UTILITY CLASSES
+// Helper classes
+// ===============================
+
+// Spacing
+.mt-auto { margin-top: auto; }
+.mb-auto { margin-bottom: auto; }
+.mx-auto { margin-left: auto; margin-right: auto; }
+
+// Display
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+// Text
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+// Performance
+.gpu-accelerated {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
 }

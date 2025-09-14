@@ -1,1 +1,38 @@
-<p>theme-toggle works!</p>
+<!-- Modern Toggle Switch -->
+<div class="theme-toggle-wrapper">
+  
+  <label class="theme-toggle" 
+         [attr.aria-label]="isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'">
+    
+    <!-- Hidden Checkbox -->
+    <input type="checkbox"
+           [checked]="isDarkMode"
+           (change)="toggleTheme()"
+           class="sr-only">
+    
+    <!-- Toggle Switch -->
+    <div class="toggle-switch" 
+         [class.dark]="isDarkMode">
+      
+      <!-- Switch Track -->
+      <div class="toggle-track">
+        
+        <!-- Icons -->
+        <i class="fas fa-sun light-icon" 
+           [class.active]="!isDarkMode"
+           aria-hidden="true"></i>
+        <i class="fas fa-moon dark-icon" 
+           [class.active]="isDarkMode"
+           aria-hidden="true"></i>
+      </div>
+      
+      <!-- Switch Thumb -->
+      <div class="toggle-thumb" 
+           [class.moved]="isDarkMode">
+      </div>
+      
+    </div>
+    
+  </label>
+  
+</div>

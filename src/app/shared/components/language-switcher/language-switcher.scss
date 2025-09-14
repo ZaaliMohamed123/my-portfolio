@@ -1,0 +1,196 @@
+// Modern Language Switcher 
+.language-switcher {
+  position: relative;
+  display: inline-block;
+}
+
+// Trigger Button
+.language-trigger {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: 8px;
+  color: var(--text-primary);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 80px;
+  
+  // Remove default button styles
+  text-decoration: none;
+  outline: none;
+  
+  &:hover {
+    background: var(--glass-bg);
+    border-color: var(--color-primary);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+  }
+  
+  &:focus {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+  
+  .fas.fa-globe {
+    color: var(--color-primary);
+    font-size: 1rem;
+  }
+  
+  .current-lang {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  
+  .dropdown-arrow {
+    margin-left: auto;
+    font-size: 0.75rem;
+    transition: transform 0.2s ease;
+    
+    &.rotated {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+// Dropdown Menu [web:277][web:280]
+.language-dropdown {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  min-width: 200px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  box-shadow: var(--shadow-xl);
+  z-index: 1000;
+  
+  // Animation states
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px) scale(0.95);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  &.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+  }
+  
+  // Add subtle backdrop on mobile
+  @media (max-width: 768px) {
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%) translateY(-10px) scale(0.95);
+    
+    &.visible {
+      transform: translateX(-50%) translateY(0) scale(1);
+    }
+  }
+}
+
+// Language Options
+.language-option {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-radius: 8px;
+  margin: 0.25rem;
+  
+  // First and last item spacing
+  &:first-child {
+    margin-top: 0.5rem;
+  }
+  
+  &:last-child {
+    margin-bottom: 0.5rem;
+  }
+  
+  &:hover {
+    background: rgba(var(--color-primary), 0.1);
+    color: var(--color-primary);
+  }
+  
+  &:focus {
+    outline: 2px solid var(--color-primary);
+    outline-offset: -2px;
+  }
+  
+  &.active {
+    background: rgba(var(--color-primary), 0.15);
+    color: var(--color-primary);
+    font-weight: 600;
+  }
+  
+  .language-flag {
+    font-size: 1.25rem;
+    width: 24px;
+    text-align: center;
+  }
+  
+  .language-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.125rem;
+  }
+  
+  .language-name {
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1.2;
+  }
+  
+  .language-code {
+    font-size: 0.75rem;
+    font-family: 'JetBrains Mono', monospace;
+    opacity: 0.7;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  
+  .active-indicator {
+    color: var(--color-primary);
+    font-size: 0.875rem;
+  }
+}
+
+// Mobile Optimizations
+@media (max-width: 768px) {
+  .language-trigger {
+    padding: 0.625rem 0.875rem;
+    font-size: 0.8rem;
+    
+    .current-lang {
+      display: none; // Hide text on mobile, show only globe icon
+    }
+  }
+  
+  .language-dropdown {
+    min-width: 180px;
+  }
+  
+  .language-option {
+    padding: 0.875rem 1rem;
+    
+    .language-name {
+      font-size: 0.9rem;
+    }
+  }
+}

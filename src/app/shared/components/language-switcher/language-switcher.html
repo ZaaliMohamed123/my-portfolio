@@ -1,1 +1,57 @@
-<p>language-switcher works!</p>
+<div class="language-switcher" 
+     [class.open]="isOpen"
+     (clickOutside)="closeDropdown()">
+  
+  <!-- Dropdown Trigger -->
+  <button class="language-trigger btn-modern"
+          (click)="toggleDropdown()"
+          [attr.aria-expanded]="isOpen"
+          [attr.aria-label]="'Switch language. Current: ' + getCurrentLanguageName()"
+          type="button">
+    
+    <!-- Globe Icon -->
+    <i class="fas fa-globe" aria-hidden="true"></i>
+    
+    <!-- Current Language -->
+    <span class="current-lang">{{ getCurrentLanguageCode() }}</span>
+    
+    <!-- Dropdown Arrow -->
+    <i class="fas fa-chevron-down dropdown-arrow" 
+       [class.rotated]="isOpen" 
+       aria-hidden="true"></i>
+  </button>
+  
+  <!-- Dropdown Menu -->
+  <div class="language-dropdown" 
+       [class.visible]="isOpen"
+       role="menu"
+       [attr.aria-hidden]="!isOpen">
+    
+    @for (language of languages; track language.code) {
+      <button class="language-option"
+              [class.active]="language.code === currentLanguage"
+              (click)="selectLanguage(language.code)"
+              role="menuitem"
+              [attr.aria-label]="'Switch to ' + language.name"
+              type="button">
+        
+        <!-- Language Flag Emoji -->
+        <span class="language-flag" [attr.aria-hidden]="true">
+          {{ language.flag }}
+        </span>
+        
+        <!-- Language Name & Code -->
+        <div class="language-info">
+          <span class="language-name">{{ language.name }}</span>
+          <span class="language-code">{{ language.code.toUpperCase() }}</span>
+        </div>
+        
+        <!-- Active Indicator -->
+        @if (language.code === currentLanguage) {
+          <i class="fas fa-check active-indicator" aria-hidden="true"></i>
+        }
+      </button>
+    }
+  </div>
+  
+</div>

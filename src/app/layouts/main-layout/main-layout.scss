@@ -1,0 +1,437 @@
+// Clean Portfolio Layout - Mobile First 
+.portfolio-layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow-x: hidden;
+}
+
+// Scroll Progress Indicator 
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--gradient-primary);
+  transform-origin: left center;
+  transform: scaleX(0);
+  z-index: 1001;
+  
+  // Smooth animation
+  transition: transform 0.1s ease;
+  
+  // Add subtle glow
+  box-shadow: 0 0 10px rgba(var(--color-primary), 0.5);
+  
+  // Dark mode adjustments
+  .dark-mode & {
+    box-shadow: 0 0 10px rgba(var(--color-cyan), 0.6);
+  }
+}
+
+// Fixed Header Styling
+.main-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  
+  // Backdrop blur support
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+// Main Content Area
+.main-content {
+  flex: 1;
+  padding-top: 4rem; // Space for fixed header
+  position: relative;
+  
+  // Mobile optimization
+  @media (min-width: 768px) {
+    padding-top: 5rem;
+  }
+  
+  @media (min-width: 1024px) {
+    padding-top: 6rem;
+  }
+}
+
+// Loading Screen - Clean & Modern
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: var(--bg-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  
+  // Smooth transitions
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+  
+  &.hidden {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.loading-animation {
+  text-align: center;
+  
+  .loading-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--color-primary);
+      opacity: 0.3;
+      
+      // Hardware-accelerated animation
+      animation: pulse-dots 1.5s ease-in-out infinite;
+      transform: translateZ(0);
+      
+      &:nth-child(1) { animation-delay: 0s; }
+      &:nth-child(2) { animation-delay: 0.2s; }
+      &:nth-child(3) { animation-delay: 0.4s; }
+    }
+  }
+  
+  .loading-text {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    font-weight: 500;
+    opacity: 0.8;
+  }
+}
+
+@keyframes pulse-dots {
+  0%, 60%, 100% {
+    opacity: 0.3;
+    transform: scale(1) translateZ(0);
+  }
+  30% {
+    opacity: 1;
+    transform: scale(1.2) translateZ(0);
+  }
+}
+
+// Content Wrapper
+.content-wrapper {
+  min-height: calc(100vh - 4rem);
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  
+  &.loading {
+    opacity: 0.7;
+    transform: translateY(10px);
+  }
+  
+  @media (min-width: 768px) {
+    min-height: calc(100vh - 5rem);
+  }
+  
+  @media (min-width: 1024px) {
+    min-height: calc(100vh - 5.5rem);
+  }
+}
+
+
+
+// Back to Top Button
+.back-to-top {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: var(--text-inverse);
+  border: none;
+  box-shadow: var(--shadow-lg);
+  z-index: 999;
+  
+  // Start hidden
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0.8) translateY(20px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  // Remove tap highlight
+  -webkit-tap-highlight-color: transparent;
+  
+  &.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1) translateY(0);
+  }
+  
+  &:hover {
+    transform: scale(1.05) translateY(-2px);
+    box-shadow: var(--shadow-xl);
+  }
+  
+  &:active {
+    transform: scale(0.95) translateY(0);
+  }
+  
+  i {
+    font-size: 1rem;
+  }
+  
+  @media (min-width: 768px) {
+    bottom: 2rem;
+    right: 2rem;
+    width: 55px;
+    height: 55px;
+    
+    i {
+      font-size: 1.1rem;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    width: 60px;
+    height: 60px;
+    
+    i {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+// Hide navigation on very small screens
+@media (max-width: 480px) {
+  .section-nav {
+    display: none;
+  }
+}
+
+// Accessibility - Reduced Motion [web:262]
+@media (prefers-reduced-motion: reduce) {
+  .scroll-progress,
+  .nav-dot .dot-inner,
+  .back-to-top,
+  .loading-animation .dot {
+    transition: none !important;
+    animation: none !important;
+  }
+  
+  .content-wrapper {
+    transition: opacity 0.1s ease;
+  }
+}
+
+// High Contrast Mode
+@media (prefers-contrast: high) {
+  .nav-dot .dot-inner {
+    border: 2px solid currentColor;
+  }
+  
+  .back-to-top {
+    border: 2px solid var(--text-inverse);
+  }
+  
+  .loading-animation .dot {
+    border: 2px solid var(--color-primary);
+  }
+}
+
+
+// Add these test styles to your existing file
+
+// Temporary test styles for layout verification
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(135deg, 
+    rgba(37, 99, 235, 0.1) 0%, 
+    rgba(124, 58, 237, 0.05) 50%,
+    rgba(5, 150, 105, 0.1) 100%);
+    
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    
+    @media (min-width: 768px) {
+      font-size: 3.5rem;
+    }
+    
+    @media (min-width: 1024px) {
+      font-size: 4rem;
+    }
+  }
+  
+  .lead {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    max-width: 600px;
+    
+    @media (min-width: 768px) {
+      font-size: 1.375rem;
+      margin-bottom: 2rem;
+    }
+  }
+  
+  p {
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    color: var(--text-secondary);
+    font-size: 1rem;
+    
+    @media (min-width: 768px) {
+      font-size: 1.125rem;
+    }
+  }
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+  
+  .btn-primary,
+  .btn-secondary {
+    padding: 0.75rem 2rem;
+    font-weight: 600;
+    border-radius: 8px;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    min-width: 140px;
+    
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+    }
+  }
+  
+  .btn-primary {
+    background: var(--gradient-primary);
+    color: white;
+  }
+  
+  .btn-secondary {
+    background: transparent;
+    color: var(--color-primary);
+    border: 2px solid var(--color-primary);
+    
+    &:hover {
+      background: var(--color-primary);
+      color: white;
+    }
+  }
+}
+
+.test-section {
+  padding: 4rem 0;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  
+  @media (min-width: 768px) {
+    padding: 6rem 0;
+  }
+  
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+    
+    @media (min-width: 768px) {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+    }
+  }
+  
+  p {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    line-height: 1.6;
+  }
+  
+  // Different background colors for each section
+  &#about {
+    background: rgba(16, 185, 129, 0.03);
+  }
+  
+  &#education {
+    background: rgba(59, 130, 246, 0.03);
+  }
+  
+  &#experience {
+    background: rgba(236, 72, 153, 0.03);  
+  }
+  
+  &#projects {
+    background: rgba(6, 182, 212, 0.03);   
+  }
+  
+  &#skills {
+    background: rgba(139, 92, 246, 0.03);  
+  }
+  
+  &#contact {
+    background: rgba(34, 197, 94, 0.03);
+  }
+}
+
+// Dark mode adjustments for test sections
+.dark-mode {
+  .hero-section {
+    background: linear-gradient(135deg, 
+      rgba(59, 130, 246, 0.1) 0%, 
+      rgba(147, 51, 234, 0.05) 50%,
+      rgba(34, 197, 94, 0.1) 100%);
+  }
+  
+  .test-section {
+    &#about {
+      background: rgba(34, 197, 94, 0.05);
+    }
+    
+    &#education {
+      background: rgba(96, 165, 250, 0.05);
+    }
+    
+    &#experience {
+      background: rgba(244, 114, 182, 0.05);  // Moved up
+    }
+    
+    &#projects {
+      background: rgba(34, 211, 238, 0.05);   // Moved up
+    }
+    
+    &#skills {
+      background: rgba(167, 139, 250, 0.05);  // Moved down
+    }
+    
+    &#contact {
+      background: rgba(52, 211, 153, 0.05);
+    }
+  }
+}
