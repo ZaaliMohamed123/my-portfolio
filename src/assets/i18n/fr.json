@@ -20,5 +20,33 @@
   },
   "common": {
     "loading": "Chargement"
+  },
+  "home": {
+    "greeting": "Salut, je suis",
+    "name": "Mohamed ZAALI",
+    "jobs": {
+      "job1": "Data Scientist",
+      "job2": "Développeur Full Stack",
+      "job3": "Innovateur Health-Tech"
+    },
+    "catchphrase": "Solutions basées sur les données, design centré sur l'humain",
+    "social": {
+      "github": "GitHub", 
+      "linkedin": "LinkedIn",
+      "github_label": "Voir mon profil GitHub",
+      "linkedin_label": "Se connecter sur LinkedIn"
+    },
+    "techstack": {
+      "title": "Stack Technique",
+      "python_alt": "Langage de programmation Python",
+      "java_alt": "Langage de programmation Java",
+      "html_alt": "Langage de balisage HTML", 
+      "css_alt": "Langage de style CSS",
+      "bootstrap_alt": "Framework CSS Bootstrap",
+      "javascript_alt": "Langage de programmation JavaScript",
+      "typescript_alt": "Langage de programmation TypeScript", 
+      "springboot_alt": "Framework Java Spring Boot",
+      "angular_alt": "Framework web Angular"
+    }
   }
 }
