@@ -43,10 +43,14 @@
       "html_alt": "HTML markup language",
       "css_alt": "CSS styling language",
       "bootstrap_alt": "Bootstrap CSS framework",
+      "scss_alt": "Sass CSS preprocessor",
       "javascript_alt": "JavaScript programming language",
-      "typescript_alt": "TypeScript programming language",
+      "angular_alt": "Angular web framework",
       "springboot_alt": "Spring Boot Java framework",
-      "angular_alt": "Angular web framework"
+      "flask_alt": "Flask Python framework",
+      "scikitlearn_alt": "Scikit-Learn machine learning library",
+      "tensorflow_alt": "TensorFlow machine learning framework",
+      "pandas_alt": "Pandas data analysis library"
     }
   }
 }

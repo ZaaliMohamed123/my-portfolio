@@ -4,11 +4,11 @@
 
 // Home Hero Section
 .home-hero {
-  min-height: 100vh;
+  min-height: 70vh; // Changed from 100vh to show more content above fold
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2rem 0;
+  padding: 1.5rem 0; // 25% smaller (was 2rem)
   position: relative;
   
   // Subtle background gradient
@@ -18,11 +18,11 @@
     rgba(var(--color-purple), 0.02) 100%);
   
   @media (min-width: 768px) {
-    padding: 4rem 0;
+    padding: 3rem 0; // 25% smaller (was 4rem)
   }
   
   @media (min-width: 1024px) {
-    padding: 6rem 0;
+    padding: 4.5rem 0; // 25% smaller (was 6rem)
   }
 }
 
@@ -30,7 +30,7 @@
 .hero-content {
   display: flex;
   align-items: center;
-  gap: 3rem;
+  gap: 2.25rem; // 25% smaller (was 3rem)
   width: 100%;
   
   // Mobile: Stack vertically (photo first)
@@ -40,15 +40,15 @@
   @media (min-width: 768px) {
     flex-direction: row;
     text-align: left;
-    gap: 4rem;
+    gap: 3rem; // 25% smaller (was 4rem)
   }
   
   @media (min-width: 1024px) {
-    gap: 6rem;
+    gap: 4.5rem; // 25% smaller (was 6rem)
   }
   
   @media (min-width: 1200px) {
-    gap: 8rem;
+    gap: 6rem; // 25% smaller (was 8rem)
   }
 }
 
@@ -60,14 +60,14 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.5rem; // 25% smaller (was 2rem)
   
   @media (min-width: 768px) {
-    gap: 2.5rem;
+    gap: 1.88rem; // 25% smaller (was 2.5rem)
   }
   
   @media (min-width: 1024px) {
-    gap: 3rem;
+    gap: 2.25rem; // 25% smaller (was 3rem)
   }
 }
 
@@ -76,141 +76,145 @@
   .greeting {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 0.375rem; // 25% smaller (was 0.5rem)
     margin: 0;
     line-height: 1.1;
   }
   
   .greeting-hi {
-    font-size: 1.5rem;
-    font-weight: 400;
+    font-size: 1.125rem; // 25% smaller (was 1.5rem)
+    font-weight: 300; // 25% lighter (was 400)
     color: var(--text-secondary);
     
     @media (min-width: 768px) {
-      font-size: 1.75rem;
+      font-size: 1.31rem; // 25% smaller (was 1.75rem)
     }
     
     @media (min-width: 1024px) {
-      font-size: 2rem;
+      font-size: 1.5rem; // 25% smaller (was 2rem)
     }
     
     @media (min-width: 1200px) {
-      font-size: 2.25rem;
+      font-size: 1.69rem; // 25% smaller (was 2.25rem)
     }
   }
   
   .name {
-    font-size: 2.5rem;
-    font-weight: 800;
+    font-size: 1.88rem; // 25% smaller (was 2.5rem)
+    font-weight: 600; // 25% lighter (was 800)
     letter-spacing: -0.02em;
     
     @media (min-width: 768px) {
-      font-size: 3rem;
+      font-size: 2.25rem; // 25% smaller (was 3rem)
     }
     
     @media (min-width: 1024px) {
-      font-size: 3.5rem;
+      font-size: 2.63rem; // 25% smaller (was 3.5rem)
     }
     
     @media (min-width: 1200px) {
-      font-size: 4rem;
+      font-size: 3rem; // 25% smaller (was 4rem)
     }
     
     @media (min-width: 1400px) {
-      font-size: 4.5rem;
+      font-size: 3.38rem; // 25% smaller (was 4.5rem)
     }
   }
 }
 
 // Typing Animation Container
+// Typing Animation Container - FIXED VERSION
 .typing-container {
   .typing-wrapper {
     display: flex;
     align-items: baseline;
     justify-content: center;
-    flex-wrap: wrap;
-    gap: 0.25rem;
-    font-size: 1.25rem;
-    font-weight: 500;
+    gap: 0; // Remove gap, we'll handle spacing manually
+    font-size: 0.94rem; // 25% smaller (was 1.25rem)
+    font-weight: 375; // 25% lighter (was 500)
     color: var(--text-primary);
-    min-height: 2rem;
+    min-height: 1.5rem; // 25% smaller (was 2rem)
     
     @media (min-width: 768px) {
       justify-content: flex-start;
-      font-size: 1.5rem;
-      min-height: 2.25rem;
+      font-size: 1.125rem; // 25% smaller (was 1.5rem)
+      min-height: 1.69rem; // 25% smaller (was 2.25rem)
     }
     
     @media (min-width: 1024px) {
-      font-size: 1.75rem;
-      min-height: 2.5rem;
+      font-size: 1.31rem; // 25% smaller (was 1.75rem)
+      min-height: 1.88rem; // 25% smaller (was 2.5rem)
     }
     
     @media (min-width: 1200px) {
-      font-size: 2rem;
-      min-height: 3rem;
+      font-size: 1.5rem; // 25% smaller (was 2rem)
+      min-height: 2.25rem; // 25% smaller (was 3rem)
     }
   }
   
   .typing-prefix {
     color: var(--text-secondary);
     white-space: nowrap;
+    margin-right: 0.5rem; // Add proper space after "I'm a"
   }
   
   .typing-text {
     color: var(--color-primary);
-    font-weight: 600;
-    min-width: 200px;
-    text-align: left;
+    font-weight: 450; // 25% lighter (was 600)
+    display: inline-block; // Important for proper spacing
+    min-width: 1ch; // Always reserve space for at least one character
     
     @media (max-width: 767px) {
       text-align: center;
-      min-width: auto;
     }
   }
   
   .cursor {
     color: var(--color-primary);
-    font-weight: 300;
+    font-weight: 225; // 25% lighter (was 300)
     animation: none;
+    display: inline-block;
+    width: 2px; // Fixed width for consistent positioning
+    margin-left: 2px; // Small gap from text
     
     &.blinking {
-      animation: blink 1s infinite;
+      animation: blink 1.2s infinite; // Slower blink
     }
   }
 }
 
-// Blinking cursor animation
+// Improved blinking animation
 @keyframes blink {
-  0%, 50% { opacity: 1; }
-  51%, 100% { opacity: 0; }
+  0%, 45% { opacity: 1; }
+  46%, 100% { opacity: 0; }
 }
+
 
 // Catchphrase Section
 .catchphrase-section {
   .catchphrase {
-    font-size: 1.125rem;
-    font-weight: 400;
+    font-size: 0.84rem; // 25% smaller (was 1.125rem)
+    font-weight: 300; // 25% lighter (was 400)
     color: var(--text-secondary);
     line-height: 1.6;
     margin: 0;
-    max-width: 500px;
+    max-width: 375px; // 25% smaller (was 500px)
     
     @media (max-width: 767px) {
       margin: 0 auto;
     }
     
     @media (min-width: 768px) {
-      font-size: 1.25rem;
+      font-size: 0.94rem; // 25% smaller (was 1.25rem)
     }
     
     @media (min-width: 1024px) {
-      font-size: 1.375rem;
-      max-width: 600px;
+      font-size: 1.03rem; // 25% smaller (was 1.375rem)
+      max-width: 450px; // 25% smaller (was 600px)
     }
     
     @media (min-width: 1200px) {
-      font-size: 1.5rem;
+      font-size: 1.125rem; // 25% smaller (was 1.5rem)
     }
   }
 }
@@ -218,24 +222,24 @@
 // Social Links
 .social-links {
   display: flex;
-  gap: 1rem;
+  gap: 0.75rem; // 25% smaller (was 1rem)
   justify-content: center;
   
   @media (min-width: 768px) {
     justify-content: flex-start;
-    gap: 1.5rem;
+    gap: 1.125rem; // 25% smaller (was 1.5rem)
   }
 }
 
 .social-link {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.75rem 1.5rem;
+  gap: 0.375rem; // 25% smaller (was 0.5rem)
+  padding: 0.56rem 1.125rem; // 25% smaller (was 0.75rem 1.5rem)
   border-radius: 50px;
   text-decoration: none;
-  font-weight: 500;
-  font-size: 0.9rem;
+  font-weight: 375; // 25% lighter (was 500)
+  font-size: 0.675rem; // 25% smaller (was 0.9rem)
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
@@ -259,13 +263,13 @@
   }
   
   @media (min-width: 1024px) {
-    padding: 0.875rem 2rem;
-    font-size: 1rem;
+    padding: 0.66rem 1.5rem; // 25% smaller (was 0.875rem 2rem)
+    font-size: 0.75rem; // 25% smaller (was 1rem)
   }
 }
 
 .social-icon {
-  font-size: 1.125rem;
+  font-size: 0.84rem; // 25% smaller (was 1.125rem)
   transition: transform 0.3s ease;
   
   .social-link:hover & {
@@ -274,7 +278,7 @@
 }
 
 .social-text {
-  font-weight: 600;
+  font-weight: 450; // 25% lighter (was 600)
   
   @media (max-width: 480px) {
     display: none; // Show only icons on very small screens
@@ -308,41 +312,60 @@
   justify-content: center;
   
   @media (min-width: 768px) {
-    flex: 0 0 350px;
+    flex: 0 0 262px;
   }
   
   @media (min-width: 1024px) {
-    flex: 0 0 400px;
+    flex: 0 0 300px;
   }
   
   @media (min-width: 1200px) {
-    flex: 0 0 450px;
+    flex: 0 0 338px;
   }
 }
 
 .photo-carousel {
   position: relative;
-  width: 280px;
-  height: 280px;
+  width: 210px;
+  height: 210px;
+  
+  // Slower, more gentle floating
+  animation: gentle-float 8s ease-in-out infinite;
   
   @media (min-width: 480px) {
-    width: 320px;
-    height: 320px;
+    width: 240px;
+    height: 240px;
   }
   
   @media (min-width: 768px) {
-    width: 350px;
-    height: 350px;
+    width: 262px;
+    height: 262px;
   }
   
   @media (min-width: 1024px) {
-    width: 400px;
-    height: 400px;
+    width: 300px;
+    height: 300px;
   }
   
   @media (min-width: 1200px) {
-    width: 450px;
-    height: 450px;
+    width: 338px;
+    height: 338px;
+  }
+}
+
+// Gentler floating animation
+@keyframes gentle-float {
+  0%, 100% { 
+    transform: translateY(0px) rotate(0deg);
+  }
+  25% { 
+    transform: translateY(-3px) rotate(0.5deg);
+  }
+  50% { 
+    transform: translateY(-6px) rotate(0deg);
+  }
+  75% { 
+    transform: translateY(-3px) rotate(-0.5deg);
   }
 }
 
@@ -350,18 +373,58 @@
   position: relative;
   width: 100%;
   height: 100%;
-  border-radius: 50%;
   overflow: hidden;
+  
+  // Slower organic morphing - much better UX
+  border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%;
+  animation: slow-organic-morph 16s ease-in-out infinite;
+  
+  // Soft shadow
+  box-shadow: 
+    0 15px 35px rgba(var(--color-primary), 0.12),
+    0 25px 65px rgba(var(--color-primary), 0.06);
 }
 
-// Animated Border
+// Much slower and smoother organic morphing
+@keyframes slow-organic-morph {
+  0%, 100% {
+    border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%;
+  }
+  
+  14% {
+    border-radius: 58% 42% 49% 51% / 60% 43% 57% 40%;
+  }
+  
+  28% {
+    border-radius: 45% 55% 65% 35% / 50% 60% 40% 50%;
+  }
+  
+  42% {
+    border-radius: 40% 60% 70% 30% / 70% 35% 65% 30%;
+  }
+  
+  56% {
+    border-radius: 55% 45% 35% 65% / 40% 70% 30% 60%;
+  }
+  
+  70% {
+    border-radius: 35% 65% 60% 40% / 50% 45% 55% 50%;
+  }
+  
+  84% {
+    border-radius: 60% 40% 45% 55% / 35% 65% 35% 65%;
+  }
+}
+
+// Cadre décoratif flottant avec forme organique
 .photo-border {
   position: absolute;
-  top: -4px;
-  left: -4px;
-  right: -4px;
-  bottom: -4px;
-  border-radius: 50%;
+  top: -8px;
+  left: -8px;
+  right: -8px;
+  bottom: -8px;
+  
+  // Slower rotating gradient
   background: conic-gradient(
     var(--color-primary) 0deg,
     var(--color-secondary) 90deg,
@@ -369,15 +432,75 @@
     var(--color-cyan) 270deg,
     var(--color-primary) 360deg
   );
-  animation: rotate-border 8s linear infinite;
+  
+  // Same slow organic shape as container
+  border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%;
+  animation: 
+    slow-organic-morph 16s ease-in-out infinite,
+    slow-rotate-border 20s linear infinite;
   z-index: 1;
   
+  // Inner cutout to create border effect
   &::before {
     content: '';
     position: absolute;
-    inset: 4px;
-    border-radius: 50%;
+    inset: 6px;
     background: var(--bg-primary);
+    border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%;
+    animation: slow-organic-morph 16s ease-in-out infinite;
+  }
+  
+  // Subtle shine effect that moves slowly
+  &::after {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    background: linear-gradient(
+      45deg,
+      transparent 40%,
+      rgba(255, 255, 255, 0.08) 50%,
+      transparent 60%
+    );
+    border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%;
+    animation: 
+      slow-organic-morph 16s ease-in-out infinite,
+      slow-shine-move 8s ease-in-out infinite;
+    pointer-events: none;
+  }
+}
+
+// Animation du gradient rotatif
+@keyframes rotate-gradient {
+  from { 
+    filter: hue-rotate(0deg);
+  }
+  to { 
+    filter: hue-rotate(360deg);
+  }
+}
+
+// Animation de rotation du gradient
+@keyframes rotate-border {
+  from { 
+    filter: hue-rotate(0deg);
+  }
+  to { 
+    filter: hue-rotate(360deg);
+  }
+}
+
+// Animation des particules flottantes
+@keyframes float-particles {
+  0%, 100% { 
+    transform: scale(1) rotate(0deg);
+    opacity: 0.6;
+  }
+  50% { 
+    transform: scale(1.2) rotate(180deg);
+    opacity: 0.9;
   }
 }
 
@@ -386,7 +509,102 @@
   to { transform: rotate(360deg); }
 }
 
-// Profile Photos
+// Animation de brillance qui se déplace
+@keyframes shine-move {
+  0%, 100% {
+    transform: translateX(-100%) translateY(-100%);
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(100%) translateY(100%);
+    opacity: 1;
+  }
+}
+
+.photo-outer-border {
+  position: absolute;
+  top: -12px;
+  left: -12px;
+  right: -12px;
+  bottom: -12px;
+  
+  // Subtle outer border with different colors
+  background: conic-gradient(
+    rgba(var(--color-primary), 0.3) 0deg,
+    rgba(var(--color-secondary), 0.3) 120deg,
+    rgba(var(--color-purple), 0.3) 240deg,
+    rgba(var(--color-primary), 0.3) 360deg
+  );
+  
+  // Slightly different organic shape for visual interest
+  border-radius: 65% 35% 58% 42% / 48% 55% 45% 52%;
+  animation: 
+    slow-outer-morph 18s ease-in-out infinite,
+    slow-rotate-border 25s linear infinite reverse;
+  z-index: 0;
+  opacity: 0.6;
+  
+  // Inner cutout
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 3px;
+    background: var(--bg-primary);
+    border-radius: 65% 35% 58% 42% / 48% 55% 45% 52%;
+    animation: slow-outer-morph 18s ease-in-out infinite;
+  }
+}
+
+// Slightly different morphing for outer border
+@keyframes slow-outer-morph {
+  0%, 100% {
+    border-radius: 65% 35% 58% 42% / 48% 55% 45% 52%;
+  }
+  
+  16% {
+    border-radius: 42% 58% 68% 32% / 65% 40% 60% 35%;
+  }
+  
+  33% {
+    border-radius: 55% 45% 38% 62% / 35% 68% 32% 65%;
+  }
+  
+  50% {
+    border-radius: 38% 62% 55% 45% / 62% 35% 65% 38%;
+  }
+  
+  66% {
+    border-radius: 68% 32% 42% 58% / 45% 62% 38% 55%;
+  }
+  
+  83% {
+    border-radius: 45% 55% 65% 35% / 58% 42% 55% 48%;
+  }
+}
+
+// Slower gradient rotation
+@keyframes slow-rotate-border {
+  from { 
+    filter: hue-rotate(0deg);
+  }
+  to { 
+    filter: hue-rotate(360deg);
+  }
+}
+
+// Slower shine movement
+@keyframes slow-shine-move {
+  0%, 100% {
+    transform: translateX(-150%) translateY(-150%);
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(150%) translateY(150%);
+    opacity: 1;
+  }
+}
+
+// Profile Photos avec forme organique
 .profile-photo {
   position: absolute;
   top: 0;
@@ -394,10 +612,9 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 50%;
   opacity: 0;
-  transform: scale(1.1);
-  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: scale(1.05);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 2;
   
   &.active {
@@ -408,47 +625,102 @@
   &.prev,
   &.next {
     opacity: 0;
-    transform: scale(0.95);
+    transform: scale(0.98);
   }
 }
 
-// Photo Indicators
+// Photo Indicators - improved organic style
 .photo-indicators {
   position: absolute;
-  bottom: -30px;
+  bottom: -45px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
-  gap: 0.5rem;
+  gap: 0.7rem;
   z-index: 3;
   
   @media (min-width: 768px) {
-    bottom: -40px;
+    bottom: -55px;
   }
 }
 
 .indicator {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
+  width: 10px;
+  height: 10px;
   border: none;
-  background: rgba(var(--color-primary), 0.3);
+  background: rgba(var(--color-primary), 0.25);
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  
+  // Slower organic morphing for indicators
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  animation: slow-mini-morph 12s ease-in-out infinite;
+  
+  // Subtle pulsation effect
+  &::before {
+    content: '';
+    position: absolute;
+    inset: -8px;
+    border-radius: 50% 50% 60% 40% / 40% 60% 40% 60%;
+    background: rgba(var(--color-primary), 0.08);
+    transform: scale(0);
+    transition: transform 0.4s ease;
+    animation: slow-mini-morph 12s ease-in-out infinite;
+  }
   
   &:hover {
     background: rgba(var(--color-primary), 0.6);
     transform: scale(1.2);
+    
+    &::before {
+      transform: scale(1);
+    }
   }
   
   &.active {
     background: var(--color-primary);
     transform: scale(1.3);
+    
+    &::before {
+      transform: scale(1.1);
+      background: rgba(var(--color-primary), 0.15);
+    }
   }
   
   &:focus {
     outline: 2px solid var(--color-primary);
-    outline-offset: 2px;
+    outline-offset: 4px;
+  }
+}
+
+// Slow organic animation for mini indicators
+@keyframes slow-mini-morph {
+  0%, 100% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+  
+  33% {
+    border-radius: 30% 70% 70% 30% / 40% 60% 40% 60%;
+  }
+  
+  66% {
+    border-radius: 70% 30% 40% 60% / 70% 40% 60% 30%;
+  }
+}
+
+// Animation organique pour les mini indicateurs
+@keyframes mini-morph {
+  0%, 100% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+  
+  33% {
+    border-radius: 30% 70% 70% 30% / 40% 60% 40% 60%;
+  }
+  
+  66% {
+    border-radius: 70% 30% 40% 60% / 70% 40% 60% 30%;
   }
 }
 
@@ -457,12 +729,12 @@
 // =====================================
 
 .tech-stack-section {
-  padding: 3rem 0;
+  padding: 2.25rem 0; // 25% smaller (was 3rem)
   background: rgba(var(--color-primary), 0.01);
   border-top: 1px solid var(--border-primary);
   
   @media (min-width: 768px) {
-    padding: 4rem 0;
+    padding: 3rem 0; // 25% smaller (was 4rem)
   }
 }
 
@@ -470,50 +742,50 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 2rem;
+  gap: 1.5rem; // 25% smaller (was 2rem)
   flex-wrap: wrap;
   
   @media (min-width: 768px) {
     flex-wrap: nowrap;
-    gap: 3rem;
+    gap: 2.25rem; // 25% smaller (was 3rem)
   }
   
   @media (min-width: 1024px) {
-    gap: 4rem;
+    gap: 3rem; // 25% smaller (was 4rem)
   }
 }
 
 .tech-label-container {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 0.75rem; // 25% smaller (was 1rem)
   flex-shrink: 0;
   
   @media (max-width: 767px) {
     width: 100%;
     justify-content: center;
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem; // 25% smaller (was 1rem)
   }
 }
 
 .tech-label {
-  font-size: 1.125rem;
-  font-weight: 600;
+  font-size: 0.84rem; // 25% smaller (was 1.125rem)
+  font-weight: 450; // 25% lighter (was 600)
   color: var(--text-primary);
   white-space: nowrap;
   
   @media (min-width: 768px) {
-    font-size: 1.25rem;
+    font-size: 0.94rem; // 25% smaller (was 1.25rem)
   }
   
   @media (min-width: 1024px) {
-    font-size: 1.375rem;
+    font-size: 1.03rem; // 25% smaller (was 1.375rem)
   }
 }
 
 .tech-separator {
-  width: 2px;
-  height: 30px;
+  width: 1.5px; // 25% smaller (was 2px)
+  height: 22px; // 25% smaller (was 30px)
   background: var(--gradient-primary);
   border-radius: 1px;
   
@@ -522,7 +794,7 @@
   }
   
   @media (min-width: 1024px) {
-    height: 40px;
+    height: 30px; // 25% smaller (was 40px)
   }
 }
 
@@ -539,26 +811,26 @@
 .tech-icons {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 0.75rem; // 25% smaller (was 1rem)
   flex-wrap: wrap;
   justify-content: center;
   
   @media (min-width: 480px) {
-    gap: 1.5rem;
+    gap: 1.125rem; // 25% smaller (was 1.5rem)
   }
   
   @media (min-width: 768px) {
-    gap: 2rem;
+    gap: 1.5rem; // 25% smaller (was 2rem)
     flex-wrap: nowrap;
     justify-content: flex-start;
   }
   
   @media (min-width: 1024px) {
-    gap: 2.5rem;
+    gap: 1.88rem; // 25% smaller (was 2.5rem)
   }
   
   @media (min-width: 1200px) {
-    gap: 3rem;
+    gap: 2.25rem; // 25% smaller (was 3rem)
   }
 }
 
@@ -578,15 +850,15 @@
   &::after {
     content: attr(data-tech);
     position: absolute;
-    top: -40px;
+    top: -30px; // 25% smaller (was -40px)
     left: 50%;
     transform: translateX(-50%);
     background: var(--bg-secondary);
     color: var(--text-primary);
-    padding: 0.5rem 0.75rem;
+    padding: 0.375rem 0.56rem; // 25% smaller (was 0.5rem 0.75rem)
     border-radius: 6px;
-    font-size: 0.75rem;
-    font-weight: 500;
+    font-size: 0.56rem; // 25% smaller (was 0.75rem)
+    font-weight: 375; // 25% lighter (was 500)
     white-space: nowrap;
     opacity: 0;
     pointer-events: none;
@@ -595,8 +867,8 @@
     z-index: 10;
     
     @media (min-width: 768px) {
-      top: -45px;
-      font-size: 0.8rem;
+      top: -34px; // 25% smaller (was -45px)
+      font-size: 0.6rem; // 25% smaller (was 0.8rem)
     }
   }
   
@@ -607,23 +879,23 @@
 }
 
 .tech-icon {
-  font-size: 2rem;
+  font-size: 1.5rem; // 25% smaller (was 2rem)
   transition: all 0.3s ease;
   
   @media (min-width: 480px) {
-    font-size: 2.25rem;
+    font-size: 1.69rem; // 25% smaller (was 2.25rem)
   }
   
   @media (min-width: 768px) {
-    font-size: 2.5rem;
+    font-size: 1.88rem; // 25% smaller (was 2.5rem)
   }
   
   @media (min-width: 1024px) {
-    font-size: 3rem;
+    font-size: 2.25rem; // 25% smaller (was 3rem)
   }
   
   @media (min-width: 1200px) {
-    font-size: 3.5rem;
+    font-size: 2.63rem; // 25% smaller (was 3.5rem)
   }
 }
 

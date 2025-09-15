@@ -43,10 +43,14 @@
       "html_alt": "Langage de balisage HTML", 
       "css_alt": "Langage de style CSS",
       "bootstrap_alt": "Framework CSS Bootstrap",
+      "scss_alt": "Préprocesseur CSS Sass",
       "javascript_alt": "Langage de programmation JavaScript",
-      "typescript_alt": "Langage de programmation TypeScript", 
+      "angular_alt": "Framework web Angular",
       "springboot_alt": "Framework Java Spring Boot",
-      "angular_alt": "Framework web Angular"
+      "flask_alt": "Framework Python Flask",
+      "scikitlearn_alt": "Bibliothèque d'apprentissage automatique Scikit-Learn",
+      "tensorflow_alt": "Framework d'apprentissage automatique TensorFlow",
+      "pandas_alt": "Bibliothèque d'analyse de données Pandas"
     }
   }
 }

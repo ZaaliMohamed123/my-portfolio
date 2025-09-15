@@ -2,10 +2,8 @@
 <section class="home-hero" id="home">
   <div class="container-custom">
     <div class="hero-content">
-      
       <!-- Left Column: Content -->
       <div class="hero-text">
-        
         <!-- Greeting -->
         <div class="greeting-section">
           <h1 class="greeting">
@@ -13,80 +11,85 @@
             <span class="name text-gradient">{{ 'home.name' | transloco }}</span>
           </h1>
         </div>
-        
+
         <!-- Typing Animation -->
         <div class="typing-container">
           <div class="typing-wrapper">
             <span class="typing-prefix">I'm a </span>
-            <span class="typing-text" 
-                  [innerHTML]="currentJob">
-            </span>
-            <span class="cursor" 
-                  [class.blinking]="!isTyping">|</span>
+            <span class="typing-text">{{ currentJob }}</span>
+            <span class="cursor" [class.blinking]="!isTyping">|</span>
           </div>
         </div>
-        
+
         <!-- Catchphrase -->
         <div class="catchphrase-section">
           <p class="catchphrase">
             {{ 'home.catchphrase' | transloco }}
           </p>
         </div>
-        
+
         <!-- Social Links -->
         <div class="social-links">
-          <a href="https://github.com/ZaaliMohamed123" 
-             target="_blank"
-             class="social-link github-link"
-             [attr.aria-label]="'home.social.github_label' | transloco">
+          <a
+            href="https://github.com/ZaaliMohamed123"
+            target="_blank"
+            class="social-link github-link"
+            [attr.aria-label]="'home.social.github_label' | transloco"
+          >
             <i class="fab fa-github social-icon" aria-hidden="true"></i>
             <span class="social-text">{{ 'home.social.github' | transloco }}</span>
           </a>
-          
-          <a href="https://www.linkedin.com/in/m-zaali/" 
-             target="_blank"
-             class="social-link linkedin-link"
-             [attr.aria-label]="'home.social.linkedin_label' | transloco">
+
+          <a
+            href="https://www.linkedin.com/in/m-zaali/"
+            target="_blank"
+            class="social-link linkedin-link"
+            [attr.aria-label]="'home.social.linkedin_label' | transloco"
+          >
             <i class="fab fa-linkedin social-icon" aria-hidden="true"></i>
             <span class="social-text">{{ 'home.social.linkedin' | transloco }}</span>
           </a>
         </div>
       </div>
-      
+
       <!-- Right Column: Photo Carousel -->
       <div class="hero-image">
         <div class="photo-carousel">
           <div class="photo-container">
-            
-            <!-- Animated Border -->
+            <!-- Outer decorative border -->
+            <div class="photo-outer-border"></div>
+
+            <!-- Main animated border -->
             <div class="photo-border"></div>
-            
+
             <!-- Photos -->
             @for (photo of profilePhotos; track photo.id) {
-              <img [src]="photo.src" 
-                   [alt]="photo.alt"
-                   class="profile-photo"
-                   [class.active]="currentPhotoIndex === $index"
-                   [class.prev]="getPrevIndex() === $index"
-                   [class.next]="getNextIndex() === $index"
-                   loading="lazy">
+            <img
+              [src]="photo.src"
+              [alt]="photo.alt"
+              class="profile-photo"
+              [class.active]="currentPhotoIndex === $index"
+              [class.prev]="getPrevIndex() === $index"
+              [class.next]="getNextIndex() === $index"
+              loading="lazy"
+            />
             }
-            
+
             <!-- Photo Indicators -->
             <div class="photo-indicators">
               @for (photo of profilePhotos; track photo.id) {
-                <button class="indicator"
-                        [class.active]="currentPhotoIndex === $index"
-                        (click)="goToPhoto($index)"
-                        [attr.aria-label]="'Go to photo ' + ($index + 1)"
-                        type="button">
-                </button>
+              <button
+                class="indicator"
+                [class.active]="currentPhotoIndex === $index"
+                (click)="goToPhoto($index)"
+                [attr.aria-label]="'Go to photo ' + ($index + 1)"
+                type="button"
+              ></button>
               }
             </div>
           </div>
         </div>
       </div>
-      
     </div>
   </div>
 </section>
@@ -95,29 +98,27 @@
 <section class="tech-stack-section">
   <div class="container-custom">
     <div class="tech-stack-bar">
-      
       <!-- Tech Stack Label -->
       <div class="tech-label-container">
         <span class="tech-label">{{ 'home.techstack.title' | transloco }}</span>
         <div class="tech-separator"></div>
       </div>
-      
+
       <!-- Tech Icons -->
       <div class="tech-icons-container">
         <div class="tech-icons">
           @for (tech of techStack; track tech.name) {
-            <div class="tech-item"
-                 [title]="tech.name"
-                 [attr.data-tech]="tech.name">
-              <i [class]="tech.icon + ' tech-icon'"
-                 [style.color]="tech.color"
-                 [attr.aria-label]="'home.techstack.' + tech.key + '_alt' | transloco">
-              </i>
-            </div>
+          <div class="tech-item" [title]="tech.name" [attr.data-tech]="tech.name">
+            <i
+              [class]="tech.icon + ' tech-icon'"
+              [style.color]="tech.color"
+              [attr.aria-label]="'home.techstack.' + tech.key + '_alt' | transloco"
+            >
+            </i>
+          </div>
           }
         </div>
       </div>
-      
     </div>
   </div>
 </section>
