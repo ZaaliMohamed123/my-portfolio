@@ -1,1 +1,136 @@
-<p>about works!</p>
+<!-- About Section - Clean Two-Column Layout -->
+<section class="about-section" id="about">
+  <div class="container-custom">
+    
+    <!-- Main About Content - Two Columns -->
+    <div class="about-main" [class.animate-in]="visibleSections.has('main')">
+      
+      <!-- Left Column: Profile Image -->
+      <div class="about-image">
+        <div class="image-container">
+          <img src="assets/media/photos/about_me.jpeg" 
+               alt="{{ 'about.image.alt' | transloco }}"
+               class="profile-image"
+               loading="lazy">
+        </div>
+      </div>
+      
+      <!-- Right Column: About Content -->
+      <div class="about-content">
+        
+        <!-- About Me Title -->
+        <div class="about-header">
+          <h1 class="about-title">{{ 'about.header.title' | transloco }}</h1>
+          <p class="about-subtitle">{{ 'about.header.subtitle' | transloco }}</p>
+        </div>
+        
+        <!-- About & Philosophy Combined Paragraph -->
+        <div class="about-text">
+          <p class="about-paragraph">{{ 'about.content.paragraph' | transloco }}</p>
+        </div>
+        
+      </div>
+      
+    </div>
+
+    <!-- What Drives Me Section -->
+    <div class="values-section" [class.animate-in]="visibleSections.has('values')">
+      <div class="values-header">
+        <h2>{{ 'about.values.title' | transloco }}</h2>
+      </div>
+      
+      <div class="values-grid">
+        
+        <!-- Curiosity Value -->
+        <div class="value-card curiosity-card"
+             (mouseenter)="showValueDetails('curiosity')"
+             (mouseleave)="hideValueDetails('curiosity')"
+             [class.active]="activeValue === 'curiosity'">
+          <div class="card-inner">
+            <div class="card-front">
+              <div class="value-icon">
+                <i class="main-icon">🔍</i>
+              </div>
+              <h3>{{ 'about.values.curiosity.title' | transloco }}</h3>
+              <p class="value-preview">{{ 'about.values.curiosity.preview' | transloco }}</p>
+            </div>
+            <div class="card-back">
+              <div class="value-detail">
+                <h4>{{ 'about.values.curiosity.detail_title' | transloco }}</h4>
+                <p>{{ 'about.values.curiosity.detail_content' | transloco }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Collaboration Value -->
+        <div class="value-card collaboration-card"
+             (mouseenter)="showValueDetails('collaboration')"
+             (mouseleave)="hideValueDetails('collaboration')"
+             [class.active]="activeValue === 'collaboration'">
+          <div class="card-inner">
+            <div class="card-front">
+              <div class="value-icon">
+                <i class="main-icon">🤝</i>
+              </div>
+              <h3>{{ 'about.values.collaboration.title' | transloco }}</h3>
+              <p class="value-preview">{{ 'about.values.collaboration.preview' | transloco }}</p>
+            </div>
+            <div class="card-back">
+              <div class="value-detail">
+                <h4>{{ 'about.values.collaboration.detail_title' | transloco }}</h4>
+                <p>{{ 'about.values.collaboration.detail_content' | transloco }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Coffee Value -->
+        <div class="value-card coffee-card"
+             (mouseenter)="showValueDetails('coffee')"
+             (mouseleave)="hideValueDetails('coffee')"
+             [class.active]="activeValue === 'coffee'">
+          <div class="card-inner">
+            <div class="card-front">
+              <div class="value-icon coffee-icon">
+                <i class="main-icon">☕</i>
+                <div class="steam-animation">
+                  <div class="steam steam-1"></div>
+                  <div class="steam steam-2"></div>
+                </div>
+              </div>
+              <h3>{{ 'about.values.coffee.title' | transloco }}</h3>
+              <p class="value-preview">{{ 'about.values.coffee.preview' | transloco }}</p>
+            </div>
+            <div class="card-back">
+              <div class="value-detail">
+                <h4>{{ 'about.values.coffee.detail_title' | transloco }}</h4>
+                <p>{{ 'about.values.coffee.detail_content' | transloco }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Let's Connect Section -->
+    <div class="cta-section" [class.animate-in]="visibleSections.has('cta')">
+      <div class="cta-content">
+        <h2>{{ 'about.cta.title' | transloco }}</h2>
+        <p class="cta-text">{{ 'about.cta.content' | transloco }}</p>
+        <div class="cta-buttons">
+          <a href="#contact" class="btn-primary cta-button">
+            <span>{{ 'about.cta.button_primary' | transloco }}</span>
+            <i class="button-icon">💬</i>
+          </a>
+          <a href="#projects" class="btn-secondary cta-button">
+            <span>{{ 'about.cta.button_secondary' | transloco }}</span>
+            <i class="button-icon">🚀</i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

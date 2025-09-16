@@ -3,7 +3,7 @@
     "home": "Home",
     "about": "About",
     "education": "Education",
-    "skills": "Skills", 
+    "skills": "Skills",
     "experience": "Experience",
     "projects": "Projects",
     "contact": "Contact",
@@ -26,7 +26,7 @@
     "name": "Mohamed ZAALI",
     "jobs": {
       "job1": "Data Scientist",
-      "job2": "Full Stack Developer", 
+      "job2": "Full Stack Developer",
       "job3": "Health-Tech Innovator"
     },
     "catchphrase": "Data-driven solutions, human-centered design",
@@ -39,7 +39,7 @@
     "techstack": {
       "title": "Tech Stack",
       "python_alt": "Python programming language",
-      "java_alt": "Java programming language", 
+      "java_alt": "Java programming language",
       "html_alt": "HTML markup language",
       "css_alt": "CSS styling language",
       "bootstrap_alt": "Bootstrap CSS framework",
@@ -51,6 +51,45 @@
       "scikitlearn_alt": "Scikit-Learn machine learning library",
       "tensorflow_alt": "TensorFlow machine learning framework",
       "pandas_alt": "Pandas data analysis library"
+    }
+  },
+  "about": {
+    "image": {
+      "alt": "Mohamed ZAALI - Data Science and AI Engineering Student"
+    },
+    "header": {
+      "title": "About Me",
+      "subtitle": "A Data Science and AI engineering student at ENSAM Rabat, Morocco"
+    },
+    "content": {
+      "paragraph": "I'm one of those people who believe data has stories to tell. My first love is diving into numbers to find meaning, build models that predict the future, and understand the \"why.\" But what good is a story if it's not well told? That's where my passion for Full Stack Development comes in. I absolutely love turning complex insights into beautiful, intuitive, and useful applications that people can actually use. To me, coding is a creative outlet: it's about building bridges between the pure logic of AI and the human experience."
+    },
+    "values": {
+      "title": "What Drives Me",
+      "curiosity": {
+        "title": "Always Curious",
+        "preview": "Never stop learning",
+        "detail_title": "Endless Learning",
+        "detail_content": "Driven by curiosity to understand how things work and discover new technologies in AI and development."
+      },
+      "collaboration": {
+        "title": "Great Collaboration",
+        "preview": "Best projects come from teamwork",
+        "detail_title": "Power of Teamwork",
+        "detail_content": "The best projects come from great collaboration, different perspectives, and shared knowledge."
+      },
+      "coffee": {
+        "title": "Good Coffee",
+        "preview": "Essential fuel for innovation",
+        "detail_title": "Innovation Fuel",
+        "detail_content": "Good coffee is the catalyst for creative thinking and those breakthrough moments that make all the difference."
+      }
+    },
+    "cta": {
+      "title": "Let's Connect",
+      "content": "Ready to build something amazing together?",
+      "button_primary": "Get in Touch",
+      "button_secondary": "View My Work"
     }
   }
 }

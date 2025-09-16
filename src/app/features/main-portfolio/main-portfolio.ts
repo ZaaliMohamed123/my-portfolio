@@ -1,67 +1,67 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ActivatedRoute } from '@angular/router';
+import { RouterOutlet, ActivatedRoute } from '@angular/router';
+import { TranslocoModule } from '@jsverse/transloco';
 
-// Import the Home component
+// Import components
 import { Home } from './components/home/home';
+import { About } from './components/about/about'; // Add About import
 
 @Component({
   selector: 'app-main-portfolio',
   standalone: true,
   imports: [
     CommonModule,
-    Home  // Add Home component here
-    // Remove other placeholder imports for now
-    // About, Education, etc. - we'll add them later
+    TranslocoModule,
+    Home,
+    About  // Add About to imports
   ],
   template: `
     <!-- Single Page Portfolio Layout -->
     <div class="portfolio-container">
-      <!-- Replace test content with actual Home component -->
+      
+      <!-- Home Section -->
       <app-home id="home" class="portfolio-section"></app-home>
       
-      <!-- Keep other test sections for now -->
-      <section id="about" class="test-section">
-        <div class="container-custom">
-          <h2>About Section</h2>
-          <p>Coming soon...</p>
-        </div>
-      </section>
+      <!-- About Section -->
+      <app-about id="about" class="portfolio-section"></app-about>
       
-      <section id="education" class="test-section">
+      <!-- Placeholder sections for other components -->
+      <section id="education" class="placeholder-section">
         <div class="container-custom">
           <h2>Education Section</h2>
           <p>Coming soon...</p>
         </div>
       </section>
       
-      <section id="experience" class="test-section">
+      <section id="experience" class="placeholder-section">
         <div class="container-custom">
           <h2>Experience Section</h2>
           <p>Coming soon...</p>
         </div>
       </section>
       
-      <section id="projects" class="test-section">
+      <section id="projects" class="placeholder-section">
         <div class="container-custom">
           <h2>Projects Section</h2>
           <p>Coming soon...</p>
         </div>
       </section>
       
-      <section id="skills" class="test-section">
+      <section id="skills" class="placeholder-section">
         <div class="container-custom">
           <h2>Skills Section</h2>
           <p>Coming soon...</p>
         </div>
       </section>
       
-      <section id="contact" class="test-section">
+      <section id="contact" class="placeholder-section">
         <div class="container-custom">
           <h2>Contact Section</h2>
           <p>Coming soon...</p>
         </div>
       </section>
+      
     </div>
   `,
   styles: [`
@@ -70,11 +70,10 @@ import { Home } from './components/home/home';
     }
     
     .portfolio-section {
-      // Remove the min-height and padding since Home handles its own layout
       display: block;
     }
     
-    .test-section {
+    .placeholder-section {
       padding: 4rem 0;
       min-height: 80vh;
       display: flex;
@@ -91,8 +90,6 @@ import { Home } from './components/home/home';
         color: var(--text-secondary);
       }
       
-      // Keep the colored backgrounds for other sections
-      &#about { background: rgba(16, 185, 129, 0.03); }
       &#education { background: rgba(59, 130, 246, 0.03); }
       &#experience { background: rgba(236, 72, 153, 0.03); }
       &#projects { background: rgba(6, 182, 212, 0.03); }
@@ -101,8 +98,7 @@ import { Home } from './components/home/home';
     }
     
     .dark-mode {
-      .test-section {
-        &#about { background: rgba(34, 197, 94, 0.05); }
+      .placeholder-section {
         &#education { background: rgba(96, 165, 250, 0.05); }
         &#experience { background: rgba(244, 114, 182, 0.05); }
         &#projects { background: rgba(34, 211, 238, 0.05); }
@@ -110,14 +106,15 @@ import { Home } from './components/home/home';
         &#contact { background: rgba(52, 211, 153, 0.05); }
       }
     }
-  `]
+  `],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class MainPortfolio implements OnInit, AfterViewInit {
 
   constructor(private route: ActivatedRoute) {}
 
   ngOnInit() {
-    // Handle direct section navigation
+    // Handle section navigation from routes
     this.route.params.subscribe(params => {
       const section = params['section'];
       if (section) {

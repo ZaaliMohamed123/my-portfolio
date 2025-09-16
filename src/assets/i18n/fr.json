@@ -4,7 +4,7 @@
     "about": "À propos",
     "education": "Formation",
     "skills": "Compétences",
-    "experience": "Expérience", 
+    "experience": "Expérience",
     "projects": "Projets",
     "contact": "Contact",
     "home_desc": "Bienvenue & introduction",
@@ -31,7 +31,7 @@
     },
     "catchphrase": "Solutions basées sur les données, design centré sur l'humain",
     "social": {
-      "github": "GitHub", 
+      "github": "GitHub",
       "linkedin": "LinkedIn",
       "github_label": "Voir mon profil GitHub",
       "linkedin_label": "Se connecter sur LinkedIn"
@@ -40,7 +40,7 @@
       "title": "Stack Technique",
       "python_alt": "Langage de programmation Python",
       "java_alt": "Langage de programmation Java",
-      "html_alt": "Langage de balisage HTML", 
+      "html_alt": "Langage de balisage HTML",
       "css_alt": "Langage de style CSS",
       "bootstrap_alt": "Framework CSS Bootstrap",
       "scss_alt": "Préprocesseur CSS Sass",
@@ -51,6 +51,45 @@
       "scikitlearn_alt": "Bibliothèque d'apprentissage automatique Scikit-Learn",
       "tensorflow_alt": "Framework d'apprentissage automatique TensorFlow",
       "pandas_alt": "Bibliothèque d'analyse de données Pandas"
+    }
+  },
+  "about": {
+    "image": {
+      "alt": "Mohamed ZAALI - Étudiant en Data Science et Ingénierie IA"
+    },
+    "header": {
+      "title": "À Propos de Moi",
+      "subtitle": "Étudiant en Data Science et ingénierie IA à l'ENSAM Rabat, Maroc"
+    },
+    "content": {
+      "paragraph": "Je suis de ceux qui croient que les données ont des histoires à raconter. Ma passion est de plonger dans les chiffres pour trouver du sens, construire des modèles qui prédisent l'avenir et comprendre le \"pourquoi\". Mais à quoi bon une histoire si elle n'est pas bien racontée ? C'est là qu'intervient ma passion pour le développement Full Stack. J'adore transformer des insights complexes en applications intuitives et utiles que les gens peuvent utiliser. Pour construire des ponts entre la logique pure de l'IA et l'expérience humaine."
+    },
+    "values": {
+      "title": "Ce qui me Motive",
+      "curiosity": {
+        "title": "Toujours Curieux",
+        "preview": "Ne jamais arrêter d'apprendre",
+        "detail_title": "Apprentissage Infini",
+        "detail_content": "Animé par la curiosité de comprendre comment les choses fonctionnent et découvrir de nouvelles technologies en IA et développement."
+      },
+      "collaboration": {
+        "title": "Grande Collaboration",
+        "preview": "Les meilleurs projets viennent du travail d'équipe",
+        "detail_title": "Puissance du Travail d'Équipe",
+        "detail_content": "Les meilleurs projets viennent d'une grande collaboration, de différentes perspectives et de connaissances partagées."
+      },
+      "coffee": {
+        "title": "Bon Café",
+        "preview": "Carburant essentiel pour l'innovation",
+        "detail_title": "Carburant de l'Innovation",
+        "detail_content": "Un bon café est le catalyseur de la pensée créative et de ces moments d'illumination qui font toute la différence."
+      }
+    },
+    "cta": {
+      "title": "Connectons-nous",
+      "content": "Prêt à construire quelque chose d'extraordinaire ensemble ?",
+      "button_primary": "Contactez-moi",
+      "button_secondary": "Voir Mon Travail"
     }
   }
 }
