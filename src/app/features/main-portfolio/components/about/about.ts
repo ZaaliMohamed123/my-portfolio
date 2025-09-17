@@ -1,4 +1,13 @@
-import { Component, OnInit, OnDestroy, AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  OnDestroy,
+  AfterViewInit,
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  ElementRef,
+  ViewChild,
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslocoModule } from '@jsverse/transloco';
 import { Subject } from 'rxjs';
@@ -9,11 +18,14 @@ import { Subject } from 'rxjs';
   imports: [CommonModule, TranslocoModule],
   templateUrl: './about.html',
   styleUrl: './about.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class About implements OnInit, OnDestroy, AfterViewInit {
-
   private destroy$ = new Subject<void>();
+
+  // FadeIn Animation
+  @ViewChild('aboutSection') aboutSection!: ElementRef;
+  aboutInView = false;
 
   // Values Cards
   activeValue: string | null = null;
@@ -28,13 +40,24 @@ export class About implements OnInit, OnDestroy, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    // Auto-show sections after a delay for better UX
-    setTimeout(() => {
-      this.visibleSections.add('main');
-      this.visibleSections.add('values');
-      this.visibleSections.add('cta');
-      this.cdr.detectChanges();
-    }, 300);
+    // FadeIn Animation Observer
+    const fadeInObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.target === this.aboutSection.nativeElement) {
+            if (entry.isIntersecting) {
+              this.aboutInView = true;
+              this.cdr.detectChanges();
+            }
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+    
+    if (this.aboutSection?.nativeElement) {
+      fadeInObserver.observe(this.aboutSection.nativeElement);
+    }
   }
 
   ngOnDestroy() {
@@ -65,18 +88,18 @@ export class About implements OnInit, OnDestroy, AfterViewInit {
   private initializeScrollObserver() {
     const observer = new IntersectionObserver(
       (entries) => {
-        entries.forEach(entry => {
+        entries.forEach((entry) => {
           if (entry.isIntersecting) {
             this.visibleSections.add('main');
             this.visibleSections.add('values');
             this.visibleSections.add('cta');
+            this.cdr.detectChanges();
           }
         });
-        this.cdr.detectChanges();
       },
-      { 
+      {
         threshold: 0.1,
-        rootMargin: '0px'
+        rootMargin: '0px',
       }
     );
 
