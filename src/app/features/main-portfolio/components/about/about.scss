@@ -4,7 +4,7 @@
 
 // About Section Container
 .about-section {
-  padding: 5rem 0;
+  padding-bottom: 5rem;
   position: relative;
   
   // Very subtle background
@@ -13,11 +13,11 @@
     rgba(var(--color-secondary), 0.008) 100%);
   
   @media (min-width: 768px) {
-    padding: 6rem 0;
+    padding-bottom: 6rem;
   }
   
   @media (min-width: 1024px) {
-    padding: 7rem 0;
+    padding-bottom: 7rem;
   }
 }
 
