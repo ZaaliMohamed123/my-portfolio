@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { TranslocoModule } from '@jsverse/transloco';
@@ -10,6 +10,11 @@ import { TranslocoModule } from '@jsverse/transloco';
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
-export class App {
+export class App implements OnInit{
   title = 'mohamed-portfolio';
+
+  ngOnInit() {
+    window.scrollTo(0, 0);
+    window.history.replaceState(null, '', '/#home');
+  }
 }
