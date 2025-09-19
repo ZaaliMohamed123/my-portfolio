@@ -1,5 +1,6 @@
 import { ApplicationConfig, provideZoneChangeDetection, isDevMode } from '@angular/core';
-import { provideRouter } from '@angular/router';
+import { withViewTransitions, withInMemoryScrolling } from '@angular/router';
+import { provideRouter , withRouterConfig } from '@angular/router';
 import { provideHttpClient } from '@angular/common/http';
 import { provideTransloco } from '@jsverse/transloco';
 
@@ -9,7 +10,14 @@ import { TranslocoHttpLoader } from './transloco-loader';
 export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }),
-    provideRouter(routes),
+    provideRouter(
+      routes,
+      withViewTransitions(),
+      withInMemoryScrolling({
+        scrollPositionRestoration: 'top',
+        anchorScrolling: 'enabled',
+      })
+    ),
     provideHttpClient(),
     provideTransloco({
       config: {
