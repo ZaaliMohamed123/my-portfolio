@@ -145,5 +145,38 @@
         "skill3": "Sorting Algorithms: Bubble sort, selection sort, merge sort, and quicksort implementation"
       }
     }
+  },
+  "experience": {
+    "title": "Professional Experience",
+    "subtitle": "Building solutions that matter",
+    "professional": {
+      "title": "Professional Journey"
+    },
+    "albarid": {
+      "period": "JUL - SEP 2025",
+      "location": "Rabat, Morocco",
+      "company": "Al Barid Bank",
+      "position": "Full Stack Developer Intern",
+      "project_label": "Project",
+      "project": "Design and development of a platform for analyzing POS, SoftPOS, and e-commerce transactions.",
+      "achievements_label": "Key Achievements",
+      "achievement1": "Built a <strong>secure REST API</strong> (Spring Boot, JWT) enabling fast access to aggregated transaction data.",
+      "achievement2": "Designed and delivered an <strong>interactive dashboard</strong> (Angular, ngx-charts) for transaction visualization and exploration.",
+      "achievement3": "Created the <strong>software architecture in UML</strong> to ensure system maintainability and scalability.",
+      "tech_label": "Technologies"
+    },
+    "ministry": {
+      "period": "JUL - SEP 2024",
+      "location": "Rabat, Morocco",
+      "company": "Ministry of Youth, Culture and Communication",
+      "position": "Data Science Intern",
+      "project_label": "Project",
+      "project": "Development of a predictive analytics system for cultural heritage preservation.",
+      "achievements_label": "Key Achievements",
+      "achievement1": "Developed a <strong>predictive model</strong> (Random Forest, 92% accuracy) to forecast cultural heritage degradation.",
+      "achievement2": "Integrated the model into a <strong>web application</strong> (Flask) to support experts in decision-making.",
+      "achievement3": "Deployed the solution on an <strong>Ubuntu server</strong> (Gunicorn, Nginx), ensuring availability and performance.",
+      "tech_label": "Technologies"
+    }
   }
 }

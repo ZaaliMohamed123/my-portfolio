@@ -145,5 +145,38 @@
         "skill3": "Algorithmes de Tri: Implémentation du tri à bulles, par sélection, fusion et quicksort"
       }
     }
+  },
+  "experience": {
+    "title": "Expérience Professionnelle",
+    "subtitle": "Construire des solutions qui comptent",
+    "professional": {
+      "title": "Parcours Professionnel"
+    },
+    "albarid": {
+      "period": "JUL - SEP 2025",
+      "location": "Rabat, Maroc",
+      "company": "Al Barid Bank",
+      "position": "Stagiaire Développeur Full Stack",
+      "project_label": "Projet",
+      "project": "Conception et développement d'une plateforme d'analyse des transactions POS, SoftPOS et e-commerce.",
+      "achievements_label": "Réalisations Clés",
+      "achievement1": "Développé une <strong>API REST sécurisée</strong> (Spring Boot, JWT) permettant un accès rapide aux données de transactions agrégées.",
+      "achievement2": "Conçu et livré un <strong>tableau de bord interactif</strong> (Angular, ngx-charts) pour la visualisation et l'exploration des transactions.",
+      "achievement3": "Créé l'<strong>architecture logicielle en UML</strong> pour assurer la maintenabilité et l'évolutivité du système.",
+      "tech_label": "Technologies"
+    },
+    "ministry": {
+      "period": "JUL - SEP 2024",
+      "location": "Rabat, Maroc",
+      "company": "Ministère de la Jeunesse, de la Culture et de la Communication",
+      "position": "Stagiaire Data Science",
+      "project_label": "Projet",
+      "project": "Développement d'un système d'analyse prédictive pour la préservation du patrimoine culturel.",
+      "achievements_label": "Réalisations Clés",
+      "achievement1": "Développé un <strong>modèle prédictif</strong> (Random Forest, 92% de précision) pour prévoir la dégradation du patrimoine culturel.",
+      "achievement2": "Intégré le modèle dans une <strong>application web</strong> (Flask) pour soutenir les experts dans la prise de décision.",
+      "achievement3": "Déployé la solution sur un <strong>serveur Ubuntu</strong> (Gunicorn, Nginx), assurant disponibilité et performance.",
+      "tech_label": "Technologies"
+    }
   }
 }

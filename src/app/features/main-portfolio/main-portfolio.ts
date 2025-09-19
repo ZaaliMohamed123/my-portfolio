@@ -7,11 +7,13 @@ import { TranslocoModule } from '@jsverse/transloco';
 import { Home } from './components/home/home';
 import { About } from './components/about/about';
 import { Education } from './components/education/education';
+import { Experience } from './components/experience/experience';
 
 @Component({
   selector: 'app-main-portfolio',
   standalone: true,
-  imports: [CommonModule, TranslocoModule, Home, About, Education],
+  imports: [CommonModule, TranslocoModule, Home, About, Education,
+    Experience],
   templateUrl: './main-portfolio.html',
   styleUrl: './main-portfolio.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

@@ -1,1 +1,147 @@
-<p>experience works!</p>
+<!-- Experience Section -->
+<section class="experience-section fadeIn" id="experience" #experienceSection [class.in-view]="experienceInView">
+  <div class="container-custom">
+
+    <!-- Section Header -->
+    <div class="section-header">
+      <h1 class="section-title">{{ 'experience.title' | transloco }}</h1>
+      <p class="section-subtitle">{{ 'experience.subtitle' | transloco }}</p>
+    </div>
+
+    <!-- Professional Experience Timeline -->
+    <div class="experience-timeline" [class.animate-in]="visibleSections.has('timeline')">
+      <div class="timeline-header">
+        <h2 class="timeline-title">
+          <i class="fas fa-briefcase timeline-icon"></i>
+          {{ 'experience.professional.title' | transloco }}
+        </h2>
+      </div>
+
+      <div class="timeline-container">
+        <!-- Timeline Line -->
+        <div class="timeline-line"></div>
+
+        <!-- Al Barid Bank Experience (2025) -->
+        <div class="timeline-item bank-experience">
+          <div class="timeline-year">
+            <span class="year-badge bank">{{ 'experience.albarid.period' | transloco }}</span>
+            <span class="location-badge">{{ 'experience.albarid.location' | transloco }}</span>
+          </div>
+          <div class="timeline-content">
+            <div class="experience-card bank">
+              <div class="card-header">
+                <div class="card-icon bank-icon">
+                  <i class="fas fa-university"></i>
+                </div>
+                <div class="card-title-group">
+                  <h3 class="company-name">{{ 'experience.albarid.company' | transloco }}</h3>
+                  <h4 class="position-title bank">{{ 'experience.albarid.position' | transloco }}</h4>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="project-info">
+                  <strong>{{ 'experience.albarid.project_label' | transloco }}:</strong>
+                  <p class="project-description">{{ 'experience.albarid.project' | transloco }}</p>
+                </div>
+                <div class="achievements-info">
+                  <strong>{{ 'experience.albarid.achievements_label' | transloco }}:</strong>
+                  <ul class="achievements-list">
+                    <li [innerHTML]="'experience.albarid.achievement1' | transloco"></li>
+                    <li [innerHTML]="'experience.albarid.achievement2' | transloco"></li>
+                    <li [innerHTML]="'experience.albarid.achievement3' | transloco"></li>
+                  </ul>
+                </div>
+                <div class="technologies-info">
+                  <strong>{{ 'experience.albarid.tech_label' | transloco }}:</strong>
+                  <div class="tech-stack">
+                    <div class="tech-badge spring-boot" title="Spring Boot">
+                      <i class="devicon-spring-original colored tech-icon"></i>
+                      <span class="tech-name">Spring Boot</span>
+                    </div>
+                    <div class="tech-badge angular" title="Angular">
+                      <i class="devicon-angular-plain colored tech-icon"></i>
+                      <span class="tech-name">Angular</span>
+                    </div>
+                    <div class="tech-badge jwt" title="JWT Authentication">
+                      <i class="fas fa-shield-alt tech-icon"></i>
+                      <span class="tech-name">JWT</span>
+                    </div>
+                    <div class="tech-badge charts" title="ngx-charts">
+                      <i class="devicon-d3js-plain colored tech-icon"></i>
+                      <span class="tech-name">ngx-charts</span>
+                    </div>
+                    <div class="tech-badge uml" title="UML">
+                      <i class="devicon-unifiedmodelinglanguage-plain colored tech-icon"></i>
+                      <span class="tech-name">UML</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ministry Experience (2024) -->
+        <div class="timeline-item ministry-experience">
+          <div class="timeline-year">
+            <span class="year-badge ministry">{{ 'experience.ministry.period' | transloco }}</span>
+            <span class="location-badge">{{ 'experience.ministry.location' | transloco }}</span>
+          </div>
+          <div class="timeline-content">
+            <div class="experience-card ministry">
+              <div class="card-header">
+                <div class="card-icon ministry-icon">
+                  <i class="fas fa-landmark"></i>
+                </div>
+                <div class="card-title-group">
+                  <h3 class="company-name">{{ 'experience.ministry.company' | transloco }}</h3>
+                  <h4 class="position-title">{{ 'experience.ministry.position' | transloco }}</h4>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="project-info">
+                  <strong>{{ 'experience.ministry.project_label' | transloco }}:</strong>
+                  <p class="project-description">{{ 'experience.ministry.project' | transloco }}</p>
+                </div>
+                <div class="achievements-info">
+                  <strong>{{ 'experience.ministry.achievements_label' | transloco }}:</strong>
+                  <ul class="achievements-list">
+                    <li [innerHTML]="'experience.ministry.achievement1' | transloco"></li>
+                    <li [innerHTML]="'experience.ministry.achievement2' | transloco"></li>
+                    <li [innerHTML]="'experience.ministry.achievement3' | transloco"></li>
+                  </ul>
+                </div>
+                <div class="technologies-info">
+                  <strong>{{ 'experience.ministry.tech_label' | transloco }}:</strong>
+                  <div class="tech-stack">
+                    <div class="tech-badge random-forest" title="Random Forest">
+                      <i class="devicon-scikitlearn-plain colored tech-icon"></i>
+                      <span class="tech-name">Random Forest</span>
+                    </div>
+                    <div class="tech-badge flask" title="Flask">
+                      <i class="devicon-flask-original colored tech-icon"></i>
+                      <span class="tech-name">Flask</span>
+                    </div>
+                    <div class="tech-badge ubuntu" title="Ubuntu">
+                      <i class="devicon-ubuntu-plain colored tech-icon"></i>
+                      <span class="tech-name">Ubuntu</span>
+                    </div>
+                    <div class="tech-badge gunicorn" title="Gunicorn">
+                      <i class="devicon-python-plain colored tech-icon"></i>
+                      <span class="tech-name">Gunicorn</span>
+                    </div>
+                    <div class="tech-badge nginx" title="Nginx">
+                      <i class="devicon-nginx-original colored tech-icon"></i>
+                      <span class="tech-name">Nginx</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
