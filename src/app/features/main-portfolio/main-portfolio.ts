@@ -5,7 +5,8 @@ import { TranslocoModule } from '@jsverse/transloco';
 
 // Import components
 import { Home } from './components/home/home';
-import { About } from './components/about/about'; // Add About import
+import { About } from './components/about/about'; 
+import { Education } from './components/education/education';
 
 @Component({
   selector: 'app-main-portfolio',
@@ -14,7 +15,8 @@ import { About } from './components/about/about'; // Add About import
     CommonModule,
     TranslocoModule,
     Home,
-    About  // Add About to imports
+    About,
+    Education
   ],
   template: `
     <!-- Single Page Portfolio Layout -->
@@ -26,13 +28,8 @@ import { About } from './components/about/about'; // Add About import
       <!-- About Section -->
       <app-about id="about" class="portfolio-section"></app-about>
       
-      <!-- Placeholder sections for other components -->
-      <section id="education" class="placeholder-section">
-        <div class="container-custom">
-          <h2>Education Section</h2>
-          <p>Coming soon...</p>
-        </div>
-      </section>
+      <!-- Education Section -->
+      <app-education id="education" class="portfolio-section"></app-education>
       
       <section id="experience" class="placeholder-section">
         <div class="container-custom">

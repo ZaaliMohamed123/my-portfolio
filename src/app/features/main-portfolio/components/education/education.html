@@ -1,1 +1,231 @@
-<p>education works!</p>
+<!-- Education Section -->
+<section class="education-section fadeIn" id="education" #educationSection [class.in-view]="educationInView">
+  <div class="container-custom">
+
+    <!-- Section Header -->
+    <div class="section-header">
+      <h1 class="section-title">{{ 'education.title' | transloco }}</h1>
+    </div>
+
+    <!-- University Education Timeline -->
+    <div class="education-timeline" [class.animate-in]="visibleSections.has('timeline')">
+      <div class="timeline-header">
+        <h2 class="timeline-title">
+          <i class="fas fa-graduation-cap timeline-icon"></i>
+          {{ 'education.university.title' | transloco }}
+        </h2>
+      </div>
+
+      <div class="timeline-container">
+        <!-- Timeline Line -->
+        <div class="timeline-line"></div>
+
+        <!-- Current Studies (2023-Present) -->
+        <div class="timeline-item current-studies">
+          <div class="timeline-year">
+            <span class="year-badge current">{{ 'education.university.current.years' | transloco }}</span>
+          </div>
+          <div class="timeline-content">
+            <div class="education-card current">
+              <div class="card-header">
+                <div class="card-icon current-icon"><i class="fas fa-graduation-cap"></i></div>
+                <div class="card-title-group">
+                  <h3 class="card-title">{{ 'education.university.current.degree' | transloco }}</h3>
+                  <p class="card-status">{{ 'education.university.current.status' | transloco }}</p>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="field-info">
+                  <strong>{{ 'education.university.current.field_label' | transloco }}:</strong>
+                  <span>{{ 'education.university.current.field' | transloco }}</span>
+                </div>
+                <div class="option-info">
+                  <strong>{{ 'education.university.current.option_label' | transloco }}:</strong>
+                  <span>{{ 'education.university.current.option' | transloco }}</span>
+                </div>
+                <div class="institution-info">
+                  <strong>{{ 'education.university.current.institution_label' | transloco }}:</strong>
+                  <a href="https://ensam.um5.ac.ma/" 
+                     target="_blank" 
+                     rel="noopener noreferrer"
+                     class="institution-link">
+                    {{ 'education.university.current.institution' | transloco }}
+                    <i class="fas fa-external-link-alt external-link"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Preparatory Classes (2021-2023) -->
+        <div class="timeline-item prep-classes">
+          <div class="timeline-year">
+            <span class="year-badge prep">{{ 'education.university.prep.years' | transloco }}</span>
+          </div>
+          <div class="timeline-content">
+            <div class="education-card prep">
+              <div class="card-header">
+                <div class="card-icon prep-icon"><i class="fas fa-book"></i></div>
+                <div class="card-title-group">
+                  <h3 class="card-title">{{ 'education.university.prep.title' | transloco }}</h3>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="focus-info">
+                  <strong>{{ 'education.university.prep.focus_label' | transloco }}:</strong>
+                  <span>{{ 'education.university.prep.focus' | transloco }}</span>
+                </div>
+                <div class="institution-info">
+                  <strong>{{ 'education.university.prep.institution_label' | transloco }}:</strong>
+                  <a href="https://ensam.um5.ac.ma/" 
+                     target="_blank" 
+                     rel="noopener noreferrer"
+                     class="institution-link">
+                    {{ 'education.university.prep.institution' | transloco }}
+                    <i class="fas fa-external-link-alt external-link"></i>
+                  </a>
+                </div>
+                <div class="description-info">
+                  <p class="description">{{ 'education.university.prep.description' | transloco }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Certifications Section -->
+    <div class="certifications-section" [class.animate-in]="visibleSections.has('certifications')">
+      <div class="certifications-header">
+        <h2 class="certifications-title">
+          <i class="fas fa-certificate certifications-icon"></i>
+          {{ 'education.certifications.title' | transloco }}
+        </h2>
+      </div>
+
+      <div class="certifications-list">
+        
+        <!-- CCNA Certification -->
+        <div class="certification-item cisco"
+             [class.expanded]="expandedCert === 'ccna'"
+             (click)="toggleCertification('ccna')">
+          <div class="cert-header">
+            <div class="cert-provider">
+              <div class="provider-badge cisco">CISCO</div>
+            </div>
+            <div class="cert-info">
+              <h3 class="cert-title">{{ 'education.certifications.ccna.title' | transloco }}</h3>
+              <p class="cert-description">{{ 'education.certifications.ccna.description' | transloco }}</p>
+            </div>
+            <div class="cert-actions">
+              <a href="https://www.credly.com/badges/2faa52b1-d971-47cc-ab5f-77deb43ce4fb/linked_in_profile"
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 class="cert-button cisco"
+                 (click)="$event.stopPropagation()">
+                {{ 'education.certifications.view_certificate' | transloco }}
+              </a>
+              <button class="expand-button" [class.expanded]="expandedCert === 'ccna'">
+            <i class="fas fa-chevron-down expand-icon"></i>
+          </button>
+            </div>
+          </div>
+          <div class="cert-details" [class.show]="expandedCert === 'ccna'">
+            <div class="details-content">
+              <div class="skills-learned">
+                <h4>{{ 'education.certifications.ccna.skills_title' | transloco }}</h4>
+                <ul class="skills-list">
+                  <li>{{ 'education.certifications.ccna.skill1' | transloco }}</li>
+                  <li>{{ 'education.certifications.ccna.skill2' | transloco }}</li>
+                  <li>{{ 'education.certifications.ccna.skill3' | transloco }}</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- DataCamp Introduction to Data -->
+        <div class="certification-item datacamp"
+             [class.expanded]="expandedCert === 'datacamp1'"
+             (click)="toggleCertification('datacamp1')">
+          <div class="cert-header">
+            <div class="cert-provider">
+              <div class="provider-badge datacamp">DataCamp</div>
+            </div>
+            <div class="cert-info">
+              <h3 class="cert-title">{{ 'education.certifications.datacamp1.title' | transloco }}</h3>
+              <p class="cert-description">{{ 'education.certifications.datacamp1.description' | transloco }}</p>
+            </div>
+            <div class="cert-actions">
+              <a href="https://www.datacamp.com/completed/statement-of-accomplishment/course/43a0c70954b7ef9c1e6ef7cba8eef86f6c93e214"
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 class="cert-button datacamp"
+                 (click)="$event.stopPropagation()">
+                {{ 'education.certifications.view_certificate' | transloco }}
+              </a>
+<button class="expand-button" [class.expanded]="expandedCert === 'datacamp1'">
+            <i class="fas fa-chevron-down expand-icon"></i>
+          </button>
+            </div>
+          </div>
+          <div class="cert-details" [class.show]="expandedCert === 'datacamp1'">
+            <div class="details-content">
+              <div class="skills-learned">
+                <h4>{{ 'education.certifications.datacamp1.skills_title' | transloco }}</h4>
+                <ul class="skills-list">
+                  <li>{{ 'education.certifications.datacamp1.skill1' | transloco }}</li>
+                  <li>{{ 'education.certifications.datacamp1.skill2' | transloco }}</li>
+                  <li>{{ 'education.certifications.datacamp1.skill3' | transloco }}</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- DataCamp Data Structures and Algorithms -->
+        <div class="certification-item datacamp"
+             [class.expanded]="expandedCert === 'datacamp2'"
+             (click)="toggleCertification('datacamp2')">
+          <div class="cert-header">
+            <div class="cert-provider">
+              <div class="provider-badge datacamp">DataCamp</div>
+            </div>
+            <div class="cert-info">
+              <h3 class="cert-title">{{ 'education.certifications.datacamp2.title' | transloco }}</h3>
+              <p class="cert-description">{{ 'education.certifications.datacamp2.description' | transloco }}</p>
+            </div>
+            <div class="cert-actions">
+              <a href="https://www.datacamp.com/completed/statement-of-accomplishment/course/970728f8d13f505e01db21a8cdb8cc8dfe97eaab"
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 class="cert-button datacamp"
+                 (click)="$event.stopPropagation()">
+                {{ 'education.certifications.view_certificate' | transloco }}
+              </a>
+              <button class="expand-button" [class.expanded]="expandedCert === 'datacamp2'">
+            <i class="fas fa-chevron-down expand-icon"></i>
+          </button>
+            </div>
+          </div>
+          <div class="cert-details" [class.show]="expandedCert === 'datacamp2'">
+            <div class="details-content">
+              <div class="skills-learned">
+                <h4>{{ 'education.certifications.datacamp2.skills_title' | transloco }}</h4>
+                <ul class="skills-list">
+                  <li>{{ 'education.certifications.datacamp2.skill1' | transloco }}</li>
+                  <li>{{ 'education.certifications.datacamp2.skill2' | transloco }}</li>
+                  <li>{{ 'education.certifications.datacamp2.skill3' | transloco }}</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>

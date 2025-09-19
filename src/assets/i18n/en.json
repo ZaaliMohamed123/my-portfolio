@@ -91,5 +91,59 @@
       "button_primary": "Get in Touch",
       "button_secondary": "View My Work"
     }
+  },
+  "education": {
+    "title": "Education & Certifications",
+    "university": {
+      "title": "University Education",
+      "current": {
+        "years": "2023-Present",
+        "degree": "State Engineer Diploma",
+        "status": "3rd year Engineering cycle",
+        "field_label": "Field",
+        "field": "Digital Engineering in Data Science, AI & Digital Health",
+        "option_label": "Option",
+        "option": "Big Data & Artificial Intelligence",
+        "institution_label": "Institution",
+        "institution": "ENSAM Rabat, Morocco"
+      },
+      "prep": {
+        "years": "2021-2023",
+        "title": "Preparatory Classes",
+        "focus_label": "Focus",
+        "focus": "Mathematics, Physics & Technologies",
+        "institution_label": "Institution",
+        "institution": "ENSAM Rabat, Morocco",
+        "description": "Focused on advanced mathematics and physics in a rigorous two-year program."
+      }
+    },
+    "certifications": {
+      "title": "Certifications",
+      "view_certificate": "View Certificate",
+      "ccna": {
+        "title": "CCNA: Introduction to Networks",
+        "description": "Cisco networking fundamentals and practical network configuration",
+        "skills_title": "Key Skills Acquired",
+        "skill1": "Configuring switches, routers, and network devices for end-to-end connectivity",
+        "skill2": "Creating IPv4/IPv6 addressing schemes and network troubleshooting",
+        "skill3": "Understanding OSI model, Ethernet protocols, and network security best practices"
+      },
+      "datacamp1": {
+        "title": "Introduction to Data",
+        "description": "Gateway to understanding data fundamentals and decision-making",
+        "skills_title": "Course Highlights",
+        "skill1": "Data Basics: Types, structures, and importance in decision-making processes",
+        "skill2": "Data Wisdom: DIKW framework and real-world data-driven decision examples",
+        "skill3": "Data Ethics: Privacy, data lifecycle, and handling common data mistakes"
+      },
+      "datacamp2": {
+        "title": "Data Structures and Algorithms in Python",
+        "description": "Comprehensive understanding of computer science fundamentals",
+        "skills_title": "Technical Mastery",
+        "skill1": "Data Structures: Linked lists, stacks, queues, trees, graphs, and Big O notation",
+        "skill2": "Search Algorithms: Linear search, binary search, DFS, BFS, and binary search trees",
+        "skill3": "Sorting Algorithms: Bubble sort, selection sort, merge sort, and quicksort implementation"
+      }
+    }
   }
 }
