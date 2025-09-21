@@ -1,1 +1,77 @@
-<p>contact works!</p>
+<section class="contact-section" id="contact">
+  <div class="container-custom">
+    <div class="section-header">
+      <h1 class="section-title">{{ 'contact.title' | transloco }}</h1>
+      <p class="section-subtitle">{{ 'contact.subtitle' | transloco }}</p>
+      <p class="contact-motivation">{{ 'contact.motivation' | transloco }}</p>
+    </div>
+
+    <div class="contact-content">
+      <!-- Availability Status -->
+      <div class="availability-card">
+        <div class="availability-header">
+          <i class="fas fa-check-circle availability-icon"></i>
+          <h3 class="availability-title">{{ 'contact.availability.title' | transloco }}</h3>
+        </div>
+        <div class="availability-list">
+          @for (availability of availabilityTypes; track availability.key) {
+            <div class="availability-item">
+              <i [class]="availability.icon"></i>
+              <span>{{ availability.key | transloco }}</span>
+            </div>
+          }
+        </div>
+      </div>
+
+      <!-- Contact Methods -->
+      <div class="contact-methods">
+        @for (contact of contactMethods; track contact.type) {
+          <div class="contact-card" [attr.data-type]="contact.type">
+            <div class="contact-card-header">
+              <i [class]="contact.icon + ' contact-icon'"></i>
+              <h3 class="contact-title">{{ contact.title | transloco }}</h3>
+            </div>
+            <div class="contact-card-body">
+              <a 
+                [href]="contact.link" 
+                [target]="contact.external ? '_blank' : '_self'"
+                [attr.rel]="contact.external ? 'noopener noreferrer' : null"
+                class="contact-link"
+                [attr.title]="contact.tooltip"
+              >
+                <span class="contact-value">{{ contact.value }}</span>
+                @if (contact.external) {
+                  <i class="fas fa-external-link-alt external-icon"></i>
+                }
+              </a>
+              <p class="contact-description">{{ contact.description | transloco }}</p>
+            </div>
+          </div>
+        }
+      </div>
+
+      <!-- Call to Action -->
+      <div class="contact-cta">
+        <p class="cta-text">{{ 'contact.cta.text' | transloco }}</p>
+        <div class="cta-buttons">
+          <a 
+            href="mailto:zaali.mohamed3002@gmail.com?subject=Let's collaborate!" 
+            class="cta-button primary"
+          >
+            <i class="fas fa-envelope"></i>
+            {{ 'contact.cta.email' | transloco }}
+          </a>
+          <a 
+            href="https://wa.me/212605964917?text=Hi%20Mohamed!%20I'd%20like%20to%20discuss%20a%20project%20opportunity." 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="cta-button secondary"
+          >
+            <i class="fab fa-whatsapp"></i>
+            {{ 'contact.cta.whatsapp' | transloco }}
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

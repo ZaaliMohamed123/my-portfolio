@@ -191,5 +191,40 @@
       "bigdata": "Big Data",
       "visualization": "Visualization & BI"
     }
+  }, 
+  "contact": {
+    "title": "Let's Connect",
+    "subtitle": "Ready to build something amazing together?",
+    "motivation": "🚀 Got an exciting project? Need a tech wizard? Just want to chat about AI and data science? Drop me a line! I promise I'm friendlier than my algorithms! 😄",
+    "availability": {
+      "title": "Currently Available For",
+      "internships": "Internships",
+      "projects": "Projects",
+      "collaborations": "Collaborations", 
+      "freelance": "Freelance Work"
+    },
+    "methods": {
+      "email": {
+        "title": "Email Me",
+        "description": "Best for detailed discussions"
+      },
+      "whatsapp": {
+        "title": "WhatsApp",
+        "description": "Quick chats and instant replies"
+      },
+      "linkedin": {
+        "title": "LinkedIn",
+        "description": "Professional networking"
+      },
+      "github": {
+        "title": "GitHub",
+        "description": "Explore my code and projects"
+      }
+    },
+    "cta": {
+      "text": "Ready to start our next big adventure?",
+      "email": "Send Email",
+      "whatsapp": "WhatsApp Me"
+    }
   }
 }

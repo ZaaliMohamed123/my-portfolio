@@ -9,11 +9,12 @@ import { About } from './components/about/about';
 import { Education } from './components/education/education';
 import { Experience } from './components/experience/experience';
 import { Skills } from './components/skills/skills';
+import { Contact } from './components/contact/contact';
 
 @Component({
   selector: 'app-main-portfolio',
   standalone: true,
-  imports: [CommonModule, TranslocoModule, Home, About, Education, Experience, Skills],
+  imports: [CommonModule, TranslocoModule, Home, About, Education, Experience, Skills, Contact],
   templateUrl: './main-portfolio.html',
   styleUrl: './main-portfolio.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

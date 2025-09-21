@@ -191,5 +191,40 @@
       "bigdata": "Big Data",
       "visualization": "Visualisation & BI"
     }
+  },
+  "contact": {
+    "title": "Connectons-nous",
+    "subtitle": "Prêt à construire quelque chose d'incroyable ensemble ?",
+    "motivation": "🚀 Un projet passionnant ? Besoin d'un magicien de la tech ? Envie de discuter d'IA et de data science ? Contactez-moi ! Je promets d'être plus sympa que mes algorithmes ! 😄",
+    "availability": {
+      "title": "Actuellement Disponible Pour",
+      "internships": "Stages",
+      "projects": "Projets",
+      "collaborations": "Collaborations",
+      "freelance": "Travail Freelance"
+    },
+    "methods": {
+      "email": {
+        "title": "Envoyez un Email",
+        "description": "Idéal pour les discussions détaillées"
+      },
+      "whatsapp": {
+        "title": "WhatsApp", 
+        "description": "Discussions rapides et réponses instantanées"
+      },
+      "linkedin": {
+        "title": "LinkedIn",
+        "description": "Réseau professionnel"
+      },
+      "github": {
+        "title": "GitHub",
+        "description": "Explorez mon code et mes projets"
+      }
+    },
+    "cta": {
+      "text": "Prêt à commencer notre prochaine grande aventure ?",
+      "email": "Envoyer un Email",
+      "whatsapp": "WhatsApp"
+    }
   }
 }
