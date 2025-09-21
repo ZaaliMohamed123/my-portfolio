@@ -40,40 +40,50 @@
 
 .section-header {
   text-align: center;
-  margin-bottom: 3.5rem;
+  margin-bottom: 3rem;
+  position: relative;
   
-  @media (max-width: 767px) {
-    margin-bottom: 2.5rem;
+  // Decorative line under title
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: var(--gradient-primary);
+    border-radius: 2px;
   }
 }
 
 .section-title {
-  font-size: 2rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  margin: 0 0 0.5rem 0;
+  font-size: 2.5rem;
+  font-weight: 600;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.02em;
   
   @media (min-width: 768px) {
-    font-size: 2.25rem;
+    font-size: 3rem;
   }
-  
   @media (min-width: 1024px) {
-    font-size: 2.5rem;
-  }
-  
-  @media (min-width: 1200px) {
-    font-size: 2.75rem;
+    font-size: 3.5rem;
   }
 }
 
 .section-subtitle {
-  font-size: 1rem;
+  font-size: 1.125rem;
   color: var(--text-secondary);
-  margin: 0;
   font-style: italic;
+  margin: 0;
+  opacity: 0.9;
   
   @media (min-width: 768px) {
-    font-size: 1.125rem;
+    font-size: 1.25rem;
   }
 }
 
