@@ -5,6 +5,7 @@
 .portfolio-section {
   display: block;
   padding-bottom: 5rem;
+  
 
   @media (min-width: 768px) {
     padding-bottom: 6rem;
@@ -53,19 +54,6 @@
   }
 
   
-  &#projects {
-    background: rgba(6, 182, 212, 0.03);
-  }
-  
 }
 
-.dark-mode {
-  .placeholder-section {
-   
-    &#projects {
-      background: rgba(34, 211, 238, 0.05);
-    }
-    
 
-  }
-}
