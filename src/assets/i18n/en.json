@@ -178,5 +178,18 @@
       "achievement3": "Deployed the solution on an <strong>Ubuntu server</strong> (Gunicorn, Nginx), ensuring availability and performance.",
       "tech_label": "Technologies"
     }
+  },
+  "skills": {
+    "title": "Skills & Technologies",
+    "subtitle": "Tools, languages, and platforms I use",
+    "cat": {
+      "programming": "Programming Languages",
+      "databases": "Databases",
+      "web": "Web Tech & Frameworks",
+      "datascience": "Data Science & AI",
+      "integration": "Data Integration",
+      "bigdata": "Big Data",
+      "visualization": "Visualization & BI"
+    }
   }
 }

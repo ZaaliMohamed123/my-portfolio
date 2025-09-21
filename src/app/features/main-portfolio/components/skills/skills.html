@@ -1,1 +1,38 @@
-<p>skills works!</p>
+<!-- <section class="skills-section fadeIn" id="skills" #skillsSection> -->
+<section class="skills-section" id="skills" #skillsSection>
+  <div class="container-custom">
+    <div class="section-header">
+      <h1 class="section-title">{{ 'skills.title' | transloco }}</h1>
+      <p class="section-subtitle">{{ 'skills.subtitle' | transloco }}</p>
+    </div>
+
+    <div class="skills-grid">
+      @for (cat of skillCategories; track cat.label) {
+      <div class="skills-card">
+        <div class="skills-card-header">
+          <i [class]="cat.icon + ' skills-cat-icon'"></i>
+          <span class="skills-cat-title">{{ cat.label | transloco }}</span>
+        </div>
+        <div class="skills-list">
+          @for (skill of cat.skills; track skill.name) {
+          <div class="skill-badge" [attr.title]="skill.tooltip" tabindex="0">
+            @if (skill.icon) { @if (skill.isCustomIcon) {
+            <img
+              width="24" height="24"
+              [src]="skill.icon"
+              [alt]="skill.name"
+              class="skill-icon"
+              [style.color]="skill.color || null"
+            />
+            } @else {
+            <i [class]="skill.icon + ' skill-icon'" [style.color]="skill.color || null"></i>
+            } }
+            <span class="skill-text">{{ skill.name }}</span>
+          </div>
+          }
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+</section>

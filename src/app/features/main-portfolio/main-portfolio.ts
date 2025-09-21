@@ -8,12 +8,12 @@ import { Home } from './components/home/home';
 import { About } from './components/about/about';
 import { Education } from './components/education/education';
 import { Experience } from './components/experience/experience';
+import { Skills } from './components/skills/skills';
 
 @Component({
   selector: 'app-main-portfolio',
   standalone: true,
-  imports: [CommonModule, TranslocoModule, Home, About, Education,
-    Experience],
+  imports: [CommonModule, TranslocoModule, Home, About, Education, Experience, Skills],
   templateUrl: './main-portfolio.html',
   styleUrl: './main-portfolio.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
