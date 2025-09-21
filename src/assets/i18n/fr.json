@@ -226,5 +226,8 @@
       "email": "Envoyer un Email",
       "whatsapp": "WhatsApp"
     }
+  },
+  "footer": {
+    "copyright": "Mohamed © 2025 | Fièrement conçu avec des bugs... je veux dire, des fonctionnalités!"
   }
 }

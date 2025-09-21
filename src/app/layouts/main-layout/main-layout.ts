@@ -5,6 +5,7 @@ import { TranslocoModule } from '@jsverse/transloco';
 import { Subject, fromEvent, debounceTime, takeUntil } from 'rxjs';
 
 import { Header } from '../header/header';
+import { Footer } from '../footer/footer';
 
 interface Section {
   id: string;
@@ -19,7 +20,7 @@ interface Section {
     RouterOutlet,
     RouterModule,
     TranslocoModule,
-    Header
+    Header, Footer
   ],
   templateUrl: './main-layout.html',
   styleUrl: './main-layout.scss'

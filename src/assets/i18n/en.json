@@ -226,5 +226,8 @@
       "email": "Send Email",
       "whatsapp": "WhatsApp Me"
     }
+  },
+  "footer": {
+    "copyright": "Mohamed © 2025 | Proudly made with bugs... I mean features"
   }
 }
