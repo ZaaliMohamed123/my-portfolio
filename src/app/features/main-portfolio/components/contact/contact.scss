@@ -3,7 +3,7 @@
 // =====================================
 
 .contact-section {
-  padding-bottom: 5rem;
+  // Remove all padding-bottom declarations
   position: relative;
   background: 
     radial-gradient(circle at 20% 80%, rgba(37, 99, 235, 0.06) 0%, transparent 50%),
@@ -30,13 +30,6 @@
   .container-custom {
     position: relative;
     z-index: 1;
-  }
-  
-  @media (min-width: 768px) {
-    padding-bottom: 6rem ;
-  }
-  @media (min-width: 1024px) {
-    padding-bottom: 7rem;
   }
 }
 
@@ -435,10 +428,7 @@
 
 // Responsive Adjustments
 @media (max-width: 480px) {
-  .contact-section {
-    padding-bottom: 4rem; // Only padding-bottom for mobile
-  }
-  
+
   .contact-motivation {
     font-size: 0.9rem;
     padding: 1rem;
