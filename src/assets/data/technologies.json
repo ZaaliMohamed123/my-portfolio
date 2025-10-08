@@ -55,5 +55,166 @@
     "icon": "devicon-python-plain",
     "color": "#3776ab",
     "category": "backend"
+  },
+  {
+    "name": "PyTorch",
+    "icon": "devicon-pytorch-original",
+    "color": "#ee4c2c",
+    "category": "dl"
+  },
+  {
+    "name": "SQLAlchemy",
+    "icon": "/assets/media/tech-icons/sqlalchemy_logo.svg",
+    "color": "#d71f00",
+    "category": "backend",
+    "isCustomIcon": true
+  },
+  {
+    "name": "NumPy",
+    "icon": "devicon-numpy-original",
+    "color": "#013243",
+    "category": "ml"
+  },
+  {
+    "name": "Pandas",
+    "icon": "devicon-pandas-original",
+    "color": "#150458",
+    "category": "ml"
+  },
+  {
+    "name": "Apache Kafka",
+    "icon": "devicon-apachekafka-original",
+    "color": "#231f20",
+    "category": "backend"
+  },
+  {
+    "name": "PyShark",
+    "icon": "/assets/media/tech-icons/pyshark_logo.png",
+    "color": "#1679a7",
+    "category": "ml",
+    "isCustomIcon": true
+  },
+  {
+    "name": "Scikit-learn",
+    "icon": "devicon-scikitlearn-plain colored",
+    "color": "#f7931e",
+    "category": "ml"
+  },
+  {
+    "name": "Joblib",
+    "icon": "/assets/media/tech-icons/joblib_logo.png",
+    "color": "#2e8b57",
+    "category": "ml",
+    "isCustomIcon": true
+  },
+  {
+    "name": "TensorFlow",
+    "icon": "devicon-tensorflow-original",
+    "color": "#ff6f00",
+    "category": "dl"
+  },
+  {
+    "name": "Streamlit",
+    "icon": "devicon-streamlit-plain",
+    "color": "#ff4b4b",
+    "category": "frontend"
+  },
+  {
+    "name": "LSTM",
+    "icon": "fas fa-brain",
+    "color": "#5c6bc0",
+    "category": "dl"
+  },
+  {
+    "name": "CNN",
+    "icon": "fas fa-network-wired",
+    "color": "#42a5f5",
+    "category": "dl"
+  },
+  {
+    "name": "Keras",
+    "icon": "devicon-keras-plain",
+    "color": "#d00000",
+    "category": "dl"
+  },
+  {
+    "name": "spaCy",
+    "icon": "/assets/media/tech-icons/SpaCy_logo.svg",
+    "color": "#09a3d5",
+    "category": "ml",
+    "isCustomIcon": true
+  },
+  {
+    "name": "Stanza",
+    "icon": "fas fa-network-wired",
+    "color": "#8c1515",
+    "category": "ml"
+  },
+  {
+    "name": "Matplotlib",
+    "icon": "devicon-matplotlib-plain",
+    "color": "#11557c",
+    "category": "ml"
+  },
+  {
+    "name": "Seaborn",
+    "icon": "/assets/media/tech-icons/seaborn_logo.svg",
+    "color": "#4c8eda",
+    "category": "ml",
+    "isCustomIcon": true
+  },
+  {
+    "name": "NLTK",
+    "icon": "devicon-python-plain",
+    "color": "#00a86b",
+    "category": "ml"
+  },
+  {
+    "name": "TF-IDF",
+    "icon": "fas fa-file-alt",
+    "color": "#f59e0b",
+    "category": "ml"
+  },
+  {
+    "name": "Figma",
+    "icon": "devicon-figma-plain",
+    "color": "#f24e1e",
+    "category": "frontend"
+  },
+  {
+    "name": "HTML",
+    "icon": "devicon-html5-plain",
+    "color": "#e34f26",
+    "category": "frontend"
+  },
+  {
+    "name": "CSS",
+    "icon": "devicon-css3-plain",
+    "color": "#1572b6",
+    "category": "frontend"
+  },
+  {
+    "name": "JavaScript",
+    "icon": "devicon-javascript-plain",
+    "color": "#f7df1e",
+    "category": "frontend"
+  },
+  {
+    "name": "Java EE",
+    "icon": "devicon-java-plain",
+    "color": "#007396",
+    "category": "backend"
+  },
+  {
+    "name": "PL/SQL",
+    "icon": "devicon-oracle-original",
+    "color": "#f80000",
+    "category": "database"
+  },
+  {
+    "name": "Oracle",
+    "icon": "devicon-oracle-original",
+    "color": "#f80000",
+    "category": "database"
   }
 ]
