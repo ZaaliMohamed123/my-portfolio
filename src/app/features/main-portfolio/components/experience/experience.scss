@@ -3,21 +3,21 @@
 
 // Experience Section Container
 .experience-section {
-  padding-bottom: 5rem;
+  padding-bottom: 0rem;
   position: relative;
   
-  // Very subtle background - professional theme
-  background: linear-gradient(135deg, 
-    rgba(var(--color-primary), 0.006) 0%, 
-    rgba(var(--color-secondary), 0.008) 50%,
-    rgba(var(--color-purple), 0.006) 100%);
+  // // Very subtle background - professional theme
+  // background: linear-gradient(135deg, 
+  //   rgba(var(--color-primary), 0.006) 0%, 
+  //   rgba(var(--color-secondary), 0.008) 50%,
+  //   rgba(var(--color-purple), 0.006) 100%);
   
   @media (min-width: 768px) {
-    padding-bottom: 6rem;
+    padding-bottom: 0rem;
   }
   
   @media (min-width: 1024px) {
-    padding-bottom: 7rem;
+    padding-bottom: 0rem;
   }
 }
 
@@ -521,12 +521,12 @@
 // DARK MODE ADJUSTMENTS
 
 .dark-mode {
-  .experience-section {
-    background: linear-gradient(135deg, 
-      rgba(var(--color-primary), 0.01) 0%, 
-      rgba(var(--color-secondary), 0.012) 50%,
-      rgba(var(--color-purple), 0.01) 100%);
-  }
+  // .experience-section {
+  //   background: linear-gradient(135deg, 
+  //     rgba(var(--color-primary), 0.01) 0%, 
+  //     rgba(var(--color-secondary), 0.012) 50%,
+  //     rgba(var(--color-purple), 0.01) 100%);
+  // }
   
   .experience-card {
     background: rgba(var(--bg-secondary), 0.8);

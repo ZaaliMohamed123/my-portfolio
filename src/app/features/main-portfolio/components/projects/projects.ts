@@ -1,4 +1,13 @@
-import { Component, OnInit, OnDestroy, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  OnDestroy,
+  AfterViewInit,
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  ElementRef,
+  ViewChild,
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
@@ -18,11 +27,18 @@ import { Project, Technology } from '../../../../core/models';
   styleUrl: './projects.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class Projects implements OnInit, OnDestroy {
+export class Projects implements OnInit, OnDestroy, AfterViewInit {
   
   // Component State
   featuredProjects: Project[] = [];
   isLoading = true;
+  
+  // FadeIn Animation
+  @ViewChild('projectsSection') projectsSection!: ElementRef;
+  projectsInView = false;
+  
+  // Scroll Detection
+  visibleSections = new Set<string>();
   
   // Lifecycle Management
   private destroy$ = new Subject<void>();
@@ -35,6 +51,7 @@ export class Projects implements OnInit, OnDestroy {
   
   ngOnInit(): void {
     this.loadProjectData();
+    this.initializeScrollObserver();
     
     // Reload data when language changes
     this.translocoService.langChanges$
@@ -44,9 +61,59 @@ export class Projects implements OnInit, OnDestroy {
       });
   }
   
+  ngAfterViewInit(): void {
+    // FadeIn Animation Observer
+    const fadeInObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.target === this.projectsSection.nativeElement) {
+            if (entry.isIntersecting) {
+              this.projectsInView = true;
+              this.cdr.detectChanges();
+            }
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+    
+    if (this.projectsSection?.nativeElement) {
+      fadeInObserver.observe(this.projectsSection.nativeElement);
+    }
+  }
+  
   ngOnDestroy(): void {
     this.destroy$.next();
     this.destroy$.complete();
+  }
+  
+  /**
+   * Initialize scroll observer for section animations
+   */
+  private initializeScrollObserver(): void {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            this.visibleSections.add('header');
+            this.visibleSections.add('grid');
+            this.visibleSections.add('viewAll');
+            this.cdr.detectChanges();
+          }
+        });
+      },
+      {
+        threshold: 0.1,
+        rootMargin: '0px',
+      }
+    );
+
+    setTimeout(() => {
+      const projectsSection = document.getElementById('projects');
+      if (projectsSection) {
+        observer.observe(projectsSection);
+      }
+    }, 100);
   }
   
   /**

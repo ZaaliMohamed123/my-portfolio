@@ -1,6 +1,16 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { 
+  Component, 
+  OnInit, 
+  OnDestroy,
+  AfterViewInit,
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  ElementRef,
+  ViewChild 
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslocoModule } from '@jsverse/transloco';
+import { Subject } from 'rxjs';
 
 interface ContactMethod {
   type: string;
@@ -26,7 +36,16 @@ interface AvailabilityType {
   styleUrl: './contact.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class Contact implements OnInit {
+export class Contact implements OnInit, OnDestroy, AfterViewInit {
+  private destroy$ = new Subject<void>();
+
+  // FadeIn Animation
+  @ViewChild('contactSection') contactSection!: ElementRef;
+  contactInView = false;
+
+  // Scroll Detection
+  visibleSections = new Set<string>();
+
   contactMethods: ContactMethod[] = [
     {
       type: 'email',
@@ -77,7 +96,66 @@ export class Contact implements OnInit {
     { key: 'contact.availability.freelance', icon: 'fas fa-briefcase' }
   ];
 
+  constructor(private cdr: ChangeDetectorRef) {}
+
   ngOnInit(): void {
-    // Component initialization
+    this.initializeScrollObserver();
+  }
+
+  ngAfterViewInit(): void {
+    // FadeIn Animation Observer
+    const fadeInObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.target === this.contactSection.nativeElement) {
+            if (entry.isIntersecting) {
+              this.contactInView = true;
+              this.cdr.detectChanges();
+            }
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+    
+    if (this.contactSection?.nativeElement) {
+      fadeInObserver.observe(this.contactSection.nativeElement);
+    }
+  }
+
+  ngOnDestroy(): void {
+    this.destroy$.next();
+    this.destroy$.complete();
+  }
+
+  // ========================
+  // SCROLL ANIMATIONS
+  // ========================
+
+  private initializeScrollObserver(): void {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            this.visibleSections.add('header');
+            this.visibleSections.add('availability');
+            this.visibleSections.add('methods');
+            this.visibleSections.add('cta');
+            this.cdr.detectChanges();
+          }
+        });
+      },
+      {
+        threshold: 0.1,
+        rootMargin: '0px',
+      }
+    );
+
+    setTimeout(() => {
+      const contactSection = document.getElementById('contact');
+      if (contactSection) {
+        observer.observe(contactSection);
+      }
+    }, 100);
   }
 }

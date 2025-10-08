@@ -4,20 +4,20 @@
 
 // Education Section Container
 .education-section {
-  padding-bottom: 5rem;
+  padding-bottom: 0rem;
   position: relative;
   
-  // Very subtle background
-  background: linear-gradient(135deg, 
-    rgba(var(--color-secondary), 0.01) 0%, 
-    rgba(var(--color-purple), 0.01) 100%);
+  // // Very subtle background
+  // background: linear-gradient(135deg, 
+  //   rgba(var(--color-secondary), 0.01) 0%, 
+  //   rgba(var(--color-purple), 0.01) 100%);
   
   @media (min-width: 768px) {
-    padding-bottom: 6rem;
+    padding-bottom: 0rem;
   }
   
   @media (min-width: 1024px) {
-    padding-bottom: 7rem;
+    padding-bottom: 0rem;
   }
 }
 
@@ -792,11 +792,11 @@
 // =====================================
 
 .dark-mode {
-  .education-section {
-    background: linear-gradient(135deg, 
-      rgba(var(--color-secondary), 0.015) 0%, 
-      rgba(var(--color-purple), 0.015) 100%);
-  }
+  // .education-section {
+  //   background: linear-gradient(135deg, 
+  //     rgba(var(--color-secondary), 0.015) 0%, 
+  //     rgba(var(--color-purple), 0.015) 100%);
+  // }
   
   .education-card,
   .certification-item {

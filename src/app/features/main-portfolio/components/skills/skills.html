@@ -1,12 +1,14 @@
-<!-- <section class="skills-section fadeIn" id="skills" #skillsSection> -->
-<section class="skills-section" id="skills" #skillsSection>
+<section class="skills-section fadeIn" 
+         id="skills" 
+         #skillsSection 
+         [class.in-view]="skillsInView">
   <div class="container-custom">
-    <div class="section-header">
+    <div class="section-header" [class.animate-in]="visibleSections.has('header')">
       <h1 class="section-title">{{ 'skills.title' | transloco }}</h1>
       <p class="section-subtitle">{{ 'skills.subtitle' | transloco }}</p>
     </div>
 
-    <div class="skills-grid">
+    <div class="skills-grid" [class.animate-in]="visibleSections.has('grid')">
       @for (cat of skillCategories; track cat.label) {
       <div class="skills-card">
         <div class="skills-card-header">

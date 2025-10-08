@@ -8,42 +8,56 @@
   overflow: hidden;
 }
 
-// Section Header
 .section-header {
   text-align: center;
   margin-bottom: 3rem;
+  position: relative;
   
-  @media (min-width: 768px) {
-    margin-bottom: 4rem;
+  // Enhanced decorative line for light theme
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+    border-radius: 2px;
   }
 }
 
 .section-title {
-  font-size: 2rem;
-  font-weight: 700;
-  color: var(--text-primary);
+  font-size: 2.5rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   margin-bottom: 0.75rem;
   letter-spacing: -0.02em;
   
   @media (min-width: 768px) {
-    font-size: 2.5rem;
-  }
-  
-  @media (min-width: 1024px) {
     font-size: 3rem;
+  }
+  @media (min-width: 1024px) {
+    font-size: 3.5rem;
   }
 }
 
 .section-subtitle {
-  font-size: 1rem;
-  color: var(--text-secondary);
+  font-size: 1.125rem;
+  color: #64748b;
+  font-style: italic;
+  font-weight: 400;
   margin: 0;
   opacity: 0.9;
   
   @media (min-width: 768px) {
-    font-size: 1.125rem;
+    font-size: 1.25rem;
   }
 }
+
 
 // Loading State
 .loading-container {
@@ -520,6 +534,32 @@
 
 // Dark Mode Adjustments
 :host-context(.dark-mode) {
+  .section-header::after {
+      background: linear-gradient(90deg, #60a5fa, #a78bfa) !important;
+    }
+    
+    .section-title {
+      background: linear-gradient(135deg, 
+        rgb(96, 165, 250), 
+        rgb(167, 139, 250), 
+        rgb(52, 211, 153)) !important;
+      -webkit-background-clip: text !important;
+      -webkit-text-fill-color: transparent !important;
+      background-clip: text !important;
+      color: transparent !important;
+      
+      // Fallback for unsupported browsers
+      @supports not (-webkit-background-clip: text) {
+        background: none !important;
+        color: #60a5fa !important;
+        -webkit-text-fill-color: #60a5fa !important;
+      }
+    }
+    
+    .section-subtitle {
+      color: var(--text-secondary) !important;
+    }
+
   .project-card {
     background: var(--bg-secondary);
     border-color: rgba(255, 255, 255, 0.1);

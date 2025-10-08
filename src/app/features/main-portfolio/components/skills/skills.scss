@@ -3,7 +3,7 @@
 // =====================================
 
 .skills-section {
-  padding-bottom: 5rem;
+  padding-bottom: 0rem;
   position: relative;
   // background: 
   //   radial-gradient(circle at 20% 80%, rgba(37, 99, 235, 0.06) 0%, transparent 50%),
@@ -33,10 +33,10 @@
   // }
   
   @media (min-width: 768px) {
-    padding-bottom: 6rem;
+    padding-bottom: 0rem;
   }
   @media (min-width: 1024px) {
-    padding-bottom: 7rem;
+    padding-bottom: 0rem;
   }
 }
 
@@ -427,18 +427,18 @@
 // Enhanced Dark Mode (HIGHER SPECIFICITY)
 :host-context(.dark-mode) {
   .skills-section {
-    background: 
-      radial-gradient(circle at 20% 80%, rgba(37, 99, 235, 0.05) 0%, transparent 50%),
-      radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.04) 0%, transparent 50%),
-      radial-gradient(circle at 40% 40%, rgba(16, 185, 129, 0.03) 0%, transparent 50%);
+    // background: 
+    //   radial-gradient(circle at 20% 80%, rgba(37, 99, 235, 0.05) 0%, transparent 50%),
+    //   radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.04) 0%, transparent 50%),
+    //   radial-gradient(circle at 40% 40%, rgba(16, 185, 129, 0.03) 0%, transparent 50%);
     
-    &::before {
-      background: 
-        linear-gradient(135deg, 
-          rgba(var(--color-primary), 0.015) 0%, 
-          rgba(var(--color-secondary), 0.02) 50%,
-          rgba(var(--color-purple), 0.015) 100%) !important;
-    }
+    // &::before {
+    //   background: 
+    //     linear-gradient(135deg, 
+    //       rgba(var(--color-primary), 0.015) 0%, 
+    //       rgba(var(--color-secondary), 0.02) 50%,
+    //       rgba(var(--color-purple), 0.015) 100%) !important;
+    // }
     
     .section-header::after {
       background: linear-gradient(90deg, #60a5fa, #a78bfa) !important;

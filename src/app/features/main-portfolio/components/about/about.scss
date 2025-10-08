@@ -4,20 +4,20 @@
 
 // About Section Container
 .about-section {
-  padding-bottom: 5rem;
+  padding-bottom: 0rem;
   position: relative;
   
-  // Very subtle background
-  background: linear-gradient(135deg, 
-    rgba(var(--color-primary), 0.008) 0%, 
-    rgba(var(--color-secondary), 0.008) 100%);
+  // // Very subtle background
+  // background: linear-gradient(135deg, 
+  //   rgba(var(--color-primary), 0.008) 0%, 
+  //   rgba(var(--color-secondary), 0.008) 100%);
   
   @media (min-width: 768px) {
-    padding-bottom: 6rem;
+    padding-bottom: 0rem;
   }
   
   @media (min-width: 1024px) {
-    padding-bottom: 7rem;
+    padding-bottom: 0rem;
   }
 }
 
@@ -666,11 +666,11 @@
 // =====================================
 
 .dark-mode {
-  .about-section {
-    background: linear-gradient(135deg, 
-      rgba(var(--color-primary), 0.012) 0%, 
-      rgba(var(--color-secondary), 0.012) 100%);
-  }
+  // .about-section {
+  //   background: linear-gradient(135deg, 
+  //     rgba(var(--color-primary), 0.012) 0%, 
+  //     rgba(var(--color-secondary), 0.012) 100%);
+  // }
   
   .profile-image {
     border-color: var(--bg-secondary);

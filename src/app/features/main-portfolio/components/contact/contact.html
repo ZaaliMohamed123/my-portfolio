@@ -1,6 +1,9 @@
-<section class="contact-section" id="contact">
+<section class="contact-section fadeIn" 
+         id="contact" 
+         #contactSection 
+         [class.in-view]="contactInView">
   <div class="container-custom">
-    <div class="section-header">
+    <div class="section-header" [class.animate-in]="visibleSections.has('header')">
       <h1 class="section-title">{{ 'contact.title' | transloco }}</h1>
       <p class="section-subtitle">{{ 'contact.subtitle' | transloco }}</p>
       <p class="contact-motivation">{{ 'contact.motivation' | transloco }}</p>
@@ -8,7 +11,7 @@
 
     <div class="contact-content">
       <!-- Availability Status -->
-      <div class="availability-card">
+      <div class="availability-card" [class.animate-in]="visibleSections.has('availability')">
         <div class="availability-header">
           <i class="fas fa-check-circle availability-icon"></i>
           <h3 class="availability-title">{{ 'contact.availability.title' | transloco }}</h3>
@@ -24,7 +27,7 @@
       </div>
 
       <!-- Contact Methods -->
-      <div class="contact-methods">
+      <div class="contact-methods" [class.animate-in]="visibleSections.has('methods')">
         @for (contact of contactMethods; track contact.type) {
           <div class="contact-card" [attr.data-type]="contact.type">
             <div class="contact-card-header">
@@ -51,7 +54,7 @@
       </div>
 
       <!-- Call to Action -->
-      <div class="contact-cta">
+      <div class="contact-cta" [class.animate-in]="visibleSections.has('cta')">
         <p class="cta-text">{{ 'contact.cta.text' | transloco }}</p>
         <div class="cta-buttons">
           <a 

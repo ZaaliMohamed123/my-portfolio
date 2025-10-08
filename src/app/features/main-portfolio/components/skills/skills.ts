@@ -1,6 +1,16 @@
-import { Component, OnInit, AfterViewInit, ChangeDetectionStrategy } from '@angular/core';
+import { 
+  Component, 
+  OnInit, 
+  OnDestroy,
+  AfterViewInit, 
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  ElementRef,
+  ViewChild 
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslocoModule } from '@jsverse/transloco';
+import { Subject } from 'rxjs';
 
 interface Skill {
   name: string;
@@ -24,7 +34,16 @@ interface SkillCategory {
   styleUrl: './skills.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class Skills implements OnInit, AfterViewInit {
+export class Skills implements OnInit, OnDestroy, AfterViewInit {
+  private destroy$ = new Subject<void>();
+
+  // FadeIn Animation
+  @ViewChild('skillsSection') skillsSection!: ElementRef;
+  skillsInView = false;
+
+  // Scroll Detection
+  visibleSections = new Set<string>();
+
   skillCategories: SkillCategory[] = [
     {
       label: 'skills.cat.programming',
@@ -81,7 +100,7 @@ export class Skills implements OnInit, AfterViewInit {
       label: 'skills.cat.bigdata',
       icon: 'fas fa-server',
       skills: [
-        { name: 'Hadoop', icon: '/assets/media/tech-icons/Apache Hadoop.svg', tooltip: 'Hadoop',isCustomIcon: true },
+        { name: 'Hadoop', icon: '/assets/media/tech-icons/Apache Hadoop.svg', tooltip: 'Hadoop', isCustomIcon: true },
         { name: 'Hive', icon: '/assets/media/tech-icons/apachehive-svgrepo-com.svg', tooltip: 'Hive', isCustomIcon: true },
         { name: 'Sqoop', icon: '/assets/media/tech-icons/Apache_Sqoop_logo.svg', tooltip: 'Apache Sqoop', isCustomIcon: true },
         { name: 'Kafka', icon: 'devicon-apachekafka-original colored', tooltip: 'Apache Kafka' },
@@ -97,7 +116,64 @@ export class Skills implements OnInit, AfterViewInit {
     },
   ];
 
-  ngOnInit() {}
+  constructor(private cdr: ChangeDetectorRef) {}
 
-  ngAfterViewInit() {}
+  ngOnInit() {
+    this.initializeScrollObserver();
+  }
+
+  ngAfterViewInit() {
+    // FadeIn Animation Observer
+    const fadeInObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.target === this.skillsSection.nativeElement) {
+            if (entry.isIntersecting) {
+              this.skillsInView = true;
+              this.cdr.detectChanges();
+            }
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+    
+    if (this.skillsSection?.nativeElement) {
+      fadeInObserver.observe(this.skillsSection.nativeElement);
+    }
+  }
+
+  ngOnDestroy() {
+    this.destroy$.next();
+    this.destroy$.complete();
+  }
+
+  // ========================
+  // SCROLL ANIMATIONS
+  // ========================
+
+  private initializeScrollObserver() {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            this.visibleSections.add('header');
+            this.visibleSections.add('grid');
+            this.cdr.detectChanges();
+          }
+        });
+      },
+      {
+        threshold: 0.1,
+        rootMargin: '0px',
+      }
+    );
+
+    setTimeout(() => {
+      const skillsSection = document.getElementById('skills');
+      if (skillsSection) {
+        observer.observe(skillsSection);
+      }
+    }, 100);
+  }
 }
