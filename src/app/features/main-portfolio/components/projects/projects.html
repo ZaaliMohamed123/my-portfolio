@@ -1,1 +1,117 @@
-<p>projects works!</p>
+<section class="projects-section portfolio-section" id="projects">
+  <div class="container-custom">
+    <!-- Section Header -->
+    <div class="section-header">
+      <h2 class="section-title">{{ 'projects.title' | transloco }}</h2>
+      <p class="section-subtitle">{{ 'projects.subtitle' | transloco }}</p>
+    </div>
+
+    <!-- Loading State -->
+    @if (isLoading) {
+    <div class="loading-container">
+      <div class="skeleton-card" *ngFor="let i of [1, 2, 3]"></div>
+    </div>
+    }
+
+    <!-- Projects Grid -->
+    @if (!isLoading && featuredProjects.length > 0) {
+    <div class="projects-grid">
+      @for (project of featuredProjects; track project.id; let i = $index) {
+      <div class="project-card" [attr.data-aos]="'fade-up'" [attr.data-aos-delay]="i * 100">
+        <!-- Card Header -->
+        <div class="card-header">
+          <div class="header-left">
+            <!-- Project Logo (conditionally shown) -->
+            @if (project.logo && project.logo.length > 0 && project.logo[0]) {
+            <div class="project-logo">
+              <img [src]="project.logo[0]" [alt]="project.title + ' logo'" class="logo-image" />
+            </div>
+            }
+
+            <!-- Title & Subtitle -->
+            <div class="title-group">
+              <h3 class="project-title">{{ project.title }}</h3>
+              <p class="project-subtitle">{{ project.subtitle }}</p>
+            </div>
+          </div>
+
+          <!-- GitHub Button -->
+          <a
+            [href]="project.github"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="github-button"
+            [attr.aria-label]="'View ' + project.title + ' on GitHub'"
+          >
+            <i class="fab fa-github"></i>
+            <span class="button-text">GitHub</span>
+          </a>
+        </div>
+
+        <!-- Divider -->
+        <div class="card-divider"></div>
+
+        <!-- Description -->
+        <div class="card-description">
+          <p class="description-text">{{ project.description }}</p>
+        </div>
+
+        <!-- Divider -->
+        <div class="card-divider"></div>
+
+        <!-- Tech Stack with Action Button -->
+        <div class="tech-stack-section">
+          <div class="tech-stack-header">
+            <span class="tech-label">{{ 'projects.technologiesUsed' | transloco }}</span>
+          </div>
+
+          <div class="tech-content">
+            <div class="tech-icons">
+              @for (tech of project.technologies; track tech.name) {
+              <div class="tech-icon-wrapper" [title]="tech.name">
+                @if (tech.isCustomIcon) {
+                <img
+                  [src]="tech.icon"
+                  [alt]="tech.name"
+                  class="tech-icon-img"
+                  width="32"
+                  height="32"
+                />
+                } @else {
+                <i [class]="tech.icon + ' tech-icon'" [style.color]="tech.color"></i>
+                }
+              </div>
+              }
+            </div>
+
+            <!-- Learn More Button (inline) -->
+            <a [routerLink]="project.goToPage" class="learn-more-button">
+              <span>{{ 'projects.learnMore' | transloco }}</span>
+              <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      }
+    </div>
+    }
+
+    <!-- Empty State -->
+    @if (!isLoading && featuredProjects.length === 0) {
+    <div class="empty-state">
+      <i class="fas fa-folder-open"></i>
+      <p>{{ 'projects.noProjects' | transloco }}</p>
+    </div>
+    }
+
+    <!-- View All Projects Link -->
+    @if (featuredProjects.length > 0) {
+    <div class="view-all-section">
+      <a routerLink="/projects" class="view-all-button">
+        <span>{{ 'projects.viewAll' | transloco }}</span>
+        <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+    }
+  </div>
+</section>

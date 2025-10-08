@@ -229,5 +229,13 @@
   },
   "footer": {
     "copyright": "Mohamed © 2025 | Fièrement conçu avec des bugs... je veux dire, des fonctionnalités!"
+  },
+  "projects": {
+    "title": "Projets en Vedette",
+    "subtitle": "Travaux récents et innovations",
+    "technologiesUsed": "Technologies Utilisées",
+    "learnMore": "En Savoir Plus",
+    "viewAll": "Voir Tous les Projets",
+    "noProjects": "Aucun projet disponible pour le moment"
   }
 }

@@ -64,20 +64,20 @@
   },
   {
     "name": "SQLAlchemy",
-    "icon": "/assets/media/tech-icons/sqlalchemy_logo.svg",
+    "icon": "/assets/media/tech-icons/SQLAlchemy_logo.svg",
     "color": "#d71f00",
     "category": "backend",
     "isCustomIcon": true
   },
   {
     "name": "NumPy",
-    "icon": "devicon-numpy-original",
+    "icon": "devicon-numpy-plain",
     "color": "#013243",
     "category": "ml"
   },
   {
     "name": "Pandas",
-    "icon": "devicon-pandas-original",
+    "icon": "devicon-pandas-plain",
     "color": "#150458",
     "category": "ml"
   },

@@ -191,7 +191,7 @@
       "bigdata": "Big Data",
       "visualization": "Visualization & BI"
     }
-  }, 
+  },
   "contact": {
     "title": "Let's Connect",
     "subtitle": "Ready to build something amazing together?",
@@ -200,7 +200,7 @@
       "title": "Currently Available For",
       "internships": "Internships",
       "projects": "Projects",
-      "collaborations": "Collaborations", 
+      "collaborations": "Collaborations",
       "freelance": "Freelance Work"
     },
     "methods": {
@@ -229,5 +229,13 @@
   },
   "footer": {
     "copyright": "Mohamed © 2025 | Proudly made with bugs... I mean features"
+  },
+  "projects": {
+    "title": "Featured Projects",
+    "subtitle": "Recent work and innovations",
+    "technologiesUsed": "Technologies Used",
+    "learnMore": "Learn More",
+    "viewAll": "View All Projects",
+    "noProjects": "No projects available at the moment"
   }
 }
