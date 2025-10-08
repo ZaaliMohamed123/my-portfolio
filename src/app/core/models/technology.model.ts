@@ -5,4 +5,5 @@ export interface Technology {
   icon: string;
   color: string;
   category: TechCategory;
+  isCustomIcon?: boolean;
 }

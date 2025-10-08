@@ -4,6 +4,6 @@ export enum TechCategory {
   DATABASE = 'database',
   DL = 'dl',
   ML = 'ml',
-  AI_ML = 'ai_ml',
+  AI = 'ai',
   DEPLOYMENT = 'deployment'
 }

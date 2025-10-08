@@ -10,8 +10,10 @@ export interface Project {
   longDescription?: string;
 
   // Visual Assets
-  thumbnail: string;
+  logo: string | string[]; // Can be a single logo or an array of logos
+  thumbnail?: string;
   images: string[];
+  videoTuto:string;
   demoGif?: string;
 
   // Technology & Tools
