@@ -1,0 +1,33 @@
+[
+  {
+    "id": 8,
+    "title": "AL-MUQARRIR",
+    "subtitle": "Automatic Transcription & Meeting Minutes Generation",
+    "description": "AI-powered web platform for real-time meeting transcription, speaker diarization, and automated generation of meeting minutes with semantic analysis. Supports Arabic, French, English, and Darija with multilingual and RTL capabilities.",
+    "longDescription": "AL-MUQARRIR is a comprehensive AI-powered solution that transforms meeting recordings into structured, actionable documentation. The platform features real-time speaker identification using PyAnnote.audio, high-accuracy transcription with OpenAI's Whisper model, and intelligent semantic analysis powered by Google's Gemini API. The system automatically generates professional meeting minutes with theme extraction, sentiment analysis, and problem/opportunity identification. With support for multiple languages including Arabic with RTL formatting, the platform offers seamless export to PDF and DOCX formats. Built with a modern Angular frontend and robust Flask backend, AL-MUQARRIR streamlines the entire meeting documentation workflow from recording to distribution.",
+    "logo" : [
+        "/assets/media/projects/al-muqarrir/small_Logo.svg",
+        "/assets/media/projects/al-muqarrir/big_Logo.svg"
+    ],
+    "thumbnail": "",
+    "images": [
+      "/assets/media/projects/al-muqarrir/home.png"
+    ],
+    "videoTuto":"/assets/media/projects/al-muqarrir/Video_Tuto_Al-Muqarrir.mp4",
+    "demoGif": "",
+    "technologies": [
+      "Whisper AI",
+      "PyAnnote",
+      "Gemini API",
+      "Flask",
+      "Angular",
+      "SQLite",
+      "Bootstrap",
+      "JWT",
+      "Python"
+    ],
+    "categories": ["ai","web", "data_science"],
+    "github": "https://github.com/SEKALDouaa/AL-MUQARRIR",
+    "goToPage": "/projects/al-muqarrir"
+  }
+]

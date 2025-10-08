@@ -1,0 +1,59 @@
+[
+  {
+    "name": "Whisper AI",
+    "icon": "/assets/media/tech-icons/whisper_openai_logo.svg",
+    "color": "",
+    "category": "ai",
+    "isCustomIcon": true
+  },
+  {
+    "name": "PyAnnote",
+    "icon": "/assets/media/tech-icons/pyannote_logo.png",
+    "color": "",
+    "category": "ai",
+    "isCustomIcon": true
+  },
+  {
+    "name": "Gemini API",
+    "icon": "/assets/media/tech-icons/Google_Gemini_icon_2025.svg",
+    "color": "",
+    "category": "ai",
+    "isCustomIcon": true
+  },
+  {
+    "name": "Flask",
+    "icon": "devicon-flask-original",
+    "color": "#000000",
+    "category": "backend"
+  },
+  {
+    "name": "Angular",
+    "icon": "devicon-angularjs-plain",
+    "color": "#dd0031",
+    "category": "frontend"
+  },
+  {
+    "name": "SQLite",
+    "icon": "devicon-sqlite-plain",
+    "color": "#003b57",
+    "category": "database"
+  },
+  {
+    "name": "Bootstrap",
+    "icon": "devicon-bootstrap-plain",
+    "color": "#7952b3",
+    "category": "frontend"
+  },
+  {
+    "name": "JWT",
+    "icon": "fas fa-shield-alt",
+    "color": "#000000",
+    "category": "backend"
+  },
+  {
+    "name": "Python",
+    "icon": "devicon-python-plain",
+    "color": "#3776ab",
+    "category": "backend"
+  }
+]

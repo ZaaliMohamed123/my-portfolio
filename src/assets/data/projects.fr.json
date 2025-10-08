@@ -1,0 +1,33 @@
+[
+  {
+    "id": 8,
+    "title": "AL-MUQARRIR",
+    "subtitle": "Transcription Automatique et Génération de Procès-Verbaux",
+    "description": "Plateforme web alimentée par l'IA pour la transcription de réunions en temps réel, la diarisation des locuteurs et la génération automatisée de procès-verbaux avec analyse sémantique. Support de l'arabe, du français, de l'anglais et du darija avec capacités multilingues et RTL.",
+    "longDescription": "AL-MUQARRIR est une solution complète alimentée par l'IA qui transforme les enregistrements de réunions en documentation structurée et exploitable. La plateforme propose l'identification des locuteurs en temps réel à l'aide de PyAnnote.audio, une transcription de haute précision avec le modèle Whisper d'OpenAI, et une analyse sémantique intelligente alimentée par l'API Gemini de Google. Le système génère automatiquement des procès-verbaux professionnels avec extraction de thèmes, analyse de sentiment et identification des problèmes/opportunités. Avec le support de plusieurs langues, y compris l'arabe avec formatage RTL, la plateforme offre une exportation transparente vers les formats PDF et DOCX. Construite avec une interface Angular moderne et un backend Flask robuste, AL-MUQARRIR simplifie l'ensemble du processus de documentation des réunions, de l'enregistrement à la distribution.",
+    "logo" : [
+        "/assets/media/projects/al-muqarrir/small_Logo.svg",
+        "/assets/media/projects/al-muqarrir/big_Logo.svg"
+    ],
+    "thumbnail": "",
+    "images": [
+      "/assets/media/projects/al-muqarrir/home.png"
+    ],
+    "videoTuto":"/assets/media/projects/al-muqarrir/Video_Tuto_Al-Muqarrir.mp4",
+    "demoGif": "",
+    "technologies": [
+      "Whisper AI",
+      "PyAnnote",
+      "Gemini API",
+      "Flask",
+      "Angular",
+      "SQLite",
+      "Bootstrap",
+      "JWT",
+      "Python"
+    ],
+    "categories": ["ai","web", "data_science"],
+    "github": "https://github.com/SEKALDouaa/AL-MUQARRIR",
+    "goToPage": "/projects/al-muqarrir"
+  }
+]
