@@ -300,5 +300,31 @@
     "technologies": "Technologies Utilisées",
     "categories": "Catégories",
     "gallery": "Galerie"
+  },
+  "certificationTags": {
+    "python": "Python",
+    "javascript": "JavaScript",
+    "web_development": "Développement Web",
+    "data_science": "Science des Données",
+    "machine_learning": "Apprentissage Automatique",
+    "deep_learning": "Apprentissage Profond",
+    "big_data": "Big Data",
+    "cloud": "Cloud",
+    "aws": "AWS",
+    "azure": "Azure",
+    "gcp": "Google Cloud",
+    "devops": "DevOps",
+    "networking": "Réseaux",
+    "cybersecurity": "Cybersécurité",
+    "cisco": "Cisco",
+    "tensorflow": "TensorFlow",
+    "pytorch": "PyTorch",
+    "docker": "Docker",
+    "kubernetes": "Kubernetes",
+    "sql": "SQL",
+    "nosql": "NoSQL",
+    "statistics": "Statistiques",
+    "data_visualization": "Visualisation de Données",
+    "project_management": "Gestion de Projet"
   }
 }
