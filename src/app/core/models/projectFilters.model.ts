@@ -1,9 +1,9 @@
 import { ProjectCategory } from './projectCategory.enum';
+import { TechCategory } from './techCategory.enum';
 
 export interface ProjectFilters {
-  searchTerm: string;
+  searchTitle: string;
   sortBy: 'latest' | 'oldest' | 'title-asc' | 'title-desc';
-  categories: ProjectCategory[];
-  categoryFilterMode: 'any' | 'all'; 
-  technologies: string[];
+  projectCategories: ProjectCategory[];
+  techCategories: TechCategory[];
 }

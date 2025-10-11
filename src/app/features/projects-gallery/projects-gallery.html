@@ -1,0 +1,234 @@
+<section class="projects-gallery-page">
+  <div class="container-custom">
+    <!-- Page Header -->
+    <div class="page-header">
+      <h1 class="page-title">{{ 'projectsGallery.title' | transloco }}</h1>
+      <p class="page-subtitle">{{ 'projectsGallery.subtitle' | transloco }}</p>
+    </div>
+
+    <!-- Filters Section -->
+    <div class="filters-section">
+      <div class="filters-container">
+        <!-- Sort Dropdown -->
+        <div class="filter-group">
+          <label class="filter-label">{{ 'projectsGallery.filters.sort' | transloco }}</label>
+          <select [(ngModel)]="filters.sortBy" (change)="applyFilters()" class="filter-select">
+            @for (option of sortOptions; track option.value) {
+            <option [value]="option.value">{{ option.label | transloco }}</option>
+            }
+          </select>
+        </div>
+
+        <!-- Project Category Dropdown -->
+        <div class="filter-group">
+          <label class="filter-label">{{ 'projectsGallery.filters.category' | transloco }}</label>
+          <div class="filter-dropdown">
+            <button class="filter-button" type="button" (click)="toggleDropdown('category')">
+              <span>
+                @if (filters.projectCategories.length === 0) {
+                {{ 'projectsGallery.filters.allCategories' | transloco }}
+                } @else {
+                {{ filters.projectCategories.length }}
+                {{ 'projectsGallery.filters.selected' | transloco }}
+                }
+              </span>
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            @if (categoryDropdownOpen) {
+            <div class="dropdown-menu">
+              @for (category of projectCategories; track category) {
+              <label class="dropdown-item">
+                <input
+                  type="checkbox"
+                  [checked]="isProjectCategorySelected(category)"
+                  (change)="toggleProjectCategory(category)"
+                />
+                <span>{{ 'projectsGallery.categories.' + category | transloco }}</span>
+              </label>
+              }
+            </div>
+            }
+          </div>
+        </div>
+
+        <!-- Tech Category Dropdown -->
+        <div class="filter-group">
+          <label class="filter-label">{{ 'projectsGallery.filters.tech' | transloco }}</label>
+          <div class="filter-dropdown">
+            <button class="filter-button" type="button" (click)="toggleDropdown('tech')">
+              <span>
+                @if (filters.techCategories.length === 0) {
+                {{ 'projectsGallery.filters.allTech' | transloco }}
+                } @else {
+                {{ filters.techCategories.length }}
+                {{ 'projectsGallery.filters.selected' | transloco }}
+                }
+              </span>
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            @if (techDropdownOpen) {
+            <div class="dropdown-menu">
+              @for (techCat of techCategories; track techCat) {
+              <label class="dropdown-item">
+                <input
+                  type="checkbox"
+                  [checked]="isTechCategorySelected(techCat)"
+                  (change)="toggleTechCategory(techCat)"
+                />
+                <span>{{ 'projectsGallery.techCategories.' + techCat | transloco }}</span>
+              </label>
+              }
+            </div>
+            }
+          </div>
+        </div>
+
+        <!-- Search Input -->
+        <div class="filter-group search-group">
+          <label class="filter-label">{{ 'projectsGallery.filters.search' | transloco }}</label>
+          <div class="search-input-wrapper">
+            <i class="fas fa-search search-icon"></i>
+            <input
+              type="text"
+              [(ngModel)]="filters.searchTitle"
+              (input)="applyFilters()"
+              [placeholder]="'projectsGallery.filters.searchPlaceholder' | transloco"
+              class="search-input"
+            />
+            @if (filters.searchTitle) {
+            <button
+              type="button"
+              (click)="filters.searchTitle = ''; applyFilters()"
+              class="clear-search-button"
+              [attr.aria-label]="'projectsGallery.filters.clearSearch' | transloco"
+            >
+              <i class="fas fa-times"></i>
+            </button>
+            }
+          </div>
+        </div>
+
+        <!-- Clear Filters Button -->
+        @if (hasActiveFilters()) {
+        <button type="button" (click)="clearFilters()" class="clear-filters-button">
+          <i class="fas fa-times-circle"></i>
+          {{ 'projectsGallery.filters.clearAll' | transloco }}
+        </button>
+        }
+      </div>
+    </div>
+
+    <!-- Results Count -->
+    <div class="results-info">
+      <p class="results-text">
+        {{ 'projectsGallery.resultsCount' | transloco : { count: filteredProjects.length } }}
+      </p>
+    </div>
+
+    <!-- Loading State -->
+    @if (isLoading) {
+    <div class="loading-container">
+      <div class="skeleton-card" *ngFor="let i of [1, 2, 3, 4, 5, 6]"></div>
+    </div>
+    }
+
+    <!-- Projects List -->
+    @if (!isLoading && filteredProjects.length > 0) {
+    <div class="projects-list">
+      @for (project of filteredProjects; track project.id) {
+      <div class="project-card">
+        <!-- Project Image (only if exists and not empty) -->
+        @if (project.images && project.images.length > 0 && project.images[0] &&
+        project.images[0].trim() !== '') {
+        <div class="project-image">
+          <img [src]="project.images[0]" [alt]="project.title" class="card-image" loading="lazy" />
+        </div>
+        }
+
+        <div class="card-content">
+          <!-- Card Header -->
+          <div class="card-header">
+            <div class="header-left">
+              <!-- Project Logo -->
+              @if (project.logo && project.logo.length > 0 && project.logo[0] &&
+              project.logo[0].trim() !== '') {
+              <div class="project-logo">
+                <img [src]="project.logo[0]" [alt]="project.title + ' logo'" class="logo-image" />
+              </div>
+              }
+
+              <!-- Title & Subtitle -->
+              <div class="title-group">
+                <h3 class="project-title">{{ project.title }}</h3>
+                <p class="project-subtitle">{{ project.subtitle }}</p>
+              </div>
+            </div>
+
+            <!-- GitHub Button -->
+            <a
+              [href]="project.github"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="github-button"
+              [attr.aria-label]="'View ' + project.title + ' on GitHub'"
+            >
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+
+          <!-- Description -->
+          <div class="card-description">
+            <p class="description-text">{{ project.description }}</p>
+          </div>
+
+          <!-- Divider -->
+          <div class="card-divider"></div>
+
+          <!-- Tech Stack & Action -->
+          <div class="card-footer">
+            <div class="tech-stack">
+              <span class="tech-label">{{ 'projectsGallery.technologies' | transloco }}</span>
+              <div class="tech-icons">
+                @for (tech of project.technologies; track tech.name) {
+                <div class="tech-icon-wrapper" [title]="tech.name">
+                  @if (tech.isCustomIcon) {
+                  <img
+                    [src]="tech.icon"
+                    [alt]="tech.name"
+                    class="tech-icon-img"
+                    width="24"
+                    height="24"
+                  />
+                  } @else {
+                  <i [class]="tech.icon + ' tech-icon'" [style.color]="tech.color"></i>
+                  }
+                </div>
+                }
+              </div>
+            </div>
+
+            <!-- Learn More Button -->
+            <a [routerLink]="project.goToPage" class="learn-more-button">
+              <span>{{ 'projectsGallery.learnMore' | transloco }}</span>
+              <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      }
+    </div>
+    }
+
+    <!-- Empty State -->
+    @if (!isLoading && filteredProjects.length === 0) {
+    <div class="empty-state">
+      <i class="fas fa-search"></i>
+      <h3>{{ 'projectsGallery.noResults.title' | transloco }}</h3>
+      <p>{{ 'projectsGallery.noResults.message' | transloco }}</p>
+      <button type="button" (click)="clearFilters()" class="clear-filters-button">
+        {{ 'projectsGallery.noResults.clearFilters' | transloco }}
+      </button>
+    </div>
+    }
+  </div>
+</section>

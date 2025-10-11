@@ -238,5 +238,53 @@
     "learnMore": "Learn More",
     "viewAll": "View All Projects",
     "noProjects": "No projects available at the moment"
+  },
+  "projectsGallery": {
+    "title": "All Projects",
+    "subtitle": "Explore my complete portfolio of AI, web development, and data science projects",
+    "filters": {
+      "sort": "Sort By",
+      "category": "Category",
+      "tech": "Technology",
+      "search": "Search",
+      "searchPlaceholder": "Search by title...",
+      "clearSearch": "Clear search",
+      "allCategories": "All Categories",
+      "allTech": "All Technologies",
+      "selected": "selected",
+      "clearAll": "Clear All Filters"
+    },
+    "sort": {
+      "latest": "Latest First",
+      "oldest": "Oldest First",
+      "titleAsc": "Title (A-Z)",
+      "titleDesc": "Title (Z-A)"
+    },
+    "categories": {
+      "ai": "Artificial Intelligence",
+      "dl": "Deep Learning",
+      "ml": "Machine Learning",
+      "web": "Web Development",
+      "data_science": "Data Science",
+      "health_tech": "Health Tech",
+      "big_data": "Big Data"
+    },
+    "techCategories": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "database": "Database",
+      "dl": "Deep Learning",
+      "ml": "Machine Learning",
+      "ai": "AI/ML",
+      "deployment": "Deployment"
+    },
+    "technologies": "Technologies",
+    "learnMore": "Learn More",
+    "resultsCount": "Showing {{count}} project(s)",
+    "noResults": {
+      "title": "No Projects Found",
+      "message": "Try adjusting your filters or search term",
+      "clearFilters": "Clear Filters"
+    }
   }
 }

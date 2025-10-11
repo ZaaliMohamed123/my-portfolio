@@ -238,5 +238,53 @@
     "learnMore": "En Savoir Plus",
     "viewAll": "Voir Tous les Projets",
     "noProjects": "Aucun projet disponible pour le moment"
+  },
+  "projectsGallery": {
+    "title": "Tous les Projets",
+    "subtitle": "Explorez mon portfolio complet de projets en IA, développement web et science des données",
+    "filters": {
+      "sort": "Trier Par",
+      "category": "Catégorie",
+      "tech": "Technologie",
+      "search": "Rechercher",
+      "searchPlaceholder": "Rechercher par titre...",
+      "clearSearch": "Effacer la recherche",
+      "allCategories": "Toutes les Catégories",
+      "allTech": "Toutes les Technologies",
+      "selected": "sélectionné(s)",
+      "clearAll": "Effacer Tous les Filtres"
+    },
+    "sort": {
+      "latest": "Plus Récent",
+      "oldest": "Plus Ancien",
+      "titleAsc": "Titre (A-Z)",
+      "titleDesc": "Titre (Z-A)"
+    },
+    "categories": {
+      "ai": "Intelligence Artificielle",
+      "dl": "Apprentissage Profond",
+      "ml": "Apprentissage Automatique",
+      "web": "Développement Web",
+      "data_science": "Science des Données",
+      "health_tech": "Technologies de Santé",
+      "big_data": "Big Data"
+    },
+    "techCategories": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "database": "Base de Données",
+      "dl": "Apprentissage Profond",
+      "ml": "Apprentissage Automatique",
+      "ai": "IA/ML",
+      "deployment": "Déploiement"
+    },
+    "technologies": "Technologies",
+    "learnMore": "En Savoir Plus",
+    "resultsCount": "Affichage de {{count}} projet(s)",
+    "noResults": {
+      "title": "Aucun Projet Trouvé",
+      "message": "Essayez d'ajuster vos filtres ou votre terme de recherche",
+      "clearFilters": "Effacer les Filtres"
+    }
   }
 }
