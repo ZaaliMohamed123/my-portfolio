@@ -119,32 +119,15 @@
       }
     },
     "certifications": {
+      "courses": "cours",
       "title": "Certifications",
       "view_certificate": "Voir le Certificat",
-      "ccna": {
-        "title": "CCNA: Introduction aux Réseaux",
-        "description": "Fondamentaux des réseaux Cisco et configuration réseau pratique",
-        "skills_title": "Compétences Clés Acquises",
-        "skill1": "Configuration des commutateurs, routeurs et équipements pour la connectivité réseau",
-        "skill2": "Création de schémas d'adressage IPv4/IPv6 et dépannage réseau",
-        "skill3": "Compréhension du modèle OSI, protocoles Ethernet et bonnes pratiques de sécurité"
-      },
-      "datacamp1": {
-        "title": "Introduction aux Données",
-        "description": "Porte d'entrée pour comprendre les fondamentaux des données et la prise de décision",
-        "skills_title": "Points Forts du Cours",
-        "skill1": "Bases des Données: Types, structures et importance dans les processus décisionnels",
-        "skill2": "Sagesse des Données: Framework DIKW et exemples réels de décisions basées sur les données",
-        "skill3": "Éthique des Données: Confidentialité, cycle de vie et gestion des erreurs courantes"
-      },
-      "datacamp2": {
-        "title": "Structures de Données et Algorithmes en Python",
-        "description": "Compréhension approfondie des fondamentaux de l'informatique",
-        "skills_title": "Maîtrise Technique",
-        "skill1": "Structures de Données: Listes chaînées, piles, files, arbres, graphes et notation Big O",
-        "skill2": "Algorithmes de Recherche: Recherche linéaire, binaire, DFS, BFS et arbres de recherche",
-        "skill3": "Algorithmes de Tri: Implémentation du tri à bulles, par sélection, fusion et quicksort"
-      }
+      "loading": "Chargement des certifications...",
+      "no_certifications": "Aucune certification disponible",
+      "view_all": "Voir Toutes les Certifications",
+      "skillTrack": "Parcours Complet",
+      "skills_acquired": "Compétences Clés Acquises",
+      "completed_courses": "Cours Complétés"
     }
   },
   "experience": {
