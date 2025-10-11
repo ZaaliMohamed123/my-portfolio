@@ -6,3 +6,4 @@ export * from './techCategory.enum';
 export * from './certification.model';
 export * from './certificationTag.enum';
 export * from './subCertification.model';
+export * from './certificationFilters.model';

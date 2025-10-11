@@ -11,29 +11,29 @@ export enum CertificationTag {
   BIG_DATA = 'big_data',
   
   // Cloud & Infrastructure
-  CLOUD = 'cloud',
-  AWS = 'aws',
-  AZURE = 'azure',
-  GCP = 'gcp',
-  DEVOPS = 'devops',
+  // CLOUD = 'cloud',
+  // AWS = 'aws',
+  // AZURE = 'azure',
+  // GCP = 'gcp',
+  // DEVOPS = 'devops',
   
   // Networking & Security
   NETWORKING = 'networking',
-  CYBERSECURITY = 'cybersecurity',
+  // CYBERSECURITY = 'cybersecurity',
   CISCO = 'cisco',
   
   // Tools & Frameworks
   TENSORFLOW = 'tensorflow',
   PYTORCH = 'pytorch',
-  DOCKER = 'docker',
-  KUBERNETES = 'kubernetes',
+  // DOCKER = 'docker',
+  // KUBERNETES = 'kubernetes',
   
   // Databases
   SQL = 'sql',
   NOSQL = 'nosql',
   
   // Other
-  STATISTICS = 'statistics',
-  DATA_VISUALIZATION = 'data_visualization',
-  PROJECT_MANAGEMENT = 'project_management'
+  // STATISTICS = 'statistics',
+  // DATA_VISUALIZATION = 'data_visualization',
+  // PROJECT_MANAGEMENT = 'project_management'
 }
