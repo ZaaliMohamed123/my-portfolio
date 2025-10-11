@@ -286,5 +286,18 @@
       "message": "Essayez d'ajuster vos filtres ou votre terme de recherche",
       "clearFilters": "Effacer les Filtres"
     }
+  },
+  "projectDetail": {
+    "loading": "Chargement du projet...",
+    "notFound": {
+      "title": "Projet Introuvable",
+      "message": "Le projet que vous recherchez n'existe pas ou a été supprimé."
+    },
+    "backToProjects": "Retour aux Projets",
+    "viewOnGitHub": "Voir sur GitHub",
+    "description": "Description",
+    "technologies": "Technologies Utilisées",
+    "categories": "Catégories",
+    "gallery": "Galerie"
   }
 }

@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import { ProjectsGallery } from './features/projects-gallery/projects-gallery';
+import { ProjectDetail } from './features/project-detail/project-detail';
 
 export const routes: Routes = [
   {
@@ -16,5 +17,10 @@ export const routes: Routes = [
     path: 'projects-gallery',
     component: ProjectsGallery,
     title: 'Projects Gallery | Mohamed ZAALI'
+  },
+  {
+  path: 'projects/:id',
+  component: ProjectDetail,
+  title: 'Project Details | Mohamed ZAALI'
   }
 ];

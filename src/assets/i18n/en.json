@@ -286,5 +286,18 @@
       "message": "Try adjusting your filters or search term",
       "clearFilters": "Clear Filters"
     }
+  },
+  "projectDetail": {
+    "loading": "Loading project...",
+    "notFound": {
+      "title": "Project Not Found",
+      "message": "The project you are looking for does not exist or has been removed."
+    },
+    "backToProjects": "Back to Projects",
+    "viewOnGitHub": "View on GitHub",
+    "description": "Description",
+    "technologies": "Technologies Used",
+    "categories": "Categories",
+    "gallery": "Gallery"
   }
 }

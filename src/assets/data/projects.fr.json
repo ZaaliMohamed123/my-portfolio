@@ -26,7 +26,7 @@
     ],
     "categories": ["ai", "web", "data_science"],
     "github": "https://github.com/SEKALDouaa/AL-MUQARRIR",
-    "goToPage": "/projects/al-muqarrir"
+    "goToPage": "/projects/8"
   },
   {
     "id": 7,
@@ -52,7 +52,7 @@
     ],
     "categories": ["health_tech", "ai", "web", "data_science", "dl"],
     "github": "https://github.com/ZaaliMohamed123/Cura",
-    "goToPage": "/projects/cura"
+    "goToPage": "/projects/7"
   },
   {
     "id": 6,
@@ -76,7 +76,7 @@
     ],
     "categories": ["ml", "data_science", "big_data"],
     "github": "https://github.com/ZaaliMohamed123/Real-time-Network-Intrusion-Detection-System-Using-Machine-Learning",
-    "goToPage": "/projects/network-intrusion-detection"
+    "goToPage": "/projects/6"
   },
   {
     "id": 5,
@@ -92,7 +92,7 @@
     "technologies": ["TensorFlow", "Streamlit", "Python", "LSTM", "CNN", "NumPy"],
     "categories": ["dl", "ai", "data_science"],
     "github": "https://github.com/ZaaliMohamed123/Lip-Reader",
-    "goToPage": "/projects/lipreader"
+    "goToPage": "/projects/5"
   },
   {
     "id": 4,
@@ -108,7 +108,7 @@
     "technologies": ["Python", "Streamlit", "Keras", "spaCy", "Stanza", "TensorFlow", "NumPy"],
     "categories": ["dl", "ai", "data_science"],
     "github": "https://github.com/ZaaliMohamed123/Named-Entity-Recognition-NER-",
-    "goToPage": "/projects/ner"
+    "goToPage": "/projects/4"
   },
   {
     "id": 3,
@@ -134,7 +134,7 @@
     ],
     "categories": ["ml", "data_science", "health_tech", "web"],
     "github": "https://github.com/ZaaliMohamed123/Analysis-and-Prediction-of-Anxiety-Levels-Using-Machine-Learning-Techniques",
-    "goToPage": "/projects/anxiety-prediction"
+    "goToPage": "/projects/3"
   },
   {
     "id": 2,
@@ -150,7 +150,7 @@
     "technologies": ["Python", "Scikit-learn", "Pandas", "NumPy", "NLTK", "TF-IDF"],
     "categories": ["ml", "data_science", "ai"],
     "github": "https://github.com/ZaaliMohamed123/Fake-News-Prediction",
-    "goToPage": "/projects/fake-news-detection"
+    "goToPage": "/projects/2"
   },
   {
     "id": 1,
@@ -166,6 +166,6 @@
     "technologies": ["Figma", "HTML", "CSS", "JavaScript", "Java EE", "PL/SQL", "Oracle"],
     "categories": ["web"],
     "github": "https://github.com/ZaaliMohamed123/GESTAG",
-    "goToPage": "/projects/gestag"
+    "goToPage": "/projects/1"
   }
 ]
