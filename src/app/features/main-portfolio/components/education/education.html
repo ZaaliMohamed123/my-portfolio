@@ -231,12 +231,12 @@
       <!-- View All Certifications Button -->
       @if (hasMoreCertifications) {
       <div class="view-all-section">
-        <a routerLink="/certifications" class="view-all-button">
+        <a routerLink="/certifications-gallery" class="view-all-button">
           <span>{{ 'education.certifications.view_all' | transloco }}</span>
           <i class="fas fa-arrow-right"></i>
         </a>
       </div>
-      }}
+      } }
 
       <!-- Empty State -->
       @if (!isLoading && displayedCertifications.length === 0) {

@@ -309,5 +309,36 @@
     "statistics": "Statistics",
     "data_visualization": "Data Visualization",
     "project_management": "Project Management"
+  },
+  "certificationsGallery": {
+    "title": "All Certifications",
+    "subtitle": "Browse my professional certifications and completed courses",
+    "backToHome": "Back to Home",
+    "loading": "Loading certifications...",
+    "noCertifications": "No certifications found",
+    "filters": {
+      "sort": "Sort by",
+      "type": "Type",
+      "tags": "Tags",
+      "search": "Search certifications...",
+      "clearAll": "Clear All Filters",
+      "selectedTags": "Selected Tags"
+    },
+    "sort": {
+      "latest": "Latest First",
+      "oldest": "Oldest First",
+      "titleAsc": "Title (A-Z)",
+      "titleDesc": "Title (Z-A)"
+    },
+    "type": {
+      "all": "All Types",
+      "standalone": "Standalone",
+      "skillTrack": "Skill Track"
+    },
+    "results": {
+      "showing": "Showing",
+      "of": "of",
+      "certifications": "certifications"
+    }
   }
 }

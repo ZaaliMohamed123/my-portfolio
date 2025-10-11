@@ -309,5 +309,36 @@
     "statistics": "Statistiques",
     "data_visualization": "Visualisation de Données",
     "project_management": "Gestion de Projet"
+  },
+  "certificationsGallery": {
+    "title": "Toutes les Certifications",
+    "subtitle": "Parcourez mes certifications professionnelles et cours complétés",
+    "backToHome": "Retour à l'accueil",
+    "loading": "Chargement des certifications...",
+    "noCertifications": "Aucune certification trouvée",
+    "filters": {
+      "sort": "Trier par",
+      "type": "Type",
+      "tags": "Tags",
+      "search": "Rechercher des certifications...",
+      "clearAll": "Effacer tous les filtres",
+      "selectedTags": "Tags Sélectionnés"
+    },
+    "sort": {
+      "latest": "Plus Récents",
+      "oldest": "Plus Anciens",
+      "titleAsc": "Titre (A-Z)",
+      "titleDesc": "Titre (Z-A)"
+    },
+    "type": {
+      "all": "Tous les Types",
+      "standalone": "Standalone",
+      "skillTrack": "Parcours Complet"
+    },
+    "results": {
+      "showing": "Affichage de",
+      "of": "sur",
+      "certifications": "certifications"
+    }
   }
 }

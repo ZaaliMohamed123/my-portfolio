@@ -1,11 +1,13 @@
 import { Routes } from '@angular/router';
 import { ProjectsGallery } from './features/projects-gallery/projects-gallery';
 import { ProjectDetail } from './features/project-detail/project-detail';
+import {CertificationsGallery} from './features/certifications-gallery/certifications-gallery';
 
 export const routes: Routes = [
   {
     path: '',
     loadComponent: () => import('./layouts/main-layout/main-layout').then(c => c.MainLayout),
+    title: 'Mohamed ZAALI - Portfolio',
     children: [
       {
         path: '',
@@ -16,11 +18,16 @@ export const routes: Routes = [
   {
     path: 'projects-gallery',
     component: ProjectsGallery,
-    title: 'Projects Gallery | Mohamed ZAALI'
+    title: 'Projects Gallery'
   },
   {
   path: 'projects/:id',
   component: ProjectDetail,
-  title: 'Project Details | Mohamed ZAALI'
+  title: 'Project Details'
+  },
+  {
+    path: 'certifications-gallery',
+    component: CertificationsGallery,
+    title: 'Certifications Gallery'
   }
 ];

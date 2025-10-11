@@ -1,1 +1,270 @@
-<p>certifications-gallery works!</p>
+<section class="certifications-gallery-page">
+  <div class="container-custom">
+    <!-- Back Navigation -->
+    <div class="back-navigation">
+      <button (click)="goToHome()" class="back-button">
+        <i class="fas fa-arrow-left"></i>
+        <span>{{ 'certificationsGallery.backToHome' | transloco }}</span>
+      </button>
+    </div>
+
+    <!-- Page Header -->
+    <div class="page-header">
+      <h1 class="page-title">{{ 'certificationsGallery.title' | transloco }}</h1>
+      <p class="page-subtitle">{{ 'certificationsGallery.subtitle' | transloco }}</p>
+    </div>
+
+    <!-- Filters Section -->
+    <div class="filters-section">
+      <div class="filters-container">
+        <!-- Sort Dropdown -->
+        <div class="filter-group">
+          <label class="filter-label">{{ 'certificationsGallery.filters.sort' | transloco }}</label>
+          <div class="filter-dropdown">
+            <button class="filter-button" type="button" (click)="toggleDropdown('sort')">
+              <span>{{ getSortLabel() | transloco }}</span>
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            @if (sortDropdownOpen) {
+            <div class="dropdown-menu">
+              @for (option of sortOptions; track option.value) {
+              <label class="dropdown-item" (click)="selectSort(option.value)">
+                <input
+                  type="radio"
+                  name="sort"
+                  [checked]="filters.sort === option.value"
+                  [value]="option.value"
+                />
+                <span>{{ option.label | transloco }}</span>
+              </label>
+              }
+            </div>
+            }
+          </div>
+        </div>
+
+        <!-- Type Dropdown -->
+        <div class="filter-group">
+          <label class="filter-label">{{ 'certificationsGallery.filters.type' | transloco }}</label>
+          <div class="filter-dropdown">
+            <button class="filter-button" type="button" (click)="toggleDropdown('type')">
+              <span>{{ getTypeLabel() | transloco }}</span>
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            @if (typeDropdownOpen) {
+            <div class="dropdown-menu">
+              @for (option of typeOptions; track option.value) {
+              <label class="dropdown-item" (click)="selectType(option.value)">
+                <input
+                  type="radio"
+                  name="type"
+                  [checked]="filters.type === option.value"
+                  [value]="option.value"
+                />
+                <span>{{ option.label | transloco }}</span>
+              </label>
+              }
+            </div>
+            }
+          </div>
+        </div>
+
+        <!-- Tags Dropdown (reste le même) -->
+        <div class="filter-group">
+          <label class="filter-label">{{ 'certificationsGallery.filters.tags' | transloco }}</label>
+          <div class="filter-dropdown">
+            <button class="filter-button" type="button" (click)="toggleDropdown('tags')">
+              <span>
+                @if (filters.tags.length === 0) {
+                {{ 'certificationsGallery.filters.tags' | transloco }}
+                } @else {
+                {{ filters.tags.length }}
+                {{ 'certificationsGallery.filters.selectedTags' | transloco }}
+                }
+              </span>
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            @if (tagsDropdownOpen) {
+            <div class="dropdown-menu">
+              @for (tag of availableTags; track tag) {
+              <label class="dropdown-item">
+                <input type="checkbox" [checked]="isTagSelected(tag)" (change)="toggleTag(tag)" />
+                <span>{{ 'certificationTags.' + tag | transloco }}</span>
+              </label>
+              }
+            </div>
+            }
+          </div>
+        </div>
+
+        <!-- Search Input -->
+        <div class="filter-group search-group">
+          <label class="filter-label">{{
+            'certificationsGallery.filters.search' | transloco
+          }}</label>
+          <div class="search-input-wrapper">
+            <i class="fas fa-search search-icon"></i>
+            <input
+              type="text"
+              [(ngModel)]="filters.search"
+              (input)="applyFilters()"
+              [placeholder]="'certificationsGallery.filters.search' | transloco"
+              class="search-input"
+            />
+            @if (filters.search) {
+            <button
+              type="button"
+              (click)="filters.search = ''; applyFilters()"
+              class="clear-search-button"
+              aria-label="Clear search"
+            >
+              <i class="fas fa-times"></i>
+            </button>
+            }
+          </div>
+        </div>
+
+        <!-- Clear Filters Button -->
+        @if (filters.tags.length > 0 || filters.type !== 'all' || filters.search.trim()) {
+        <button type="button" (click)="clearAllFilters()" class="clear-filters-button">
+          <i class="fas fa-times-circle"></i>
+          {{ 'certificationsGallery.filters.clearAll' | transloco }}
+        </button>
+        }
+      </div>
+    </div>
+
+    <!-- Results Count -->
+    <div class="results-info">
+      <p class="results-text">
+        {{ 'certificationsGallery.results.showing' | transloco }}
+        <strong>{{ filteredCertifications.length }}</strong>
+        {{ 'certificationsGallery.results.of' | transloco }}
+        <strong>{{ certifications.length }}</strong>
+        {{ 'certificationsGallery.results.certifications' | transloco }}
+      </p>
+    </div>
+
+    <!-- Loading State -->
+    @if (isLoading) {
+    <div class="loading-container">
+      <div class="skeleton-card" *ngFor="let i of [1, 2, 3, 4, 5, 6]"></div>
+    </div>
+    }
+
+    <!-- Certifications List -->
+    @if (!isLoading && filteredCertifications.length > 0) {
+    <div class="certifications-list">
+      @for (cert of filteredCertifications; track trackCertification($index, cert)) {
+      <div
+        class="certification-item"
+        [class]="getProviderClass(cert.provider)"
+        [class.expanded]="expandedCert === cert.id"
+        [class.skill-track]="cert.type === 'skill-track'"
+        (click)="toggleCertification(cert.id)"
+      >
+        <div class="cert-header">
+          <div class="cert-provider">
+            <div class="provider-badge" [class]="getProviderClass(cert.provider)">
+              {{ cert.provider }}
+            </div>
+          </div>
+
+          <div class="cert-info">
+            <div class="cert-title-wrapper">
+              <h3 class="cert-title">
+                {{ cert.title }}
+                @if (cert.type === 'skill-track') {
+                <span class="skill-track-badge">
+                  <i class="fas fa-layer-group"></i>
+                  {{ cert.subCertifications?.length }}
+                  {{ 'education.certifications.courses' | transloco }}
+                </span>
+                }
+              </h3>
+            </div>
+            <p class="cert-description">{{ cert.description }}</p>
+          </div>
+
+          <div class="cert-actions">
+            <a
+              [href]="cert.credentialUrl"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="cert-button"
+              [class]="getProviderClass(cert.provider)"
+              (click)="openCredential(cert.credentialUrl, $event)"
+            >
+              {{ 'education.certifications.view_certificate' | transloco }}
+            </a>
+            <button
+              class="expand-button"
+              [class.expanded]="expandedCert === cert.id"
+              [attr.aria-label]="'Expand ' + cert.title"
+            >
+              <i class="fas fa-chevron-down expand-icon"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="cert-details" [class.show]="expandedCert === cert.id">
+          <div class="details-content">
+            <!-- Main Skills -->
+            <div class="skills-learned">
+              <h4>{{ 'education.certifications.skills_acquired' | transloco }}</h4>
+              <ul class="skills-list">
+                @for (skill of cert.skills; track skill) {
+                <li>{{ skill }}</li>
+                }
+              </ul>
+            </div>
+
+            <!-- Sub-certifications (for skill-tracks) -->
+            @if (cert.subCertifications && cert.subCertifications.length > 0) {
+            <div class="sub-certifications">
+              <h4>
+                <i class="fas fa-certificate"></i>
+                {{ 'education.certifications.completed_courses' | transloco }}
+                ({{ cert.subCertifications.length }})
+              </h4>
+              <div class="sub-cert-list">
+                @for (subCert of cert.subCertifications; track subCert.id) {
+                <a
+                  [href]="subCert.credentialUrl"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="sub-cert-item"
+                  (click)="$event.stopPropagation()"
+                >
+                  <span class="sub-cert-title">{{ subCert.title }}</span>
+                  <i class="fas fa-external-link-alt sub-cert-icon"></i>
+                </a>
+                }
+              </div>
+            </div>
+            }
+          </div>
+        </div>
+      </div>
+      }
+    </div>
+    }
+
+    <!-- Empty State -->
+    @if (!isLoading && filteredCertifications.length === 0) {
+    <div class="empty-state">
+      <i class="fas fa-search"></i>
+      <h3>{{ 'certificationsGallery.noCertifications' | transloco }}</h3>
+      <p>{{ 'certificationsGallery.noResults' | transloco }}</p>
+      <button type="button" (click)="clearAllFilters()" class="clear-filters-button">
+        {{ 'certificationsGallery.filters.clearAll' | transloco }}
+      </button>
+    </div>
+    }
+
+    <!-- Click outside to close dropdown -->
+    @if (sortDropdownOpen || typeDropdownOpen || tagsDropdownOpen) {
+    <div class="dropdown-backdrop" (click)="closeAllDropdowns()"></div>
+    }
+  </div>
+</section>

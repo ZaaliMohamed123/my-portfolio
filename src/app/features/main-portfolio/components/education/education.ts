@@ -11,7 +11,7 @@ import {
 import { CommonModule } from '@angular/common';
 import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
 import { Subject, takeUntil } from 'rxjs';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 
 import { Certification } from '../../../../core/models';
 import { CertificationsService } from '../../../../core/services/certifications';
@@ -19,7 +19,7 @@ import { CertificationsService } from '../../../../core/services/certifications'
 @Component({
   selector: 'app-education',
   standalone: true,
-  imports: [CommonModule, TranslocoModule],
+  imports: [CommonModule, TranslocoModule, RouterModule],
   templateUrl: './education.html',
   styleUrl: './education.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
