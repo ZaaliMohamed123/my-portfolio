@@ -1,5 +1,7 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, OnDestroy, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ThemeService } from '../../../core/services/theme';
+import { Subject, takeUntil } from 'rxjs';
 
 @Component({
   selector: 'app-theme-toggle',
@@ -8,45 +10,40 @@ import { CommonModule } from '@angular/common';
   templateUrl: './theme-toggle.html',
   styleUrl: './theme-toggle.scss'
 })
-export class ThemeToggle implements OnInit {
+export class ThemeToggle implements OnInit, OnDestroy {
   
   @Output() themeChanged = new EventEmitter<boolean>();
   
   isDarkMode = false;
+  private destroy$ = new Subject<void>();
+
+  constructor(private themeService: ThemeService) {}
 
   ngOnInit() {
-    this.loadThemePreference();
-    this.applyTheme();
+    // S'abonner au thème du service
+    this.themeService.isDarkMode$
+      .pipe(takeUntil(this.destroy$))
+      .subscribe(isDark => {
+        this.isDarkMode = isDark;
+        this.applyMetaThemeColor(isDark);
+      });
+  }
+
+  ngOnDestroy() {
+    this.destroy$.next();
+    this.destroy$.complete();
   }
 
   toggleTheme() {
-    this.isDarkMode = !this.isDarkMode;
-    this.saveThemePreference();
-    this.applyTheme();
-    this.themeChanged.emit(this.isDarkMode);
+    this.themeService.toggleTheme();
+    this.themeChanged.emit(this.themeService.getCurrentTheme());
   }
 
-  private loadThemePreference() {
-    const savedTheme = localStorage.getItem('darkMode');
-    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    
-    this.isDarkMode = savedTheme 
-      ? savedTheme === 'true' 
-      : systemPrefersDark;
-  }
-
-  private saveThemePreference() {
-    localStorage.setItem('darkMode', this.isDarkMode.toString());
-  }
-
-  private applyTheme() {
-    document.body.classList.toggle('dark-mode', this.isDarkMode);
-    
-    // Update meta theme-color for mobile browsers
+  private applyMetaThemeColor(isDark: boolean) {
     const metaThemeColor = document.querySelector('meta[name="theme-color"]');
     if (metaThemeColor) {
       metaThemeColor.setAttribute('content', 
-        this.isDarkMode ? '#0F172A' : '#FFFFFF'
+        isDark ? '#0F172A' : '#FFFFFF'
       );
     }
   }

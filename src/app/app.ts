@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { TranslocoModule } from '@jsverse/transloco';
+import { ThemeService } from './core/services/theme';
 
 @Component({
   selector: 'app-root',
@@ -10,11 +11,8 @@ import { TranslocoModule } from '@jsverse/transloco';
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
-export class App implements OnInit{
+export class App {
   title = 'mohamed-portfolio';
 
-  ngOnInit() {
-    window.scrollTo(0, 0);
-    window.history.replaceState(null, '', '/#home');
-  }
+  constructor(private themeService: ThemeService) {}
 }
