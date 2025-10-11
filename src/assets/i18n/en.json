@@ -24,6 +24,7 @@
   "home": {
     "greeting": "Hi, I'm",
     "name": "Mohamed ZAALI",
+    "statement": "I'm a",
     "jobs": {
       "job1": "Data Scientist",
       "job2": "Full Stack Developer",
