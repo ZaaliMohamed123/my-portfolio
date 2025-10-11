@@ -2,59 +2,55 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { TranslocoService } from '@jsverse/transloco';
 import { Observable, forkJoin, of } from 'rxjs';
-import { map, catchError } from 'rxjs/operators';
+import { map, catchError, tap } from 'rxjs/operators';
 
 import { Project, Technology, ProjectFilters } from '../models';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ProjectsService {
-  
   private allProjects: Project[] = [];
   private allTechnologies: Technology[] = [];
 
-  constructor(
-    private http: HttpClient,
-    private translocoService: TranslocoService
-  ) {}
+  constructor(private http: HttpClient, private translocoService: TranslocoService) {}
 
   /**
    * Load all projects and technologies
    */
-  loadAllData(): Observable<{ projects: Project[], technologies: Technology[] }> {
+  loadAllData(): Observable<{ projects: Project[]; technologies: Technology[] }> {
     const currentLang = this.translocoService.getActiveLang();
     const projectsPath = `assets/data/projects.${currentLang}.json`;
     const technologiesPath = `assets/data/technologies.json`;
 
     return forkJoin({
       projects: this.http.get<Project[]>(projectsPath).pipe(
-        catchError(error => {
+        catchError((error) => {
           console.error('Error loading projects:', error);
           return of([]);
         })
       ),
       technologies: this.http.get<Technology[]>(technologiesPath).pipe(
-        catchError(error => {
+        catchError((error) => {
           console.error('Error loading technologies:', error);
           return of([]);
         })
-      )
+      ),
     }).pipe(
-      map(data => {
+      map((data) => {
         // Map technology names to full Technology objects
-        const techMap = new Map(data.technologies.map(tech => [tech.name, tech]));
-        
-        const mappedProjects = data.projects.map(project => ({
+        const techMap = new Map(data.technologies.map((tech) => [tech.name, tech]));
+
+        const mappedProjects = data.projects.map((project) => ({
           ...project,
           technologies: project.technologies
-            .map(techName => {
+            .map((techName) => {
               if (typeof techName === 'object' && 'name' in techName) {
                 return techName as Technology;
               }
               return techMap.get(techName as string);
             })
-            .filter((tech): tech is Technology => tech !== undefined)
+            .filter((tech): tech is Technology => tech !== undefined),
         }));
 
         this.allProjects = mappedProjects;
@@ -66,6 +62,29 @@ export class ProjectsService {
   }
 
   /**
+   * Get all projects
+   * Returns an Observable that loads data if not already loaded
+   */
+  getAllProjects(): Observable<Project[]> {
+    // If projects are already loaded, return them
+    if (this.allProjects.length > 0) {
+      return of(this.allProjects);
+    }
+
+    // Otherwise, load data first
+    return this.loadAllData().pipe(
+      map(data => data.projects)
+    );
+  }
+
+  /**
+   * Get all technologies
+   */
+  getAllTechnologies(): Technology[] {
+    return this.allTechnologies;
+  }
+
+  /**
    * Filter and sort projects based on filters
    */
   filterProjects(filters: ProjectFilters): Project[] {
@@ -74,24 +93,20 @@ export class ProjectsService {
     // Filter by search title
     if (filters.searchTitle.trim()) {
       const searchLower = filters.searchTitle.toLowerCase().trim();
-      filtered = filtered.filter(project => 
-        project.title.toLowerCase().includes(searchLower)
-      );
+      filtered = filtered.filter((project) => project.title.toLowerCase().includes(searchLower));
     }
 
     // Filter by project categories
     if (filters.projectCategories.length > 0) {
-      filtered = filtered.filter(project =>
-        project.categories.some(cat => filters.projectCategories.includes(cat))
+      filtered = filtered.filter((project) =>
+        project.categories.some((cat) => filters.projectCategories.includes(cat))
       );
     }
 
     // Filter by tech categories
     if (filters.techCategories.length > 0) {
-      filtered = filtered.filter(project =>
-        project.technologies.some(tech => 
-          filters.techCategories.includes(tech.category)
-        )
+      filtered = filtered.filter((project) =>
+        project.technologies.some((tech) => filters.techCategories.includes(tech.category))
       );
     }
 
@@ -117,19 +132,5 @@ export class ProjectsService {
       default:
         return projects;
     }
-  }
-
-  /**
-   * Get all projects
-   */
-  getAllProjects(): Project[] {
-    return this.allProjects;
-  }
-
-  /**
-   * Get all technologies
-   */
-  getAllTechnologies(): Technology[] {
-    return this.allTechnologies;
   }
 }

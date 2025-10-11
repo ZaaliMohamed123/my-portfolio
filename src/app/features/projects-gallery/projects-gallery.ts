@@ -7,12 +7,12 @@ import {
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { RouterModule,Router } from '@angular/router';
+import { RouterModule, Router } from '@angular/router';
 import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
-import { Project, ProjectFilters, ProjectCategory, TechCategory } from '../../core/models';
+import { Project, ProjectFilters, ProjectCategory, TechCategory, ProjectSortOption } from '../../core/models';
 import { ProjectsService } from '../../core/services/projects.service';
 
 @Component({
@@ -24,10 +24,14 @@ import { ProjectsService } from '../../core/services/projects.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ProjectsGallery implements OnInit, OnDestroy {
+  
   // Component State
   allProjects: Project[] = [];
   filteredProjects: Project[] = [];
   isLoading = true;
+  
+  // Dropdown states
+  sortDropdownOpen = false;
   categoryDropdownOpen = false;
   techDropdownOpen = false;
 
@@ -46,7 +50,7 @@ export class ProjectsGallery implements OnInit, OnDestroy {
   // Dropdown options
   projectCategories = Object.values(ProjectCategory);
   techCategories = Object.values(TechCategory);
-  sortOptions = [
+  sortOptions: { value: ProjectSortOption; label: string }[] = [
     { value: 'latest', label: 'projectsGallery.sort.latest' },
     { value: 'oldest', label: 'projectsGallery.sort.oldest' },
     { value: 'title-asc', label: 'projectsGallery.sort.titleAsc' },
@@ -79,6 +83,10 @@ export class ProjectsGallery implements OnInit, OnDestroy {
     this.destroy$.complete();
   }
 
+  // ========================
+  // PROJECTS LOADING
+  // ========================
+
   /**
    * Load all projects
    */
@@ -87,22 +95,26 @@ export class ProjectsGallery implements OnInit, OnDestroy {
     this.cdr.markForCheck();
 
     this.projectsService
-      .loadAllData()
+      .getAllProjects()
       .pipe(takeUntil(this.destroy$))
       .subscribe({
-        next: (data) => {
-          this.allProjects = data.projects;
+        next: (projects: Project[]) => {
+          this.allProjects = projects;
           this.applyFilters();
           this.isLoading = false;
           this.cdr.markForCheck();
         },
-        error: (error) => {
+        error: (error: Error) => {
           console.error('Error loading projects:', error);
           this.isLoading = false;
           this.cdr.markForCheck();
-        },
+        }
       });
   }
+
+  // ========================
+  // FILTERS
+  // ========================
 
   /**
    * Apply current filters
@@ -165,18 +177,9 @@ export class ProjectsGallery implements OnInit, OnDestroy {
     this.applyFilters();
   }
 
-  // Add these methods
-  toggleDropdown(type: 'category' | 'tech'): void {
-    if (type === 'category') {
-      this.categoryDropdownOpen = !this.categoryDropdownOpen;
-      this.techDropdownOpen = false;
-    } else {
-      this.techDropdownOpen = !this.techDropdownOpen;
-      this.categoryDropdownOpen = false;
-    }
-    this.cdr.markForCheck();
-  }
-
+  /**
+   * Check if there are active filters
+   */
   hasActiveFilters(): boolean {
     return (
       this.filters.searchTitle.trim() !== '' ||
@@ -186,6 +189,72 @@ export class ProjectsGallery implements OnInit, OnDestroy {
     );
   }
 
+  // ========================
+  // DROPDOWN MANAGEMENT
+  // ========================
+
+  /**
+   * Toggle dropdown visibility
+   */
+  toggleDropdown(type: 'sort' | 'category' | 'tech'): void {
+    switch (type) {
+      case 'sort':
+        this.sortDropdownOpen = !this.sortDropdownOpen;
+        this.categoryDropdownOpen = false;
+        this.techDropdownOpen = false;
+        break;
+      case 'category':
+        this.categoryDropdownOpen = !this.categoryDropdownOpen;
+        this.sortDropdownOpen = false;
+        this.techDropdownOpen = false;
+        break;
+      case 'tech':
+        this.techDropdownOpen = !this.techDropdownOpen;
+        this.sortDropdownOpen = false;
+        this.categoryDropdownOpen = false;
+        break;
+    }
+    this.cdr.markForCheck();
+  }
+
+  /**
+   * Close all dropdowns
+   */
+  closeAllDropdowns(): void {
+    this.sortDropdownOpen = false;
+    this.categoryDropdownOpen = false;
+    this.techDropdownOpen = false;
+    this.cdr.markForCheck();
+  }
+
+  // ========================
+  // SORT DROPDOWN
+  // ========================
+
+  /**
+   * Select sort option
+   */
+  selectSort(value: ProjectSortOption): void {
+    this.filters.sortBy = value;
+    this.sortDropdownOpen = false;
+    this.applyFilters();
+  }
+
+  /**
+   * Get current sort label
+   */
+  getSortLabel(): string {
+    const option = this.sortOptions.find(opt => opt.value === this.filters.sortBy);
+    return option ? option.label : this.sortOptions[0].label;
+  }
+
+  // ========================
+  // NAVIGATION
+  // ========================
+
+  /**
+   * Navigate to home page
+   */
   goToHome(): void {
     this.router.navigate(['/']);
   }

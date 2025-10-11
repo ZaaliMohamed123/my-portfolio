@@ -7,7 +7,7 @@
         <span>{{ 'projectsGallery.backToHome' | transloco }}</span>
       </button>
     </div>
-    
+
     <!-- Page Header -->
     <div class="page-header">
       <h1 class="page-title">{{ 'projectsGallery.title' | transloco }}</h1>
@@ -20,11 +20,27 @@
         <!-- Sort Dropdown -->
         <div class="filter-group">
           <label class="filter-label">{{ 'projectsGallery.filters.sort' | transloco }}</label>
-          <select [(ngModel)]="filters.sortBy" (change)="applyFilters()" class="filter-select">
-            @for (option of sortOptions; track option.value) {
-            <option [value]="option.value">{{ option.label | transloco }}</option>
+          <div class="filter-dropdown">
+            <button class="filter-button" type="button" (click)="toggleDropdown('sort')">
+              <span>{{ getSortLabel() | transloco }}</span>
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            @if (sortDropdownOpen) {
+            <div class="dropdown-menu">
+              @for (option of sortOptions; track option.value) {
+              <label class="dropdown-item" (click)="selectSort(option.value)">
+                <input
+                  type="radio"
+                  name="sort"
+                  [checked]="filters.sortBy === option.value"
+                  [value]="option.value"
+                />
+                <span>{{ option.label | transloco }}</span>
+              </label>
+              }
+            </div>
             }
-          </select>
+          </div>
         </div>
 
         <!-- Project Category Dropdown -->
@@ -129,7 +145,11 @@
     <!-- Results Count -->
     <div class="results-info">
       <p class="results-text">
-        {{ 'projectsGallery.resultsCount' | transloco : { count: filteredProjects.length } }}
+        {{ 'projectsGallery.results.showing' | transloco }}
+        <strong>{{ filteredProjects.length }}</strong>
+        {{ 'projectsGallery.results.of' | transloco }}
+        <strong>{{ allProjects.length }}</strong>
+        {{ 'projectsGallery.results.projects' | transloco }}
       </p>
     </div>
 
@@ -237,6 +257,11 @@
         {{ 'projectsGallery.noResults.clearFilters' | transloco }}
       </button>
     </div>
+    }
+
+    <!-- Click outside to close dropdown -->
+    @if (sortDropdownOpen || categoryDropdownOpen || techDropdownOpen) {
+    <div class="dropdown-backdrop" (click)="closeAllDropdowns()"></div>
     }
   </div>
 </section>

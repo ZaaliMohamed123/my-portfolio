@@ -264,7 +264,11 @@
     },
     "technologies": "Technologies",
     "learnMore": "En Savoir Plus",
-    "resultsCount": "Affichage de {{count}} projet(s)",
+    "results": {
+      "showing": "Affichage de",
+      "of": "sur",
+      "projects": "projets"
+    },
     "noResults": {
       "title": "Aucun Projet Trouvé",
       "message": "Essayez d'ajuster vos filtres ou votre terme de recherche",
