@@ -1,5 +1,13 @@
 <section class="projects-gallery-page">
   <div class="container-custom">
+    <!-- Back Navigation -->
+    <div class="back-navigation">
+      <button (click)="goToHome()" class="back-button">
+        <i class="fas fa-arrow-left"></i>
+        <span>{{ 'projectsGallery.backToHome' | transloco }}</span>
+      </button>
+    </div>
+    
     <!-- Page Header -->
     <div class="page-header">
       <h1 class="page-title">{{ 'projectsGallery.title' | transloco }}</h1>

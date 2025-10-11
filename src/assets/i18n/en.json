@@ -240,6 +240,7 @@
     "noProjects": "No projects available at the moment"
   },
   "projectsGallery": {
+    "backToHome": "Back to Home",
     "title": "All Projects",
     "subtitle": "Explore my complete portfolio of AI, web development, and data science projects",
     "filters": {

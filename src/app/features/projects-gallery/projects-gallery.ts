@@ -7,7 +7,7 @@ import {
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
+import { RouterModule,Router } from '@angular/router';
 import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
@@ -59,6 +59,7 @@ export class ProjectsGallery implements OnInit, OnDestroy {
   constructor(
     private projectsService: ProjectsService,
     private translocoService: TranslocoService,
+    private router: Router,
     private cdr: ChangeDetectorRef
   ) {}
 
@@ -183,5 +184,9 @@ export class ProjectsGallery implements OnInit, OnDestroy {
       this.filters.techCategories.length > 0 ||
       this.filters.sortBy !== 'latest'
     );
+  }
+
+  goToHome(): void {
+    this.router.navigate(['/']);
   }
 }

@@ -240,6 +240,7 @@
     "noProjects": "Aucun projet disponible pour le moment"
   },
   "projectsGallery": {
+    "backToHome": "Retour à l'accueil",
     "title": "Tous les Projets",
     "subtitle": "Explorez mon portfolio complet de projets en IA, développement web et science des données",
     "filters": {

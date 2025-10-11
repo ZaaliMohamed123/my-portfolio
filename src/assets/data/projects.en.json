@@ -87,7 +87,7 @@
     "logo": ["/assets/media/projects/LipReader/logo.jpeg"],
     "thumbnail": "",
     "images": ["/assets/media/projects/LipReader/interface.png"],
-    "videoTuto": "/assets/media/projects/LipReader/video_tuto_lipreader.mp4",
+    "videoTuto": "/assets/media/projects/LipReader/video_tuto_lipReader.mp4",
     "demoGif": "",
     "technologies": ["TensorFlow", "Streamlit", "Python", "LSTM", "CNN", "NumPy"],
     "categories": ["dl", "ai", "data_science"],
