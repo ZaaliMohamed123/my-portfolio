@@ -1,0 +1,85 @@
+[
+  {
+    "id": 1,
+    "type": "standalone",
+    "title": "CCNA : Introduction aux Réseaux",
+    "provider": "Cisco",
+    "description": "Fondamentaux du réseautage Cisco et configuration pratique de réseaux",
+    "credentialUrl": "https://www.credly.com/badges/2faa52b1-d971-47cc-ab5f-77deb43ce4fb/linked_in_profile",
+    "skills": [
+      "Configuration de commutateurs, routeurs et périphériques réseau pour une connectivité de bout en bout",
+      "Création de schémas d'adressage IPv4/IPv6 et dépannage réseau",
+      "Compréhension du modèle OSI, des protocoles Ethernet et des meilleures pratiques de sécurité réseau"
+    ],
+    "tags": ["networking", "cisco"]
+  },
+  {
+    "id": 2,
+    "type": "standalone",
+    "title": "Introduction aux Données",
+    "provider": "DataCamp",
+    "description": "Porte d'entrée vers la compréhension des fondamentaux des données et de la prise de décision",
+    "credentialUrl": "https://www.datacamp.com/completed/statement-of-accomplishment/course/43a0c70954b7ef9c1e6ef7cba8eef86f6c93e214",
+    "skills": [
+      "Bases des Données : Types, structures et importance dans les processus de prise de décision",
+      "Sagesse des Données : Framework DIKW et exemples réels de décisions basées sur les données",
+      "Éthique des Données : Confidentialité, cycle de vie des données et gestion des erreurs courantes"
+    ],
+    "tags": ["data_science"]
+  },
+  {
+    "id": 3,
+    "type": "standalone",
+    "title": "Structures de Données et Algorithmes en Python",
+    "provider": "DataCamp",
+    "description": "Compréhension complète des fondamentaux de l'informatique",
+    "credentialUrl": "https://www.datacamp.com/completed/statement-of-accomplishment/course/970728f8d13f505e01db21a8cdb8cc8dfe97eaab",
+    "skills": [
+      "Structures de Données : Listes chaînées, piles, files, arbres, graphes et notation Big O",
+      "Algorithmes de Recherche : Recherche linéaire, recherche binaire, DFS, BFS et arbres de recherche binaire",
+      "Algorithmes de Tri : Implémentation du tri à bulles, tri par sélection, tri fusion et tri rapide"
+    ],
+    "tags": ["python", "data_science"]
+  },
+  {
+    "id": 4,
+    "type": "skill-track",
+    "title": "Fondamentaux de la Programmation Python",
+    "provider": "DataCamp",
+    "description": "Parcours complet Python couvrant les fondamentaux de programmation, concepts intermédiaires, outils avancés et types de données",
+    "credentialUrl": "https://www.datacamp.com/statement-of-accomplishment/track/YOUR_TRACK_ID",
+    "skills": [
+      "Syntaxe Python, variables et types de données intégrés (chaînes, entiers, flottants, booléens)",
+      "Structures de données : listes, dictionnaires, ensembles, tuples et leurs applications pratiques",
+      "Flux de contrôle : opérateurs de comparaison, instructions conditionnelles, boucles for et while",
+      "Fonctions : fonctions intégrées, fonctions personnalisées, docstrings, arguments par défaut et arbitraires",
+      "Modules et packages : importation, utilisation et création de code réutilisable",
+      "Gestion des erreurs et débogage : interprétation des tracebacks et gestion des exceptions",
+      "Techniques avancées : itérateurs, compréhensions de listes et module Collections Python",
+      "Manipulation de données réelles et résolution de problèmes multi-étapes"
+    ],
+    "tags": ["python", "data_science"],
+    "subCertifications": [
+      {
+        "id": 41,
+        "title": "Introduction à Python pour Développeurs",
+        "credentialUrl": "https://www.datacamp.com/completed/statement-of-accomplishment/course/5f9701befea87c776758ce0ab5dbeeb850389910"
+      },
+      {
+        "id": 42,
+        "title": "Python Intermédiaire pour Développeurs",
+        "credentialUrl": "https://www.datacamp.com/completed/statement-of-accomplishment/course/d3c7be90b680dc46517e3fda475155e230e41ec5"
+      },
+      {
+        "id": 43,
+        "title": "Boîte à Outils Python",
+        "credentialUrl": "https://www.datacamp.com/completed/statement-of-accomplishment/course/1b8bc6e7cafd68b23cca7717fa76af17bec6f472"
+      },
+      {
+        "id": 44,
+        "title": "Types de Données en Python",
+        "credentialUrl": "https://www.datacamp.com/completed/statement-of-accomplishment/course/YOUR_CREDENTIAL_URL"
+      }
+    ]
+  }
+]

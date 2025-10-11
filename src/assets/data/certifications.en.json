@@ -1,0 +1,85 @@
+[
+  {
+    "id": 1,
+    "type": "standalone",
+    "title": "CCNA: Introduction to Networks",
+    "provider": "Cisco",
+    "description": "Cisco networking fundamentals and practical network configuration",
+    "credentialUrl": "https://www.credly.com/badges/2faa52b1-d971-47cc-ab5f-77deb43ce4fb/linked_in_profile",
+    "skills": [
+      "Configuring switches, routers, and network devices for end-to-end connectivity",
+      "Creating IPv4/IPv6 addressing schemes and network troubleshooting",
+      "Understanding OSI model, Ethernet protocols, and network security best practices"
+    ],
+    "tags": ["networking", "cisco"]
+  },
+  {
+    "id": 2,
+    "type": "standalone",
+    "title": "Introduction to Data",
+    "provider": "DataCamp",
+    "description": "Gateway to understanding data fundamentals and decision-making",
+    "credentialUrl": "https://www.datacamp.com/completed/statement-of-accomplishment/course/43a0c70954b7ef9c1e6ef7cba8eef86f6c93e214",
+    "skills": [
+      "Data Basics: Types, structures, and importance in decision-making processes",
+      "Data Wisdom: DIKW framework and real-world data-driven decision examples",
+      "Data Ethics: Privacy, data lifecycle, and handling common data mistakes"
+    ],
+    "tags": ["data_science"]
+  },
+  {
+    "id": 3,
+    "type": "standalone",
+    "title": "Data Structures and Algorithms in Python",
+    "provider": "DataCamp",
+    "description": "Comprehensive understanding of computer science fundamentals",
+    "credentialUrl": "https://www.datacamp.com/completed/statement-of-accomplishment/course/970728f8d13f505e01db21a8cdb8cc8dfe97eaab",
+    "skills": [
+      "Data Structures: Linked lists, stacks, queues, trees, graphs, and Big O notation",
+      "Search Algorithms: Linear search, binary search, DFS, BFS, and binary search trees",
+      "Sorting Algorithms: Bubble sort, selection sort, merge sort, and quicksort implementation"
+    ],
+    "tags": ["python", "data_science"]
+  },
+  {
+    "id": 4,
+    "type": "skill-track",
+    "title": "Python Programming Fundamentals",
+    "provider": "DataCamp",
+    "description": "Comprehensive Python skill track covering programming fundamentals, intermediate concepts, advanced tooling, and data types",
+    "credentialUrl": "https://www.datacamp.com/statement-of-accomplishment/track/YOUR_TRACK_ID",
+    "skills": [
+      "Python syntax, variables, and built-in data types (strings, integers, floats, booleans)",
+      "Data structures: lists, dictionaries, sets, tuples, and their practical applications",
+      "Control flow: comparison operators, conditional statements, for and while loops",
+      "Functions: built-in functions, custom functions, docstrings, default and arbitrary arguments",
+      "Modules and packages: importing, using, and creating reusable code",
+      "Error handling and debugging: interpreting tracebacks and handling exceptions",
+      "Advanced techniques: iterators, list comprehensions, and Python Collections module",
+      "Real-world data manipulation and multistep problem solving"
+    ],
+    "tags": ["python", "data_science"],
+    "subCertifications": [
+      {
+        "id": 41,
+        "title": "Introduction to Python for Developers",
+        "credentialUrl": "https://www.datacamp.com/completed/statement-of-accomplishment/course/5f9701befea87c776758ce0ab5dbeeb850389910"
+      },
+      {
+        "id": 42,
+        "title": "Intermediate Python for Developers",
+        "credentialUrl": "https://www.datacamp.com/completed/statement-of-accomplishment/course/d3c7be90b680dc46517e3fda475155e230e41ec5"
+      },
+      {
+        "id": 43,
+        "title": "Python Toolbox",
+        "credentialUrl": "https://www.datacamp.com/completed/statement-of-accomplishment/course/1b8bc6e7cafd68b23cca7717fa76af17bec6f472"
+      },
+      {
+        "id": 44,
+        "title": "Data Types in Python",
+        "credentialUrl": "https://www.datacamp.com/completed/statement-of-accomplishment/course/YOUR_CREDENTIAL_URL"
+      }
+    ]
+  }
+]
