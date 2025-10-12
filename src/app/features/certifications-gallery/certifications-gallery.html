@@ -34,6 +34,7 @@
                   name="sort"
                   [checked]="filters.sort === option.value"
                   [value]="option.value"
+                  (click)="$event.stopPropagation()"
                 />
                 <span>{{ option.label | transloco }}</span>
               </label>
@@ -60,6 +61,7 @@
                   name="type"
                   [checked]="filters.type === option.value"
                   [value]="option.value"
+                  (click)="$event.stopPropagation()"
                 />
                 <span>{{ option.label | transloco }}</span>
               </label>
@@ -69,7 +71,7 @@
           </div>
         </div>
 
-        <!-- Tags Dropdown (reste le même) -->
+        <!-- Tags Dropdown -->
         <div class="filter-group">
           <label class="filter-label">{{ 'certificationsGallery.filters.tags' | transloco }}</label>
           <div class="filter-dropdown">
@@ -125,7 +127,7 @@
         </div>
 
         <!-- Clear Filters Button -->
-        @if (filters.tags.length > 0 || filters.type !== 'all' || filters.search.trim()) {
+        @if (hasActiveFilters()) {
         <button type="button" (click)="clearAllFilters()" class="clear-filters-button">
           <i class="fas fa-times-circle"></i>
           {{ 'certificationsGallery.filters.clearAll' | transloco }}

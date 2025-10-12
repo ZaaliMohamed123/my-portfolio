@@ -11,13 +11,13 @@ import { Router, RouterModule } from '@angular/router';
 import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
 import { Subject, takeUntil } from 'rxjs';
 
-import { 
-  Certification, 
-  CertificationTag, 
+import {
+  Certification,
+  CertificationTag,
   CertificationFilters,
   CertificationSortOption,
   CertificationType,
-  DEFAULT_CERTIFICATION_FILTERS
+  DEFAULT_CERTIFICATION_FILTERS,
 } from '../../core/models';
 
 import { CertificationsService } from '../../core/services/certifications';
@@ -31,23 +31,22 @@ import { CertificationsService } from '../../core/services/certifications';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CertificationsGallery implements OnInit, OnDestroy {
-  
   certifications: Certification[] = [];
   filteredCertifications: Certification[] = [];
-  
+
   filters: CertificationFilters = { ...DEFAULT_CERTIFICATION_FILTERS };
-  
+
   availableTags: CertificationTag[] = [];
   isTagDropdownOpen = false;
-  
+
   expandedCert: number | null = null;
-  
+
   isLoading = true;
   // Dropdown states
   sortDropdownOpen = false;
   typeDropdownOpen = false;
   tagsDropdownOpen = false;
-  
+
   private destroy$ = new Subject<void>();
 
   // Sort options for template
@@ -55,14 +54,14 @@ export class CertificationsGallery implements OnInit, OnDestroy {
     { value: 'latest', label: 'certificationsGallery.sort.latest' },
     { value: 'oldest', label: 'certificationsGallery.sort.oldest' },
     { value: 'title-asc', label: 'certificationsGallery.sort.titleAsc' },
-    { value: 'title-desc', label: 'certificationsGallery.sort.titleDesc' }
+    { value: 'title-desc', label: 'certificationsGallery.sort.titleDesc' },
   ];
 
   // Type options for template
   typeOptions: { value: CertificationType; label: string }[] = [
     { value: 'all', label: 'certificationsGallery.type.all' },
     { value: 'standalone', label: 'certificationsGallery.type.standalone' },
-    { value: 'skill-track', label: 'certificationsGallery.type.skillTrack' }
+    { value: 'skill-track', label: 'certificationsGallery.type.skillTrack' },
   ];
 
   constructor(
@@ -77,11 +76,9 @@ export class CertificationsGallery implements OnInit, OnDestroy {
     this.loadCertifications();
 
     // Reload when language changes
-    this.translocoService.langChanges$
-      .pipe(takeUntil(this.destroy$))
-      .subscribe(() => {
-        this.loadCertifications();
-      });
+    this.translocoService.langChanges$.pipe(takeUntil(this.destroy$)).subscribe(() => {
+      this.loadCertifications();
+    });
   }
 
   ngOnDestroy(): void {
@@ -93,7 +90,8 @@ export class CertificationsGallery implements OnInit, OnDestroy {
     this.isLoading = true;
     this.cdr.markForCheck();
 
-    this.certificationsService.getAllCertifications()
+    this.certificationsService
+      .getAllCertifications()
       .pipe(takeUntil(this.destroy$))
       .subscribe({
         next: (certifications) => {
@@ -106,17 +104,18 @@ export class CertificationsGallery implements OnInit, OnDestroy {
           console.error('Error loading certifications:', error);
           this.isLoading = false;
           this.cdr.markForCheck();
-        }
+        },
       });
 
     // Load available tags
-    this.certificationsService.getAllTags()
+    this.certificationsService
+      .getAllTags()
       .pipe(takeUntil(this.destroy$))
       .subscribe({
         next: (tags) => {
           this.availableTags = tags;
           this.cdr.markForCheck();
-        }
+        },
       });
   }
 
@@ -129,23 +128,24 @@ export class CertificationsGallery implements OnInit, OnDestroy {
 
     // Filter by type
     if (this.filters.type !== 'all') {
-      filtered = filtered.filter(cert => cert.type === this.filters.type);
+      filtered = filtered.filter((cert) => cert.type === this.filters.type);
     }
 
     // Filter by tags
     if (this.filters.tags.length > 0) {
-      filtered = filtered.filter(cert =>
-        this.filters.tags.some(tag => cert.tags.includes(tag))
+      filtered = filtered.filter((cert) =>
+        this.filters.tags.some((tag) => cert.tags.includes(tag))
       );
     }
 
     // Filter by search
     if (this.filters.search.trim()) {
       const searchLower = this.filters.search.toLowerCase().trim();
-      filtered = filtered.filter(cert =>
-        cert.title.toLowerCase().includes(searchLower) ||
-        cert.description.toLowerCase().includes(searchLower) ||
-        cert.provider.toLowerCase().includes(searchLower)
+      filtered = filtered.filter(
+        (cert) =>
+          cert.title.toLowerCase().includes(searchLower) ||
+          cert.description.toLowerCase().includes(searchLower) ||
+          cert.provider.toLowerCase().includes(searchLower)
       );
     }
 
@@ -156,7 +156,10 @@ export class CertificationsGallery implements OnInit, OnDestroy {
     this.cdr.markForCheck();
   }
 
-  private sortCertifications(certs: Certification[], sortBy: CertificationSortOption): Certification[] {
+  private sortCertifications(
+    certs: Certification[],
+    sortBy: CertificationSortOption
+  ): Certification[] {
     const sorted = [...certs];
 
     switch (sortBy) {
@@ -174,10 +177,12 @@ export class CertificationsGallery implements OnInit, OnDestroy {
   }
 
   onSortChange(): void {
+    this.closeAllDropdowns(); // Fermer le dropdown après sélection
     this.applyFilters();
   }
 
   onTypeChange(): void {
+    this.closeAllDropdowns(); // Fermer le dropdown après sélection
     this.applyFilters();
   }
 
@@ -204,15 +209,21 @@ export class CertificationsGallery implements OnInit, OnDestroy {
     this.applyFilters();
   }
 
-  
-
-  
-
   clearAllFilters(): void {
-    this.filters = { ...DEFAULT_CERTIFICATION_FILTERS };
-    this.applyFilters();
-  }
-
+  // Créer un nouvel objet au lieu de réutiliser la référence
+  this.filters = {
+    sort: 'latest',
+    tags: [],
+    type: 'all',
+    search: ''
+  };
+  
+  this.closeAllDropdowns();
+  this.applyFilters();
+  
+  // Force la détection des changements
+  this.cdr.detectChanges();
+}
   // ========================
   // CERTIFICATION ACTIONS
   // ========================
@@ -286,7 +297,7 @@ export class CertificationsGallery implements OnInit, OnDestroy {
   }
 
   getSortLabel(): string {
-    const option = this.sortOptions.find(opt => opt.value === this.filters.sort);
+    const option = this.sortOptions.find((opt) => opt.value === this.filters.sort);
     return option ? option.label : this.sortOptions[0].label;
   }
 
@@ -301,7 +312,7 @@ export class CertificationsGallery implements OnInit, OnDestroy {
   }
 
   getTypeLabel(): string {
-    const option = this.typeOptions.find(opt => opt.value === this.filters.type);
+    const option = this.typeOptions.find((opt) => opt.value === this.filters.type);
     return option ? option.label : this.typeOptions[0].label;
   }
 
@@ -316,5 +327,14 @@ export class CertificationsGallery implements OnInit, OnDestroy {
   closeTagDropdown(): void {
     this.tagsDropdownOpen = false;
     this.cdr.markForCheck();
+  }
+
+  hasActiveFilters(): boolean {
+    return (
+      this.filters.tags.length > 0 ||
+      this.filters.type !== 'all' ||
+      this.filters.search.trim() !== '' ||
+      this.filters.sort !== 'latest' // Ajouter cette condition
+    );
   }
 }

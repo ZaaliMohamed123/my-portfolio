@@ -47,7 +47,7 @@
     "title": "Python Programming Fundamentals",
     "provider": "DataCamp",
     "description": "Comprehensive Python skill track covering programming fundamentals, intermediate concepts, advanced tooling, and data types",
-    "credentialUrl": "https://www.datacamp.com/statement-of-accomplishment/track/YOUR_TRACK_ID",
+    "credentialUrl": "https://www.datacamp.com/completed/statement-of-accomplishment/track/570b6b615274514fb5a8f886083784e1d1358f3f",
     "skills": [
       "Python syntax, variables, and built-in data types (strings, integers, floats, booleans)",
       "Data structures: lists, dictionaries, sets, tuples, and their practical applications",
@@ -78,7 +78,7 @@
       {
         "id": 44,
         "title": "Data Types in Python",
-        "credentialUrl": "https://www.datacamp.com/completed/statement-of-accomplishment/course/YOUR_CREDENTIAL_URL"
+        "credentialUrl": "https://www.datacamp.com/completed/statement-of-accomplishment/course/30077b724d06e4e74e39a9c12458ff14a75eb31d"
       }
     ]
   }

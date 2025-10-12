@@ -47,7 +47,7 @@
     "title": "Fondamentaux de la Programmation Python",
     "provider": "DataCamp",
     "description": "Parcours complet Python couvrant les fondamentaux de programmation, concepts intermédiaires, outils avancés et types de données",
-    "credentialUrl": "https://www.datacamp.com/statement-of-accomplishment/track/YOUR_TRACK_ID",
+    "credentialUrl": "https://www.datacamp.com/completed/statement-of-accomplishment/track/570b6b615274514fb5a8f886083784e1d1358f3f",
     "skills": [
       "Syntaxe Python, variables et types de données intégrés (chaînes, entiers, flottants, booléens)",
       "Structures de données : listes, dictionnaires, ensembles, tuples et leurs applications pratiques",
@@ -78,7 +78,7 @@
       {
         "id": 44,
         "title": "Types de Données en Python",
-        "credentialUrl": "https://www.datacamp.com/completed/statement-of-accomplishment/course/YOUR_CREDENTIAL_URL"
+        "credentialUrl": "https://www.datacamp.com/completed/statement-of-accomplishment/course/30077b724d06e4e74e39a9c12458ff14a75eb31d"
       }
     ]
   }
