@@ -155,12 +155,10 @@ export class Home implements OnInit, OnDestroy {
 
   ngOnInit() {
     if (this.isInitialized) {
-      console.warn('Home component already initialized - skipping');
       return;
     }
 
     this.isInitialized = true;
-    console.log('Home component initialized - starting carousel');
 
     // Set initial jobs
     this.updateJobsBasedOnLanguage();
@@ -170,19 +168,16 @@ export class Home implements OnInit, OnDestroy {
 
     // Start typing animation after delay
     setTimeout(() => {
-      console.log('Starting typing animation with jobs:', this.jobs);
       this.startTypingAnimation();
     }, 1500);
 
     // Handle language changes - but DON'T restart carousel
     this.translocoService.langChanges$.pipe(takeUntil(this.destroy$)).subscribe(() => {
-      console.log('Language changed - updating jobs only');
       this.updateJobsBasedOnLanguage();
     });
   }
 
   ngOnDestroy() {
-    console.log('Home component destroying');
 
     if (this.photoIntervalSubscription) {
       this.photoIntervalSubscription.unsubscribe();
@@ -199,17 +194,14 @@ export class Home implements OnInit, OnDestroy {
   private startPhotoCarousel() {
     // Prevent multiple intervals
     if (this.photoIntervalSubscription) {
-      console.log('Photo carousel already running, stopping previous one');
       this.photoIntervalSubscription.unsubscribe();
     }
 
-    console.log('Starting photo carousel with', this.photoInterval, 'ms interval');
 
     this.photoIntervalSubscription = interval(this.photoInterval)
       .pipe(takeUntil(this.destroy$))
       .subscribe(() => {
         const timestamp = new Date().toLocaleTimeString();
-        console.log(`Photo changing at ${timestamp} - from index ${this.currentPhotoIndex}`);
         this.nextPhoto();
       });
   }
@@ -217,14 +209,12 @@ export class Home implements OnInit, OnDestroy {
   nextPhoto() {
     const oldIndex = this.currentPhotoIndex;
     this.currentPhotoIndex = (this.currentPhotoIndex + 1) % this.profilePhotos.length;
-    console.log(`Photo changed: ${oldIndex} → ${this.currentPhotoIndex}`);
     this.cdr.detectChanges();
   }
 
   goToPhoto(index: number) {
     const oldIndex = this.currentPhotoIndex;
     this.currentPhotoIndex = index;
-    console.log(`Photo manually changed: ${oldIndex} → ${this.currentPhotoIndex}`);
     this.cdr.detectChanges();
   }
 
@@ -247,28 +237,23 @@ export class Home implements OnInit, OnDestroy {
     this.jobs = currentLang === 'fr' ? this.jobsFr : this.jobsEn;
     this.currentJobIndex = 0;
 
-    console.log('Updated jobs for language:', currentLang, this.jobs);
     this.cdr.detectChanges();
   }
 
   private startTypingAnimation() {
     if (this.jobs.length === 0) {
-      console.error('No jobs available for typing animation');
       return;
     }
 
-    console.log('Starting typing with jobs:', this.jobs);
     this.typeCurrentJob();
   }
 
   private typeCurrentJob() {
     if (!this.jobs.length) {
-      console.error('Jobs array is empty');
       return;
     }
 
     const targetJob = this.jobs[this.currentJobIndex];
-    console.log('Typing job:', targetJob);
 
     this.isTyping = true;
     this.currentJob = '';
