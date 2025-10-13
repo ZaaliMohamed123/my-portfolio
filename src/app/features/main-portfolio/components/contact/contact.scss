@@ -371,6 +371,7 @@
 .cta-button {
   display: inline-flex;
   align-items: center;
+  justify-content: center; // ✅ Centrer le contenu
   gap: 0.75rem;
   padding: 0.875rem 2rem;
   border-radius: 25px;
@@ -380,6 +381,8 @@
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
+  white-space: nowrap; // ✅ Éviter le retour à la ligne
+  min-height: 52px; // ✅ Limiter la hauteur pour éviter les débordements
   
   i {
     font-size: 1.1em;
@@ -394,6 +397,20 @@
       background: linear-gradient(135deg, #1d4ed8, #1e40af);
       transform: translateY(-2px);
       box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+    }
+  }
+  
+  &.download {
+    background: linear-gradient(135deg, #8b5cf6, #6d28d9);
+    color: white;
+    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+    border: none;
+    cursor: pointer;
+    
+    &:hover {
+      background: linear-gradient(135deg, #6d28d9, #5b21b6);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(139, 92, 246, 0.4);
     }
   }
   
@@ -413,6 +430,7 @@
     transform: translateY(0) scale(0.98);
   }
 }
+
 
 // Animations
 @keyframes pulse {

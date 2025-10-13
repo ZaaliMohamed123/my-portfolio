@@ -1,15 +1,15 @@
-import { 
-  Component, 
-  OnInit, 
+import {
+  Component,
+  OnInit,
   OnDestroy,
   AfterViewInit,
   ChangeDetectionStrategy,
   ChangeDetectorRef,
   ElementRef,
-  ViewChild 
+  ViewChild,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TranslocoModule } from '@jsverse/transloco';
+import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
 import { Subject } from 'rxjs';
 
 interface ContactMethod {
@@ -52,10 +52,10 @@ export class Contact implements OnInit, OnDestroy, AfterViewInit {
       icon: 'fas fa-envelope',
       title: 'contact.methods.email.title',
       value: 'zaali.mohamed3002@gmail.com',
-      link: 'mailto:zaali.mohamed3002@gmail.com?subject=Hello Mohamed! Let\'s connect',
+      link: "mailto:zaali.mohamed3002@gmail.com?subject=Hello Mohamed! Let's connect",
       description: 'contact.methods.email.description',
       tooltip: 'Send me an email',
-      external: false
+      external: false,
     },
     {
       type: 'whatsapp',
@@ -65,7 +65,7 @@ export class Contact implements OnInit, OnDestroy, AfterViewInit {
       link: 'https://wa.me/212605964917?text=Hi%20Mohamed!%20I%20found%20your%20portfolio%20and%20would%20love%20to%20connect.',
       description: 'contact.methods.whatsapp.description',
       tooltip: 'Message me on WhatsApp',
-      external: true
+      external: true,
     },
     {
       type: 'linkedin',
@@ -75,7 +75,7 @@ export class Contact implements OnInit, OnDestroy, AfterViewInit {
       link: 'https://www.linkedin.com/in/m-zaali',
       description: 'contact.methods.linkedin.description',
       tooltip: 'Connect on LinkedIn',
-      external: true
+      external: true,
     },
     {
       type: 'github',
@@ -85,18 +85,18 @@ export class Contact implements OnInit, OnDestroy, AfterViewInit {
       link: 'https://github.com/ZaaliMohamed123',
       description: 'contact.methods.github.description',
       tooltip: 'View my code on GitHub',
-      external: true
-    }
+      external: true,
+    },
   ];
 
   availabilityTypes: AvailabilityType[] = [
     { key: 'contact.availability.internships', icon: 'fas fa-graduation-cap' },
     { key: 'contact.availability.projects', icon: 'fas fa-project-diagram' },
     { key: 'contact.availability.collaborations', icon: 'fas fa-handshake' },
-    { key: 'contact.availability.freelance', icon: 'fas fa-briefcase' }
+    { key: 'contact.availability.freelance', icon: 'fas fa-briefcase' },
   ];
 
-  constructor(private cdr: ChangeDetectorRef) {}
+  constructor(private cdr: ChangeDetectorRef, private translocoService: TranslocoService) {}
 
   ngOnInit(): void {
     this.initializeScrollObserver();
@@ -117,7 +117,7 @@ export class Contact implements OnInit, OnDestroy, AfterViewInit {
       },
       { threshold: 0.2 }
     );
-    
+
     if (this.contactSection?.nativeElement) {
       fadeInObserver.observe(this.contactSection.nativeElement);
     }
@@ -158,4 +158,17 @@ export class Contact implements OnInit, OnDestroy, AfterViewInit {
       }
     }, 100);
   }
+
+  downloadCV(): void {
+  const currentLang = this.translocoService.getActiveLang();
+  const cvPath = `assets/media/cv/ZAALI_Mohamed.${currentLang}.pdf`;
+
+  // Create a temporary link and trigger download
+  const link = document.createElement('a');
+  link.href = cvPath;
+  link.download = 'ZAALI_Mohamed.pdf'; 
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+}
 }

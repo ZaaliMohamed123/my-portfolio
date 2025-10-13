@@ -1,7 +1,9 @@
-<section class="contact-section fadeIn" 
-         id="contact" 
-         #contactSection 
-         [class.in-view]="contactInView">
+<section
+  class="contact-section fadeIn"
+  id="contact"
+  #contactSection
+  [class.in-view]="contactInView"
+>
   <div class="container-custom">
     <div class="section-header" [class.animate-in]="visibleSections.has('header')">
       <h1 class="section-title">{{ 'contact.title' | transloco }}</h1>
@@ -18,10 +20,10 @@
         </div>
         <div class="availability-list">
           @for (availability of availabilityTypes; track availability.key) {
-            <div class="availability-item">
-              <i [class]="availability.icon"></i>
-              <span>{{ availability.key | transloco }}</span>
-            </div>
+          <div class="availability-item">
+            <i [class]="availability.icon"></i>
+            <span>{{ availability.key | transloco }}</span>
+          </div>
           }
         </div>
       </div>
@@ -29,27 +31,27 @@
       <!-- Contact Methods -->
       <div class="contact-methods" [class.animate-in]="visibleSections.has('methods')">
         @for (contact of contactMethods; track contact.type) {
-          <div class="contact-card" [attr.data-type]="contact.type">
-            <div class="contact-card-header">
-              <i [class]="contact.icon + ' contact-icon'"></i>
-              <h3 class="contact-title">{{ contact.title | transloco }}</h3>
-            </div>
-            <div class="contact-card-body">
-              <a 
-                [href]="contact.link" 
-                [target]="contact.external ? '_blank' : '_self'"
-                [attr.rel]="contact.external ? 'noopener noreferrer' : null"
-                class="contact-link"
-                [attr.title]="contact.tooltip"
-              >
-                <span class="contact-value">{{ contact.value }}</span>
-                @if (contact.external) {
-                  <i class="fas fa-external-link-alt external-icon"></i>
-                }
-              </a>
-              <p class="contact-description">{{ contact.description | transloco }}</p>
-            </div>
+        <div class="contact-card" [attr.data-type]="contact.type">
+          <div class="contact-card-header">
+            <i [class]="contact.icon + ' contact-icon'"></i>
+            <h3 class="contact-title">{{ contact.title | transloco }}</h3>
           </div>
+          <div class="contact-card-body">
+            <a
+              [href]="contact.link"
+              [target]="contact.external ? '_blank' : '_self'"
+              [attr.rel]="contact.external ? 'noopener noreferrer' : null"
+              class="contact-link"
+              [attr.title]="contact.tooltip"
+            >
+              <span class="contact-value">{{ contact.value }}</span>
+              @if (contact.external) {
+              <i class="fas fa-external-link-alt external-icon"></i>
+              }
+            </a>
+            <p class="contact-description">{{ contact.description | transloco }}</p>
+          </div>
+        </div>
         }
       </div>
 
@@ -57,22 +59,27 @@
       <div class="contact-cta" [class.animate-in]="visibleSections.has('cta')">
         <p class="cta-text">{{ 'contact.cta.text' | transloco }}</p>
         <div class="cta-buttons">
-          <a 
-            href="mailto:zaali.mohamed3002@gmail.com?subject=Let's collaborate!" 
+          <a
+            href="mailto:zaali.mohamed3002@gmail.com?subject=Let's collaborate!"
             class="cta-button primary"
           >
             <i class="fas fa-envelope"></i>
             {{ 'contact.cta.email' | transloco }}
           </a>
-          <a 
-            href="https://wa.me/212605964917?text=Hi%20Mohamed!%20I'd%20like%20to%20discuss%20a%20project%20opportunity." 
-            target="_blank" 
+          <a
+            href="https://wa.me/212605964917?text=Hi%20Mohamed!%20I'd%20like%20to%20discuss%20a%20project%20opportunity."
+            target="_blank"
             rel="noopener noreferrer"
             class="cta-button secondary"
           >
             <i class="fab fa-whatsapp"></i>
             {{ 'contact.cta.whatsapp' | transloco }}
           </a>
+
+          <button (click)="downloadCV()" class="cta-button download" type="button">
+            <i class="fas fa-download"></i>
+            {{ 'contact.cta.downloadCV' | transloco }}
+          </button>
         </div>
       </div>
     </div>

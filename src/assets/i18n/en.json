@@ -208,7 +208,8 @@
     "cta": {
       "text": "Ready to start our next big adventure?",
       "email": "Send Email",
-      "whatsapp": "WhatsApp Me"
+      "downloadCV": "Download CV",
+      "whatsapp": "WhatsApp"
     }
   },
   "footer": {
