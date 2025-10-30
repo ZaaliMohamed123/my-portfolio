@@ -3,7 +3,6 @@
   <nav class="header-nav glass-ultra" role="navigation" [attr.aria-label]="'Main navigation'">
     <!-- Header Content Wrapper -->
     <div class="nav-content container-custom">
-
       <!-- Brand/Logo Section -->
       <div class="brand-section">
         <a href="#home" class="brand-link hover-scale" [attr.aria-label]="'Go to homepage'">
@@ -91,6 +90,16 @@
     [attr.aria-hidden]="!isMobileMenuOpen"
   >
     <div class="mobile-nav-content glass-ultra">
+      <!-- Close Button (X) -->
+      <button
+        class="mobile-close-button"
+        (click)="closeMobileMenu()"
+        [attr.aria-label]="'Close navigation menu'"
+        type="button"
+      >
+        <i class="fas fa-times"></i>
+      </button>
+
       <!-- Mobile Navigation Menu -->
       <ul class="mobile-nav-menu" role="list">
         @for (section of navigationSections; track section.id) {

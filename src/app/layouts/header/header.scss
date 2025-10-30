@@ -72,7 +72,7 @@
     padding: 0.4rem 1rem;
     min-height: 3.5rem;
   }
-  
+
   @media (min-width: 768px) and (max-width: 1023px) {
     // Tablet - Moderate spacing
     padding: 0.5rem 1.5rem;
@@ -133,9 +133,9 @@
     height: 45px;
     border-radius: 10px;
   }
-  
+
   @media (min-width: 481px) and (max-width: 767px) {
-    // Large mobile - Medium logo  
+    // Large mobile - Medium logo
     width: 50px;
     height: 50px;
     border-radius: 11px;
@@ -242,7 +242,7 @@
     // Tablet - Hide desktop nav, show mobile menu
     display: none;
   }
-  
+
   @media (min-width: 1024px) and (max-width: 1199px) {
     // Medium desktop - Tighter spacing
     max-width: 900px;
@@ -317,7 +317,7 @@
   &.active {
     color: var(--color-primary);
     background: rgba(var(--color-primary), 0.1);
-    
+
     // Dynamic underline that matches text width
     &::after {
       content: '';
@@ -335,7 +335,7 @@
   @media (min-width: 1024px) and (max-width: 1199px) {
     // Medium desktop - Icon only mode with active indicator
     padding: 0.6rem 0.5rem;
-    
+
     &.active::after {
       // Adjust active indicator for icon-only
       width: 24px; // Fixed width for icons
@@ -415,7 +415,7 @@
     // Small mobile - Tighter controls
     gap: 1rem;
   }
-  
+
   @media (min-width: 481px) and (max-width: 767px) {
     // Large mobile - Normal gap
     gap: 1.2rem;
@@ -547,7 +547,7 @@
     // Full width on small mobile
     width: 100vw;
   }
-  
+
   @media (min-width: 481px) and (max-width: 767px) {
     // Slightly narrower on large mobile
     width: 90vw;
@@ -578,12 +578,78 @@
   }
 }
 
+// Close Button (X)
+.mobile-close-button {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(var(--color-primary), 0.1);
+  border: 1px solid rgba(var(--color-primary), 0.2);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 10;
+
+  i {
+    font-size: 1.25rem;
+    color: var(--color-primary);
+    transition: all 0.3s ease;
+  }
+
+  opacity: 0;
+  transform: scale(0.8) rotate(-90deg);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+  .mobile-nav-overlay.open & {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+    transition-delay: 0.2s;
+  }
+
+  &:hover {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+    transform: rotate(90deg) scale(1.05);
+
+    i {
+      color: white;
+    }
+  }
+
+  &:active {
+    transform: rotate(90deg) scale(0.95);
+  }
+
+  &:focus {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+
+  @media (max-width: 480px) {
+    top: 1rem;
+    right: 1rem;
+    width: 40px;
+    height: 40px;
+
+    i {
+      font-size: 1.125rem;
+    }
+  }
+
+  
+}
+
 // Mobile Navigation Menu
 .mobile-nav-menu {
   flex: 1;
   list-style: none;
   margin: 0;
-  padding: 2rem 0;
+  padding: 4rem 0 2rem 0;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
