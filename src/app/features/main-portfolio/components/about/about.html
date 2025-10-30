@@ -1,36 +1,29 @@
 <!-- About Section - Clean Two-Column Layout -->
 <section class="about-section fadeIn" id="about" #aboutSection [class.in-view]="aboutInView">
   <div class="container-custom">
-    
     <!-- Main About Content - Two Columns -->
     <div class="about-main" [class.animate-in]="visibleSections.has('main')">
-      
-      <!-- Left Column: Profile Image -->
+      <!-- Left Column: 3D Avatar -->
       <div class="about-image">
-        <div class="image-container">
-          <img src="assets/media/photos/about_me.jpeg" 
-               alt="{{ 'about.image.alt' | transloco }}"
-               class="profile-image"
-               loading="lazy">
+        <div class="avatar-container-about">
+          <canvas #avatarCanvas class="avatar-canvas-about"></canvas>
+          <!-- <div class="avatar-hint-about">{{ 'about.avatar.hint' | transloco }}</div> -->
         </div>
       </div>
-      
+
       <!-- Right Column: About Content -->
       <div class="about-content">
-        
         <!-- About Me Title -->
         <div class="about-header">
           <h1 class="about-title">{{ 'about.header.title' | transloco }}</h1>
           <p class="about-subtitle">{{ 'about.header.subtitle' | transloco }}</p>
         </div>
-        
+
         <!-- About & Philosophy Combined Paragraph -->
         <div class="about-text">
           <p class="about-paragraph">{{ 'about.content.paragraph' | transloco }}</p>
         </div>
-        
       </div>
-      
     </div>
 
     <!-- What Drives Me Section -->
@@ -38,14 +31,15 @@
       <div class="values-header">
         <h2>{{ 'about.values.title' | transloco }}</h2>
       </div>
-      
+
       <div class="values-grid">
-        
         <!-- Curiosity Value -->
-        <div class="value-card curiosity-card"
-             (mouseenter)="showValueDetails('curiosity')"
-             (mouseleave)="hideValueDetails('curiosity')"
-             [class.active]="activeValue === 'curiosity'">
+        <div
+          class="value-card curiosity-card"
+          (mouseenter)="showValueDetails('curiosity')"
+          (mouseleave)="hideValueDetails('curiosity')"
+          [class.active]="activeValue === 'curiosity'"
+        >
           <div class="card-inner">
             <div class="card-front">
               <div class="value-icon">
@@ -64,10 +58,12 @@
         </div>
 
         <!-- Collaboration Value -->
-        <div class="value-card collaboration-card"
-             (mouseenter)="showValueDetails('collaboration')"
-             (mouseleave)="hideValueDetails('collaboration')"
-             [class.active]="activeValue === 'collaboration'">
+        <div
+          class="value-card collaboration-card"
+          (mouseenter)="showValueDetails('collaboration')"
+          (mouseleave)="hideValueDetails('collaboration')"
+          [class.active]="activeValue === 'collaboration'"
+        >
           <div class="card-inner">
             <div class="card-front">
               <div class="value-icon">
@@ -86,10 +82,12 @@
         </div>
 
         <!-- Coffee Value -->
-        <div class="value-card coffee-card"
-             (mouseenter)="showValueDetails('coffee')"
-             (mouseleave)="hideValueDetails('coffee')"
-             [class.active]="activeValue === 'coffee'">
+        <div
+          class="value-card coffee-card"
+          (mouseenter)="showValueDetails('coffee')"
+          (mouseleave)="hideValueDetails('coffee')"
+          [class.active]="activeValue === 'coffee'"
+        >
           <div class="card-inner">
             <div class="card-front">
               <div class="value-icon coffee-icon">
@@ -110,7 +108,6 @@
             </div>
           </div>
         </div>
-
       </div>
     </div>
 
@@ -131,6 +128,5 @@
         </div>
       </div>
     </div>
-
   </div>
 </section>

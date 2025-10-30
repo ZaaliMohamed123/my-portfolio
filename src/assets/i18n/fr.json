@@ -91,6 +91,9 @@
       "content": "Prêt à construire quelque chose d'extraordinaire ensemble ?",
       "button_primary": "Contactez-moi",
       "button_secondary": "Voir Mon Travail"
+    },
+    "avatar": {
+      "hint": "Glisser pour pivoter"
     }
   },
   "education": {

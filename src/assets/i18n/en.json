@@ -91,6 +91,9 @@
       "content": "Ready to build something amazing together?",
       "button_primary": "Get in Touch",
       "button_secondary": "View My Work"
+    },
+    "avatar": {
+      "hint": "Drag to rotate"
     }
   },
   "education": {
