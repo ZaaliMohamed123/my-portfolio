@@ -78,7 +78,9 @@ export class Education implements OnInit, OnDestroy, AfterViewInit {
           }
         });
       },
-      { threshold: 0.2 }
+      { threshold: 0.02, 
+        rootMargin: '0px 0px -5% 0px'
+       }
     );
 
     if (this.educationSection?.nativeElement) {
