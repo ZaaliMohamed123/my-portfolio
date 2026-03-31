@@ -6,6 +6,7 @@ import { Subject, fromEvent, debounceTime, takeUntil } from 'rxjs';
 
 import { Header } from '../header/header';
 import { Footer } from '../footer/footer';
+import { SplashCursor } from '../../shared/components/splash-cursor/splash-cursor';
 
 interface Section {
   id: string;
@@ -20,7 +21,7 @@ interface Section {
     RouterOutlet,
     RouterModule,
     TranslocoModule,
-    Header, Footer
+    Header, Footer, SplashCursor
   ],
   templateUrl: './main-layout.html',
   styleUrl: './main-layout.scss'
