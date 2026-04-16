@@ -2,23 +2,16 @@
   display: block;
 }
 
-.splash-cursor-wrapper {
+.antigravity-canvas {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 9999;
+  width: 100vw;
+  height: 100vh;
   pointer-events: none;
+  z-index: -1; /* truly behind everything at root stacking context */
 
-  canvas {
-    display: block;
-    width: 100vw;
-    height: 100vh;
-  }
-
-  // CSS fallback: hide on touch/mobile devices
-  @media (hover: none), (max-width: 1024px) {
+  @media (max-width: 1023px) {
     display: none;
   }
 }
