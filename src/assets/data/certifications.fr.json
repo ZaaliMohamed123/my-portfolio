@@ -81,5 +81,61 @@
         "credentialUrl": "https://www.datacamp.com/completed/statement-of-accomplishment/course/30077b724d06e4e74e39a9c12458ff14a75eb31d"
       }
     ]
+  },
+  {
+    "id": 5,
+    "type": "skill-track",
+    "title": "Fondamentaux SQL",
+    "provider": "DataCamp",
+    "description": "Parcours SQL complet couvrant les bases de données relationnelles, la requête de données, les jointures, la manipulation, les fonctions de fenêtre et la conception de bases de données en PostgreSQL",
+    "credentialUrl": "https://www.datacamp.com/completed/statement-of-accomplishment/track/c5c3f19c391a65a517fa15b62336e4f045759095",
+    "skills": [
+      "Concepts des bases de données relationnelles et requêtes",
+      "Filtrage des enregistrements, fonctions d'agrégation et regroupement des données",
+      "Jointures de tables",
+      "Opérations de théorie des ensembles, sous-requêtes et requêtes corrélées",
+      "Instructions CASE, expressions de table commune (CTE) et fonctions de fenêtre",
+      "Fonctions de fenêtre PostgreSQL : classement, récupération, pagination et cadres agrégés",
+      "Fonctions date/heure, analyse de texte et recherche plein texte en PostgreSQL",
+      "Conception de bases de données : schémas, normalisation, vues et gestion de bases de données"
+    ],
+    "tags": ["sql", "data_science"],
+    "subCertifications": [
+      {
+        "id": 51,
+        "title": "Introduction au SQL",
+        "credentialUrl": "https://www.datacamp.com/completed/statement-of-accomplishment/course/cc347a2a2475485d696315aa143b87c08bd2614d"
+      },
+      {
+        "id": 52,
+        "title": "SQL Intermédiaire",
+        "credentialUrl": "https://www.datacamp.com/completed/statement-of-accomplishment/course/cb8c0120375c612de6a98f283cf067f6aa24cf2d"
+      },
+      {
+        "id": 53,
+        "title": "Jointures de Données en SQL",
+        "credentialUrl": "https://www.datacamp.com/completed/statement-of-accomplishment/course/2205f4b414aa8661b782b3e97a1a2bffa2bccb7e"
+      },
+      {
+        "id": 54,
+        "title": "Manipulation de Données en SQL",
+        "credentialUrl": "https://www.datacamp.com/completed/statement-of-accomplishment/course/7b05f413aecd9deef06fe3dbd21174df54c72b0e"
+      },
+      {
+        "id": 55,
+        "title": "Statistiques Récapitulatives PostgreSQL et Fonctions de Fenêtre",
+        "credentialUrl": "https://www.datacamp.com/completed/statement-of-accomplishment/course/14c869950bfae5137dd2fea8c7e4709eac5123fc"
+      },
+      {
+        "id": 56,
+        "title": "Fonctions pour la Manipulation de Données en PostgreSQL",
+        "credentialUrl": "https://www.datacamp.com/completed/statement-of-accomplishment/course/abf09dfe38bba47ee5473a0f422f73777b0f20cc"
+      },
+      {
+        "id": 57,
+        "title": "Conception de Bases de Données",
+        "credentialUrl": "https://www.datacamp.com/completed/statement-of-accomplishment/course/afd821b32f146f48d53b83975bfcec01a0273895"
+      }
+    ]
   }
 ]

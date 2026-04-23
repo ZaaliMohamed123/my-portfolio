@@ -81,5 +81,61 @@
         "credentialUrl": "https://www.datacamp.com/completed/statement-of-accomplishment/course/30077b724d06e4e74e39a9c12458ff14a75eb31d"
       }
     ]
+  },
+  {
+    "id": 5,
+    "type": "skill-track",
+    "title": "SQL Fundamentals",
+    "provider": "DataCamp",
+    "description": "Comprehensive SQL skill track covering relational databases, data querying, joining, manipulation, window functions, and database design in PostgreSQL",
+    "credentialUrl": "https://www.datacamp.com/completed/statement-of-accomplishment/track/c5c3f19c391a65a517fa15b62336e4f045759095",
+    "skills": [
+      "Relational database concepts and querying",
+      "Filtering records, aggregate functions, and grouping data",
+      "Joining tables",
+      "Set theory operations, subqueries, and correlated queries",
+      "CASE statements, Common Table Expressions (CTEs), and window functions",
+      "PostgreSQL window functions: ranking, fetching, paging, and aggregate frames",
+      "Date/time functions, text parsing, and full-text search in PostgreSQL",
+      "Database design: schemas, normalization, views, and database management"
+    ],
+    "tags": ["sql", "data_science"],
+    "subCertifications": [
+      {
+        "id": 51,
+        "title": "Introduction to SQL",
+        "credentialUrl": "https://www.datacamp.com/completed/statement-of-accomplishment/course/cc347a2a2475485d696315aa143b87c08bd2614d"
+      },
+      {
+        "id": 52,
+        "title": "Intermediate SQL",
+        "credentialUrl": "https://www.datacamp.com/completed/statement-of-accomplishment/course/cb8c0120375c612de6a98f283cf067f6aa24cf2d"
+      },
+      {
+        "id": 53,
+        "title": "Joining Data in SQL",
+        "credentialUrl": "https://www.datacamp.com/completed/statement-of-accomplishment/course/2205f4b414aa8661b782b3e97a1a2bffa2bccb7e"
+      },
+      {
+        "id": 54,
+        "title": "Data Manipulation in SQL",
+        "credentialUrl": "https://www.datacamp.com/completed/statement-of-accomplishment/course/7b05f413aecd9deef06fe3dbd21174df54c72b0e"
+      },
+      {
+        "id": 55,
+        "title": "PostgreSQL Summary Stats and Window Functions",
+        "credentialUrl": "https://www.datacamp.com/completed/statement-of-accomplishment/course/14c869950bfae5137dd2fea8c7e4709eac5123fc"
+      },
+      {
+        "id": 56,
+        "title": "Functions for Manipulating Data in PostgreSQL",
+        "credentialUrl": "https://www.datacamp.com/completed/statement-of-accomplishment/course/abf09dfe38bba47ee5473a0f422f73777b0f20cc"
+      },
+      {
+        "id": 57,
+        "title": "Database Design",
+        "credentialUrl": "https://www.datacamp.com/completed/statement-of-accomplishment/course/afd821b32f146f48d53b83975bfcec01a0273895"
+      }
+    ]
   }
 ]
