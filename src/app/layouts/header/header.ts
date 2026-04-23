@@ -46,12 +46,6 @@ export class Header implements OnInit, OnDestroy {
     icon: 'fa-home'
   },
   {
-    id: 'about',
-    name: 'nav.about',
-    description: 'nav.about_desc',
-    icon: 'fa-user'
-  },
-  {
     id: 'education',
     name: 'nav.education',
     description: 'nav.education_desc',
@@ -74,6 +68,12 @@ export class Header implements OnInit, OnDestroy {
     name: 'nav.skills',
     description: 'nav.skills_desc',
     icon: 'fa-code'
+  },
+  {
+    id: 'about',
+    name: 'nav.about',
+    description: 'nav.about_desc',
+    icon: 'fa-user'
   },
   {
     id: 'contact',

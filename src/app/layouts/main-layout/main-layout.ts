@@ -42,11 +42,11 @@ export class MainLayout implements OnInit, OnDestroy {
   // Portfolio sections
   sections: Section[] = [
     { id: 'home', name: 'nav.home' },
-    { id: 'about', name: 'nav.about' },
     { id: 'education', name: 'nav.education' },
     { id: 'experience', name: 'nav.experience' },
     { id: 'projects', name: 'nav.projects' },
     { id: 'skills', name: 'nav.skills' },
+    { id: 'about', name: 'nav.about' },
     { id: 'contact', name: 'nav.contact' }
   ];
   

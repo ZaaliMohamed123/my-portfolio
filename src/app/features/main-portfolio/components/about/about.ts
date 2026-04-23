@@ -125,7 +125,6 @@ export class About implements OnInit, OnDestroy, AfterViewInit {
           if (entry.isIntersecting) {
             this.visibleSections.add('main');
             this.visibleSections.add('values');
-            this.visibleSections.add('cta');
             this.cdr.detectChanges();
           }
         });
