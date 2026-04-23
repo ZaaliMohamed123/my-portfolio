@@ -2,8 +2,12 @@ import {
   Component,
   OnInit,
   OnDestroy,
+  AfterViewInit,
   ChangeDetectionStrategy,
   ChangeDetectorRef,
+  ElementRef,
+  ViewChild,
+  NgZone,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
@@ -20,6 +24,8 @@ interface TechStack {
   key: string;
   icon: string;
   color: string;
+  isCustomIcon?: boolean;
+  scale?: number;
 }
 
 @Component({
@@ -30,7 +36,7 @@ interface TechStack {
   styleUrl: './home.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class Home implements OnInit, OnDestroy {
+export class Home implements OnInit, AfterViewInit, OnDestroy {
   private destroy$ = new Subject<void>();
   private photoIntervalSubscription: Subscription | null = null;
   private isInitialized = false;
@@ -38,6 +44,24 @@ export class Home implements OnInit, OnDestroy {
   // Photo carousel
   currentPhotoIndex = 0;
   private photoInterval = 30000;
+
+  // ========================
+  // LOGO LOOP (tech stack)
+  // ========================
+  @ViewChild('logoTrack') logoTrackRef!: ElementRef<HTMLElement>;
+  @ViewChild('logoSeq')   logoSeqRef!: ElementRef<HTMLElement>;
+  @ViewChild('logoContainer') logoContainerRef!: ElementRef<HTMLElement>;
+
+  private readonly SMOOTH_TAU = 0.25;
+  private readonly SPEED = 80; // px/s
+  copyCount = 2;
+  private seqWidth = 0;
+  private offset = 0;
+  private velocity = 0;
+  private rafId: number | null = null;
+  private lastTimestamp: number | null = null;
+  private resizeObserver: ResizeObserver | null = null;
+  isHovered = false;
 
   profilePhotos: ProfilePhoto[] = [
     {
@@ -60,89 +84,38 @@ export class Home implements OnInit, OnDestroy {
       src: 'assets/media/photos/mohamed-4.jpeg',
       alt: 'Mohamed ZAALI - Professional headshot',
     },
+    {
+      id: 5,
+      src: 'assets/media/photos/mohamed-5.jpg',
+      alt: 'Mohamed ZAALI - Professional headshot',
+    }
   ];
 
   // Tech stack with DevIcon classes
   techStack: TechStack[] = [
-    {
-      name: 'Python',
-      key: 'python',
-      icon: 'devicon-python-plain',
-      color: '#3776ab',
-    },
-    {
-      name: 'Java',
-      key: 'java',
-      icon: 'devicon-java-plain',
-      color: '#ed8b00',
-    },
-    {
-      name: 'HTML5',
-      key: 'html',
-      icon: 'devicon-html5-plain',
-      color: '#e34c26',
-    },
-    {
-      name: 'CSS3',
-      key: 'css',
-      icon: 'devicon-css3-plain',
-      color: '#1572b6',
-    },
-    {
-      name: 'Bootstrap',
-      key: 'bootstrap',
-      icon: 'devicon-bootstrap-plain',
-      color: '#7952b3',
-    },
-    {
-      name: 'Sass',
-      key: 'scss',
-      icon: 'devicon-sass-original',
-      color: '#cc6699',
-    },
-    {
-      name: 'JavaScript',
-      key: 'javascript',
-      icon: 'devicon-javascript-plain',
-      color: '#f7df1e',
-    },
-    {
-      name: 'Angular',
-      key: 'angular',
-      icon: 'devicon-angular-plain',
-      color: '#dd0031',
-    },
-    {
-      name: 'Spring Boot',
-      key: 'springboot',
-      icon: 'devicon-spring-original',
-      color: '#6db33f',
-    },
-    {
-      name: 'Flask',
-      key: 'flask',
-      icon: 'devicon-flask-original',
-      color: '#000000',
-    },
-    {
-      name: 'Scikit-Learn',
-      key: 'scikitlearn',
-      icon: 'devicon-scikitlearn-plain',
-      color: '#f7931e',
-    },
-    {
-      name: 'TensorFlow',
-      key: 'tensorflow',
-      icon: 'devicon-tensorflow-original',
-      color: '#ff6f00',
-    },
+    { name: 'Python',       key: 'python',       icon: 'devicon-python-plain',          color: '#3776ab' },
+    { name: 'TypeScript',   key: 'typescript',   icon: 'devicon-typescript-plain',      color: '#3178c6' },
+    { name: 'JavaScript',   key: 'javascript',   icon: 'devicon-javascript-plain',      color: '#f7df1e' },
+    { name: 'Java',         key: 'java',         icon: 'devicon-java-plain',            color: '#ed8b00' },
+    { name: 'HTML5',        key: 'html',         icon: 'devicon-html5-plain',           color: '#e34c26' },
+    { name: 'CSS3',         key: 'css',          icon: 'devicon-css3-plain',            color: '#1572b6' },
+    { name: 'Bootstrap',    key: 'bootstrap',    icon: 'devicon-bootstrap-plain',       color: '#7952b3' },
+    { name: 'Sass',         key: 'scss',         icon: 'devicon-sass-original',         color: '#cc6699' },
+    { name: 'Angular',      key: 'angular',      icon: 'devicon-angular-plain',         color: '#dd0031' },
+    { name: 'Spring Boot',  key: 'springboot',   icon: 'devicon-spring-original',       color: '#6db33f' },
+    { name: 'Flask',        key: 'flask',        icon: 'devicon-flask-original',        color: '#000000' },
+    { name: 'FastAPI',      key: 'fastapi',      icon: 'devicon-fastapi-plain',         color: '#009688' },
+    { name: 'Scikit-Learn', key: 'scikitlearn',  icon: 'devicon-scikitlearn-plain',     color: '#f7931e' },
+    { name: 'TensorFlow',   key: 'tensorflow',   icon: 'devicon-tensorflow-original',   color: '#ff6f00' },
+    { name: 'PyTorch',      key: 'pytorch',      icon: 'devicon-pytorch-original',      color: '#ee4c2c' },
+    { name: 'Docker',       key: 'docker',       icon: 'devicon-docker-plain',          color: '#2496ed' },
+    { name: 'PostgreSQL',   key: 'postgresql',   icon: 'devicon-postgresql-plain',      color: '#336791' },
+    { name: 'LangGraph',    key: 'langgraph',    icon: 'assets/media/tech-icons/langgraph.svg',    color: '#1c3c3c', isCustomIcon: true, scale: 2 },
+    { name: 'LangFlow',     key: 'langflow',     icon: 'assets/media/tech-icons/langflow.svg',     color: '#f72585', isCustomIcon: true, scale: 2 },
+    { name: 'HuggingFace',  key: 'huggingface',  icon: 'assets/media/tech-icons/huggingface.svg',  color: '#ffbd00', isCustomIcon: true, scale: 2 },
   ];
 
-  // Typing animation (hardcoded for reliability)
-  jobsEn: string[] = ['Data Scientist', 'Full Stack Developer', 'Health-Tech Innovator'];
-
-  jobsFr: string[] = ['Data Scientist', 'Développeur Full Stack', 'Innovateur Health-Tech'];
-
+  // Typing animation — driven by i18n keys
   jobs: string[] = [];
   currentJob = '';
   currentJobIndex = 0;
@@ -151,44 +124,134 @@ export class Home implements OnInit, OnDestroy {
   private deletingSpeed = 40;
   private pauseTime = 2500;
 
-  constructor(private translocoService: TranslocoService, private cdr: ChangeDetectorRef) {}
+  constructor(
+    private translocoService: TranslocoService,
+    private cdr: ChangeDetectorRef,
+    private ngZone: NgZone,
+  ) {}
 
   ngOnInit() {
-    if (this.isInitialized) {
-      return;
-    }
-
+    if (this.isInitialized) return;
     this.isInitialized = true;
 
-    // Set initial jobs
     this.updateJobsBasedOnLanguage();
-
-    // Start photo carousel ONCE
     this.startPhotoCarousel();
 
-    // Start typing animation after delay
     setTimeout(() => {
       this.startTypingAnimation();
     }, 1500);
 
-    // Handle language changes - but DON'T restart carousel
     this.translocoService.langChanges$.pipe(takeUntil(this.destroy$)).subscribe(() => {
       this.updateJobsBasedOnLanguage();
     });
   }
 
-  ngOnDestroy() {
+  ngAfterViewInit() {
+    this.ngZone.runOutsideAngular(() => {
+      this.setupLogoLoop();
+    });
+  }
 
+  ngOnDestroy() {
     if (this.photoIntervalSubscription) {
       this.photoIntervalSubscription.unsubscribe();
     }
-
+    this.stopLogoLoop();
+    this.resizeObserver?.disconnect();
     this.destroy$.next();
     this.destroy$.complete();
   }
 
   // ========================
-  // PHOTO CAROUSEL METHODS - FIXED VERSION
+  // LOGO LOOP METHODS
+  // ========================
+
+  private setupLogoLoop() {
+    const updateDimensions = () => {
+      const seq = this.logoSeqRef?.nativeElement;
+      const container = this.logoContainerRef?.nativeElement;
+      if (!seq || !container) return;
+
+      const seqRect = seq.getBoundingClientRect();
+      const seqW = Math.ceil(seqRect.width);
+      if (seqW <= 0) return;
+
+      this.seqWidth = seqW;
+      const containerW = container.clientWidth;
+      const copies = Math.max(2, Math.ceil(containerW / seqW) + 2);
+
+      if (copies !== this.copyCount) {
+        this.copyCount = copies;
+        this.cdr.detectChanges();
+      }
+
+      this.offset = ((this.offset % seqW) + seqW) % seqW;
+    };
+
+    // Wait for images to load before measuring
+    const images = this.logoSeqRef?.nativeElement?.querySelectorAll('i') ?? [];
+    updateDimensions();
+
+    this.resizeObserver = new ResizeObserver(updateDimensions);
+    if (this.logoContainerRef?.nativeElement) {
+      this.resizeObserver.observe(this.logoContainerRef.nativeElement);
+    }
+    if (this.logoSeqRef?.nativeElement) {
+      this.resizeObserver.observe(this.logoSeqRef.nativeElement);
+    }
+
+    this.startLogoAnimation();
+  }
+
+  private startLogoAnimation() {
+    const animate = (timestamp: number) => {
+      if (this.lastTimestamp === null) this.lastTimestamp = timestamp;
+      const delta = Math.max(0, timestamp - this.lastTimestamp) / 1000;
+      this.lastTimestamp = timestamp;
+
+      const target = this.isHovered ? 0 : this.SPEED;
+      const easing = 1 - Math.exp(-delta / this.SMOOTH_TAU);
+      this.velocity += (target - this.velocity) * easing;
+
+      if (this.seqWidth > 0) {
+        let next = this.offset + this.velocity * delta;
+        next = ((next % this.seqWidth) + this.seqWidth) % this.seqWidth;
+        this.offset = next;
+
+        const track = this.logoTrackRef?.nativeElement;
+        if (track) {
+          track.style.transform = `translate3d(${-this.offset}px, 0, 0)`;
+        }
+      }
+
+      this.rafId = requestAnimationFrame(animate);
+    };
+
+    this.rafId = requestAnimationFrame(animate);
+  }
+
+  private stopLogoLoop() {
+    if (this.rafId !== null) {
+      cancelAnimationFrame(this.rafId);
+      this.rafId = null;
+    }
+    this.lastTimestamp = null;
+  }
+
+  onLogoMouseEnter() {
+    this.isHovered = true;
+  }
+
+  onLogoMouseLeave() {
+    this.isHovered = false;
+  }
+
+  get copyArray(): number[] {
+    return Array.from({ length: this.copyCount }, (_, i) => i);
+  }
+
+  // ========================
+  // PHOTO CAROUSEL METHODS
   // ========================
 
   private startPhotoCarousel() {
@@ -233,11 +296,13 @@ export class Home implements OnInit, OnDestroy {
   // ========================
 
   private updateJobsBasedOnLanguage() {
-    const currentLang = this.translocoService.getActiveLang();
-    this.jobs = currentLang === 'fr' ? this.jobsFr : this.jobsEn;
-    this.currentJobIndex = 0;
-
-    this.cdr.detectChanges();
+    this.translocoService.selectTranslateObject<Record<string, string>>('home.jobs')
+      .pipe(takeUntil(this.destroy$))
+      .subscribe(jobsObj => {
+        this.jobs = Object.values(jobsObj);
+        this.currentJobIndex = 0;
+        this.cdr.detectChanges();
+      });
   }
 
   private startTypingAnimation() {

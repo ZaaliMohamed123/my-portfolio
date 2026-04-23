@@ -26,11 +26,11 @@
     "name": "Mohamed ZAALI",
     "statement": "I'm a",
     "jobs": {
-      "job1": "Data Scientist",
-      "job2": "Full Stack Developer",
-      "job3": "Health-Tech Innovator"
+      "job1": "AI Agent Developer",
+      "job2": "Data Scientist",
+      "job3": "Full Stack Developer"
     },
-    "catchphrase": "Data-driven solutions, human-centered design",
+    "catchphrase": "Turning data into decisions, and AI into action",
     "social": {
       "github": "GitHub",
       "linkedin": "LinkedIn",
@@ -51,7 +51,16 @@
       "flask_alt": "Flask Python framework",
       "scikitlearn_alt": "Scikit-Learn machine learning library",
       "tensorflow_alt": "TensorFlow machine learning framework",
-      "pandas_alt": "Pandas data analysis library"
+      "pandas_alt": "Pandas data analysis library",
+      "typescript_alt": "TypeScript programming language",
+      "fastapi_alt": "FastAPI Python framework",
+      "pytorch_alt": "PyTorch deep learning framework",
+      "docker_alt": "Docker containerization platform",
+      "postgresql_alt": "PostgreSQL relational database",
+      "langchain_alt": "LangChain AI framework",
+      "langflow_alt": "LangFlow visual AI builder",
+      "langgraph_alt": "LangGraph agent orchestration",
+      "huggingface_alt": "HuggingFace AI platform"
     }
   },
   "about": {

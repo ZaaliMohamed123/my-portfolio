@@ -98,24 +98,50 @@
 <section class="tech-stack-section">
   <div class="container-custom">
     <div class="tech-stack-bar">
-      <!-- Tech Stack Label -->
+      <!-- Label -->
       <div class="tech-label-container">
         <span class="tech-label">{{ 'home.techstack.title' | transloco }}</span>
         <div class="tech-separator"></div>
       </div>
 
-      <!-- Tech Icons -->
-      <div class="tech-icons-container">
-        <div class="tech-icons">
-          @for (tech of techStack; track tech.name) {
-          <div class="tech-item" [title]="tech.name" [attr.data-tech]="tech.name">
-            <i
-              [class]="tech.icon + ' tech-icon'"
-              [style.color]="tech.color"
-              [attr.aria-label]="'home.techstack.' + tech.key + '_alt' | transloco"
-            >
-            </i>
-          </div>
+      <!-- Logo Loop -->
+      <div class="logoloop" #logoContainer>
+        <div
+          class="logoloop__track"
+          #logoTrack
+          (mouseenter)="onLogoMouseEnter()"
+          (mouseleave)="onLogoMouseLeave()"
+        >
+          @for (copy of copyArray; track copy) {
+              @if (copy === 0) {
+              <ul class="logoloop__list" #logoSeq>
+                @for (tech of techStack; track tech.name) {
+                  <li class="logoloop__item" [title]="tech.name">
+                    @if (tech.isCustomIcon) {
+                      <img [src]="tech.icon" [alt]="tech.name" [style.height]="(tech.scale ?? 1) + 'em'" [style.width]="(tech.scale ?? 1) + 'em'" />
+                    } @else {
+                      <i
+                        [class]="tech.icon"
+                        [style.color]="tech.color"
+                        [attr.aria-label]="'home.techstack.' + tech.key + '_alt' | transloco"
+                      ></i>
+                    }
+                  </li>
+                }
+              </ul>
+            } @else {
+              <ul class="logoloop__list" aria-hidden="true">
+                @for (tech of techStack; track tech.name) {
+                  <li class="logoloop__item" [title]="tech.name">
+                    @if (tech.isCustomIcon) {
+                      <img [src]="tech.icon" [alt]="tech.name" [style.height]="(tech.scale ?? 1) + 'em'" [style.width]="(tech.scale ?? 1) + 'em'" aria-hidden="true" />
+                    } @else {
+                      <i [class]="tech.icon" [style.color]="tech.color" aria-hidden="true"></i>
+                    }
+                  </li>
+                }
+              </ul>
+            }
           }
         </div>
       </div>
