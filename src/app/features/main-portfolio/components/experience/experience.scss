@@ -207,12 +207,12 @@
   }
   
   @media (min-width: 768px) {
-    flex: 0 0 140px;
+    flex: 0 0 160px;
     margin-left: -3rem;
   }
   
   @media (min-width: 1024px) {
-    flex: 0 0 160px;
+    flex: 0 0 175px;
     margin-left: -4rem;
   }
 }
@@ -221,14 +221,20 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.4rem 0.875rem;
+  padding: 0.4rem 0.75rem;
   border-radius: 20px;
-  font-size: 0.85rem;
+  font-size: 0.75rem;
   font-weight: 600;
   color: white;
   position: relative;
   text-align: center;
-  
+  white-space: nowrap;
+  max-width: 100%;
+
+  @media (min-width: 768px) {
+    font-size: 0.78rem;
+  }
+
   &.bank {
     background: linear-gradient(135deg, #1e40af, #1d4ed8);
     box-shadow: 0 3px 12px rgba(30, 64, 175, 0.3);
@@ -238,25 +244,31 @@
     background: linear-gradient(135deg, #059669, #10b981);
     box-shadow: 0 3px 12px rgba(5, 150, 105, 0.3);
   }
-  
+
+  &.syntax {
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    box-shadow: 0 3px 12px rgba(99, 102, 241, 0.3);
+  }  
 }
 
 .location-badge {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.25rem 0.625rem;
+  padding: 0.25rem 0.5rem;
   border-radius: 12px;
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   font-weight: 500;
   color: var(--text-secondary);
   background: rgba(var(--bg-secondary), 0.6);
   border: 1px solid var(--border-primary);
   backdrop-filter: blur(8px);
-  
+  white-space: nowrap;
+  max-width: 100%;
+
   @media (min-width: 1024px) {
-    font-size: 0.8rem;
-    padding: 0.3rem 0.75rem;
+    font-size: 0.75rem;
+    padding: 0.3rem 0.625rem;
   }
 }
 
@@ -300,6 +312,15 @@
     &:hover {
       border-color: rgba(5, 150, 105, 0.3);
       box-shadow: 0 12px 30px rgba(5, 150, 105, 0.15);
+    }
+  }
+
+  &.syntax {
+    border-color: rgba(99, 102, 241, 0.15);
+
+    &:hover {
+      border-color: rgba(99, 102, 241, 0.3);
+      box-shadow: 0 12px 30px rgba(99, 102, 241, 0.15);
     }
   }
   
@@ -387,6 +408,62 @@
 
   &.bank {
     color: #1e40af;
+  }
+
+  &.syntax {
+    color: #6366f1;
+  }
+}
+
+// Company Logo (replaces icon circle)
+.card-logo {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-primary);
+  padding: 4px;
+
+  @media (min-width: 768px) {
+    width: 54px;
+    height: 54px;
+  }
+}
+
+.company-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+// Company name as a link
+.company-name-link {
+  text-decoration: none;
+  display: inline-block;
+
+  .company-name {
+    transition: color 0.2s ease;
+  }
+
+  &:hover .company-name {
+    color: var(--color-primary);
+  }
+}
+
+// Custom icon image in tech badges (for SVG icons)
+.tech-icon-img {
+  width: 1rem;
+  height: 1rem;
+  object-fit: contain;
+
+  @media (min-width: 768px) {
+    width: 1.125rem;
+    height: 1.125rem;
   }
 }
 

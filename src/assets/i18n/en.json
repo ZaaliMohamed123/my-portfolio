@@ -148,10 +148,25 @@
     "professional": {
       "title": "Professional Journey"
     },
+    "syntax": {
+      "period": "FEB 2026 - PRESENT",
+      "location": "Casablanca, Morocco",
+      "company": "Syntax",
+      "company_url": "https://www.syntax.com/",
+      "position": "Junior AI Developer Intern",
+      "project_label": "Project",
+      "project": "Building an extensible MCP server that plugs AI agents directly into Microsoft 365 via the Microsoft Graph API. Any service, any workflow, zero manual intervention.",
+      "achievements_label": "Key Achievements",
+      "achievement1": "Architected a <strong>preset system</strong> that controls exactly what tools an AI agent sees per context. Shipped the first production preset with <strong>55+ tools</strong> covering SharePoint & Excel via Microsoft Graph API.",
+      "achievement2": "Built a <strong>5-step code generation pipeline</strong> that turns Microsoft's 45MB OpenAPI spec into typed, validated MCP tools automatically. Adding a new tool is one JSON line.",
+      "achievement3": "Designed the server for <strong>zero-effort extensibility</strong>. Onboarding a new M365 service (Outlook, Teams, Calendar) requires only a JSON config, no code changes.",
+      "tech_label": "Technologies"
+    },
     "albarid": {
       "period": "JUL - SEP 2025",
       "location": "Rabat, Morocco",
       "company": "Al Barid Bank",
+      "company_url": "https://www.albaridbank.ma",
       "position": "Full Stack Developer Intern",
       "project_label": "Project",
       "project": "Design and development of a platform for analyzing POS, SoftPOS, and e-commerce transactions.",
@@ -165,6 +180,7 @@
       "period": "JUL - SEP 2024",
       "location": "Rabat, Morocco",
       "company": "Ministry of Youth, Culture and Communication",
+      "company_url": "https://www.mjcc.gov.ma",
       "position": "Data Science Intern",
       "project_label": "Project",
       "project": "Development of a predictive analytics system for cultural heritage preservation.",

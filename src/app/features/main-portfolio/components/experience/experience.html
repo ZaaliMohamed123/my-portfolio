@@ -21,6 +21,72 @@
         <!-- Timeline Line -->
         <div class="timeline-line"></div>
 
+        <!-- Syntax Experience (2026 - Present) -->
+        <div class="timeline-item syntax-experience">
+          <div class="timeline-year">
+            <span class="year-badge syntax">{{ 'experience.syntax.period' | transloco }}</span>
+            <span class="location-badge">{{ 'experience.syntax.location' | transloco }}</span>
+          </div>
+          <div class="timeline-content">
+            <div class="experience-card syntax">
+              <div class="card-header">
+                <div class="card-logo">
+                  <img src="assets/media/logos/syntax_logo.svg" [alt]="'experience.syntax.company' | transloco" class="company-logo" />
+                </div>
+                <div class="card-title-group">
+                  <a [href]="'experience.syntax.company_url' | transloco" target="_blank" rel="noopener noreferrer" class="company-name-link">
+                    <h3 class="company-name">{{ 'experience.syntax.company' | transloco }}</h3>
+                  </a>
+                  <h4 class="position-title syntax">{{ 'experience.syntax.position' | transloco }}</h4>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="project-info">
+                  <strong>{{ 'experience.syntax.project_label' | transloco }}:</strong>
+                  <p class="project-description">{{ 'experience.syntax.project' | transloco }}</p>
+                </div>
+                <div class="achievements-info">
+                  <strong>{{ 'experience.syntax.achievements_label' | transloco }}:</strong>
+                  <ul class="achievements-list">
+                    <li [innerHTML]="'experience.syntax.achievement1' | transloco"></li>
+                    <li [innerHTML]="'experience.syntax.achievement2' | transloco"></li>
+                    <li [innerHTML]="'experience.syntax.achievement3' | transloco"></li>
+                  </ul>
+                </div>
+                <div class="technologies-info">
+                  <strong>{{ 'experience.syntax.tech_label' | transloco }}:</strong>
+                  <div class="tech-stack">
+                    <div class="tech-badge langgraph" title="LangGraph">
+                      <img src="assets/media/tech-icons/langgraph.svg" alt="LangGraph" class="tech-icon-img" />
+                      <span class="tech-name">LangGraph</span>
+                    </div>
+                    <div class="tech-badge langflow" title="LangFlow">
+                      <img src="assets/media/tech-icons/langflow.svg" alt="LangFlow" class="tech-icon-img" />
+                      <span class="tech-name">LangFlow</span>
+                    </div>
+                    <div class="tech-badge python" title="Python">
+                      <i class="devicon-python-plain colored tech-icon"></i>
+                      <span class="tech-name">Python</span>
+                    </div>
+                    <div class="tech-badge typescript" title="TypeScript">
+                      <i class="devicon-typescript-plain colored tech-icon"></i>
+                      <span class="tech-name">TypeScript</span>
+                    </div>
+                    <div class="tech-badge openai" title="OpenAI via Azure">
+                      <i class="devicon-azure-plain colored tech-icon"></i>
+                      <span class="tech-name">OpenAI / Azure</span>
+                    </div>
+                    <div class="tech-badge nodejs" title="Node.js">
+                      <i class="devicon-nodejs-plain colored tech-icon"></i>
+                      <span class="tech-name">Node.js</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <!-- Al Barid Bank Experience (2025) -->
         <div class="timeline-item bank-experience">
           <div class="timeline-year">
@@ -30,11 +96,13 @@
           <div class="timeline-content">
             <div class="experience-card bank">
               <div class="card-header">
-                <div class="card-icon bank-icon">
-                  <i class="fas fa-university"></i>
+                <div class="card-logo">
+                  <img src="assets/media/logos/AlbaridBank_logo.png" [alt]="'experience.albarid.company' | transloco" class="company-logo" />
                 </div>
                 <div class="card-title-group">
-                  <h3 class="company-name">{{ 'experience.albarid.company' | transloco }}</h3>
+                  <a [href]="'experience.albarid.company_url' | transloco" target="_blank" rel="noopener noreferrer" class="company-name-link">
+                    <h3 class="company-name">{{ 'experience.albarid.company' | transloco }}</h3>
+                  </a>
                   <h4 class="position-title bank">{{ 'experience.albarid.position' | transloco }}</h4>
                 </div>
               </div>
@@ -90,11 +158,13 @@
           <div class="timeline-content">
             <div class="experience-card ministry">
               <div class="card-header">
-                <div class="card-icon ministry-icon">
-                  <i class="fas fa-landmark"></i>
+                <div class="card-logo">
+                  <img src="assets/media/logos/ministry_logo.jpg" [alt]="'experience.ministry.company' | transloco" class="company-logo" />
                 </div>
                 <div class="card-title-group">
-                  <h3 class="company-name">{{ 'experience.ministry.company' | transloco }}</h3>
+                  <a [href]="'experience.ministry.company_url' | transloco" target="_blank" rel="noopener noreferrer" class="company-name-link">
+                    <h3 class="company-name">{{ 'experience.ministry.company' | transloco }}</h3>
+                  </a>
                   <h4 class="position-title">{{ 'experience.ministry.position' | transloco }}</h4>
                 </div>
               </div>

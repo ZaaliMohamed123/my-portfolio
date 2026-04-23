@@ -148,10 +148,25 @@
     "professional": {
       "title": "Parcours Professionnel"
     },
+    "syntax": {
+      "period": "FÉV 2026 - PRÉSENT",
+      "location": "Casablanca, Maroc",
+      "company": "Syntax",
+      "company_url": "https://www.syntax.com/",
+      "position": "Stagiaire Développeur IA Junior",
+      "project_label": "Projet",
+      "project": "Développement d'un serveur MCP extensible qui connecte des agents IA directement à Microsoft 365 via l'API Microsoft Graph. Tout service, tout workflow, zéro intervention manuelle.",
+      "achievements_label": "Réalisations Clés",
+      "achievement1": "Conçu un <strong>système de presets</strong> qui contrôle exactement quels outils l'agent IA voit selon le contexte. Premier preset en production avec <strong>55+ outils</strong> couvrant SharePoint & Excel via l'API Microsoft Graph.",
+      "achievement2": "Développé un <strong>pipeline de génération de code en 5 étapes</strong> transformant la spec OpenAPI Microsoft (45 Mo) en outils MCP typés et validés automatiquement. Ajouter un outil = une ligne JSON.",
+      "achievement3": "Conçu le serveur pour une <strong>extensibilité sans effort</strong>. Intégrer un nouveau service M365 (Outlook, Teams, Calendar) nécessite uniquement un fichier JSON, sans modification de code.",
+      "tech_label": "Technologies"
+    },
     "albarid": {
       "period": "JUL - SEP 2025",
       "location": "Rabat, Maroc",
       "company": "Al Barid Bank",
+      "company_url": "https://www.albaridbank.ma",
       "position": "Stagiaire Développeur Full Stack",
       "project_label": "Projet",
       "project": "Conception et développement d'une plateforme d'analyse des transactions POS, SoftPOS et e-commerce.",
@@ -165,6 +180,7 @@
       "period": "JUL - SEP 2024",
       "location": "Rabat, Maroc",
       "company": "Ministère de la Jeunesse, de la Culture et de la Communication",
+      "company_url": "https://www.mjcc.gov.ma",
       "position": "Stagiaire Data Science",
       "project_label": "Projet",
       "project": "Développement d'un système d'analyse prédictive pour la préservation du patrimoine culturel.",
