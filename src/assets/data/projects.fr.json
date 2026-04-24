@@ -1,5 +1,24 @@
 [
   {
+    "id": 11,
+    "title": "TrendToThread",
+    "subtitle": "Serveur MCP Twitter/X pour l'Automatisation des Réseaux Sociaux par IA",
+    "description": "Un serveur Model Context Protocol (MCP) qui permet aux agents IA et workflows d'automatisation de publier des tweets, des threads et de rechercher sur Twitter/X. Construit avec FastMCP et Python, il expose une interface d'outils compatible avec tout client MCP dont Claude, n8n et les agents LangGraph.",
+    "longDescription": "TrendToThread est un serveur MCP prêt pour la production qui connecte les agents IA à Twitter/X via le standard Model Context Protocol. Le serveur expose quatre outils : post_tweet pour les tweets individuels avec threading optionnel, post_thread pour publier des threads multi-tweets en un seul appel, search_tweets pour interroger les tweets récents avec les opérateurs Twitter, et get_user_profile pour récupérer les métadonnées de l'utilisateur authentifié. Le serveur supporte deux endpoints de transport : HTTP Streamable (/mcp) et Server-Sent Events (/sse), le rendant compatible avec toute plateforme conforme MCP. L'accès distant est géré via un tunnel ngrok, permettant d'exposer le serveur local aux plateformes IA cloud. Construit avec FastMCP et Python, le projet suit une architecture propre avec un chargeur de configuration dédié, la gestion des identifiants via .env et un script de lancement ngrok. La démo présente un agent IA complet appelé TrendToTweet : à partir d'un sujet fourni par l'utilisateur, l'agent utilise Google Search et YouTube Search pour découvrir les contenus tendance des 7 derniers jours, extrait les insights des meilleures sources, génère un article de blog structuré hébergé à une URL temporaire, rédige un tweet accrocheur incluant le lien du blog, et le publie en direct sur Twitter via ce serveur MCP. L'ensemble du pipeline de la recherche à la publication s'exécute de manière autonome, démontrant l'intégration du serveur MCP dans un vrai workflow agentique.",
+    "logo": ["assets/media/projects/TrendToThread/TrendToTweet_logo.png"],
+    "thumbnail": "",
+    "images": [],
+    "videoTuto": "assets/media/projects/TrendToThread/TrendToTweet_demo.mp4",
+    "demoGif": "",
+    "technologies": [
+      "Python",
+      "FastMCP"
+    ],
+    "categories": ["ai", "agentic", "ai_tools"],
+    "github": "https://github.com/ZaaliMohamed123/Twitter_MCP_Server",
+    "goToPage": "/projects/11"
+  },
+  {
     "id": 10,
     "title": "Agent Architecte de Projets",
     "subtitle": "Workflow de Documentation de Projets Automatisé avec LangGraph",

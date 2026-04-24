@@ -10,6 +10,7 @@ export enum Tech {
   PYANNOTE = 'PyAnnote',
   LANGFLOW = 'LangFlow',
   HUGGINGFACE = 'HuggingFace',
+  FASTMCP = 'FastMCP',
 
   // Deep Learning
   TENSORFLOW = 'TensorFlow',

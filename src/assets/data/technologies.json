@@ -258,5 +258,12 @@
     "color": "#de5833",
     "technology": "DuckDuckGo Search",
     "isCustomIcon": true
+  },
+  {
+    "name": "FastMCP",
+    "icon": "/assets/media/tech-icons/Model_Context_Protocol_logo.svg",
+    "color": "#000000",
+    "technology": "FastMCP",
+    "isCustomIcon": true
   }
 ]
