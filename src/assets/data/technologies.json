@@ -3,46 +3,46 @@
     "name": "Whisper AI",
     "icon": "/assets/media/tech-icons/whisper_openai_logo.svg",
     "color": "",
-    "technology": "WHISPER_AI",
+    "technology": "Whisper AI",
     "isCustomIcon": true
   },
   {
     "name": "PyAnnote",
     "icon": "/assets/media/tech-icons/pyannote_logo.png",
     "color": "",
-    "technology": "PYANNOTE",
+    "technology": "PyAnnote",
     "isCustomIcon": true
   },
   {
     "name": "Gemini API",
     "icon": "/assets/media/tech-icons/Google_Gemini_icon_2025.svg",
     "color": "",
-    "technology": "GEMINI_API",
+    "technology": "Gemini API",
     "isCustomIcon": true
   },
   {
     "name": "Flask",
     "icon": "devicon-flask-original",
     "color": "#000000",
-    "technology": "FLASK"
+    "technology": "Flask"
   },
   {
     "name": "Angular",
     "icon": "devicon-angularjs-plain",
     "color": "#dd0031",
-    "technology": "ANGULAR"
+    "technology": "Angular"
   },
   {
     "name": "SQLite",
     "icon": "devicon-sqlite-plain",
     "color": "#003b57",
-    "technology": "SQLITE"
+    "technology": "SQLite"
   },
   {
     "name": "Bootstrap",
     "icon": "devicon-bootstrap-plain",
     "color": "#7952b3",
-    "technology": "BOOTSTRAP"
+    "technology": "Bootstrap"
   },
   {
     "name": "JWT",
@@ -54,70 +54,70 @@
     "name": "Python",
     "icon": "devicon-python-plain",
     "color": "#3776ab",
-    "technology": "PYTHON"
+    "technology": "Python"
   },
   {
     "name": "PyTorch",
     "icon": "devicon-pytorch-original",
     "color": "#ee4c2c",
-    "technology": "PYTORCH"
+    "technology": "PyTorch"
   },
   {
     "name": "SQLAlchemy",
     "icon": "/assets/media/tech-icons/SQLAlchemy_logo.svg",
     "color": "#d71f00",
-    "technology": "SQLALCHEMY",
+    "technology": "SQLAlchemy",
     "isCustomIcon": true
   },
   {
     "name": "NumPy",
     "icon": "devicon-numpy-plain",
     "color": "#013243",
-    "technology": "NUMPY"
+    "technology": "NumPy"
   },
   {
     "name": "Pandas",
     "icon": "devicon-pandas-plain",
     "color": "#150458",
-    "technology": "PANDAS"
+    "technology": "Pandas"
   },
   {
     "name": "Apache Kafka",
     "icon": "devicon-apachekafka-original",
     "color": "#231f20",
-    "technology": "APACHE_KAFKA"
+    "technology": "Apache Kafka"
   },
   {
     "name": "PyShark",
     "icon": "/assets/media/tech-icons/pyshark_logo.png",
     "color": "#1679a7",
-    "technology": "PYSHARK",
+    "technology": "PyShark",
     "isCustomIcon": true
   },
   {
     "name": "Scikit-learn",
     "icon": "devicon-scikitlearn-plain colored",
     "color": "#f7931e",
-    "technology": "SCIKIT_LEARN"
+    "technology": "Scikit-learn"
   },
   {
     "name": "Joblib",
     "icon": "/assets/media/tech-icons/joblib_logo.png",
     "color": "#2e8b57",
-    "technology": "JOBLIB",
+    "technology": "Joblib",
     "isCustomIcon": true
   },
   {
     "name": "TensorFlow",
     "icon": "devicon-tensorflow-original",
     "color": "#ff6f00",
-    "technology": "TENSORFLOW"
+    "technology": "TensorFlow"
   },
   {
     "name": "Streamlit",
     "icon": "devicon-streamlit-plain",
     "color": "#ff4b4b",
-    "technology": "STREAMLIT"
+    "technology": "Streamlit"
   },
   {
     "name": "LSTM",
@@ -135,32 +135,32 @@
     "name": "Keras",
     "icon": "devicon-keras-plain",
     "color": "#d00000",
-    "technology": "KERAS"
+    "technology": "Keras"
   },
   {
     "name": "spaCy",
     "icon": "/assets/media/tech-icons/SpaCy_logo.svg",
     "color": "#09a3d5",
-    "technology": "SPACY",
+    "technology": "spaCy",
     "isCustomIcon": true
   },
   {
     "name": "Stanza",
     "icon": "fas fa-network-wired",
     "color": "#8c1515",
-    "technology": "STANZA"
+    "technology": "Stanza"
   },
   {
     "name": "Matplotlib",
     "icon": "devicon-matplotlib-plain",
     "color": "#11557c",
-    "technology": "MATPLOTLIB"
+    "technology": "Matplotlib"
   },
   {
     "name": "Seaborn",
     "icon": "/assets/media/tech-icons/seaborn_logo.svg",
     "color": "#4c8eda",
-    "technology": "SEABORN",
+    "technology": "Seaborn",
     "isCustomIcon": true
   },
   {
@@ -173,13 +173,13 @@
     "name": "TF-IDF",
     "icon": "fas fa-file-alt",
     "color": "#f59e0b",
-    "technology": "TF_IDF"
+    "technology": "TF-IDF"
   },
   {
     "name": "Figma",
     "icon": "devicon-figma-plain",
     "color": "#f24e1e",
-    "technology": "FIGMA"
+    "technology": "Figma"
   },
   {
     "name": "HTML",
@@ -197,73 +197,73 @@
     "name": "JavaScript",
     "icon": "devicon-javascript-plain",
     "color": "#f7df1e",
-    "technology": "JAVASCRIPT"
+    "technology": "JavaScript"
   },
   {
     "name": "Java EE",
     "icon": "devicon-java-plain",
     "color": "#007396",
-    "technology": "JAVA_EE"
+    "technology": "Java EE"
   },
   {
     "name": "PL/SQL",
     "icon": "devicon-oracle-original",
     "color": "#f80000",
-    "technology": "PL_SQL"
+    "technology": "PL/SQL"
   },
   {
     "name": "Oracle",
     "icon": "devicon-oracle-original",
     "color": "#f80000",
-    "technology": "ORACLE"
+    "technology": "Oracle"
   },
   {
     "name": "LangGraph",
     "icon": "/assets/media/tech-icons/langgraph.svg",
     "color": "#1c3c3c",
-    "technology": "LANGGRAPH",
+    "technology": "LangGraph",
     "isCustomIcon": true
   },
   {
     "name": "LangChain",
     "icon": "/assets/media/tech-icons/langgraph.svg",
     "color": "#1c3c3c",
-    "technology": "LANGCHAIN",
+    "technology": "LangChain",
     "isCustomIcon": true
   },
   {
     "name": "Gradio",
     "icon": "/assets/media/tech-icons/gradio.svg",
     "color": "#ff7c00",
-    "technology": "GRADIO",
+    "technology": "Gradio",
     "isCustomIcon": true
   },
   {
     "name": "Pydantic",
     "icon": "/assets/media/tech-icons/pydantic.svg",
     "color": "#e92063",
-    "technology": "PYDANTIC",
+    "technology": "Pydantic",
     "isCustomIcon": true
   },
   {
     "name": "OpenAI API",
     "icon": "/assets/media/tech-icons/openai.svg",
     "color": "#412991",
-    "technology": "OPENAI_API",
+    "technology": "OpenAI API",
     "isCustomIcon": true
   },
   {
     "name": "Notion API",
     "icon": "/assets/media/tech-icons/notion.svg",
     "color": "#000000",
-    "technology": "NOTION_API",
+    "technology": "Notion API",
     "isCustomIcon": true
   },
   {
     "name": "DuckDuckGo Search",
     "icon": "/assets/media/tech-icons/duckduckgo.svg",
     "color": "#de5833",
-    "technology": "DUCKDUCKGO_SEARCH",
+    "technology": "DuckDuckGo Search",
     "isCustomIcon": true
   }
 ]
