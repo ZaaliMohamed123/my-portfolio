@@ -228,7 +228,7 @@
     "name": "LangChain",
     "icon": "/assets/media/tech-icons/langgraph.svg",
     "color": "#1c3c3c",
-    "technology": "LangChain",
+    "technology": "LangGraph",
     "isCustomIcon": true
   },
   {

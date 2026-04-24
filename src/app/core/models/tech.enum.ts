@@ -3,7 +3,6 @@ export enum Tech {
   OPENAI_API = 'OpenAI API',
   GEMINI_API = 'Gemini API',
   LANGGRAPH = 'LangGraph',
-  LANGCHAIN = 'LangChain',
   GRADIO = 'Gradio',
   NOTION_API = 'Notion API',
   DUCKDUCKGO_SEARCH = 'DuckDuckGo Search',
