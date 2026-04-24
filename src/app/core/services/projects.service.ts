@@ -106,7 +106,12 @@ export class ProjectsService {
     // Filter by tech categories
     if (filters.techCategories.length > 0) {
       filtered = filtered.filter((project) =>
-        project.technologies.some((tech) => filters.techCategories.includes(tech.technology))
+        project.technologies.some((tech) => {
+          // Check if any filter matches the tech's technology field
+          return filters.techCategories.some((filterTech) => 
+            tech.technology === filterTech || tech.name === filterTech
+          );
+        })
       );
     }
 
