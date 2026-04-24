@@ -12,7 +12,7 @@ import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
-import { Project, ProjectFilters, ProjectCategory, TechCategory, ProjectSortOption } from '../../core/models';
+import { Project, ProjectFilters, ProjectCategory, Tech, ProjectSortOption } from '../../core/models';
 import { ProjectsService } from '../../core/services/projects.service';
 
 @Component({
@@ -45,11 +45,11 @@ export class ProjectsGallery implements OnInit, OnDestroy {
 
   // Enums for template
   projectCategoryEnum = ProjectCategory;
-  techCategoryEnum = TechCategory;
+  techEnum = Tech;
 
   // Dropdown options
   projectCategories = Object.values(ProjectCategory);
-  techCategories = Object.values(TechCategory);
+  techCategories = Object.values(Tech);
   sortOptions: { value: ProjectSortOption; label: string }[] = [
     { value: 'latest', label: 'projectsGallery.sort.latest' },
     { value: 'oldest', label: 'projectsGallery.sort.oldest' },
@@ -140,7 +140,7 @@ export class ProjectsGallery implements OnInit, OnDestroy {
   /**
    * Toggle tech category filter
    */
-  toggleTechCategory(category: TechCategory): void {
+  toggleTechCategory(category: Tech): void {
     const index = this.filters.techCategories.indexOf(category);
     if (index > -1) {
       this.filters.techCategories.splice(index, 1);
@@ -160,7 +160,7 @@ export class ProjectsGallery implements OnInit, OnDestroy {
   /**
    * Check if tech category is selected
    */
-  isTechCategorySelected(category: TechCategory): boolean {
+  isTechCategorySelected(category: Tech): boolean {
     return this.filters.techCategories.includes(category);
   }
 

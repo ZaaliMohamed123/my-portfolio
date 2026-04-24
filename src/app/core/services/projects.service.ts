@@ -106,7 +106,7 @@ export class ProjectsService {
     // Filter by tech categories
     if (filters.techCategories.length > 0) {
       filtered = filtered.filter((project) =>
-        project.technologies.some((tech) => filters.techCategories.includes(tech.category))
+        project.technologies.some((tech) => filters.techCategories.includes(tech.technology))
       );
     }
 

@@ -1,9 +1,9 @@
-import { TechCategory } from './techCategory.enum';
+import { Tech } from './tech.enum';
 
 export interface Technology {
   name: string;
   icon: string;
   color: string;
-  category: TechCategory;
+  technology: Tech;
   isCustomIcon?: boolean;
 }

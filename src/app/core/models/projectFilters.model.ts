@@ -1,5 +1,5 @@
 import { ProjectCategory } from './projectCategory.enum';
-import { TechCategory } from './techCategory.enum';
+import { Tech } from './tech.enum';
 
 export type ProjectSortOption = 'latest' | 'oldest' | 'title-asc' | 'title-desc';
 
@@ -7,7 +7,7 @@ export interface ProjectFilters {
   searchTitle: string;
   sortBy: ProjectSortOption;
   projectCategories: ProjectCategory[];
-  techCategories: TechCategory[];
+  techCategories: Tech[];
 }
 
 export const DEFAULT_PROJECT_FILTERS: ProjectFilters = {
