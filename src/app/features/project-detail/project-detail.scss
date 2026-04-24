@@ -372,10 +372,44 @@
   line-height: 1.8;
   color: var(--text-secondary);
   margin: 0;
-  white-space: pre-line; // Preserve line breaks
-  
+
   @media (min-width: 768px) {
     font-size: 1.125rem;
+  }
+
+  p {
+    margin: 0 0 1.25rem 0;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  strong {
+    color: var(--text-primary);
+    font-weight: 600;
+  }
+
+  ul, ol {
+    margin: 0 0 1.25rem 0;
+    padding-left: 1.5rem;
+
+    li {
+      margin-bottom: 0.5rem;
+      line-height: 1.7;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  ul {
+    list-style: disc;
+  }
+
+  ol {
+    list-style: decimal;
   }
 }
 

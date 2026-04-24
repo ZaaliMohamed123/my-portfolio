@@ -4,8 +4,10 @@
     "title": "TrendToThread",
     "subtitle": "Twitter/X MCP Server for AI Agent Social Media Automation",
     "description": "A Model Context Protocol (MCP) server that enables AI agents and automation workflows to post tweets, publish threads, and search Twitter/X. Built with FastMCP and Python, it exposes a clean tool interface compatible with any MCP client including Claude, n8n, and LangGraph agents.",
-    "longDescription": "TrendToThread is a production-ready MCP server that bridges AI agents with Twitter/X through the Model Context Protocol standard. The server exposes four tools: post_tweet for single tweets with optional reply threading, post_thread for publishing connected multi-tweet threads in one call, search_tweets for querying recent tweets with full Twitter operator support, and get_user_profile for retrieving authenticated user metadata. The server supports dual transport endpoints — Streamable HTTP (/mcp) and Server-Sent Events (/sse) — making it compatible with any MCP-compliant platform. Remote access is handled via ngrok tunneling, allowing the local server to be exposed to cloud-based AI platforms. Built with FastMCP and Python, the project follows a clean architecture with a dedicated config loader, credential management via .env, and a ngrok launcher script. The demo showcases a full AI content agent called TrendToTweet: given a user topic, the agent uses Google Search and YouTube Search to discover trending content from the last 7 days, extracts insights from the best sources, generates a structured blog post hosted at a temporary URL, crafts a single curiosity-driven tweet referencing the blog link, and publishes it live to Twitter using this MCP server. The entire pipeline from research to publication runs autonomously, demonstrating how the MCP server integrates into a real agentic workflow.",
-    "logo": ["assets/media/projects/TrendToThread/TrendToTweet_logo.png"],
+    "longDescription": "TrendToThread is a production-ready **MCP (Model Context Protocol)** server that bridges AI agents with Twitter/X, exposing a clean tool interface compatible with any MCP-compliant platform including Claude, n8n, and LangGraph agents.\n\nThe server provides four tools: **post_tweet** for single tweets with optional reply threading, **post_thread** for publishing connected multi-tweet threads in one call, **search_tweets** for querying recent tweets with full Twitter operator support, and **get_user_profile** for retrieving authenticated user metadata. It supports dual transport endpoints — Streamable HTTP () and Server-Sent Events () — and remote access via **ngrok** tunneling for cloud-based AI platforms.\n\nThe demo showcases **TrendToTweet**, a full AI content agent built on top of this server. Given a user topic, the agent searches Google and YouTube for trending content from the last 7 days, extracts insights from the best sources, generates a structured blog post hosted at a temporary URL, crafts a single curiosity-driven tweet with the blog link, and publishes it live to Twitter — all autonomously. This demonstrates how the MCP server integrates into a real agentic workflow from research to publication.",
+    "logo": [
+      "assets/media/projects/TrendToThread/TrendToTweet_logo.png"
+    ],
     "thumbnail": "",
     "images": [],
     "videoTuto": "assets/media/projects/TrendToThread/TrendToTweet_demo.mp4",
@@ -14,7 +16,11 @@
       "Python",
       "FastMCP"
     ],
-    "categories": ["ai", "agentic", "ai_tools"],
+    "categories": [
+      "ai",
+      "agentic",
+      "ai_tools"
+    ],
     "github": "https://github.com/ZaaliMohamed123/Twitter_MCP_Server",
     "goToPage": "/projects/11"
   },
@@ -23,10 +29,14 @@
     "title": "Project Architect Agent",
     "subtitle": "LangGraph-Powered Automated Project Documentation Workflow",
     "description": "Autonomous AI agent that transforms project ideas into structured Notion workspaces through automated research and documentation generation using LangChain and LangGraph.",
-    "longDescription": "The Project Architect Agent is an autonomous AI-powered research and documentation assistant built with LangChain and LangGraph. The system takes a project idea and automatically extracts key metadata (title, objectives, deliverables), generates 4-7 actionable implementation steps, and creates a complete Notion workspace. For each step, the agent enters a research loop that reflects on information needs, searches the web (Google Custom Search or DuckDuckGo), reads relevant URLs, synthesizes findings using LLMs, and writes structured documentation to Notion. The system supports any OpenAI-compatible LLM endpoint including OAI, Ollama, vLLM, and LM Studio. A Gradio web interface provides real-time progress updates and interaction. The architecture follows LangGraph state machine patterns with modular nodes (understand → outline → create_overview → research_loop → finalize) with typed state schema and clean separation between research, synthesis, and Notion integration services.",
-    "logo": ["assets/media/projects/project_architect_agent/logo.png"],
+    "longDescription": "The Project Architect Agent is an autonomous AI research and documentation assistant that takes a project idea and produces a fully structured **Notion workspace** — automatically, end to end.\n\nThe system first extracts key metadata from the idea (title, objectives, deliverables), then generates 4-7 actionable implementation steps. For each step, the agent enters a research loop: it reflects on what information is needed, searches the web via **Google Custom Search** or **DuckDuckGo**, reads relevant URLs, synthesizes findings using an LLM, and writes structured documentation directly into Notion.\n\nThe architecture follows **LangGraph** state machine patterns with modular nodes: . A typed state schema ensures clean data flow between nodes, and services for research, synthesis, and Notion integration are fully separated.\n\nThe system supports any OpenAI-compatible LLM endpoint including OAI, Ollama, vLLM, and LM Studio. A **Gradio** interface provides real-time progress updates throughout the generation process.",
+    "logo": [
+      "assets/media/projects/project_architect_agent/logo.png"
+    ],
     "thumbnail": "",
-    "images": ["assets/media/projects/project_architect_agent/architecture.svg"],
+    "images": [
+      "assets/media/projects/project_architect_agent/architecture.svg"
+    ],
     "videoTuto": "assets/media/projects/project_architect_agent/project_architect_demo.mp4",
     "demoGif": "",
     "technologies": [
@@ -37,7 +47,10 @@
       "Python",
       "DuckDuckGo Search"
     ],
-    "categories": ["ai", "agentic"],
+    "categories": [
+      "ai",
+      "agentic"
+    ],
     "github": "https://github.com/ZaaliMohamed123/Project-Architect-agent",
     "goToPage": "/projects/10"
   },
@@ -46,10 +59,14 @@
     "title": "AI Invoice Processing Agent",
     "subtitle": "LangGraph-Powered Automated Invoice Approval Workflow",
     "description": "AI agent that extracts, validates, and auto-approves or rejects PDF invoices using LangChain and LangGraph. Enforces business rules, validates calculations, and sends automated email notifications with a Gradio web interface.",
-    "longDescription": "The AI Invoice Processing Agent is a production-ready agentic workflow built with LangChain and LangGraph that fully automates the invoice approval lifecycle. The system ingests PDF invoices, uses GPT-4 to extract all structured fields (vendor, line items, totals, tax), validates calculations mathematically, enforces custom business policies (field requirements, amount limits, duplicate detection), and makes automated approval or rejection decisions with clear explanations. Rejected or approved invoices trigger automated email notifications via Gmail. The architecture follows real-world LangGraph patterns with modular nodes for each stage of the pipeline, a typed state schema using Pydantic for LLM output contracts, and a clean separation between PDF ingestion, LLM extraction, validation, decision, and notification services. The project is fully configurable via .env and supports any OpenAI-compatible endpoint including Azure, Gemini, Claude, or local Ollama models. A modern Gradio interface provides drag-and-drop invoice upload and real-time processing feedback.",
-    "logo": ["assets/media/projects/ai_invoice_processing_agent/ai_invoice_processing_logo.mp4.png"],
+    "longDescription": "The AI Invoice Processing Agent is a production-ready agentic workflow that fully automates the invoice approval lifecycle using **LangGraph** state machine patterns and **GPT-4** for structured data extraction.\n\nThe system ingests PDF invoices and extracts all structured fields — vendor, line items, totals, and tax — then validates calculations mathematically and enforces custom business policies including field requirements, amount limits, and duplicate detection. Based on this analysis, it makes automated approval or rejection decisions with clear explanations and triggers email notifications via Gmail.\n\nThe architecture uses modular LangGraph nodes for each pipeline stage: PDF ingestion, LLM extraction, validation, decision, and notification. A typed state schema with **Pydantic** enforces LLM output contracts throughout. The project supports any OpenAI-compatible endpoint including Azure, Gemini, Claude, and local Ollama models, and is fully configurable via . A **Gradio** interface provides drag-and-drop invoice upload with real-time processing feedback.",
+    "logo": [
+      "assets/media/projects/ai_invoice_processing_agent/ai_invoice_processing_logo.mp4.png"
+    ],
     "thumbnail": "",
-    "images": ["assets/media/projects/ai_invoice_processing_agent/results.png"],
+    "images": [
+      "assets/media/projects/ai_invoice_processing_agent/results.png"
+    ],
     "videoTuto": "assets/media/projects/ai_invoice_processing_agent/Ai_invoice_processing_demo.mp4",
     "demoGif": "",
     "technologies": [
@@ -59,7 +76,10 @@
       "Pydantic",
       "Python"
     ],
-    "categories": ["ai", "agentic"],
+    "categories": [
+      "ai",
+      "agentic"
+    ],
     "github": "https://github.com/ZaaliMohamed123/AI_invoice_processing_agent",
     "goToPage": "/projects/9"
   },
@@ -68,13 +88,15 @@
     "title": "AL-MUQARRIR",
     "subtitle": "Automatic Transcription & Meeting Minutes Generation",
     "description": "AI-powered web platform for real-time meeting transcription, speaker diarization, and automated generation of meeting minutes with semantic analysis. Supports Arabic, French, English, and Darija with multilingual and RTL capabilities.",
-    "longDescription": "AL-MUQARRIR is a comprehensive AI-powered solution that transforms meeting recordings into structured, actionable documentation. The platform features real-time speaker identification using PyAnnote.audio, high-accuracy transcription with OpenAI's Whisper model, and intelligent semantic analysis powered by Google's Gemini API. The system automatically generates professional meeting minutes with theme extraction, sentiment analysis, and problem/opportunity identification. With support for multiple languages including Arabic with RTL formatting, the platform offers seamless export to PDF and DOCX formats. Built with a modern Angular frontend and robust Flask backend, AL-MUQARRIR streamlines the entire meeting documentation workflow from recording to distribution.",
+    "longDescription": "AL-MUQARRIR is a comprehensive AI platform that transforms meeting recordings into structured, professional documentation — supporting Arabic, French, English, and Darija with full RTL capabilities.\n\nSpeaker identification uses **PyAnnote.audio** in real time, while **OpenAI Whisper** delivers high-accuracy multilingual transcription. **Google Gemini API** then performs intelligent semantic analysis to automatically generate meeting minutes with theme extraction, sentiment analysis, and identification of problems and opportunities.\n\nThe platform exports seamlessly to PDF and DOCX formats and supports the full Arabic RTL text formatting standard. Built with an **Angular** frontend and a **Flask** backend with **JWT** authentication and **SQLite** storage, AL-MUQARRIR covers the entire meeting documentation workflow from raw recording to formatted, distributable minutes.",
     "logo": [
       "/assets/media/projects/al-muqarrir/small_Logo.svg",
       "/assets/media/projects/al-muqarrir/big_Logo.svg"
     ],
     "thumbnail": "",
-    "images": ["/assets/media/projects/al-muqarrir/home.png"],
+    "images": [
+      "/assets/media/projects/al-muqarrir/home.png"
+    ],
     "videoTuto": "/assets/media/projects/al-muqarrir/Video_Tuto_Al-Muqarrir.mp4",
     "demoGif": "",
     "technologies": [
@@ -88,7 +110,12 @@
       "JWT",
       "Python"
     ],
-    "categories": ["ai", "genai", "web", "data_science"],
+    "categories": [
+      "ai",
+      "genai",
+      "web",
+      "data_science"
+    ],
     "github": "https://github.com/SEKALDouaa/AL-MUQARRIR",
     "goToPage": "/projects/8"
   },
@@ -97,10 +124,14 @@
     "title": "Cura",
     "subtitle": "AI-Powered Medical Management System",
     "description": "Comprehensive Flask-based web application for managing patient medications, pathologies, and appointments with AI-powered drug-drug interaction (DDI) detection using machine learning and Google Gemini AI. Features medication tracking, mentor-patient relationships, pharmacy management, and intelligent medication safety checks.",
-    "longDescription": "Cura is a sophisticated healthcare management platform that combines traditional medication tracking with cutting-edge AI technology. The system uses a two-tier approach for drug interaction analysis: a local PyTorch MLP neural network with molecular fingerprints from RDKit for probability-based interaction detection, and Google Gemini AI for generating patient-friendly safety alerts and contextual medical advice. The platform enables patients to manage their medications with dosage tracking, set up automated reminders, monitor medical conditions (pathologies), and schedule appointments with healthcare providers. The mentorship system connects patients with mentors for ongoing support, while advanced autocomplete features with fuzzy matching help users find medications quickly. Built with Flask and SQLAlchemy, Cura provides role-based access control, secure password hashing with Bcrypt, and comprehensive medication intake logging. The system integrates with external APIs including PubChem for molecular data and provides real-time DDI analysis to enhance patient safety.",
-    "logo": ["assets/media/projects/cura/cura_logo_no_back.svg"],
+    "longDescription": "Cura is a healthcare management platform that combines medication tracking with AI-powered drug interaction detection, built to enhance patient safety and simplify medical management.\n\nDrug interaction analysis uses a two-tier approach: a local **PyTorch MLP** neural network with molecular fingerprints from **RDKit** for probability-based detection, and **Google Gemini AI** for generating patient-friendly safety alerts and contextual medical advice. Molecular data is fetched from **PubChem** for real-time DDI analysis.\n\nPatients can manage medications with dosage tracking, set automated reminders, monitor pathologies, and schedule appointments. A mentorship system connects patients with mentors for ongoing support, while advanced autocomplete with fuzzy matching helps users find medications quickly.\n\nThe backend is built with **Flask** and **SQLAlchemy**, providing role-based access control, secure password hashing with Bcrypt, and comprehensive medication intake logging. This project demonstrates the application of deep learning and generative AI to real-world healthcare challenges.",
+    "logo": [
+      "assets/media/projects/cura/cura_logo_no_back.svg"
+    ],
     "thumbnail": "",
-    "images": ["/assets/media/projects/cura/dashboard_cura.png"],
+    "images": [
+      "/assets/media/projects/cura/dashboard_cura.png"
+    ],
     "videoTuto": "/assets/media/projects/cura/Video_Tuto_Cura.mp4",
     "demoGif": "",
     "technologies": [
@@ -114,7 +145,14 @@
       "Pandas",
       "Python"
     ],
-    "categories": ["health_tech", "ai", "genai", "web", "data_science", "dl"],
+    "categories": [
+      "health_tech",
+      "ai",
+      "genai",
+      "web",
+      "data_science",
+      "dl"
+    ],
     "github": "https://github.com/ZaaliMohamed123/Cura",
     "goToPage": "/projects/7"
   },
@@ -123,10 +161,14 @@
     "title": "Real-Time Network Intrusion Detection System",
     "subtitle": "ML-Powered Network Security Monitoring",
     "description": "Real-time network intrusion detection system that captures and analyzes network packets using machine learning. Built with Apache Kafka for message streaming, PyShark for packet capture, and Scikit-learn for traffic classification. The system provides continuous network monitoring with automated threat detection and comprehensive logging.",
-    "longDescription": "This advanced network security system implements real-time intrusion detection by capturing live network packets, analyzing them using trained machine learning models, and logging results for security analysis. The architecture leverages Apache Kafka for reliable message delivery and processing, ensuring scalable handling of high-volume network traffic. PyShark captures packets from network interfaces, extracting relevant features such as protocol types, packet sizes, and timing information. The preprocessed data is fed into a Scikit-learn-based classifier that predicts traffic types and identifies potential security threats. The system features automated data logging with predictions saved to Excel files for historical analysis and audit trails. Built with Python, the platform provides role-based access to archived logs and supports continuous monitoring of network activity. The machine learning model is trained to detect various types of network intrusions including DoS attacks, port scans, and unauthorized access attempts, making it suitable for enterprise network security monitoring.",
-    "logo": [""],
+    "longDescription": "This real-time network intrusion detection system captures live network packets, analyzes them with machine learning models, and logs results for security auditing — built to scale for enterprise network monitoring.\n\n**Apache Kafka** handles reliable, high-throughput message delivery across the pipeline. **PyShark** captures packets from network interfaces and extracts features such as protocol types, packet sizes, and timing information. The preprocessed data is fed into a **Scikit-learn** classifier that predicts traffic types and flags potential threats including DoS attacks, port scans, and unauthorized access attempts.\n\nPredictions are automatically saved to Excel files for historical analysis and audit trails. The system supports continuous monitoring with role-based access to archived logs, making it suitable for security operations teams that need both real-time detection and long-term forensic capabilities.",
+    "logo": [
+      ""
+    ],
     "thumbnail": "",
-    "images": ["/assets/media/projects/network-intrusion-detection/Data_flow_diagram.png"],
+    "images": [
+      "/assets/media/projects/network-intrusion-detection/Data_flow_diagram.png"
+    ],
     "videoTuto": "",
     "demoGif": "",
     "technologies": [
@@ -138,7 +180,11 @@
       "Joblib",
       "NumPy"
     ],
-    "categories": ["ml", "data_science", "big_data"],
+    "categories": [
+      "ml",
+      "data_science",
+      "big_data"
+    ],
     "github": "https://github.com/ZaaliMohamed123/Real-time-Network-Intrusion-Detection-System-Using-Machine-Learning",
     "goToPage": "/projects/6"
   },
@@ -147,14 +193,29 @@
     "title": "LipReader",
     "subtitle": "AI-Powered Lip Reading Application",
     "description": "Deep learning application that converts lip movements into text using advanced computer vision and neural networks. Built with TensorFlow for model implementation and Streamlit for an interactive user interface. The system employs 3D convolutional neural networks combined with LSTM layers to accurately predict text from video-based lip movements.",
-    "longDescription": "LipReader is an innovative deep learning application that performs real-time lip reading from video input, translating silent speech into readable text. The system leverages a sophisticated architecture combining 3D Convolutional Neural Networks (3D-CNN) for spatial feature extraction from video frames with Long Short-Term Memory (LSTM) layers for temporal sequence modeling. This hybrid approach enables the model to capture both the visual characteristics of lip shapes and the temporal dynamics of speech patterns. Built on TensorFlow, the model processes video input frame-by-frame, extracting facial features and lip movements to generate accurate text predictions. The application features an intuitive Streamlit-based user interface that allows users to upload videos or select from pre-loaded samples to see real-time lip reading results. The system includes comprehensive video preprocessing utilities, character mapping functions, and alignment data processing to ensure high accuracy. Developed as a proof-of-concept for assistive technology and accessibility applications, LipReader demonstrates the potential of deep learning in helping individuals with hearing impairments and enabling silent communication systems. The project showcases expertise in computer vision, sequence-to-sequence modeling, and interactive application development.",
-    "logo": ["/assets/media/projects/LipReader/logo.jpeg"],
+    "longDescription": "LipReader is a deep learning application that translates silent lip movements from video into readable text, built as a proof-of-concept for assistive technology and accessibility use cases.\n\nThe model architecture combines **3D Convolutional Neural Networks (3D-CNN)** for spatial feature extraction from video frames with **LSTM** layers for temporal sequence modeling. This hybrid approach captures both the visual shape of lips and the temporal dynamics of speech patterns, enabling accurate text predictions from video input.\n\nBuilt on **TensorFlow**, the model processes video frame by frame, extracting facial features and generating character predictions. The **Streamlit** interface lets users upload videos or select pre-loaded samples and see real-time lip reading results. The system includes video preprocessing utilities, character mapping functions, and alignment data processing to ensure high accuracy.\n\nThis project demonstrates expertise in computer vision, sequence-to-sequence modeling, and the potential of deep learning to help individuals with hearing impairments through silent communication systems.",
+    "logo": [
+      "/assets/media/projects/LipReader/logo.jpeg"
+    ],
     "thumbnail": "",
-    "images": ["/assets/media/projects/LipReader/interface.png"],
+    "images": [
+      "/assets/media/projects/LipReader/interface.png"
+    ],
     "videoTuto": "/assets/media/projects/LipReader/video_tuto_lipReader.mp4",
     "demoGif": "",
-    "technologies": ["TensorFlow", "Streamlit", "Python", "LSTM", "CNN", "NumPy"],
-    "categories": ["dl", "ai", "data_science"],
+    "technologies": [
+      "TensorFlow",
+      "Streamlit",
+      "Python",
+      "LSTM",
+      "CNN",
+      "NumPy"
+    ],
+    "categories": [
+      "dl",
+      "ai",
+      "data_science"
+    ],
     "github": "https://github.com/ZaaliMohamed123/Lip-Reader",
     "goToPage": "/projects/5"
   },
@@ -163,14 +224,30 @@
     "title": "NER - Named Entity Recognition",
     "subtitle": "Multi-Model Entity Detection System",
     "description": "Advanced Named Entity Recognition application that identifies and classifies entities in text using multiple deep learning and NLP models. Built with Streamlit for an interactive interface, the system employs Keras-based neural networks, spaCy, and Stanza to extract entities such as persons, organizations, locations, and miscellaneous categories from unstructured text.",
-    "longDescription": "This comprehensive Named Entity Recognition system implements multiple state-of-the-art NLP models to identify and classify named entities in text with high accuracy. The application features a user-friendly Streamlit interface that allows users to input text and receive real-time entity predictions from four different models, each with unique strengths. The first Keras-based model specializes in detecting geographical entities, organizations, and persons using deep neural network architecture with custom embedding layers. The second Keras model focuses on miscellaneous entities, persons, and locations with enhanced classification capabilities. The spaCy model leverages pre-trained language models for fast and accurate entity recognition across multiple entity types. The Stanza model, developed by Stanford NLP, provides robust multilingual entity recognition capabilities. The system processes input text through each model simultaneously, presenting comparative results that highlight entity boundaries and classifications. The application includes sophisticated text preprocessing, tokenization, and entity boundary detection algorithms. Built with Python, the platform demonstrates expertise in natural language processing, deep learning model development, and comparative model analysis. The multi-model approach allows users to validate entity recognition across different frameworks, ensuring higher confidence in entity extraction tasks. This project is particularly valuable for applications in document analysis, information extraction, content categorization, and automated text annotation systems.",
-    "logo": [""],
+    "longDescription": "This **Named Entity Recognition** system uses multiple state-of-the-art NLP models to identify and classify entities — persons, organizations, locations, and miscellaneous — in unstructured text with high accuracy.\n\nFour models run simultaneously and present comparative results through a **Streamlit** interface. The first **Keras** model specializes in geographical entities, organizations, and persons using custom embedding layers. The second Keras model focuses on miscellaneous entities and locations with enhanced classification. **spaCy** provides fast and accurate entity recognition using pre-trained language models, while **Stanza** (Stanford NLP) adds robust multilingual capabilities.\n\nThe application includes text preprocessing, tokenization, and entity boundary detection. Displaying results from all four models side by side lets users validate entity extraction across frameworks, giving higher confidence for document analysis, information extraction, content categorization, and automated text annotation tasks.",
+    "logo": [
+      ""
+    ],
     "thumbnail": "",
-    "images": ["/assets/media/projects/ner/interface.png"],
+    "images": [
+      "/assets/media/projects/ner/interface.png"
+    ],
     "videoTuto": "/assets/media/projects/ner/video_tuto_ner.mp4",
     "demoGif": "",
-    "technologies": ["Python", "Streamlit", "Keras", "spaCy", "Stanza", "TensorFlow", "NumPy"],
-    "categories": ["dl", "ai", "data_science"],
+    "technologies": [
+      "Python",
+      "Streamlit",
+      "Keras",
+      "spaCy",
+      "Stanza",
+      "TensorFlow",
+      "NumPy"
+    ],
+    "categories": [
+      "dl",
+      "ai",
+      "data_science"
+    ],
     "github": "https://github.com/ZaaliMohamed123/Named-Entity-Recognition-NER-",
     "goToPage": "/projects/4"
   },
@@ -179,10 +256,14 @@
     "title": "Anxiety Level Prediction",
     "subtitle": "ML-Based Mental Health Assessment Platform",
     "description": "Comprehensive platform for analyzing and predicting anxiety levels based on psychological traits, demographic factors, and behavioral information. Built with Python and Scikit-learn, the system employs multiple machine learning models to classify anxiety levels using Generalized Anxiety Disorder (GAD) questionnaire responses. Features a Flask backend and Bootstrap frontend for an interactive user experience.",
-    "longDescription": "This advanced mental health assessment platform analyzes and predicts anxiety levels in individuals using machine learning techniques applied to psychological, demographic, and behavioral data. The system processes responses to a Generalized Anxiety Disorder (GAD) questionnaire and classifies anxiety into multiple severity levels. The project implements a comprehensive data science pipeline including data preprocessing with missing value handling, categorical feature encoding using LabelEncoder, and feature engineering to extract meaningful patterns. The platform evaluates multiple machine learning algorithms including Random Forest, Support Vector Machines (SVM), Gradient Boosting, and others through cross-validation to determine optimal performance. Hyperparameter tuning is performed using GridSearchCV to optimize model accuracy, with the final SVM model achieving high classification performance. The system includes extensive data visualization using Matplotlib and Seaborn to illustrate age distributions and categorical relationships with anxiety levels. The Flask backend provides RESTful endpoints for predictions, while the Bootstrap-based user interface offers an intuitive questionnaire experience with real-time anxiety level predictions and personalized mental health recommendations. The ModelPipeline class encapsulates all preprocessing and prediction logic, enabling seamless deployment and scalability. The platform demonstrates expertise in mental health data analysis, supervised learning, model optimization, and full-stack development. This project addresses the critical need for accessible mental health screening tools and showcases the application of data science in healthcare and wellness domains.",
-    "logo": [""],
+    "longDescription": "This mental health assessment platform uses **machine learning** to predict anxiety levels from psychological, demographic, and behavioral data collected through a **Generalized Anxiety Disorder (GAD)** questionnaire.\n\nThe data science pipeline covers missing value handling, categorical feature encoding with **LabelEncoder**, and feature engineering to extract meaningful patterns. Multiple algorithms are evaluated — including **Random Forest**, **SVM**, and **Gradient Boosting** — through cross-validation to find the best performer. Hyperparameter tuning with **GridSearchCV** further optimizes the final SVM model.\n\nData visualizations built with **Matplotlib** and **Seaborn** illustrate age distributions and categorical relationships with anxiety levels. The **Flask** backend exposes RESTful prediction endpoints, while a **Bootstrap** frontend delivers an intuitive questionnaire experience with real-time predictions and personalized mental health recommendations.\n\nThe **ModelPipeline** class encapsulates all preprocessing and prediction logic for clean deployment. This project demonstrates how data science can support accessible mental health screening and wellness applications.",
+    "logo": [
+      ""
+    ],
     "thumbnail": "",
-    "images": ["/assets/media/projects/anxiety-prediction/interface.png"],
+    "images": [
+      "/assets/media/projects/anxiety-prediction/interface.png"
+    ],
     "videoTuto": "/assets/media/projects/anxiety-prediction/video_tuto_anxiety.mp4",
     "demoGif": "",
     "technologies": [
@@ -196,7 +277,12 @@
       "Matplotlib",
       "Seaborn"
     ],
-    "categories": ["ml", "data_science", "health_tech", "web"],
+    "categories": [
+      "ml",
+      "data_science",
+      "health_tech",
+      "web"
+    ],
     "github": "https://github.com/ZaaliMohamed123/Analysis-and-Prediction-of-Anxiety-Levels-Using-Machine-Learning-Techniques",
     "goToPage": "/projects/3"
   },
@@ -205,14 +291,29 @@
     "title": "Fake News Detection",
     "subtitle": "ML-Powered News Authenticity Classifier",
     "description": "Machine learning system that classifies news articles as fake or real using natural language processing and logistic regression. Built with Python and Scikit-learn, the system employs TF-IDF vectorization and text preprocessing techniques including stemming and stopword removal to analyze news content from a Kaggle competition dataset with thousands of labeled articles.",
-    "longDescription": "This comprehensive fake news detection system leverages machine learning and natural language processing to combat misinformation by classifying news articles as reliable or unreliable. The project processes a large-scale Kaggle dataset containing news articles with author information, titles, and full content. The data preprocessing pipeline merges author, title, and text fields into a unified content column for comprehensive feature engineering. Advanced text preprocessing techniques include Porter Stemming to reduce words to their root forms, removal of stopwords to eliminate common but uninformative words, and filtering of non-alphabetic characters to clean the text data. The system employs TF-IDF (Term Frequency-Inverse Document Frequency) vectorization to convert the preprocessed text into numerical features that capture the importance of words across the corpus. A logistic regression model is trained on the transformed features, chosen for its interpretability and effectiveness in binary classification tasks. The model achieves high accuracy on both training and test datasets, demonstrating robust generalization capabilities. The project includes a predictive system function that accepts new news articles and returns real-time authenticity predictions. The implementation showcases expertise in text mining, feature extraction, supervised learning, and building practical NLP applications. This project addresses the critical societal challenge of combating misinformation and demonstrates the application of data science in promoting media literacy and information integrity. The system can be integrated into news platforms, social media monitoring tools, or fact-checking applications to help users identify potentially false information.",
-    "logo": [""],
+    "longDescription": "This fake news detection system uses **machine learning** and **natural language processing** to classify news articles as reliable or unreliable, addressing the critical challenge of misinformation.\n\nThe pipeline processes a large-scale Kaggle dataset containing articles with author, title, and body text. All three fields are merged into a unified content column before preprocessing. Text is cleaned using **Porter Stemming** to reduce words to root forms, stopword removal to eliminate uninformative words, and filtering of non-alphabetic characters.\n\n**TF-IDF vectorization** then converts the preprocessed text into numerical features that capture word importance across the corpus. A **logistic regression** model is trained on these features — chosen for its interpretability and strong performance on binary classification tasks — and achieves high accuracy on both training and test sets.\n\nThe system includes a predictive function that accepts any new article and returns a real-time authenticity prediction, making it ready to integrate into news platforms, fact-checking tools, or social media monitoring workflows.",
+    "logo": [
+      ""
+    ],
     "thumbnail": "",
-    "images": [""],
+    "images": [
+      ""
+    ],
     "videoTuto": "",
     "demoGif": "",
-    "technologies": ["Python", "Scikit-learn", "Pandas", "NumPy", "NLTK", "TF-IDF"],
-    "categories": ["ml", "data_science", "ai"],
+    "technologies": [
+      "Python",
+      "Scikit-learn",
+      "Pandas",
+      "NumPy",
+      "NLTK",
+      "TF-IDF"
+    ],
+    "categories": [
+      "ml",
+      "data_science",
+      "ai"
+    ],
     "github": "https://github.com/ZaaliMohamed123/Fake-News-Prediction",
     "goToPage": "/projects/2"
   },
@@ -221,16 +322,28 @@
     "title": "GESTAG",
     "subtitle": "Intern and Internship Management System",
     "description": "Comprehensive web application for managing trainees, internships, and registrations developed with Java EE and Oracle database. The system streamlines the entire internship lifecycle from stage selection to trainee registration, featuring dynamic sorting, waitlist management, and automated status tracking. Built with a modern frontend using HTML, CSS, and JavaScript, and designed in Figma.",
-    "longDescription": "GESTAG is a robust enterprise-level web application designed to manage the complete lifecycle of trainees, internships, and registration processes for educational institutions and organizations. Built on Java/JEE architecture with an Oracle relational database backend, the system implements sophisticated business logic through stored procedures and functions in PL/SQL. The application features a multi-window interface starting with secure authentication, followed by an intelligent stage selection screen that displays available internships with dynamic sorting capabilities by type or start date. Users can view detailed information about selected stages including the complete list of registered trainees and available slots. The registration workflow includes automatic trainee creation if they don't exist in the system, with comprehensive data validation and duplicate checking. The system implements intelligent capacity management, automatically assigning trainees to a waiting list (position code 3) when internships reach full capacity, or confirming registration (position code 2) when slots are available. After validation, the system automatically updates registration counts and maintains data integrity across related tables. The application includes six carefully designed windows: login authentication, stage selection with sorting, detailed stage information with trainee lists, registration interface, new trainee creation form, and confirmation messaging. The frontend is designed in Figma for optimal user experience and implemented using HTML, CSS, and JavaScript for responsive interactions. The backend leverages Java EE for robust server-side processing and Oracle's powerful relational database capabilities. This project demonstrates expertise in full-stack enterprise application development, database design and optimization, business logic implementation, and creating user-friendly interfaces for complex administrative workflows. Developed collaboratively with a team, GESTAG showcases professional software engineering practices including version control and collaborative development.",
-    "logo": [""],
+    "longDescription": "GESTAG is a robust enterprise-level web application built to manage the complete lifecycle of trainees, internships, and registration processes for educational institutions. It is built on **Java EE** with an **Oracle** relational database backend, implementing sophisticated business logic through stored procedures and functions in **PL/SQL**.\n\nThe application features a multi-window interface starting with secure authentication, followed by an intelligent stage selection screen displaying available internships with dynamic sorting by type or start date. Users can view detailed stage information including registered trainees and available slots.\n\nThe registration workflow handles automatic trainee creation with full data validation and duplicate checking. **Capacity management** is built-in: the system automatically assigns trainees to a waiting list when an internship is full, or confirms registration when slots are available, then updates all counts and maintains data integrity across related tables.\n\nThe six application windows cover: login, stage selection, stage details, registration, new trainee creation, and confirmation. The frontend was designed in **Figma** and implemented with HTML, CSS, and JavaScript, while the backend leverages Java EE for robust server-side processing.",
+    "logo": [
+      ""
+    ],
     "thumbnail": "",
     "images": [
       "/assets/media/projects/gestag/interface.png"
     ],
     "videoTuto": "/assets/media/projects/gestag/video_tuto_gestag.mp4",
     "demoGif": "",
-    "technologies": ["Figma", "HTML", "CSS", "JavaScript", "Java EE", "PL/SQL", "Oracle"],
-    "categories": ["web"],
+    "technologies": [
+      "Figma",
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Java EE",
+      "PL/SQL",
+      "Oracle"
+    ],
+    "categories": [
+      "web"
+    ],
     "github": "https://github.com/ZaaliMohamed123/GESTAG",
     "goToPage": "/projects/1"
   }

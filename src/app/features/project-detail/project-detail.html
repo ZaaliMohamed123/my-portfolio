@@ -90,9 +90,9 @@
         </div>
         <div class="card-content">
           @if (project.longDescription) {
-          <p class="long-description">{{ project.longDescription }}</p>
+          <div class="long-description" [innerHTML]="project.longDescription | markdown"></div>
           } @else {
-          <p class="long-description">{{ project.description }}</p>
+          <div class="long-description" [innerHTML]="project.description | markdown"></div>
           }
         </div>
       </div>

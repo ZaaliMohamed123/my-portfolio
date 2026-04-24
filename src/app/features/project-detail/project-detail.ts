@@ -13,11 +13,12 @@ import { Subject, takeUntil } from 'rxjs';
 import { Project } from '../../core/models';
 import { ProjectsService } from '../../core/services/projects.service';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { MarkdownPipe } from '../../shared/pipes/markdown.pipe';
 
 @Component({
   selector: 'app-project-detail',
   standalone: true,
-  imports: [CommonModule, RouterModule, TranslocoModule],
+  imports: [CommonModule, RouterModule, TranslocoModule, MarkdownPipe],
   templateUrl: './project-detail.html',
   styleUrl: './project-detail.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
