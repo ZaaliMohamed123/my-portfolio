@@ -1,5 +1,51 @@
 [
   {
+    "id": 10,
+    "title": "Agent Architecte de Projets",
+    "subtitle": "Workflow de Documentation de Projets Automatisé avec LangGraph",
+    "description": "Agent IA autonome qui transforme les idées de projets en espaces de travail Notion structurés via une recherche et une génération de documentation automatisées utilisant LangChain et LangGraph.",
+    "longDescription": "L'Agent Architecte de Projets est un assistant de recherche et de documentation IA autonome construit avec LangChain et LangGraph. Le système prend une idée de projet et extrait automatiquement les métadonnées clés (titre, objectifs, livrables), génère 4 à 7 étapes d'implémentation actionnables, et crée un espace de travail Notion complet. Pour chaque étape, l'agent entre dans une boucle de recherche qui reflète les besoins d'information, recherche sur le web (Google Custom Search ou DuckDuckGo), lit les URLs pertinentes, synthétise les découvertes en utilisant les LLMs, et écrit une documentation structurée dans Notion. Le système supporte tout endpoint LLM compatible OpenAI incluant OAI, Ollama, vLLM et LM Studio. Une interface web Gradio fournit des mises à jour de progression en temps réel et l'interaction. L'architecture suit les patterns de machine à états LangGraph avec des noeuds modulaires (understand → outline → create_overview → research_loop → finalize) avec un schéma d'état typé et une separation claire entre les services de recherche, de synthèse et d'intégration Notion.",
+    "logo": ["assets/media/projects/project_architect_agent/logo.png"],
+    "thumbnail": "",
+    "images": ["assets/media/projects/project_architect_agent/architecture.svg"],
+    "videoTuto": "assets/media/projects/project_architect_agent/project_architect_demo.mp4",
+    "demoGif": "",
+    "technologies": [
+      "LangGraph",
+      "Notion API",
+      "Gradio",
+      "OpenAI API",
+      "Python",
+      "DuckDuckGo Search"
+    ],
+    "categories": ["ai", "agentic"],
+    "github": "https://github.com/ZaaliMohamed123/Project-Architect-agent",
+    "goToPage": "/projects/10"
+  },
+  {
+    "id": 9,
+    "title": "Agent IA de Traitement de Factures",
+    "subtitle": "Workflow d'Approbation de Factures Automatisé avec LangGraph",
+    "description": "Agent IA prêt pour la production qui extrait, valide et approuve ou rejette automatiquement des factures PDF via LangChain et LangGraph. Applique des règles métier, valide les calculs et envoie des notifications email automatisées via une interface Gradio.",
+    "longDescription": "L'Agent IA de Traitement de Factures est un workflow agentique prêt pour la production, construit avec LangChain et LangGraph, qui automatise entièrement le cycle d'approbation des factures. Le système ingère des factures PDF, utilise GPT-4 pour extraire tous les champs structurés (fournisseur, articles, totaux, taxe), valide les calculs mathématiquement, applique des politiques métier personnalisées (exigences de champs, limites de montants, détection des doublons) et prend des décisions d'approbation ou de rejet automatisées avec des explications claires. Les factures approuvées ou rejetées déclenchent des notifications email automatiques via Gmail. L'architecture suit les patterns LangGraph réels avec des noeuds modulaires pour chaque étape du pipeline, un schéma d'état typé avec Pydantic pour les contrats de sortie LLM, et une séparation claire entre les services d'ingestion PDF, d'extraction LLM, de validation, de décision et de notification. Le projet est entièrement configurable via .env et supporte tout endpoint compatible OpenAI incluant Azure, Gemini, Claude ou les modèles Ollama locaux. Une interface Gradio moderne offre un upload de factures par glisser-déposer et un retour de traitement en temps réel.",
+    "logo": [],
+    "thumbnail": "",
+    "images": [],
+    "videoTuto": "",
+    "demoGif": "",
+    "technologies": [
+      "LangChain",
+      "LangGraph",
+      "OpenAI API",
+      "Gradio",
+      "Pydantic",
+      "Python"
+    ],
+    "categories": ["ai", "agentic"],
+    "github": "https://github.com/ZaaliMohamed123/AI_invoice_processing_agent",
+    "goToPage": "/projects/9"
+  },
+  {
     "id": 8,
     "title": "AL-MUQARRIR",
     "subtitle": "Transcription Automatique et Génération de Procès-Verbaux",
@@ -24,7 +70,7 @@
       "JWT",
       "Python"
     ],
-    "categories": ["ai", "web", "data_science"],
+    "categories": ["ai", "genai", "web", "data_science"],
     "github": "https://github.com/SEKALDouaa/AL-MUQARRIR",
     "goToPage": "/projects/8"
   },
@@ -50,7 +96,7 @@
       "Pandas",
       "Python"
     ],
-    "categories": ["health_tech", "ai", "web", "data_science", "dl"],
+    "categories": ["health_tech", "ai", "genai", "web", "data_science", "dl"],
     "github": "https://github.com/ZaaliMohamed123/Cura",
     "goToPage": "/projects/7"
   },

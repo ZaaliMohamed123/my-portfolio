@@ -1,5 +1,50 @@
 [
   {
+    "id": 10,
+    "title": "Project Architect Agent",
+    "subtitle": "LangGraph-Powered Automated Project Documentation Workflow",
+    "description": "Autonomous AI agent that transforms project ideas into structured Notion workspaces through automated research and documentation generation using LangChain and LangGraph.",
+    "longDescription": "The Project Architect Agent is an autonomous AI-powered research and documentation assistant built with LangChain and LangGraph. The system takes a project idea and automatically extracts key metadata (title, objectives, deliverables), generates 4-7 actionable implementation steps, and creates a complete Notion workspace. For each step, the agent enters a research loop that reflects on information needs, searches the web (Google Custom Search or DuckDuckGo), reads relevant URLs, synthesizes findings using LLMs, and writes structured documentation to Notion. The system supports any OpenAI-compatible LLM endpoint including OAI, Ollama, vLLM, and LM Studio. A Gradio web interface provides real-time progress updates and interaction. The architecture follows LangGraph state machine patterns with modular nodes (understand → outline → create_overview → research_loop → finalize) with typed state schema and clean separation between research, synthesis, and Notion integration services.",
+    "logo": ["assets/media/projects/project_architect_agent/logo.png"],
+    "thumbnail": "",
+    "images": ["assets/media/projects/project_architect_agent/architecture.svg"],
+    "videoTuto": "assets/media/projects/project_architect_agent/project_architect_demo.mp4",
+    "demoGif": "",
+    "technologies": [
+      "LangGraph",
+      "Notion API",
+      "Gradio",
+      "OpenAI API",
+      "Python",
+      "DuckDuckGo Search"
+    ],
+    "categories": ["ai", "agentic"],
+    "github": "https://github.com/ZaaliMohamed123/Project-Architect-agent",
+    "goToPage": "/projects/10"
+  },
+  {
+    "id": 9,
+    "title": "AI Invoice Processing Agent",
+    "subtitle": "LangGraph-Powered Automated Invoice Approval Workflow",
+    "description": "AI agent that extracts, validates, and auto-approves or rejects PDF invoices using LangChain and LangGraph. Enforces business rules, validates calculations, and sends automated email notifications with a Gradio web interface.",
+    "longDescription": "The AI Invoice Processing Agent is a production-ready agentic workflow built with LangChain and LangGraph that fully automates the invoice approval lifecycle. The system ingests PDF invoices, uses GPT-4 to extract all structured fields (vendor, line items, totals, tax), validates calculations mathematically, enforces custom business policies (field requirements, amount limits, duplicate detection), and makes automated approval or rejection decisions with clear explanations. Rejected or approved invoices trigger automated email notifications via Gmail. The architecture follows real-world LangGraph patterns with modular nodes for each stage of the pipeline, a typed state schema using Pydantic for LLM output contracts, and a clean separation between PDF ingestion, LLM extraction, validation, decision, and notification services. The project is fully configurable via .env and supports any OpenAI-compatible endpoint including Azure, Gemini, Claude, or local Ollama models. A modern Gradio interface provides drag-and-drop invoice upload and real-time processing feedback.",
+    "logo": ["assets/media/projects/ai_invoice_processing_agent/ai_invoice_processing_logo.mp4.png"],
+    "thumbnail": "",
+    "images": ["assets/media/projects/ai_invoice_processing_agent/results.png"],
+    "videoTuto": "assets/media/projects/ai_invoice_processing_agent/Ai_invoice_processing_demo.mp4",
+    "demoGif": "",
+    "technologies": [
+      "LangGraph",
+      "OpenAI API",
+      "Gradio",
+      "Pydantic",
+      "Python"
+    ],
+    "categories": ["ai", "agentic"],
+    "github": "https://github.com/ZaaliMohamed123/AI_invoice_processing_agent",
+    "goToPage": "/projects/9"
+  },
+  {
     "id": 8,
     "title": "AL-MUQARRIR",
     "subtitle": "Automatic Transcription & Meeting Minutes Generation",
@@ -24,7 +69,7 @@
       "JWT",
       "Python"
     ],
-    "categories": ["ai", "web", "data_science"],
+    "categories": ["ai", "genai", "web", "data_science"],
     "github": "https://github.com/SEKALDouaa/AL-MUQARRIR",
     "goToPage": "/projects/8"
   },
@@ -50,7 +95,7 @@
       "Pandas",
       "Python"
     ],
-    "categories": ["health_tech", "ai", "web", "data_science", "dl"],
+    "categories": ["health_tech", "ai", "genai", "web", "data_science", "dl"],
     "github": "https://github.com/ZaaliMohamed123/Cura",
     "goToPage": "/projects/7"
   },

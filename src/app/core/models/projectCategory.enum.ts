@@ -1,4 +1,6 @@
 export enum ProjectCategory {
+  AGENTIC = 'agentic',
+  GENAI = 'genai',
   AI = 'ai',       
   DL = 'dl',                
   ML = 'ml',                

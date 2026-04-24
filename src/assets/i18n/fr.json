@@ -280,16 +280,9 @@
       "web": "Développement Web",
       "data_science": "Science des Données",
       "health_tech": "Technologies de Santé",
-      "big_data": "Big Data"
-    },
-    "techCategories": {
-      "frontend": "Frontend",
-      "backend": "Backend",
-      "database": "Base de Données",
-      "dl": "Apprentissage Profond",
-      "ml": "Apprentissage Automatique",
-      "ai": "IA/ML",
-      "deployment": "Déploiement"
+      "big_data": "Big Data",
+      "agentic": "IA Agentique",
+      "genai": "IA Générative"
     },
     "technologies": "Technologies",
     "learnMore": "En Savoir Plus",

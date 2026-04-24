@@ -216,5 +216,54 @@
     "icon": "devicon-oracle-original",
     "color": "#f80000",
     "category": "database"
+  },
+  {
+    "name": "LangGraph",
+    "icon": "/assets/media/tech-icons/langgraph.svg",
+    "color": "#1c3c3c",
+    "category": "ai",
+    "isCustomIcon": true
+  },
+  {
+    "name": "LangChain",
+    "icon": "/assets/media/tech-icons/langgraph.svg",
+    "color": "#1c3c3c",
+    "category": "ai",
+    "isCustomIcon": true
+  },
+  {
+    "name": "Gradio",
+    "icon": "/assets/media/tech-icons/gradio.svg",
+    "color": "#ff7c00",
+    "category": "ai",
+    "isCustomIcon": true
+  },
+  {
+    "name": "Pydantic",
+    "icon": "/assets/media/tech-icons/pydantic.svg",
+    "color": "#e92063",
+    "category": "backend",
+    "isCustomIcon": true
+  },
+  {
+    "name": "OpenAI API",
+    "icon": "/assets/media/tech-icons/openai.svg",
+    "color": "#412991",
+    "category": "ai",
+    "isCustomIcon": true
+  },
+  {
+    "name": "Notion API",
+    "icon": "/assets/media/tech-icons/notion.svg",
+    "color": "#000000",
+    "category": "ai",
+    "isCustomIcon": true
+  },
+  {
+    "name": "DuckDuckGo Search",
+    "icon": "/assets/media/tech-icons/duckduckgo.svg",
+    "color": "#de5833",
+    "category": "ai",
+    "isCustomIcon": true
   }
 ]
