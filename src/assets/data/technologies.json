@@ -265,5 +265,33 @@
     "color": "#000000",
     "technology": "FastMCP",
     "isCustomIcon": true
+  },
+  {
+    "name": "LangFlow",
+    "icon": "/assets/media/tech-icons/langflow.svg",
+    "color": "#1c3c3c",
+    "technology": "LangFlow",
+    "isCustomIcon": true
+  },
+  {
+    "name": "Chroma DB",
+    "icon": "/assets/media/tech-icons/chroma.svg",
+    "color": "#FF6B35",
+    "technology": "Chroma DB",
+    "isCustomIcon": true
+  },
+  {
+    "name": "Gmail MCP",
+    "icon": "/assets/media/tech-icons/gmail.svg",
+    "color": "#EA4335",
+    "technology": "Gmail MCP",
+    "isCustomIcon": true
+  },
+  {
+    "name": "Google Calendar MCP",
+    "icon": "/assets/media/tech-icons/google-calendar.svg",
+    "color": "#4285F4",
+    "technology": "Google Calendar MCP",
+    "isCustomIcon": true
   }
 ]

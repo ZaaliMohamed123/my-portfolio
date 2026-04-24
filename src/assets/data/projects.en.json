@@ -1,5 +1,35 @@
 [
   {
+    "id": 12,
+    "title": "El-Qess Restaurant AI Assistant",
+    "subtitle": "Langflow-Powered Moroccan Restaurant AI with RAG and MCP Integrations",
+    "description": "An AI-powered virtual assistant for an authentic Moroccan restaurant built with Langflow. Handles FAQ answering via RAG, table reservations through Google Calendar MCP, and sends automated email confirmations via Gmail MCP, all through a conversational interface.",
+    "longDescription": "El-Qess Restaurant AI Assistant is a fully visual AI agent built on **Langflow** that handles the three core operations of a Moroccan restaurant: answering customer questions, managing reservations, and sending confirmation emails.\n\nFor FAQ answering, the agent uses a **RAG (Retrieval-Augmented Generation)** pipeline. Restaurant documents are loaded, chunked with a Recursive Text Splitter, converted into vectors using **OpenAI Embeddings**, and stored in **Chroma DB**. When a customer asks a question, the agent performs a semantic search and generates a grounded, accurate answer.\n\nFor reservations, the agent collects all required guest details through conversation (name, date, time, number of guests, email, and phone), then uses **Google Calendar MCP** via Composio to create the calendar event automatically. Once the booking is confirmed, **Gmail MCP** sends a formatted confirmation email directly to the guest.\n\nThe entire workflow is built visually in Langflow without custom code, demonstrating how drag-and-drop AI orchestration can produce a production-ready hospitality assistant. The agent uses MCP (Model Context Protocol) servers via Composio for both Google Calendar and Gmail integrations, handling OAuth 2.0 authentication transparently.",
+    "logo": [
+      "assets/media/projects/el-qess-restaurant-agent/el_qess_restaurant_assistant_logo.png"
+    ],
+    "thumbnail": "",
+    "images": [
+      "assets/media/projects/el-qess-restaurant-agent/flow.png"
+    ],
+    "videoTuto": "assets/media/projects/el-qess-restaurant-agent/el-Qess_Restaurant_assistant_demo.mp4",
+    "demoGif": "",
+    "technologies": [
+      "LangFlow",
+      "OpenAI API",
+      "Chroma DB",
+      "Gmail MCP",
+      "Google Calendar MCP"
+    ],
+    "categories": [
+      "ai",
+      "agentic",
+      "ai_tools"
+    ],
+    "github": "https://github.com/ZaaliMohamed123/el-qess-restaurant-ai-assistant",
+    "goToPage": "/projects/12"
+  },
+  {
     "id": 11,
     "title": "Twitter MCP Server",
     "subtitle": "Model Context Protocol Server for Twitter/X Automation",

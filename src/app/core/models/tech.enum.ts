@@ -11,6 +11,9 @@ export enum Tech {
   LANGFLOW = 'LangFlow',
   HUGGINGFACE = 'HuggingFace',
   FASTMCP = 'FastMCP',
+  CHROMADB = 'Chroma DB',
+  GMAIL_MCP = 'Gmail MCP',
+  GOOGLE_CALENDAR_MCP = 'Google Calendar MCP',
 
   // Deep Learning
   TENSORFLOW = 'TensorFlow',
