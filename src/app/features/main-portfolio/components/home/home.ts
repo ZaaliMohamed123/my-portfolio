@@ -110,9 +110,10 @@ export class Home implements OnInit, AfterViewInit, OnDestroy {
     { name: 'PyTorch',      key: 'pytorch',      icon: 'devicon-pytorch-original',      color: '#ee4c2c' },
     { name: 'Docker',       key: 'docker',       icon: 'devicon-docker-plain',          color: '#2496ed' },
     { name: 'PostgreSQL',   key: 'postgresql',   icon: 'devicon-postgresql-plain',      color: '#336791' },
-    { name: 'LangGraph',    key: 'langgraph',    icon: 'assets/media/tech-icons/langgraph.svg',    color: '#1c3c3c', isCustomIcon: true, scale: 2 },
-    { name: 'LangFlow',     key: 'langflow',     icon: 'assets/media/tech-icons/langflow.svg',     color: '#f72585', isCustomIcon: true, scale: 2 },
-    { name: 'HuggingFace',  key: 'huggingface',  icon: 'assets/media/tech-icons/huggingface.svg',  color: '#ffbd00', isCustomIcon: true, scale: 2 },
+    { name: 'LangGraph',    key: 'langgraph',    icon: 'assets/media/tech-icons/langgraph.svg',                    color: '#1c3c3c', isCustomIcon: true, scale: 2 },
+    { name: 'LangFlow',     key: 'langflow',     icon: 'assets/media/tech-icons/langflow.svg',                     color: '#f72585', isCustomIcon: true, scale: 2 },
+    { name: 'HuggingFace',  key: 'huggingface',  icon: 'assets/media/tech-icons/huggingface.svg',                  color: '#ffbd00', isCustomIcon: true, scale: 2 },
+    { name: 'FastMCP',      key: 'fastmcp',      icon: 'assets/media/tech-icons/Model_Context_Protocol_logo.svg',  color: '#000000', isCustomIcon: true, scale: 2 },
   ];
 
   // Typing animation — driven by i18n keys
