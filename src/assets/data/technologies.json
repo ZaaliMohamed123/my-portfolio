@@ -225,13 +225,6 @@
     "isCustomIcon": true
   },
   {
-    "name": "LangChain",
-    "icon": "/assets/media/tech-icons/langgraph.svg",
-    "color": "#1c3c3c",
-    "technology": "LangGraph",
-    "isCustomIcon": true
-  },
-  {
     "name": "Gradio",
     "icon": "/assets/media/tech-icons/gradio.svg",
     "color": "#ff7c00",
