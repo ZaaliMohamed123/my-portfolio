@@ -102,33 +102,34 @@ export class Skills implements OnInit, OnDestroy, AfterViewInit {
         { name: 'NLP',              icon: 'devicon-python-plain colored',        tooltip: 'Natural Language Processing' },
       ]
     },
-    {
-      label: 'skills.cat.integration',
-      icon: 'fas fa-plug',
-      skills: [
-        { name: 'Talend',           icon: 'fas fa-project-diagram', tooltip: 'Talend Data Integration' },
-        { name: 'Data Warehousing', icon: 'fas fa-warehouse',       tooltip: 'Enterprise Data Warehousing' },
-        { name: 'ETL',              icon: 'fas fa-random',          tooltip: 'ETL Processes' },
-      ]
-    },
-    {
-      label: 'skills.cat.bigdata',
-      icon: 'fas fa-server',
-      skills: [
-        { name: 'Hadoop', icon: '/assets/media/tech-icons/Apache Hadoop.svg',        tooltip: 'Hadoop',        isCustomIcon: true },
-        { name: 'Hive',   icon: '/assets/media/tech-icons/apachehive-svgrepo-com.svg', tooltip: 'Hive',        isCustomIcon: true },
-        { name: 'Sqoop',  icon: '/assets/media/tech-icons/Apache_Sqoop_logo.svg',    tooltip: 'Apache Sqoop', isCustomIcon: true },
-        { name: 'Kafka',  icon: 'devicon-apachekafka-original colored',              tooltip: 'Apache Kafka' },
-      ]
-    },
-    {
-      label: 'skills.cat.visualization',
-      icon: 'fas fa-chart-bar',
-      skills: [
-        { name: 'Power BI',      icon: '/assets/media/tech-icons/bi-2021.svg', tooltip: 'Power BI',      isCustomIcon: true },
-        { name: 'Google Looker', icon: '/assets/media/tech-icons/Looker.svg',  tooltip: 'Google Looker', isCustomIcon: true },
-      ]
-    },
+    // ---- Uncomment when Data Engineer certification is obtained ----
+    // {
+    //   label: 'skills.cat.integration',
+    //   icon: 'fas fa-plug',
+    //   skills: [
+    //     { name: 'Talend',           icon: 'fas fa-project-diagram', tooltip: 'Talend Data Integration' },
+    //     { name: 'Data Warehousing', icon: 'fas fa-warehouse',       tooltip: 'Enterprise Data Warehousing' },
+    //     { name: 'ETL',              icon: 'fas fa-random',          tooltip: 'ETL Processes' },
+    //   ]
+    // },
+    // {
+    //   label: 'skills.cat.bigdata',
+    //   icon: 'fas fa-server',
+    //   skills: [
+    //     { name: 'Hadoop', icon: '/assets/media/tech-icons/Apache Hadoop.svg',          tooltip: 'Hadoop',        isCustomIcon: true },
+    //     { name: 'Hive',   icon: '/assets/media/tech-icons/apachehive-svgrepo-com.svg', tooltip: 'Hive',          isCustomIcon: true },
+    //     { name: 'Sqoop',  icon: '/assets/media/tech-icons/Apache_Sqoop_logo.svg',      tooltip: 'Apache Sqoop',  isCustomIcon: true },
+    //     { name: 'Kafka',  icon: 'devicon-apachekafka-original colored',                tooltip: 'Apache Kafka' },
+    //   ]
+    // },
+    // {
+    //   label: 'skills.cat.visualization',
+    //   icon: 'fas fa-chart-bar',
+    //   skills: [
+    //     { name: 'Power BI',      icon: '/assets/media/tech-icons/bi-2021.svg', tooltip: 'Power BI',      isCustomIcon: true },
+    //     { name: 'Google Looker', icon: '/assets/media/tech-icons/Looker.svg',  tooltip: 'Google Looker', isCustomIcon: true },
+    //   ]
+    // },
   ];
 
   constructor(private cdr: ChangeDetectorRef) {}
