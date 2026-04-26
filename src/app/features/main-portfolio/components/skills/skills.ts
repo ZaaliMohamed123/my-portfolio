@@ -85,6 +85,7 @@ export class Skills implements OnInit, OnDestroy, AfterViewInit {
       icon: 'fas fa-robot',
       skills: [
         { name: 'LangGraph',  icon: '/assets/media/tech-icons/langgraph.svg',                   tooltip: 'LangGraph',  isCustomIcon: true },
+        { name: 'LangChain',  icon: '/assets/media/tech-icons/langgraph.svg',                   tooltip: 'LangChain',  isCustomIcon: true },
         { name: 'LangFlow',   icon: '/assets/media/tech-icons/langflow.svg',                    tooltip: 'LangFlow',   isCustomIcon: true },
         { name: 'FastMCP',    icon: '/assets/media/tech-icons/Model_Context_Protocol_logo.svg', tooltip: 'FastMCP',    isCustomIcon: true },
         { name: 'OpenAI API', icon: '/assets/media/tech-icons/openai.svg',                      tooltip: 'OpenAI API', isCustomIcon: true },
