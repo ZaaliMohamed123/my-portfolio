@@ -101,7 +101,7 @@ export class Home implements OnInit, AfterViewInit, OnDestroy {
     { name: 'CSS3',         key: 'css',          icon: 'devicon-css3-plain',            color: '#1572b6' },
     { name: 'Bootstrap',    key: 'bootstrap',    icon: 'devicon-bootstrap-plain',       color: '#7952b3' },
     { name: 'Sass',         key: 'scss',         icon: 'devicon-sass-original',         color: '#cc6699' },
-    { name: 'Angular',      key: 'angular',      icon: 'devicon-angular-plain',         color: '#dd0031' },
+    { name: 'Angular',      key: 'angular',      icon: 'devicon-angular-original',         color: '#dd0031' },
     { name: 'Spring Boot',  key: 'springboot',   icon: 'devicon-spring-original',       color: '#6db33f' },
     { name: 'Flask',        key: 'flask',        icon: 'devicon-flask-original',        color: '#000000' },
     { name: 'FastAPI',      key: 'fastapi',      icon: 'devicon-fastapi-plain',         color: '#009688' },

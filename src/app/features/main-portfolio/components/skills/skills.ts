@@ -72,7 +72,7 @@ export class Skills implements OnInit, OnDestroy, AfterViewInit {
         { name: 'HTML',        icon: 'devicon-html5-plain colored',       tooltip: 'HTML5' },
         { name: 'CSS',         icon: 'devicon-css3-plain colored',        tooltip: 'CSS3' },
         { name: 'Bootstrap',   icon: 'devicon-bootstrap-plain colored',   tooltip: 'Bootstrap' },
-        { name: 'Angular',     icon: 'devicon-angular-plain colored',     tooltip: 'Angular' },
+        { name: 'Angular',     icon: 'devicon-angular-original colored',     tooltip: 'Angular' },
         { name: 'Flask',       icon: 'devicon-flask-original colored',    tooltip: 'Flask' },
         { name: 'FastAPI',     icon: 'devicon-fastapi-plain colored',     tooltip: 'FastAPI' },
         { name: 'Spring Boot', icon: 'devicon-spring-plain colored',      tooltip: 'Spring Boot' },
