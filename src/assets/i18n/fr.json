@@ -207,8 +207,7 @@
   },
   "contact": {
     "title": "Connectons-nous",
-    "subtitle": "Prêt à construire quelque chose d'incroyable ensemble ?",
-    "motivation": "🚀 Un projet passionnant ? Besoin d'un magicien de la tech ? Envie de discuter d'IA et de data science ? Contactez-moi ! Je promets d'être plus sympa que mes algorithmes ! 😄",
+    "motivation": "Que vous ayez un projet en tête, souhaitiez collaborer, ou simplement discuter d'IA, n'hésitez pas à me contacter.",
     "availability": {
       "title": "Actuellement Disponible Pour",
       "fulltime": "Postes à Temps Plein",
@@ -235,14 +234,14 @@
       }
     },
     "cta": {
-      "text": "Prêt à commencer notre prochaine grande aventure ?",
+      "text": "Construisons quelque chose ensemble.",
       "email": "Envoyer un Email",
       "downloadCV": "Télécharger CV",
       "whatsapp": "WhatsApp"
     }
   },
   "footer": {
-    "copyright": "Mohamed © 2025 | Fièrement conçu avec des bugs... je veux dire, des fonctionnalités!"
+    "copyright": "Mohamed © 2026 | Fièrement conçu avec des bugs... je veux dire, des fonctionnalités!"
   },
   "projects": {
     "title": "Projets en Vedette",

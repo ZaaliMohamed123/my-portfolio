@@ -207,8 +207,7 @@
   },
   "contact": {
     "title": "Let's Connect",
-    "subtitle": "Ready to build something amazing together?",
-    "motivation": "🚀 Got an exciting project? Need a tech wizard? Just want to chat about AI and data science? Drop me a line! I promise I'm friendlier than my algorithms! 😄",
+    "motivation": "Whether you have a project in mind, want to collaborate, or just want to talk AI, feel free to reach out.",
     "availability": {
       "title": "Currently Available For",
       "fulltime": "Full-time Positions",
@@ -235,14 +234,14 @@
       }
     },
     "cta": {
-      "text": "Ready to start our next big adventure?",
+      "text": "Let's build something together.",
       "email": "Send Email",
       "downloadCV": "Download CV",
       "whatsapp": "WhatsApp"
     }
   },
   "footer": {
-    "copyright": "Mohamed © 2025 | Proudly made with bugs... I mean features"
+    "copyright": "Mohamed © 2026 | Proudly made with bugs... I mean features"
   },
   "projects": {
     "title": "Featured Projects",
