@@ -90,10 +90,10 @@ export class Contact implements OnInit, OnDestroy, AfterViewInit {
   ];
 
   availabilityTypes: AvailabilityType[] = [
-    { key: 'contact.availability.internships', icon: 'fas fa-graduation-cap' },
+    { key: 'contact.availability.fulltime', icon: 'fas fa-briefcase' },
     { key: 'contact.availability.projects', icon: 'fas fa-project-diagram' },
     { key: 'contact.availability.collaborations', icon: 'fas fa-handshake' },
-    { key: 'contact.availability.freelance', icon: 'fas fa-briefcase' },
+    { key: 'contact.availability.freelance', icon: 'fas fa-laptop-code' },
   ];
 
   constructor(private cdr: ChangeDetectorRef, private translocoService: TranslocoService) {}
