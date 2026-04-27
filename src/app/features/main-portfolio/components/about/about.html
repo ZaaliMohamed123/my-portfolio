@@ -33,81 +33,49 @@
       </div>
 
       <div class="values-grid">
-        <!-- Curiosity Value -->
-        <div
-          class="value-card curiosity-card"
-          (mouseenter)="showValueDetails('curiosity')"
-          (mouseleave)="hideValueDetails('curiosity')"
-          [class.active]="activeValue === 'curiosity'"
-        >
-          <div class="card-inner">
-            <div class="card-front">
-              <div class="value-icon">
-                <i class="main-icon">🔍</i>
-              </div>
-              <h3>{{ 'about.values.curiosity.title' | transloco }}</h3>
-              <p class="value-preview">{{ 'about.values.curiosity.preview' | transloco }}</p>
+
+        <!-- Curiosity Card -->
+        <div class="magic-card curiosity-card"
+          (mousemove)="onCardMouseMove($event, 'curiosity')"
+          (mouseleave)="onCardMouseLeave('curiosity')"
+          [style]="getCardStyle('curiosity')">
+          <div class="magic-card-inner">
+            <div class="value-icon">
+              <i class="fas fa-search-plus"></i>
             </div>
-            <div class="card-back">
-              <div class="value-detail">
-                <h4>{{ 'about.values.curiosity.detail_title' | transloco }}</h4>
-                <p>{{ 'about.values.curiosity.detail_content' | transloco }}</p>
-              </div>
-            </div>
+            <h3>{{ 'about.values.curiosity.title' | transloco }}</h3>
+            <p>{{ 'about.values.curiosity.detail_content' | transloco }}</p>
           </div>
         </div>
 
-        <!-- Collaboration Value -->
-        <div
-          class="value-card collaboration-card"
-          (mouseenter)="showValueDetails('collaboration')"
-          (mouseleave)="hideValueDetails('collaboration')"
-          [class.active]="activeValue === 'collaboration'"
-        >
-          <div class="card-inner">
-            <div class="card-front">
-              <div class="value-icon">
-                <i class="main-icon">🤝</i>
-              </div>
-              <h3>{{ 'about.values.collaboration.title' | transloco }}</h3>
-              <p class="value-preview">{{ 'about.values.collaboration.preview' | transloco }}</p>
+        <!-- Collaboration Card -->
+        <div class="magic-card collaboration-card"
+          (mousemove)="onCardMouseMove($event, 'collaboration')"
+          (mouseleave)="onCardMouseLeave('collaboration')"
+          [style]="getCardStyle('collaboration')">
+          <div class="magic-card-inner">
+            <div class="value-icon">
+              <i class="fas fa-handshake"></i>
             </div>
-            <div class="card-back">
-              <div class="value-detail">
-                <h4>{{ 'about.values.collaboration.detail_title' | transloco }}</h4>
-                <p>{{ 'about.values.collaboration.detail_content' | transloco }}</p>
-              </div>
-            </div>
+            <h3>{{ 'about.values.collaboration.title' | transloco }}</h3>
+            <p>{{ 'about.values.collaboration.detail_content' | transloco }}</p>
           </div>
         </div>
 
-        <!-- Coffee Value -->
-        <div
-          class="value-card coffee-card"
-          (mouseenter)="showValueDetails('coffee')"
-          (mouseleave)="hideValueDetails('coffee')"
-          [class.active]="activeValue === 'coffee'"
-        >
-          <div class="card-inner">
-            <div class="card-front">
-              <div class="value-icon coffee-icon">
-                <i class="main-icon">☕</i>
-                <div class="steam-animation">
-                  <div class="steam steam-1"></div>
-                  <div class="steam steam-2"></div>
-                </div>
-              </div>
-              <h3>{{ 'about.values.coffee.title' | transloco }}</h3>
-              <p class="value-preview">{{ 'about.values.coffee.preview' | transloco }}</p>
+        <!-- Coffee Card -->
+        <div class="magic-card coffee-card"
+          (mousemove)="onCardMouseMove($event, 'coffee')"
+          (mouseleave)="onCardMouseLeave('coffee')"
+          [style]="getCardStyle('coffee')">
+          <div class="magic-card-inner">
+            <div class="value-icon">
+              <i class="fas fa-coffee"></i>
             </div>
-            <div class="card-back">
-              <div class="value-detail">
-                <h4>{{ 'about.values.coffee.detail_title' | transloco }}</h4>
-                <p>{{ 'about.values.coffee.detail_content' | transloco }}</p>
-              </div>
-            </div>
+            <h3>{{ 'about.values.coffee.title' | transloco }}</h3>
+            <p>{{ 'about.values.coffee.detail_content' | transloco }}</p>
           </div>
         </div>
+
       </div>
     </div>
   </div>

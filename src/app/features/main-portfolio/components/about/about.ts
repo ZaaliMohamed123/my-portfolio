@@ -43,8 +43,28 @@ export class About implements OnInit, OnDestroy, AfterViewInit {
   private targetRotationY = 0;
   private currentRotationY = 0;
 
-  // Values Cards
-  activeValue: string | null = null;
+  // Values Cards - Magic Card mouse tracking
+  mousePos: Record<string, { x: number; y: number }> = {};
+
+  onCardMouseMove(event: MouseEvent, card: string): void {
+    const rect = (event.currentTarget as HTMLElement).getBoundingClientRect();
+    this.mousePos[card] = {
+      x: event.clientX - rect.left,
+      y: event.clientY - rect.top,
+    };
+  }
+
+  onCardMouseLeave(card: string): void {
+    this.mousePos[card] = { x: -999, y: -999 };
+  }
+
+  getCardStyle(card: string): Record<string, string> {
+    const pos = this.mousePos[card] || { x: -999, y: -999 };
+    return {
+      '--mouse-x': `${pos.x}px`,
+      '--mouse-y': `${pos.y}px`,
+    };
+  }
 
   // Scroll Detection
   visibleSections = new Set<string>();
@@ -96,22 +116,6 @@ export class About implements OnInit, OnDestroy, AfterViewInit {
 
     this.destroy$.next();
     this.destroy$.complete();
-  }
-
-  // ========================
-  // VALUES CARDS
-  // ========================
-
-  showValueDetails(value: string) {
-    this.activeValue = value;
-    this.cdr.detectChanges();
-  }
-
-  hideValueDetails(value: string) {
-    if (this.activeValue === value) {
-      this.activeValue = null;
-      this.cdr.detectChanges();
-    }
   }
 
   // ========================
