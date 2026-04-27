@@ -35,6 +35,10 @@ $info: #3B82F6;
   --color-purple: #{$purple};
   --color-cyan: #{$cyan};
   --color-pink: #{$pink};
+
+  // RGB channel values for rgba() usage
+  --color-primary-rgb: 37, 99, 235;
+  --color-secondary-rgb: 16, 185, 129;
   
   // Light Theme Backgrounds
   --bg-primary: #{$white};

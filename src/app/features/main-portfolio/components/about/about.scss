@@ -361,16 +361,15 @@
 .magic-card {
   position: relative;
   border-radius: 20px;
-  padding: 2px; // space for the gradient border
-  background: var(--border-primary);
+  padding: 2px;
   cursor: default;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 
   // Spotlight border: radial gradient follows --mouse-x/--mouse-y
   background: radial-gradient(
-    300px circle at var(--mouse-x) var(--mouse-y),
-    rgba(var(--color-primary), 0.4),
-    var(--border-primary) 60%
+    300px circle at var(--mouse-x, -999px) var(--mouse-y, -999px),
+    rgba(var(--color-primary-rgb), 0.5),
+    rgba(var(--color-primary-rgb), 0.08) 60%
   );
 
   &:hover {
@@ -391,19 +390,18 @@
   text-align: center;
   height: 100%;
 
-  // Inner spotlight overlay
+  // Inner spotlight overlay - uses parent CSS vars (inherited)
   &::before {
     content: '';
     position: absolute;
     inset: 0;
     border-radius: 18px;
     background: radial-gradient(
-      200px circle at var(--mouse-x) var(--mouse-y),
-      rgba(var(--color-primary), 0.06),
+      180px circle at var(--mouse-x, -999px) var(--mouse-y, -999px),
+      rgba(var(--color-primary-rgb), 0.07),
       transparent 80%
     );
     pointer-events: none;
-    transition: opacity 0.2s ease;
   }
 
   h3 {
@@ -568,9 +566,9 @@
 .dark-mode {
   .magic-card {
     background: radial-gradient(
-      300px circle at var(--mouse-x) var(--mouse-y),
-      rgba(var(--color-primary), 0.5),
-      var(--border-primary) 60%
+      300px circle at var(--mouse-x, -999px) var(--mouse-y, -999px),
+      rgba(var(--color-primary-rgb), 0.6),
+      rgba(var(--color-primary-rgb), 0.1) 60%
     );
 
     &:hover {
@@ -580,8 +578,8 @@
 
   .magic-card-inner::before {
     background: radial-gradient(
-      200px circle at var(--mouse-x) var(--mouse-y),
-      rgba(var(--color-primary), 0.1),
+      180px circle at var(--mouse-x, -999px) var(--mouse-y, -999px),
+      rgba(var(--color-primary-rgb), 0.12),
       transparent 80%
     );
   }
