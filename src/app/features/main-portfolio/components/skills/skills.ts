@@ -56,31 +56,6 @@ export class Skills implements OnInit, OnDestroy, AfterViewInit {
       ]
     },
     {
-      label: 'skills.cat.databases',
-      icon: 'fas fa-database',
-      skills: [
-        { name: 'MySQL',      icon: 'devicon-mysql-plain colored',      tooltip: 'MySQL' },
-        { name: 'PostgreSQL', icon: 'devicon-postgresql-plain colored', tooltip: 'PostgreSQL' },
-        { name: 'MongoDB',    icon: 'devicon-mongodb-plain colored',    tooltip: 'MongoDB' },
-        { name: 'SQLite',     icon: 'devicon-sqlite-plain colored',     tooltip: 'SQLite' },
-      ]
-    },
-    {
-      label: 'skills.cat.web',
-      icon: 'fas fa-globe',
-      skills: [
-        { name: 'HTML',        icon: 'devicon-html5-plain colored',       tooltip: 'HTML5' },
-        { name: 'CSS',         icon: 'devicon-css3-plain colored',        tooltip: 'CSS3' },
-        { name: 'Bootstrap',   icon: 'devicon-bootstrap-plain colored',   tooltip: 'Bootstrap' },
-        { name: 'Angular',     icon: 'devicon-angular-plain colored',     tooltip: 'Angular', color: '#dd0031' },
-        { name: 'Flask',       icon: 'devicon-flask-original colored',    tooltip: 'Flask' },
-        { name: 'FastAPI',     icon: 'devicon-fastapi-plain colored',     tooltip: 'FastAPI' },
-        { name: 'Spring Boot', icon: 'devicon-spring-plain colored',      tooltip: 'Spring Boot' },
-        { name: 'Streamlit',   icon: 'devicon-streamlit-plain colored',   tooltip: 'Streamlit' },
-        { name: 'Gradio',      icon: '/assets/media/tech-icons/gradio.svg', tooltip: 'Gradio', isCustomIcon: true },
-      ]
-    },
-    {
       label: 'skills.cat.aiengineering',
       icon: 'fas fa-robot',
       skills: [
@@ -100,6 +75,31 @@ export class Skills implements OnInit, OnDestroy, AfterViewInit {
         { name: 'Machine Learning', icon: 'devicon-scikitlearn-plain colored',   tooltip: 'Machine Learning' },
         { name: 'Deep Learning',    icon: 'devicon-tensorflow-original colored', tooltip: 'Deep Learning' },
         { name: 'NLP',              icon: 'devicon-python-plain colored',        tooltip: 'Natural Language Processing' },
+      ]
+    },
+    {
+      label: 'skills.cat.web',
+      icon: 'fas fa-globe',
+      skills: [
+        { name: 'HTML',        icon: 'devicon-html5-plain colored',       tooltip: 'HTML5' },
+        { name: 'CSS',         icon: 'devicon-css3-plain colored',        tooltip: 'CSS3' },
+        { name: 'Bootstrap',   icon: 'devicon-bootstrap-plain colored',   tooltip: 'Bootstrap' },
+        { name: 'Angular',     icon: 'devicon-angular-plain colored',     tooltip: 'Angular', color: '#dd0031' },
+        { name: 'Flask',       icon: 'devicon-flask-original colored',    tooltip: 'Flask' },
+        { name: 'FastAPI',     icon: 'devicon-fastapi-plain colored',     tooltip: 'FastAPI' },
+        { name: 'Spring Boot', icon: 'devicon-spring-plain colored',      tooltip: 'Spring Boot' },
+        { name: 'Streamlit',   icon: 'devicon-streamlit-plain colored',   tooltip: 'Streamlit' },
+        { name: 'Gradio',      icon: '/assets/media/tech-icons/gradio.svg', tooltip: 'Gradio', isCustomIcon: true },
+      ]
+    },
+    {
+      label: 'skills.cat.databases',
+      icon: 'fas fa-database',
+      skills: [
+        { name: 'MySQL',      icon: 'devicon-mysql-plain colored',      tooltip: 'MySQL' },
+        { name: 'PostgreSQL', icon: 'devicon-postgresql-plain colored', tooltip: 'PostgreSQL' },
+        { name: 'MongoDB',    icon: 'devicon-mongodb-plain colored',    tooltip: 'MongoDB' },
+        { name: 'SQLite',     icon: 'devicon-sqlite-plain colored',     tooltip: 'SQLite' },
       ]
     },
     // ---- Uncomment when Data Engineer certification is obtained ----
