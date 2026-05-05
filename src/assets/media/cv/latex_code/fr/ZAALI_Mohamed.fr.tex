@@ -1,0 +1,350 @@
+\documentclass[10pt, letterpaper]{article}
+
+% Define tagline command
+\newcommand{\tagline}[1]{\textit{#1}}
+% Packages:
+\usepackage[
+    ignoreheadfoot, % set margins without considering header and footer
+    top=1 cm, % separation between body and page edge from the top
+    bottom=1 cm, % separation between body and page edge from the bottom
+    left=1 cm, % separation between body and page edge from the left
+    right=1 cm, % separation between body and page edge from the right
+    footskip=1.0 cm, % separation between body and footer
+    % showframe % for debugging 
+]{geometry} % for adjusting page geometry
+\usepackage[explicit]{titlesec} % for customizing section titles
+\usepackage{tabularx} % for making tables with fixed width columns
+\usepackage{array} % tabularx requires this
+\usepackage[dvipsnames]{xcolor} % for coloring text
+\definecolor{primaryColor}{RGB}{0, 79, 144} % define primary color
+\usepackage{enumitem} % for customizing lists
+\usepackage{fontawesome5} % for using icons
+\usepackage{amsmath} % for math
+\usepackage[
+    pdftitle={ZAALI Mohamed  CV},
+    pdfauthor={ZAALI Mohamed},
+    pdfcreator={LaTeX with RenderCV},
+    colorlinks=true,
+    urlcolor=primaryColor
+]{hyperref} % for links, metadata and bookmarks
+\usepackage[pscoord]{eso-pic} % for floating text on the page
+\usepackage{calc} % for calculating lengths
+\usepackage{bookmark} % for bookmarks
+\usepackage{lastpage} % for getting the total number of pages
+\usepackage{changepage} % for one column entries (adjustwidth environment)
+\usepackage{paracol} % for two and three column entries
+\usepackage{ifthen} % for conditional statements
+\usepackage{needspace} % for avoiding page brake right after the section title
+\usepackage{iftex} % check if engine is pdflatex, xetex or luatex
+\usepackage{xcolor}  % For colors
+\usepackage{tcolorbox}  % For boxes
+
+% Define a custom "skill box" command
+\newtcbox{\skillbox}{
+    on line,  % Inline (not a block)
+    boxsep=0pt,  % No extra padding
+    left=2pt, right=2pt, top=2pt, bottom=2pt,  % Tight spacing
+    colback=gray!20,  % Light gray background
+    colframe=gray!40,  % Border color
+    fontupper=\ttfamily\bfseries,  % Monospace font
+    boxrule=0.7pt  % Thin border
+}
+\usepackage{tasks}
+\usepackage{tabularx}
+% Ensure that generate pdf is machine readable/ATS parsable:
+\ifPDFTeX
+    \input{glyphtounicode}
+    \pdfgentounicode=1
+    \usepackage[T1]{fontenc}
+    \usepackage[utf8]{inputenc}
+    \usepackage{lmodern}
+\fi
+
+\usepackage[default, type1]{sourcesanspro} 
+
+% Some settings:
+\AtBeginEnvironment{adjustwidth}{\partopsep0pt} % remove space before adjustwidth environment
+\pagestyle{empty} % no header or footer
+\setcounter{secnumdepth}{0} % no section numbering
+\setlength{\parindent}{0pt} % no indentation
+\setlength{\topskip}{0pt} % no top skip
+\setlength{\columnsep}{1cm} % set column separation
+
+
+\makeatletter
+
+
+\titleformat{\section}{
+    % avoid page braking right after the section title
+    \needspace{4\baselineskip}
+    % make the font size of the section title large and color it with the primary color
+    \Large\color{primaryColor}
+}{
+}{
+}{
+    % print bold title, give 0.15 cm space and draw a line of 0.8 pt thickness
+    % from the end of the title to the end of the body
+    \textbf{#1}\hspace{0.1cm}\titlerule[0.8pt]\hspace{-0.1cm}
+}[] % section title formatting
+
+\titlespacing{\section}{
+    % left space:
+    -1pt
+}{
+    % top space:
+    0.1 cm
+}{
+    % bottom space:
+    0.065 cm
+} % section title spacing
+
+\titlespacing{\subsection}{
+    % left space:
+    -1pt
+}{
+    % top space:
+    0.1 cm
+}{
+    % bottom space:
+    0.1 cm
+} % section title spacing
+
+\titlespacing{\subsubsection}{
+    % left space:
+    -1pt
+}{
+    % top space:
+    0.4 cm
+}{
+    % bottom space:
+    0.1 cm
+} % section title spacing
+
+% \renewcommand\labelitemi{$\vcenter{\hbox{\small$\bullet$}}$} % custom bullet points
+\newenvironment{highlights}{
+    \begin{itemize}[
+        topsep=0.10 cm,
+        parsep=0.10 cm,
+        partopsep=0pt,
+        itemsep=0pt,
+        leftmargin=0.4 cm + 10pt
+    ]
+}{
+    \end{itemize}
+} % new environment for highlights
+
+\newenvironment{highlightsforbulletentries}{
+    \begin{itemize}[
+        topsep=0.10 cm,
+        parsep=0.10 cm,
+        partopsep=0pt,
+        itemsep=0pt,
+        leftmargin=10pt
+    ]
+}{
+    \end{itemize}
+} % new environment for highlights for bullet entries
+
+
+\newenvironment{onecolentry}{
+    \begin{adjustwidth}{
+        0.2 cm + 0.00001 cm
+    }{
+        0.2 cm + 0.00001 cm
+    }
+}{
+    \end{adjustwidth}
+} % new environment for one column entries
+
+\newenvironment{twocolentry}[2][]{
+    \onecolentry
+    \def\secondColumn{#2}
+    \setcolumnwidth{0.4\textwidth, 0.6\textwidth} % Set left column to 40% and right to 60%
+    \begin{paracol}{2}
+}{
+    \switchcolumn \raggedleft \secondColumn
+    \end{paracol}
+    \endonecolentry
+} % new environment for two column entries
+
+\newenvironment{threecolentry}[3][]{
+    \onecolentry
+    \def\thirdColumn{#3}
+    \setcolumnwidth{1 cm, \fill, 4.5 cm}
+    \begin{paracol}{3}
+    {\raggedright #2} \switchcolumn
+}{
+    \switchcolumn \raggedleft \thirdColumn
+    \end{paracol}
+    \endonecolentry
+} % new environment for three column entries
+
+\newenvironment{header}{
+    \setlength{\topsep}{0pt}\par\kern\topsep\centering\color{primaryColor}\linespread{1.5}
+}{
+    \par\kern\topsep
+} % new environment for the header
+
+\newcommand{\placelastupdatedtext}{% \placetextbox{<horizontal pos>}{<vertical pos>}{<stuff>}
+  \AddToShipoutPictureFG*{% Add <stuff> to current page foreground
+    \put(
+        \LenToUnit{\paperwidth-2 cm-0.2 cm+0.05cm},
+        \LenToUnit{\paperheight-1.0 cm}
+    ){\vtop{{\null}\makebox[0pt][c]{
+        \small\color{gray}\textit{Dernière mise à jour en septembre 2024}\hspace{\widthof{Dernière mise à jour en septembre 2024}}
+    }}}%
+  }%
+}%
+
+% save the original href command in a new command:
+\let\hrefWithoutArrow\href
+
+% new command for external links:
+\renewcommand{\href}[2]{\hrefWithoutArrow{#1}{\ifthenelse{\equal{#2}{}}{ }{#2 }\raisebox{.15ex}{\footnotesize \faExternalLink*}}}
+
+
+% Dans le préambule (avant \begin{document})
+\usepackage{enumitem} % Pour personnaliser les listes
+
+% Redéfinir l'environnement highlights avec un espacement réduit
+\renewenvironment{highlights}{
+    \begin{itemize}[
+        topsep=0.05cm,    % Espacement avant la liste
+        partopsep=0pt,   % Espacement si la liste est après un paragraphe
+        itemsep=0.05cm,   % Espacement entre les items
+        parsep=0pt,      % Espacement après chaque item
+        leftmargin=0.5cm % Marge gauche des items
+    ]
+}{
+    \end{itemize}
+}
+
+
+\begin{document}
+    \newcommand{\AND}{\unskip
+        \cleaders\copy\ANDbox\hskip\wd\ANDbox
+        \ignorespaces
+    }
+    \newsavebox\ANDbox
+    \sbox\ANDbox{}
+
+    \begin{header}
+        \fontsize{25 pt}{25 pt}
+        \textbf{ZAALI Mohamed}
+
+        \vspace{-4pt}
+
+        \fontsize{13 pt}{13 pt}\selectfont
+        \tagline{Étudiant Ingénieur en IA \& Data Engineering}
+
+        \vspace{1pt}
+
+        
+        \fontsize{9 pt}{9 pt}\selectfont
+        \mbox{\hrefWithoutArrow{mailto:zaali.mohamed3002@gmail.com}{{\footnotesize\faEnvelope[regular]}\hspace*{0.13cm}zaali.mohamed3002@gmail.com}}%
+        \kern 0.25 cm%
+        \AND%
+        \kern 0.25 cm%
+        \mbox{\hrefWithoutArrow{tel:+212 605964917}{{\footnotesize\faPhone*}\hspace*{0.13cm}+212 605964917}}%
+        \kern 0.25 cm%
+        \AND%
+        \kern 0.25 cm%
+        \mbox{\hrefWithoutArrow{https://linkedin.com/in/m-zaali}{{\footnotesize\faLinkedinIn}\hspace*{0.13cm}m-zaali}}%
+        \kern 0.25 cm%
+        \AND%
+        \kern 0.25 cm%
+        \mbox{\hrefWithoutArrow{https://github.com/ZaaliMohamed123}{{\footnotesize\faGithub}\hspace*{0.13cm}ZaaliMohamed123}}%
+        \kern 0.25 cm%
+        \AND%
+        \kern 0.25 cm%
+        \mbox{\hrefWithoutArrow{https://zaalimohamed.me/}{{\footnotesize\faLink}\hspace*{0.13cm}zaalimohamed.me}}%
+    \end{header}
+
+
+    \section{FORMATION}
+
+    \subsection{ENSAM Rabat -- Élève Ingénieur d'État en Data Science, IA \& Santé Numérique \hfill Sep 2023--En cours}
+
+    \section{EXPÉRIENCE PROFESSIONNELLE}
+
+\subsection{Al Barid Bank - RABAT - Stagiaire Développeur Full Stack \hfill JUI 2025 - SEP 2025} 
+\textit{Conception et développement d'une plateforme d'analyse des transactions POS, SoftPOS et e-commerce.}
+\begin{highlights}
+    \item Développement d'une \textbf{API REST sécurisée} (Spring Boot, JWT) permettant l'accès rapide aux données transactionnelles agrégées.
+    \item Conception et livraison d'un \textbf{site web responsive} (Angular, ngx-charts) pour la visualisation et l'exploration des transactions.
+    \item Élaboration de l'\textbf{architecture logicielle en UML} pour garantir la maintenabilité et l'évolutivité du système.
+\end{highlights}
+
+\subsection{Ministère de la Jeunesse, de la Culture et de la Communication - Stagiaire Data Science \hfill JUI 2024 - SEP 2024} 
+\textit{Développement d'un système d'analyse prédictive pour la préservation du patrimoine culturel.}
+\begin{highlights}
+    \item Développement d'un \textbf{modèle prédictif} pour anticiper la dégradation du patrimoine culturel.
+    \item Intégration du modèle dans une \textbf{application web} (Flask) pour accompagner les experts dans la prise de décision.
+    \item Déploiement de la solution sur un \textbf{serveur Ubuntu} (Gunicorn, Nginx), garantissant disponibilité et performance.
+\end{highlights}
+
+
+    \section{PROJETS \& RÉALISATIONS}
+
+    \begin{highlights}
+        
+    \item \textbf{\textit{AL-MUQARRIR} - Transcription Automatique \& Génération de Comptes-Rendus:}  Plateforme web pour la \textbf{transcription en temps réel}, la \textbf{diarisation} des locuteurs et la génération automatique de \textbf{comptes-rendus de réunions} avec \textbf{analyse sémantique}. \\ \textit{Technologies}: \skillbox{Whisper (OpenAI)} \skillbox{PyAnnote} \skillbox{Gemini API} \skillbox{Flask} \skillbox{Angular} \skillbox{SQLite} 
+
+    \item \textbf{\textit{Cura} - Suivi des Maladies \& Médicaments:}  Application web de gestion des traitements avec \textbf{détection des interactions médicamenteuses} par IA et génération d'alertes adaptées aux patients. | \textit{Technologies}: \skillbox{PyTorch} \skillbox{Gemini API} \skillbox{Flask} \skillbox{SQLAlchemy} \skillbox{Bootstrap} \skillbox{SQLite} 
+
+    \item \textbf{\textit{LipReader} -- Application de Lecture Labiale:}  Application convertissant les mouvements des lèvres en texte. \\ \textit{Technologies}: \skillbox{TensorFlow} \skillbox{Streamlit} 
+
+    \item \textbf{\textit{NER} -- Modèles de Reconnaissance d'Entités Nommées:}  Développement d'une application capable d'identifier des entités nommées. | \textit{Technologies}: \skillbox{Python} \skillbox{Streamlit} \skillbox{Keras} \skillbox{SpaCy} \skillbox{Stanza}
+
+    \item \textbf{Système de Détection d'Intrusions Réseau en Temps Réel:}  Système capturant et analysant les paquets réseau en temps réel. \textit{Technologies}: \skillbox{Python} \skillbox{Kafka} \skillbox{PyShark} \skillbox{Pandas} \skillbox{Scikit-learn} \skillbox{Joblib} 
+    
+    \item \textbf{Pipeline MySQL vers Hadoop:}  Conception et mise en œuvre d'un pipeline de migration de données d'une base MySQL vers HDFS via Sqoop, avec analyse via Hive. | \textit{Technologies}: \skillbox{Apache Sqoop} \skillbox{Hadoop HDFS} \skillbox{Apache Hive} \skillbox{MySQL} \skillbox{Docker} \skillbox{Linux Shell}
+
+    \item \textbf{\textit{Analyse des Ventes BigMart – Tableau de Bord Google Looker:}}  
+    Tableau de bord d'analyse retail fournissant des insights stratégiques sur les ventes et l'optimisation des stocks. | 
+    \textit{Technologies}: \skillbox{Google Looker} \skillbox{Python}  
+    \hfill \hrefWithoutArrow{https://lookerstudio.google.com/u/0/reporting/d0283436-408d-469b-9398-567fc449375f/page/RPBLF}{Voir le Tableau de Bord}
+
+
+    \end{highlights}
+
+
+        
+    \section{COMPÉTENCES TECHNIQUES}
+    \begin{tabularx}{\textwidth}{l}
+        \textbf{Langages de Programmation}: \skillbox{Python} \skillbox{Java} \skillbox{Scala} \hfill
+        \textbf{IA/ML}: \skillbox{scikit‑learn}, \skillbox{PyTorch}, \skillbox{TensorFlow}, \skillbox{NLP} \\
+        \textbf{Bases de Données}: \skillbox{MySQL} \skillbox{Oracle} \skillbox{MongoDB} \skillbox{SQLite} \skillbox{PostgreSQL} \hfill 
+        \textbf{Big Data}: \skillbox{Hadoop} \skillbox{Hive} \skillbox{Sqoop} \skillbox{Kafka} \skillbox{Spark} \\
+        \textbf{Intégration de Données}: \skillbox{Talend} \skillbox{Data Warehousing} \skillbox{ETL} \hfill
+        \textbf{Visualisation \& BI}: \skillbox{Power BI} \skillbox{Google Looker} \\
+        \textbf{Technologies \& Frameworks Web}: \skillbox{HTML} \skillbox{CSS} \skillbox{JavaScript} \skillbox{Bootstrap} 
+        \skillbox{Angular} \skillbox{Streamlit} \skillbox{Flask} \skillbox{Spring Boot} 
+        
+    \end{tabularx}
+
+    \section{ACTIVITÉS PARAUNIVERSITAIRES}
+        \subsection{Architecte d'Expérience d'Apprentissage - Club Fatal Error ENSAM Rabat \hfill SEP 2024 - JUIN 2025} 
+        \begin{highlights}
+                \item Animation d'ateliers en data science, machine learning et développement logiciel ; co-création de programmes innovants.
+\item Optimisation des résultats de formation par évaluation et amélioration continues.
+        \end{highlights}
+    \section{CERTIFICATIONS}
+\begin{tabularx}{\textwidth}{X X}
+    \textbf{\textbullet~\hrefWithoutArrow{https://www.credly.com/badges/2faa52b1-d971-47cc-ab5f-77deb43ce4fb/linked_in_profile}{CCNA: Introduction aux Réseaux}} & 
+    \textbf{\textbullet~\hrefWithoutArrow{https://www.datacamp.com/completed/statement-of-accomplishment/course/43a0c70954b7ef9c1e6ef7cba8eef86f6c93e214}{Introduction à la Data}} \\
+    
+    \textbf{\textbullet~\hrefWithoutArrow{https://www.datacamp.com/completed/statement-of-accomplishment/course/970728f8d13f505e01db21a8cdb8cc8dfe97eaab}{Structures de Données et Algorithmes en Python}} &
+
+    \textbf{\textbullet~\hrefWithoutArrow{https://www.datacamp.com/completed/statement-of-accomplishment/track/570b6b615274514fb5a8f886083784e1d1358f3f}{Fondamentaux de la Programmation Python}} 
+    
+\end{tabularx}
+    \vspace{-0.7cm}
+        
+        
+    \section{LANGUES}
+        \begin{tabularx}{\textwidth}{X X X}
+            \textbf{\textbullet~Anglais}: Courant & \textbf{\textbullet~Français}: Courant & \textbf{\textbullet~Arabe}: Langue maternelle 
+        \end{tabularx}
+
+\end{document}

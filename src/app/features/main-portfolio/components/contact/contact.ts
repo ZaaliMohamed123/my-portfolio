@@ -162,15 +162,14 @@ export class Contact implements OnInit, OnDestroy, AfterViewInit {
   }
 
   downloadCV(): void {
-  const currentLang = this.translocoService.getActiveLang();
-  const cvPath = `assets/media/cv/ZAALI_Mohamed.${currentLang}.pdf`;
+    const currentLang = this.translocoService.getActiveLang();
+    const cvPath = `assets/media/cv/latex_code/${currentLang}/ZAALI_Mohamed.${currentLang}.pdf`;
 
-  // Create a temporary link and trigger download
-  const link = document.createElement('a');
-  link.href = cvPath;
-  link.download = 'ZAALI_Mohamed.pdf'; 
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
-}
+    const link = document.createElement('a');
+    link.href = cvPath;
+    link.download = 'ZAALI_Mohamed.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
 }
