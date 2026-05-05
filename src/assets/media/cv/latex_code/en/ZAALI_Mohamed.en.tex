@@ -191,7 +191,7 @@
         \LenToUnit{\paperwidth-2 cm-0.2 cm+0.05cm},
         \LenToUnit{\paperheight-1.0 cm}
     ){\vtop{{\null}\makebox[0pt][c]{
-        \small\color{gray}\textit{Last updated in September 2024}\hspace{\widthof{Last updated in September 2024}}
+        \small\color{gray}\textit{Last updated in May 2026}\hspace{\widthof{Last updated in May 2026}}
     }}}%
   }%
 }%
@@ -221,133 +221,141 @@
 
 
 \begin{document}
-    \newcommand{\AND}{\unskip
-        \cleaders\copy\ANDbox\hskip\wd\ANDbox
-        \ignorespaces
-    }
-    \newsavebox\ANDbox
-    \sbox\ANDbox{}
+\newcommand{\AND}{\unskip
+	\cleaders\copy\ANDbox\hskip\wd\ANDbox
+	\ignorespaces
+}
+\newsavebox\ANDbox
+\sbox\ANDbox{}
 
-    \begin{header}
-        \fontsize{25 pt}{25 pt}
-        \textbf{ZAALI Mohamed}
+\begin{header}
+	\fontsize{25 pt}{25 pt}
+	\textbf{ZAALI Mohamed}
 
-        \vspace{-1pt}
+	\vspace{-1pt}
 
-        \fontsize{13 pt}{13 pt}\selectfont
-        \tagline{AI \& Data Engineering Student}
+	\fontsize{13 pt}{13 pt}\selectfont
+	\tagline{AI Agent Developer}
 
-        \vspace{1pt}
-
-        
-        \fontsize{9 pt}{9 pt}\selectfont
-        \mbox{\hrefWithoutArrow{mailto:zaali.mohamed3002@gmail.com}{{\footnotesize\faEnvelope[regular]}\hspace*{0.13cm}zaali.mohamed3002@gmail.com}}%
-        \kern 0.25 cm%
-        \AND%
-        \kern 0.25 cm%
-        \mbox{\hrefWithoutArrow{tel:+212 605964917}{{\footnotesize\faPhone*}\hspace*{0.13cm}+212 605964917}}%
-        \kern 0.25 cm%
-        \AND%
-        \kern 0.25 cm%
-        \mbox{\hrefWithoutArrow{https://linkedin.com/in/m-zaali}{{\footnotesize\faLinkedinIn}\hspace*{0.13cm}m-zaali}}%
-        \kern 0.25 cm%
-        \AND%
-        \kern 0.25 cm%
-        \mbox{\hrefWithoutArrow{https://github.com/ZaaliMohamed123}{{\footnotesize\faGithub}\hspace*{0.13cm}ZaaliMohamed123}}%
-        \kern 0.25 cm%
-        \AND%
-        \kern 0.25 cm%
-        \mbox{\hrefWithoutArrow{https://zaalimohamed.me/}{{\footnotesize\faLink}\hspace*{0.13cm}zaalimohamed.me}}%
-    \end{header}
+	\vspace{1pt}
 
 
-    \section{EDUCATION}
+	\fontsize{9 pt}{9 pt}\selectfont
+	\mbox{\hrefWithoutArrow{mailto:zaali.mohamed3002@gmail.com}{{\footnotesize\faEnvelope[regular]}\hspace*{0.13cm}zaali.mohamed3002@gmail.com}}%
+	\kern 0.25 cm%
+	\AND%
+	\kern 0.25 cm%
+	\mbox{\hrefWithoutArrow{tel:+212 605964917}{{\footnotesize\faPhone*}\hspace*{0.13cm}+212 605964917}}%
+	\kern 0.25 cm%
+	\AND%
+	\kern 0.25 cm%
+	\mbox{\hrefWithoutArrow{https://linkedin.com/in/m-zaali}{{\footnotesize\faLinkedinIn}\hspace*{0.13cm}m-zaali}}%
+	\kern 0.25 cm%
+	\AND%
+	\kern 0.25 cm%
+	\mbox{\hrefWithoutArrow{https://github.com/ZaaliMohamed123}{{\footnotesize\faGithub}\hspace*{0.13cm}ZaaliMohamed123}}%
+	\kern 0.25 cm%
+	\AND%
+	\kern 0.25 cm%
+	\mbox{\hrefWithoutArrow{https://zaalimohamed.me/}{{\footnotesize\faLink}\hspace*{0.13cm}zaalimohamed.me}}%
+\end{header}
 
-    \subsection{ENSAM Rabat -- State Engineer Student in Data Science, AI \& Digital Health \hfill Sep 2023--Present}
 
-    \section{PROFESSIONAL EXPERIENCE}
+\section{EDUCATION}
 
-\subsection{Al Barid Bank - RABAT - Full Stack Developer Intern \hfill JUL 2025 - SEP 2025} 
+\subsection{ENSAM Rabat -- State Engineer Student in Data Science, AI \& Digital Health \hfill Sep 2023--Present}
+
+\section{PROFESSIONAL EXPERIENCE}
+
+\subsection{Syntax - RABAT - AI Agent Developer Intern \hfill FEB 2026 - Present}
+\textit{Building an extensible MCP server connecting AI agents to Microsoft 365 via Microsoft Graph API.}
+\begin{highlights}
+	\item Architected a \textbf{preset system} controlling exactly what tools an AI agent sees per context; shipped the first production preset with \textbf{55+ tools} covering SharePoint \& Excel via Microsoft Graph API.
+	\item Built a \textbf{5-step code generation pipeline} that turns Microsoft's 45MB OpenAPI spec into typed, validated MCP tools automatically — adding a new tool requires a single JSON line.
+	\item Designed the server for \textbf{zero-effort extensibility}: onboarding a new M365 service (Outlook, Teams, Calendar) requires only a JSON config, no code changes.
+\end{highlights}
+\vspace{0.05cm}
+\textit{Technologies}: \skillbox{Python} \skillbox{TypeScript} \skillbox{FastMCP} \skillbox{LangGraph} \skillbox{OpenAI / Azure} \skillbox{Node.js}
+
+\subsection{Al Barid Bank - RABAT - Full Stack Developer Intern \hfill JUL 2024 - SEP 2024}
 \textit{Design and development of a platform for analyzing POS, SoftPOS, and e-commerce transactions.}
 \begin{highlights}
-    \item Built a \textbf{secure REST API} (Spring Boot, JWT) enabling fast access to aggregated transaction data.
-    \item Designed and delivered a \textbf{responsive website} (Angular, ngx-charts) for transaction visualization and exploration.
-    \item Created the \textbf{software architecture in UML} to ensure system maintainability and scalability.
+	\item Built a \textbf{secure REST API} (Spring Boot, JWT) enabling fast access to aggregated transaction data.
+	\item Designed and delivered a \textbf{responsive website} (Angular, ngx-charts) for transaction visualization and exploration.
+	\item Created the \textbf{software architecture in UML} to ensure system maintainability and scalability.
 \end{highlights}
 
-\subsection{Ministry of Youth, Culture and Communication - RABAT - Data Science Intern \hfill JUL 2024 - SEP 2024} 
+\subsection{Ministry of Youth, Culture and Communication - RABAT - Data Science Intern \hfill JUL 2023 - SEP 2023}
 \textit{Development of a predictive analytics system for cultural heritage preservation.}
 \begin{highlights}
-    \item Developed a \textbf{predictive model} to forecast cultural heritage degradation.
-    \item Integrated the model into a \textbf{web application} (Flask) to support experts in decision-making.
-    \item Deployed the solution on an \textbf{Ubuntu server} (Gunicorn, Nginx), ensuring availability and performance.
+	\item Developed a \textbf{predictive model} to forecast cultural heritage degradation.
+	\item Integrated the model into a \textbf{web application} (Flask) to support experts in decision-making.
+	\item Deployed the solution on an \textbf{Ubuntu server} (Gunicorn, Nginx), ensuring availability and performance.
 \end{highlights}
 
 
-    \section{PROJECTS \& ACCOMPLISHMENTS}
+\section{PROJECTS \& ACCOMPLISHMENTS}
 
-    \begin{highlights}
-        
-    \item \textbf{\textit{AL-MUQARRIR} - Automatic Transcription \& Meeting Minutes Generation:}  Web platform for \textbf{real-time transcription}, speaker \textbf{diarization}, and automatic generation of \textbf{meeting minutes} with \textbf{semantic analysis}. | \textit{Technologies}: \skillbox{Whisper (OpenAI)} \skillbox{PyAnnote} \skillbox{Gemini API} \skillbox{Flask} \skillbox{Angular} \skillbox{SQLite} 
+\begin{highlights}
 
-    \item \textbf{\textit{Cura} - Disease \& Medication Tracking:}  Web application for treatment management with AI-powered \textbf{drug interaction detection} and generation of patient-friendly alerts. | \textit{Technologies}: \skillbox{PyTorch} \skillbox{Gemini API} \skillbox{Flask} \skillbox{SQLAlchemy} \skillbox{Bootstrap} \skillbox{SQLite} 
+	\item \textbf{\textit{AL-MUQARRIR} - Automatic Transcription \& Meeting Minutes Generation:}  Web platform for \textbf{real-time transcription}, speaker \textbf{diarization}, and automatic generation of \textbf{meeting minutes} with \textbf{semantic analysis}. | \textit{Technologies}: \skillbox{Whisper (OpenAI)} \skillbox{PyAnnote} \skillbox{Gemini API} \skillbox{Flask} \skillbox{Angular} \skillbox{SQLite}
 
-    \item \textbf{\textit{LipReader} -- Lip-Reading Application:}  Application converting lip movements into text. | \textit{Technologies}: \skillbox{TensorFlow} \skillbox{Streamlit} 
+	\item \textbf{\textit{Cura} - Disease \& Medication Tracking:}  Web application for treatment management with AI-powered \textbf{drug interaction detection} and generation of patient-friendly alerts. | \textit{Technologies}: \skillbox{PyTorch} \skillbox{Gemini API} \skillbox{Flask} \skillbox{SQLAlchemy} \skillbox{Bootstrap} \skillbox{SQLite}
 
-    \item \textbf{\textit{NER} -- Named Entity Recognition Models:}  Developed an application capable of identifying named entities. | \textit{Technologies}: \skillbox{Python} \skillbox{Streamlit} \skillbox{Keras} \skillbox{SpaCy} \skillbox{Stanza}
+	\item \textbf{\textit{LipReader} -- Lip-Reading Application:}  Application converting lip movements into text. | \textit{Technologies}: \skillbox{TensorFlow} \skillbox{Streamlit}
 
-    \item \textbf{Real-Time Network Intrusion Detection System:}  System capturing and analyzing network packets in real-time. | \textit{Technologies}: \skillbox{Python} \skillbox{Kafka} \skillbox{PyShark} \skillbox{Pandas} \skillbox{Scikit-learn} \skillbox{Joblib} 
+	\item \textbf{\textit{NER} -- Named Entity Recognition Models:}  Developed an application capable of identifying named entities. | \textit{Technologies}: \skillbox{Python} \skillbox{Streamlit} \skillbox{Keras} \skillbox{SpaCy} \skillbox{Stanza}
 
-    \item \textbf{Anxiety Level Prediction:}  Platform for assessing and predicting anxiety levels based on psychological, demographic, and behavioral information. | \textit{Technologies}: \skillbox{Python} \skillbox{Scikit-learn} \skillbox{Flask} \skillbox{Bootstrap} \skillbox{Joblib}
+	\item \textbf{Real-Time Network Intrusion Detection System:}  System capturing and analyzing network packets in real-time. | \textit{Technologies}: \skillbox{Python} \skillbox{Kafka} \skillbox{PyShark} \skillbox{Pandas} \skillbox{Scikit-learn} \skillbox{Joblib}
 
-    \item \textbf{MySQL-to-Hadoop Pipeline:}  Designed and implemented a data migration pipeline from a MySQL database to HDFS via Sqoop, with analysis using Hive. | \textit{Technologies}: \skillbox{Apache Sqoop} \skillbox{Hadoop HDFS} \skillbox{Apache Hive} \skillbox{MySQL} \skillbox{Docker} \skillbox{Linux Shell}
+	\item \textbf{Anxiety Level Prediction:}  Platform for assessing and predicting anxiety levels based on psychological, demographic, and behavioral information. | \textit{Technologies}: \skillbox{Python} \skillbox{Scikit-learn} \skillbox{Flask} \skillbox{Bootstrap} \skillbox{Joblib}
 
-    \item \textbf{\textit{BigMart Sales Analysis – Dashboard in Google Looker:}}  
-    Retail analytics dashboard providing strategic insights on sales and inventory optimization. | 
-    \textit{Technologies}: \skillbox{Google Looker} \skillbox{Python}  
-    \hfill \hrefWithoutArrow{https://lookerstudio.google.com/u/0/reporting/d0283436-408d-469b-9398-567fc449375f/page/RPBLF}{View Dashboard}
+	\item \textbf{MySQL-to-Hadoop Pipeline:}  Designed and implemented a data migration pipeline from a MySQL database to HDFS via Sqoop, with analysis using Hive. | \textit{Technologies}: \skillbox{Apache Sqoop} \skillbox{Hadoop HDFS} \skillbox{Apache Hive} \skillbox{MySQL} \skillbox{Docker} \skillbox{Linux Shell}
 
-
-    \end{highlights}
+	\item \textbf{\textit{BigMart Sales Analysis – Dashboard in Google Looker:}}
+	Retail analytics dashboard providing strategic insights on sales and inventory optimization. |
+	\textit{Technologies}: \skillbox{Google Looker} \skillbox{Python}
+	\hfill \hrefWithoutArrow{https://lookerstudio.google.com/u/0/reporting/d0283436-408d-469b-9398-567fc449375f/page/RPBLF}{View Dashboard}
 
 
-        
-    \section{TECHNICAL SKILLS}
-    \begin{tabularx}{\textwidth}{l}
-        \textbf{Programming Languages}: \skillbox{Python} \skillbox{Java} \skillbox{scala} \hfill
-        \textbf{AI/ML}: \skillbox{scikit‑learn}, \skillbox{PyTorch}, \skillbox{TensorFlow}, \skillbox{NLP} \\
-        \textbf{Databases}: \skillbox{MySQL} \skillbox{Oracle} \skillbox{MongoDB} \skillbox{SQLite} \skillbox{PostgreSQL} \hfill 
-        \textbf{Big Data}: \skillbox{Hadoop} \skillbox{Hive} \skillbox{Sqoop} \skillbox{Kafka} \skillbox{Spark} \\
-        \textbf{Data Integration}: \skillbox{Talend} \skillbox{Data Warehousing} \skillbox{ETL} \hfill
-        \textbf{Visualization \& BI}: \skillbox{Power BI} \skillbox{Google Looker} \\
-        \textbf{Web Technologies \& Frameworks}: \skillbox{HTML} \skillbox{CSS} \skillbox{JavaScript} \skillbox{Bootstrap} 
-        \skillbox{Angular} \skillbox{Streamlit} \skillbox{Flask} \skillbox{Spring Boot} 
-        
-    \end{tabularx}
+\end{highlights}
 
-    \section{EXTRACURRICULAR ACTIVITIES}
-        \subsection{Learning Experience Architect - Fatal Error Club ENSAM Rabat \hfill SEP 2024 - JUN 2025} 
-        \begin{highlights}
-                \item Led workshops in data science, machine learning, and software development; co-created innovative programs.
 
-\item Optimized training outcomes through continuous evaluation and refinement.
-        \end{highlights}
-    \section{CERTIFICATIONS}
-\begin{tabularx}{\textwidth}{X X}
-    \textbf{\textbullet~\hrefWithoutArrow{https://www.credly.com/badges/2faa52b1-d971-47cc-ab5f-77deb43ce4fb/linked_in_profile}{CCNA: Introduction to Networks}} & 
-    \textbf{\textbullet~\hrefWithoutArrow{https://www.datacamp.com/completed/statement-of-accomplishment/course/43a0c70954b7ef9c1e6ef7cba8eef86f6c93e214}{Introduction to Data}} \\
-    
-    \textbf{\textbullet~\hrefWithoutArrow{https://www.datacamp.com/completed/statement-of-accomplishment/course/970728f8d13f505e01db21a8cdb8cc8dfe97eaab}{Data Structures and Algorithms in Python}} &
 
-    \textbf{\textbullet~\hrefWithoutArrow{https://www.datacamp.com/completed/statement-of-accomplishment/track/570b6b615274514fb5a8f886083784e1d1358f3f}{Python Programming Fundamentals}} 
-    
+\section{TECHNICAL SKILLS}
+\begin{tabularx}{\textwidth}{l}
+	\textbf{Programming Languages}: \skillbox{Python} \skillbox{Java} \skillbox{scala} \hfill
+	\textbf{AI/ML}: \skillbox{scikit‑learn}, \skillbox{PyTorch}, \skillbox{TensorFlow}, \skillbox{NLP}      \\
+	\textbf{Databases}: \skillbox{MySQL} \skillbox{Oracle} \skillbox{MongoDB} \skillbox{SQLite} \skillbox{PostgreSQL} \hfill
+	\textbf{Big Data}: \skillbox{Hadoop} \skillbox{Hive} \skillbox{Sqoop} \skillbox{Kafka} \skillbox{Spark} \\
+	\textbf{Data Integration}: \skillbox{Talend} \skillbox{Data Warehousing} \skillbox{ETL} \hfill
+	\textbf{Visualization \& BI}: \skillbox{Power BI} \skillbox{Google Looker}                              \\
+	\textbf{Web Technologies \& Frameworks}: \skillbox{HTML} \skillbox{CSS} \skillbox{JavaScript} \skillbox{Bootstrap}
+	\skillbox{Angular} \skillbox{Streamlit} \skillbox{Flask} \skillbox{Spring Boot}
 \end{tabularx}
-    \vspace{-0.7cm}
-        
-        
-    \section{LANGUAGES}
-        \begin{tabularx}{\textwidth}{X X X}
-            \textbf{\textbullet~English}: Fluent & \textbf{\textbullet~French}: Fluent & \textbf{\textbullet~Arabic}: Native 
-        \end{tabularx}
+
+\section{EXTRACURRICULAR ACTIVITIES}
+\subsection{Learning Experience Architect - Fatal Error Club ENSAM Rabat \hfill SEP 2024 - JUN 2025}
+\begin{highlights}
+	\item Led workshops in data science, machine learning, and software development; co-created innovative programs.
+
+	\item Optimized training outcomes through continuous evaluation and refinement.
+\end{highlights}
+\section{CERTIFICATIONS}
+\begin{tabularx}{\textwidth}{X X}
+	\textbf{\textbullet~\hrefWithoutArrow{https://www.credly.com/badges/2faa52b1-d971-47cc-ab5f-77deb43ce4fb/linked_in_profile}{CCNA: Introduction to Networks}}                                     &
+	\textbf{\textbullet~\hrefWithoutArrow{https://www.datacamp.com/completed/statement-of-accomplishment/course/43a0c70954b7ef9c1e6ef7cba8eef86f6c93e214}{Introduction to Data}}                       \\
+
+	\textbf{\textbullet~\hrefWithoutArrow{https://www.datacamp.com/completed/statement-of-accomplishment/course/970728f8d13f505e01db21a8cdb8cc8dfe97eaab}{Data Structures and Algorithms in Python}} &
+
+	\textbf{\textbullet~\hrefWithoutArrow{https://www.datacamp.com/completed/statement-of-accomplishment/track/570b6b615274514fb5a8f886083784e1d1358f3f}{Python Programming Fundamentals}}
+\end{tabularx}
+\vspace{-0.7cm}
+
+
+\section{LANGUAGES}
+\begin{tabularx}{\textwidth}{X X X}
+	\textbf{\textbullet~English}: Fluent & \textbf{\textbullet~French}: Fluent & \textbf{\textbullet~Arabic}: Native
+\end{tabularx}
 
 \end{document}
