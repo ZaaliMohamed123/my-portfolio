@@ -3,21 +3,20 @@
 % Define tagline command
 \newcommand{\tagline}[1]{\textit{#1}}
 % Packages:
+\usepackage{enumitem} % for customizing lists
 \usepackage[
-    ignoreheadfoot, % set margins without considering header and footer
-    top=1 cm, % separation between body and page edge from the top
-    bottom=1 cm, % separation between body and page edge from the bottom
-    left=1 cm, % separation between body and page edge from the left
-    right=1 cm, % separation between body and page edge from the right
-    footskip=1.0 cm, % separation between body and footer
-    % showframe % for debugging 
-]{geometry} % for adjusting page geometry
+    ignoreheadfoot,
+    top=0.5 cm,
+    bottom=0.5 cm,
+    left=0.5 cm,
+    right=0.5 cm,
+    footskip=0.5 cm,
+]{geometry}
 \usepackage[explicit]{titlesec} % for customizing section titles
 \usepackage{tabularx} % for making tables with fixed width columns
 \usepackage{array} % tabularx requires this
 \usepackage[dvipsnames]{xcolor} % for coloring text
 \definecolor{primaryColor}{RGB}{0, 79, 144} % define primary color
-\usepackage{enumitem} % for customizing lists
 \usepackage{fontawesome5} % for using icons
 \usepackage{amsmath} % for math
 \usepackage[
@@ -38,6 +37,7 @@
 \usepackage{iftex} % check if engine is pdflatex, xetex or luatex
 \usepackage{xcolor}  % For colors
 \usepackage{tcolorbox}  % For boxes
+\usepackage{multicol}  % For multi-column certifications
 
 % Define a custom "skill box" command
 \newtcbox{\skillbox}{
@@ -50,7 +50,6 @@
     boxrule=0.7pt  % Thin border
 }
 \usepackage{tasks}
-\usepackage{tabularx}
 % Ensure that generate pdf is machine readable/ATS parsable:
 \ifPDFTeX
     \input{glyphtounicode}
@@ -68,7 +67,7 @@
 \setcounter{secnumdepth}{0} % no section numbering
 \setlength{\parindent}{0pt} % no indentation
 \setlength{\topskip}{0pt} % no top skip
-\setlength{\columnsep}{1cm} % set column separation
+\setlength{\columnsep}{0.5cm} % set column separation
 
 
 \makeatletter
@@ -92,10 +91,10 @@
     -1pt
 }{
     % top space:
-    0.1 cm
+    0.05 cm
 }{
     % bottom space:
-    0.065 cm
+    0.05 cm
 } % section title spacing
 
 \titlespacing{\subsection}{
@@ -103,10 +102,10 @@
     -1pt
 }{
     % top space:
-    0.1 cm
+    0.05 cm
 }{
     % bottom space:
-    0.1 cm
+    0.05 cm
 } % section title spacing
 
 \titlespacing{\subsubsection}{
@@ -114,24 +113,13 @@
     -1pt
 }{
     % top space:
-    0.4 cm
+    0.05 cm
 }{
     % bottom space:
-    0.1 cm
+    0.05 cm
 } % section title spacing
 
 % \renewcommand\labelitemi{$\vcenter{\hbox{\small$\bullet$}}$} % custom bullet points
-\newenvironment{highlights}{
-    \begin{itemize}[
-        topsep=0.10 cm,
-        parsep=0.10 cm,
-        partopsep=0pt,
-        itemsep=0pt,
-        leftmargin=0.4 cm + 10pt
-    ]
-}{
-    \end{itemize}
-} % new environment for highlights
 
 \newenvironment{highlightsforbulletentries}{
     \begin{itemize}[
@@ -203,17 +191,14 @@
 \renewcommand{\href}[2]{\hrefWithoutArrow{#1}{\ifthenelse{\equal{#2}{}}{ }{#2 }\raisebox{.15ex}{\footnotesize \faExternalLink*}}}
 
 
-% Dans le préambule (avant \begin{document})
-\usepackage{enumitem} % Pour personnaliser les listes
-
-% Redéfinir l'environnement highlights avec un espacement réduit
-\renewenvironment{highlights}{
+% Highlights environment with tight spacing
+\newenvironment{highlights}{
     \begin{itemize}[
-        topsep=0.05cm,    % Espacement avant la liste
-        partopsep=0pt,   % Espacement si la liste est après un paragraphe
-        itemsep=0.05cm,   % Espacement entre les items
-        parsep=0pt,      % Espacement après chaque item
-        leftmargin=0.5cm % Marge gauche des items
+        topsep=0.05cm,
+        partopsep=0pt,
+        itemsep=0.05cm,
+        parsep=0pt,
+        leftmargin=0.5cm
     ]
 }{
     \end{itemize}
@@ -232,10 +217,10 @@
 	\fontsize{25 pt}{25 pt}
 	\textbf{ZAALI Mohamed}
 
-	\vspace{-1pt}
+	\vspace{-2pt}
 
 	\fontsize{13 pt}{13 pt}\selectfont
-	\tagline{AI Agent Developer}
+	\tagline{AI Software Engineer}
 
 	\vspace{1pt}
 
@@ -295,21 +280,21 @@
 
 \begin{highlights}
 
-	\item \textbf{\textit{Project Architect Agent} - Autonomous Project Documentation Agent:} Agentic system that takes a project idea, runs a \textbf{research loop} per implementation step, and auto-generates a structured \textbf{Notion workspace}. | \textit{Technologies}: \skillbox{LangGraph} \skillbox{OpenAI API} \skillbox{Gradio} \skillbox{Notion API} \skillbox{DuckDuckGo}
+	\item \textbf{\textit{Project Architect Agent} - Autonomous Project Documentation Agent:} Agentic system that takes a project idea, runs a \textbf{research loop} per implementation step, and generates a structured \textbf{Notion workspace}. | \textit{Technologies}: \skillbox{LangGraph} \skillbox{OpenAI API} \skillbox{Gradio} \skillbox{Notion API}
 
-	\item \textbf{\textit{AI Invoice Processing Agent} - Automated Invoice Approval Workflow:} Agent that extracts, validates, and approves PDF invoices with business rule enforcement and \textbf{email notifications}. | \textit{Technologies}: \skillbox{LangGraph} \skillbox{Gradio} \skillbox{OpenAI API} \skillbox{Gmail API}
+	\item \textbf{\textit{AI Invoice Processing Agent} - Automated Invoice Approval Workflow:} Agent that extracts, validates, and approves PDF invoices with business rule enforcement and email notifications. | \textit{Technologies}: \skillbox{LangGraph} \skillbox{Gradio} \skillbox{OpenAI API} \skillbox{Gmail API}
 
-	\item \textbf{\textit{Twitter MCP Server} - Bridging AI Agents with Twitter/X:} Exposes tweet posting, thread publishing, and search as callable tools to any AI agent via Streamable HTTP and SSE endpoints. | \textit{Technologies}: \skillbox{FastMCP} \skillbox{Python}
+	\item \textbf{\textit{Twitter MCP Server} - Tool for AI Agent Social Media Automation:} Exposes Twitter/X tools (post, thread, search) to any MCP-compliant AI agent via Streamable HTTP and SSE endpoints. | \textit{Technologies}: \skillbox{FastMCP} \skillbox{Python} \skillbox{Twitter API}
 
-	\item \textbf{\textit{El-Qess Restaurant AI Assistant} - Langflow-Powered Restaurant Agent:} Conversational agent handling \textbf{FAQ via RAG}, table reservations, and confirmation emails through MCP integrations. | \textit{Technologies}: \skillbox{LangFlow} \skillbox{OpenAI API} \skillbox{Chroma DB} \skillbox{Google Calendar MCP} \skillbox{Gmail MCP}
+	\item \textbf{\textit{El-Qess Restaurant AI Assistant} - Langflow-Powered Restaurant Agent:} Conversational agent handling \textbf{FAQ via RAG}, table reservations, and confirmation emails. | \textit{Technologies}: \skillbox{LangFlow} \skillbox{OpenAI API} \skillbox{Chroma DB} \skillbox{Google Calendar MCP} \skillbox{Gmail MCP}
 
-	\item \textbf{\textit{AL-MUQARRIR} - Automatic Transcription \& Meeting Minutes Generation:}  Web platform for \textbf{real-time transcription}, speaker \textbf{diarization}, and automatic generation of \textbf{meeting minutes} with \textbf{semantic analysis}. | \textit{Technologies}: \skillbox{Whisper (OpenAI)} \skillbox{PyAnnote} \skillbox{Gemini API} \skillbox{Flask} \skillbox{Angular} \skillbox{SQLite}
+	\item \textbf{\textit{AL-MUQARRIR} - Automatic Transcription \& Meeting Minutes Generation:}  Web platform for \textbf{real-time transcription}, speaker \textbf{diarization}, and automatic generation of \textbf{meeting minutes} with \textbf{semantic analysis}. | \textit{Technologies}: \skillbox{Whisper} \skillbox{PyAnnote} \skillbox{Gemini} \skillbox{Flask} \skillbox{Angular}
 
 	\item \textbf{\textit{Cura} - Disease \& Medication Tracking:}  Web application for treatment management with AI-powered \textbf{drug interaction detection} and generation of patient-friendly alerts. | \textit{Technologies}: \skillbox{PyTorch} \skillbox{Gemini API} \skillbox{Flask} \skillbox{SQLAlchemy} \skillbox{Bootstrap} \skillbox{SQLite}
 
-	\item \textbf{\textit{LipReader} -- Lip-Reading Application:}  Application converting lip movements into text. | \textit{Technologies}: \skillbox{TensorFlow} \skillbox{Streamlit}
+	\item \textbf{\textit{LipReader} - Lip-Reading Application:}  Application converting lip movements into text. | \textit{Technologies}: \skillbox{TensorFlow} \skillbox{Streamlit}
 
-	\item \textbf{Real-Time Network Intrusion Detection System:}  System capturing and analyzing network packets in real-time. | \textit{Technologies}: \skillbox{Python} \skillbox{Kafka} \skillbox{PyShark} \skillbox{Pandas} \skillbox{Scikit-learn} \skillbox{Joblib}
+	\item \textbf{\textit{Real-Time Network Intrusion Detection System:}}  System capturing and analyzing network packets in real-time. | \textit{Technologies}: \skillbox{Python} \skillbox{Kafka} \skillbox{PyShark} \skillbox{Pandas} \skillbox{Scikit-learn} \skillbox{Joblib}
 
 \end{highlights}
 
@@ -317,14 +302,10 @@
 
 \section{TECHNICAL SKILLS}
 \begin{tabularx}{\textwidth}{l}
-	\textbf{Programming Languages}: \skillbox{Python} \skillbox{Java} \skillbox{scala} \hfill
-	\textbf{AI/ML}: \skillbox{scikit‑learn}, \skillbox{PyTorch}, \skillbox{TensorFlow}, \skillbox{NLP}      \\
-	\textbf{Databases}: \skillbox{MySQL} \skillbox{Oracle} \skillbox{MongoDB} \skillbox{SQLite} \skillbox{PostgreSQL} \hfill
-	\textbf{Big Data}: \skillbox{Hadoop} \skillbox{Hive} \skillbox{Sqoop} \skillbox{Kafka} \skillbox{Spark} \\
-	\textbf{Data Integration}: \skillbox{Talend} \skillbox{Data Warehousing} \skillbox{ETL} \hfill
-	\textbf{Visualization \& BI}: \skillbox{Power BI} \skillbox{Google Looker}                              \\
-	\textbf{Web Technologies \& Frameworks}: \skillbox{HTML} \skillbox{CSS} \skillbox{JavaScript} \skillbox{Bootstrap}
-	\skillbox{Angular} \skillbox{Streamlit} \skillbox{Flask} \skillbox{Spring Boot}
+	\textbf{AI Engineering}: \skillbox{LangGraph} \skillbox{LangChain} \skillbox{LangFlow} \skillbox{FastMCP} \skillbox{OpenAI API} \skillbox{Gemini API} \skillbox{RAG}                                      \\
+	\textbf{Programming Languages}: \skillbox{Python} \skillbox{Java} \skillbox{TypeScript} \skillbox{JavaScript} \hfill                                                                                      \\
+	\textbf{ML/DL}: \skillbox{PyTorch} \skillbox{TensorFlow} \skillbox{Scikit-learn} \skillbox{NLP}  \hfill \textbf{Databases}: \skillbox{PostgreSQL} \skillbox{MySQL} \skillbox{MongoDB} \skillbox{SQLite}   \\
+	\textbf{Web Tech \& Frameworks}: \skillbox{HTML} \skillbox{CSS} \skillbox{Bootstrap} \skillbox{Angular} \skillbox{Flask} \skillbox{FastAPI} \skillbox{Spring Boot} \skillbox{Streamlit} \skillbox{Gradio} \\
 \end{tabularx}
 
 \section{EXTRACURRICULAR ACTIVITIES}
@@ -334,19 +315,25 @@
 
 	\item Optimized training outcomes through continuous evaluation and refinement.
 \end{highlights}
+
 \section{CERTIFICATIONS}
-\begin{tabularx}{\textwidth}{X X}
-	\textbf{\textbullet~\hrefWithoutArrow{https://www.credly.com/badges/2faa52b1-d971-47cc-ab5f-77deb43ce4fb/linked_in_profile}{CCNA: Introduction to Networks}}                                     &
-	\textbf{\textbullet~\hrefWithoutArrow{https://www.datacamp.com/completed/statement-of-accomplishment/course/43a0c70954b7ef9c1e6ef7cba8eef86f6c93e214}{Introduction to Data}}                       \\
-
-	\textbf{\textbullet~\hrefWithoutArrow{https://www.datacamp.com/completed/statement-of-accomplishment/course/970728f8d13f505e01db21a8cdb8cc8dfe97eaab}{Data Structures and Algorithms in Python}} &
-
-	\textbf{\textbullet~\hrefWithoutArrow{https://www.datacamp.com/completed/statement-of-accomplishment/track/570b6b615274514fb5a8f886083784e1d1358f3f}{Python Programming Fundamentals}}
-\end{tabularx}
-\vspace{-0.7cm}
+ {\fontsize{9.33pt}{12pt}\selectfont
+  \vspace{-0.68cm}
+  \begin{multicols}{3}
+	  \begin{itemize}[leftmargin=*, itemsep=0pt, topsep=0pt, parsep=0pt, partopsep=0pt]
+		  \item \textbf{\hrefWithoutArrow{https://www.credly.com/badges/2faa52b1-d971-47cc-ab5f-77deb43ce4fb/linked_in_profile}{CCNA: Introduction to Networks}}
+		  \item \textbf{\hrefWithoutArrow{https://www.datacamp.com/completed/statement-of-accomplishment/course/970728f8d13f505e01db21a8cdb8cc8dfe97eaab}{Data Structures \& Algorithms in Python}}
+		  \item \textbf{\hrefWithoutArrow{https://www.datacamp.com/completed/statement-of-accomplishment/track/570b6b615274514fb5a8f886083784e1d1358f3f}{Python Programming Fundamentals}}
+		  \item \textbf{\hrefWithoutArrow{https://www.datacamp.com/completed/statement-of-accomplishment/track/c5c3f19c391a65a517fa15b62336e4f045759095}{SQL Fundamentals}}
+		  \item \textbf{\hrefWithoutArrow{https://www.datacamp.com/completed/statement-of-accomplishment/course/43a0c70954b7ef9c1e6ef7cba8eef86f6c93e214}{Introduction to Data}}
+	  \end{itemize}
+  \end{multicols}
+ }
+\vspace{-0.5cm}
 
 
 \section{LANGUAGES}
+\vspace{-0.1cm}
 \begin{tabularx}{\textwidth}{X X X}
 	\textbf{\textbullet~English}: Fluent & \textbf{\textbullet~French}: Fluent & \textbf{\textbullet~Arabic}: Native
 \end{tabularx}
