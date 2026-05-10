@@ -90,10 +90,14 @@
     "subtitle": "Workflow d'Approbation de Factures Automatisé avec LangGraph",
     "description": "Agent IA prêt pour la production qui extrait, valide et approuve ou rejette automatiquement des factures PDF via LangChain et LangGraph. Applique des règles métier, valide les calculs et envoie des notifications email automatisées via une interface Gradio.",
     "longDescription": "L'Agent IA de Traitement de Factures est un workflow agentique prêt pour la production qui automatise entièrement le cycle d'approbation des factures grâce aux patterns de machine à états **LangGraph** et **GPT-4** pour l'extraction de données structurées.\n\nLe système ingère des factures PDF et extrait tous les champs structurés (fournisseur, articles, totaux et taxe), puis valide les calculs mathématiquement et applique des politiques métier personnalisées :\n\n- Exigences de champs et limites de montants\n- Détection des doublons\n- Approbation ou rejet automatisé avec explications claires\n- Notifications email via Gmail pour chaque décision\n\nL'architecture utilise des noeuds LangGraph modulaires pour chaque étape : ingestion PDF, extraction LLM, validation, décision et notification. Un schéma d'état typé avec **Pydantic** applique les contrats de sortie LLM tout au long du pipeline. Le projet supporte tout endpoint compatible OpenAI incluant Azure, Gemini, Claude et les modèles Ollama locaux. Une interface **Gradio** offre un upload par glisser-déposer avec retour de traitement en temps réel.",
-    "logo": [],
+    "logo": [
+      "assets/media/projects/ai_invoice_processing_agent/ai_invoice_processing_logo.png"
+    ],
     "thumbnail": "",
-    "images": [],
-    "videoTuto": "",
+    "images": [
+      "assets/media/projects/ai_invoice_processing_agent/results.png"
+    ],
+    "videoTuto": "assets/media/projects/ai_invoice_processing_agent/Ai_invoice_processing_demo.mp4",
     "demoGif": "",
     "technologies": [
       "LangChain",
