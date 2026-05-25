@@ -158,7 +158,7 @@
     "title": "Construction d'APIs en Python",
     "provider": "DataCamp",
     "description": "Parcours pratique enseignant la consommation et la création d'APIs avec Python et FastAPI, couvrant l'intégration REST, l'authentification, la gestion d'erreurs et la construction d'APIs CRUD prêtes pour la production",
-    "credentialUrl": "",
+    "credentialUrl": "https://www.datacamp.com/completed/statement-of-accomplishment/track/6c6849dcadfca0de2a113735c04f09e94f597128",
     "skills": [
       "Requêtes API avec Python via le package requests",
       "Authentification API : Basic auth, clé API et méthodes par token",
@@ -187,12 +187,12 @@
       {
         "id": 63,
         "title": "Introduction to APIs in Python",
-        "credentialUrl": ""
+        "credentialUrl": "https://www.datacamp.com/completed/statement-of-accomplishment/course/03295810e79dcfc91c326880b84a76873f19f649"
       },
       {
         "id": 64,
         "title": "Introduction to FastAPI",
-        "credentialUrl": ""
+        "credentialUrl": "https://www.datacamp.com/completed/statement-of-accomplishment/course/9f09d4e58e13d04b134981d38bf87467c62b7d93"
       }
     ]
   }
