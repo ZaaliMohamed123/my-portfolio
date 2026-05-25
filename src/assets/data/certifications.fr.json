@@ -11,7 +11,10 @@
       "Création de schémas d'adressage IPv4/IPv6 et dépannage réseau",
       "Compréhension du modèle OSI, des protocoles Ethernet et des meilleures pratiques de sécurité réseau"
     ],
-    "tags": ["networking", "cisco"]
+    "tags": [
+      "networking",
+      "cisco"
+    ]
   },
   {
     "id": 2,
@@ -25,7 +28,9 @@
       "Sagesse des Données : Framework DIKW et exemples réels de décisions basées sur les données",
       "Éthique des Données : Confidentialité, cycle de vie des données et gestion des erreurs courantes"
     ],
-    "tags": ["data_science"]
+    "tags": [
+      "data_science"
+    ]
   },
   {
     "id": 3,
@@ -39,7 +44,10 @@
       "Algorithmes de Recherche : Recherche linéaire, recherche binaire, DFS, BFS et arbres de recherche binaire",
       "Algorithmes de Tri : Implémentation du tri à bulles, tri par sélection, tri fusion et tri rapide"
     ],
-    "tags": ["python", "data_science"]
+    "tags": [
+      "python",
+      "data_science"
+    ]
   },
   {
     "id": 4,
@@ -58,7 +66,10 @@
       "Techniques avancées : itérateurs, compréhensions de listes et module Collections Python",
       "Manipulation de données réelles et résolution de problèmes multi-étapes"
     ],
-    "tags": ["python", "data_science"],
+    "tags": [
+      "python",
+      "data_science"
+    ],
     "subCertifications": [
       {
         "id": 41,
@@ -99,7 +110,10 @@
       "Fonctions date/heure, analyse de texte et recherche plein texte en PostgreSQL",
       "Conception de bases de données : schémas, normalisation, vues et gestion de bases de données"
     ],
-    "tags": ["sql", "data_science"],
+    "tags": [
+      "sql",
+      "data_science"
+    ],
     "subCertifications": [
       {
         "id": 51,
@@ -135,6 +149,50 @@
         "id": 57,
         "title": "Conception de Bases de Données",
         "credentialUrl": "https://www.datacamp.com/completed/statement-of-accomplishment/course/afd821b32f146f48d53b83975bfcec01a0273895"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "type": "skill-track",
+    "title": "Construction d'APIs en Python",
+    "provider": "DataCamp",
+    "description": "Parcours pratique enseignant la consommation et la création d'APIs avec Python et FastAPI, couvrant l'intégration REST, l'authentification, la gestion d'erreurs et la construction d'APIs CRUD prêtes pour la production",
+    "credentialUrl": "",
+    "skills": [
+      "Requêtes API avec Python via le package requests",
+      "Authentification API : Basic auth, clé API et méthodes par token",
+      "Manipulation de données JSON structurées : envoi et réception de payloads",
+      "Gestion des erreurs, codes de statut et respect des limites de taux API",
+      "Construction d'APIs REST avec FastAPI : opérations GET, POST, PUT, DELETE",
+      "Validation des requêtes avec Pydantic et schémas de réponse",
+      "Exécution asynchrone pour la gestion concurrente des requêtes",
+      "Construction et test d'une API CRUD JSON complète avec tests automatisés et fonctionnels"
+    ],
+    "tags": [
+      "python",
+      "web_development"
+    ],
+    "subCertifications": [
+      {
+        "id": 61,
+        "title": "Introduction to Python for Developers",
+        "credentialUrl": "https://www.datacamp.com/completed/statement-of-accomplishment/course/5f9701befea87c776758ce0ab5dbeeb850389910"
+      },
+      {
+        "id": 62,
+        "title": "Intermediate Python for Developers",
+        "credentialUrl": "https://www.datacamp.com/completed/statement-of-accomplishment/course/d3c7be90b680dc46517e3fda475155e230e41ec5"
+      },
+      {
+        "id": 63,
+        "title": "Introduction to APIs in Python",
+        "credentialUrl": ""
+      },
+      {
+        "id": 64,
+        "title": "Introduction to FastAPI",
+        "credentialUrl": ""
       }
     ]
   }

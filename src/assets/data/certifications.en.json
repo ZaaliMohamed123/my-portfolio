@@ -11,7 +11,10 @@
       "Creating IPv4/IPv6 addressing schemes and network troubleshooting",
       "Understanding OSI model, Ethernet protocols, and network security best practices"
     ],
-    "tags": ["networking", "cisco"]
+    "tags": [
+      "networking",
+      "cisco"
+    ]
   },
   {
     "id": 2,
@@ -25,7 +28,9 @@
       "Data Wisdom: DIKW framework and real-world data-driven decision examples",
       "Data Ethics: Privacy, data lifecycle, and handling common data mistakes"
     ],
-    "tags": ["data_science"]
+    "tags": [
+      "data_science"
+    ]
   },
   {
     "id": 3,
@@ -39,7 +44,10 @@
       "Search Algorithms: Linear search, binary search, DFS, BFS, and binary search trees",
       "Sorting Algorithms: Bubble sort, selection sort, merge sort, and quicksort implementation"
     ],
-    "tags": ["python", "data_science"]
+    "tags": [
+      "python",
+      "data_science"
+    ]
   },
   {
     "id": 4,
@@ -58,7 +66,10 @@
       "Advanced techniques: iterators, list comprehensions, and Python Collections module",
       "Real-world data manipulation and multistep problem solving"
     ],
-    "tags": ["python", "data_science"],
+    "tags": [
+      "python",
+      "data_science"
+    ],
     "subCertifications": [
       {
         "id": 41,
@@ -99,7 +110,10 @@
       "Date/time functions, text parsing, and full-text search in PostgreSQL",
       "Database design: schemas, normalization, views, and database management"
     ],
-    "tags": ["sql", "data_science"],
+    "tags": [
+      "sql",
+      "data_science"
+    ],
     "subCertifications": [
       {
         "id": 51,
@@ -135,6 +149,50 @@
         "id": 57,
         "title": "Database Design",
         "credentialUrl": "https://www.datacamp.com/completed/statement-of-accomplishment/course/afd821b32f146f48d53b83975bfcec01a0273895"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "type": "skill-track",
+    "title": "Building APIs in Python",
+    "provider": "DataCamp",
+    "description": "Practical skill track teaching API consumption and creation with Python and FastAPI, covering REST API integration, authentication, error handling, and building production-grade CRUD APIs",
+    "credentialUrl": "",
+    "skills": [
+      "Making API requests with Python using the requests package",
+      "API authentication: Basic auth, API key, and token-based methods",
+      "Working with structured JSON data: sending and receiving payloads",
+      "Error handling, status codes, and respecting API rate limits",
+      "Building REST APIs with FastAPI: GET, POST, PUT, DELETE operations",
+      "Request validation with Pydantic models and response schemas",
+      "Asynchronous code execution for concurrent request handling",
+      "Building and testing a complete JSON CRUD API with automated and functional tests"
+    ],
+    "tags": [
+      "python",
+      "web_development"
+    ],
+    "subCertifications": [
+      {
+        "id": 61,
+        "title": "Introduction to Python for Developers",
+        "credentialUrl": "https://www.datacamp.com/completed/statement-of-accomplishment/course/5f9701befea87c776758ce0ab5dbeeb850389910"
+      },
+      {
+        "id": 62,
+        "title": "Intermediate Python for Developers",
+        "credentialUrl": "https://www.datacamp.com/completed/statement-of-accomplishment/course/d3c7be90b680dc46517e3fda475155e230e41ec5"
+      },
+      {
+        "id": 63,
+        "title": "Introduction to APIs in Python",
+        "credentialUrl": ""
+      },
+      {
+        "id": 64,
+        "title": "Introduction to FastAPI",
+        "credentialUrl": ""
       }
     ]
   }
